@@ -46,24 +46,15 @@ Use license-key gating (GitLab model) rather than component separation to protec
 
 ---
 
-## Applied Research
-
-This research has been used to assess real projects:
-
-| Assessment | Description |
-|------------|-------------|
-
----
-
 ## Full Research
 
 | Document | Contents |
 |----------|----------|
-| [`docs/mono-vs-micro-agentic-era.md`](docs/mono-vs-micro-agentic-era.md) | Full analysis with all citations |
-| [`docs/citations.md`](docs/citations.md) | 140 sources with credibility assessments |
-| [`docs/reference/architecture-tradeoffs.md`](docs/reference/architecture-tradeoffs.md) | Architecture quantified data and reversal cases |
-| [`docs/reference/ai-agents-and-architecture.md`](docs/reference/ai-agents-and-architecture.md) | AI agent capabilities, METR RCT, context windows |
-| [`docs/reference/open-source-commercial.md`](docs/reference/open-source-commercial.md) | Open-source commercial models and license changes |
-| [`docs/reference/competitive-moats.md`](docs/reference/competitive-moats.md) | Moat durability analysis, Tailwind case study |
-| [`docs/reference/operational-complexity.md`](docs/reference/operational-complexity.md) | Quantified ops costs, K8s costs, SRE ratios |
-| [`docs/reference/migration-patterns.md`](docs/reference/migration-patterns.md) | Modular monolith, Strangler Fig, DDD, reversals |
+| [mono-vs-micro-agentic-era.md](mono-vs-micro-agentic-era.md) | Full analysis with all citations |
+| [citations.md](citations.md) | 140 sources with credibility assessments |
+| [references/architecture-tradeoffs.md](references/architecture-tradeoffs.md) | Architecture quantified data and reversal cases |
+| [references/ai-agents-and-architecture.md](references/ai-agents-and-architecture.md) | AI agent capabilities, METR RCT, context windows |
+| [references/open-source-commercial.md](references/open-source-commercial.md) | Open-source commercial models and license changes |
+| [references/competitive-moats.md](references/competitive-moats.md) | Moat durability analysis, Tailwind case study |
+| [references/operational-complexity.md](references/operational-complexity.md) | Quantified ops costs, K8s costs, SRE ratios |
+| [references/migration-patterns.md](references/migration-patterns.md) | Modular monolith, Strangler Fig, DDD, reversals |

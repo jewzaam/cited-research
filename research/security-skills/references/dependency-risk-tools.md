@@ -5,7 +5,7 @@ An analysis of tools for assessing security risk in package dependencies,
 with emphasis on gaps relevant to AI-assisted development workflows.
 
 **Citations:** All references `[N]` point to entries in
-[dependency-tools-citations.md](dependency-tools-citations.md).
+[dependency-tools-citations.md](../dependency-tools-citations.md).
 
 ---
 

@@ -7,7 +7,7 @@ Research Date: 2026-03-27
 
 ## Citation Scope
 
-This document references citations from multiple per-dimension citation files. Bare numbers (e.g., [5]) in code trust sections refer to `citations-old.md`; in test trust sections to `test-trust-citations.md`. Prefixed citations (SC-, HG-, ER-, DS-, SM-, Dep-) reference their respective dimension files. See [citations.md](citations.md) for the full index.
+This document references citations from multiple per-dimension citation files. Bare numbers (e.g., [5]) in code trust sections are inline in `references/ai-code-trust-analysis.md`; in test trust sections refer to `test-trust-citations.md`. Prefixed citations (SC-, HG-, ER-, DS-, SM-, Dep-) reference their respective dimension files. See [citations.md](citations.md) for the full index.
 
 ---
 
@@ -44,7 +44,7 @@ The software supply chain is under sustained attack, and AI coding assistants am
 
 The most dangerous finding is the **confidence gap**: developers using AI assistants believe their code is more secure while it is actually less secure [1]. This creates a systematic under-investment in review.
 
-**Common CWE patterns in AI code:** CWE-79 (XSS), CWE-89 (SQL injection), CWE-78 (OS command injection), CWE-22 (path traversal), CWE-798 (hardcoded credentials), CWE-502 (unsafe deserialization). See [reference/cwe-patterns-llm.md](reference/cwe-patterns-llm.md).
+**Common CWE patterns in AI code:** CWE-79 (XSS), CWE-89 (SQL injection), CWE-78 (OS command injection), CWE-22 (path traversal), CWE-798 (hardcoded credentials), CWE-502 (unsafe deserialization). See [references/cwe-patterns-llm.md](references/cwe-patterns-llm.md).
 
 ### 1.3 AI-Generated Tests Create False Confidence
 

@@ -83,7 +83,7 @@ LogRecords, making them available in format strings [5]:
 | `opentelemetry-exporter-otlp-proto-grpc` | gRPC OTLP exporter (port 4317) |
 | `opentelemetry-exporter-otlp-proto-http` | HTTP OTLP exporter (port 4318) |
 
-See [reference/python-logging-otel.md](reference/python-logging-otel.md) for full details.
+See [references/python-logging-otel.md](references/python-logging-otel.md) for full details.
 
 ---
 
@@ -132,7 +132,7 @@ However, the OTEL project recommends using a Collector [38]:
 
 Both are configured via environment variables (`OTEL_EXPORTER_OTLP_ENDPOINT`, etc.) [13].
 
-See [reference/export-options.md](reference/export-options.md) for the full env var table.
+See [references/export-options.md](references/export-options.md) for the full env var table.
 
 ---
 
@@ -166,7 +166,7 @@ data model instead of ViaQ [21].
 LokiStack can ingest OTLP data via `lokiStack.dataModel: Otel`, but this requires
 three operators: Logging + Loki + Cluster Observability Operator [21][22].
 
-See [reference/openshift-logging.md](reference/openshift-logging.md) for full details.
+See [references/openshift-logging.md](references/openshift-logging.md) for full details.
 
 ---
 
@@ -197,7 +197,7 @@ The OTEL Collector can forward logs directly to a LokiStack instance via its OTL
 endpoint [27]. LokiStack in `openshift-logging` mode automatically maps OTLP attributes
 to Loki stream labels [20].
 
-See [reference/collector-architecture.md](reference/collector-architecture.md) for full details.
+See [references/collector-architecture.md](references/collector-architecture.md) for full details.
 
 ---
 

@@ -43,11 +43,10 @@ references/
   complex-estimation.md                Gate structure, mixed skills, parallelization, rationale appendix
   estimation-methodology.md            Full analysis with worked examples (84 citations)
   tooling.md                           Spec-kit tooling landscape overview
-research/
-  estimation-methodology.md            Source research document
-  citations.md                         Numbered sources with URLs
-  reference/                           8 dimension reference files
-  audit/                               Citation audit + consistency review
+estimation-methodology.md              Source research document
+citations.md                           Numbered sources with URLs
+references/                            8 dimension reference files
+audit/                                 Citation audit + consistency review
 tooling/
   README.md                            Tooling landscape overview
   sdd-platforms.md                     Spec-Kit, Kiro, Tessl, OpenSpec

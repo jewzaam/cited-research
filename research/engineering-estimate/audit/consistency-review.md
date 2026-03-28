@@ -3,7 +3,7 @@
 
 **Review Date:** 2026-03-20
 **Reviewer:** Independent consistency audit (no prior context from research conversation)
-**Scope:** All markdown files in docs/, docs/reference/, and README.md
+**Scope:** All markdown files in docs/, docs/references/, and README.md
 
 ---
 
@@ -37,7 +37,7 @@
 ### Issue 1: Bain Correction Formula Inconsistency (CRITICAL)
 
 **Files:**
-- `docs/reference/productivity-multipliers.md` (lines 70-73)
+- `docs/references/productivity-multipliers.md` (lines 70-73)
 - `docs/llm-estimation-methodology.md` (lines 192-194)
 - `README.md` (lines 34-37)
 
@@ -116,7 +116,7 @@ The README line 50 says "Developers believe AI helps 20-24%". This conflates pre
 
 **Files:**
 - `docs/llm-estimation-methodology.md` (line 226): `Weighted_AI_Multiplier: 1.0 - 1.3`
-- `docs/reference/team-sizing.md` (line 95): `AI_Multiplier: 1.0 - 1.5`
+- `docs/references/team-sizing.md` (line 95): `AI_Multiplier: 1.0 - 1.5`
 
 **Problem:** The sprint capacity formula in the deliverable caps the AI multiplier at 1.3, while the team-sizing reference file allows up to 1.5.
 
@@ -133,7 +133,7 @@ The deliverable says the multiplier is "weighted by task mix" which would bring 
 
 **Files:**
 - `README.md` (line 75): "40-75 pp swing from context quality"
-- `docs/reference/context-engineering.md` (line 8): "40-75 percentage point gap"
+- `docs/references/context-engineering.md` (line 8): "40-75 percentage point gap"
 - `docs/llm-estimation-methodology.md` (lines 292-296): "Delta: 40-75 percentage points"
 
 **Verification:** -19% to +55% = 74 pp. -19% to +20% = 39 pp. Range is 39-74 pp, rounded to "40-75 pp". Consistent across all files.
@@ -202,11 +202,11 @@ The example says non-code = 5 x 0.65 = 3.25, which treats the 5-day estimate as 
 ### Issue 7: Incidents Per PR Discrepancy (MODERATE)
 
 **Files:**
-- `docs/reference/non-code-estimation.md` (line 53): "Incidents per PR +24% [43]"
+- `docs/references/non-code-estimation.md` (line 53): "Incidents per PR +24% [43]"
 - `docs/llm-estimation-methodology.md` (line 263): "Incidents per PR +23.5% [29]" (risk framework)
-- `docs/reference/risk-uncertainty.md` (line 63): same -- "+23.5% [29]"
-- `docs/reference/productivity-multipliers.md` (line 66): "+23.5% [29]"
-- `docs/reference/orchestrator-role.md` (line 63): "+23.5% [29]"
+- `docs/references/risk-uncertainty.md` (line 63): same -- "+23.5% [29]"
+- `docs/references/productivity-multipliers.md` (line 66): "+23.5% [29]"
+- `docs/references/orchestrator-role.md` (line 63): "+23.5% [29]"
 
 **Citations check:**
 - [29] Cortex 2026: "incidents/PR +23.5%" -- this is the original data point.
@@ -221,7 +221,7 @@ The example says non-code = 5 x 0.65 = 3.25, which treats the 5-day estimate as 
 
 ### Issue 8: Unmarked Synthesized Claims in Risk Framework (MINOR)
 
-**File:** `docs/llm-estimation-methodology.md` (lines 249-263), `docs/reference/risk-uncertainty.md` (lines 83-87)
+**File:** `docs/llm-estimation-methodology.md` (lines 249-263), `docs/references/risk-uncertainty.md` (lines 83-87)
 
 **Problem:** The cone-of-uncertainty analysis includes entries marked "Synthesized" (no specific source) but without "(est.)" markers:
 - "Wider initial cone" -- Source: Synthesized
@@ -241,7 +241,7 @@ The two "Synthesized" entries are author's analysis, not from a cited source. Pe
 
 ### Issue 9: Unverifiable Data Point -- "~9% of developer time" (MINOR)
 
-**File:** `docs/reference/risk-uncertainty.md` (line 45)
+**File:** `docs/references/risk-uncertainty.md` (line 45)
 
 **Claim:** "~9% of developer time spent reviewing/correcting AI output [3]"
 
@@ -258,7 +258,7 @@ The two "Synthesized" entries are author's analysis, not from a cited source. Pe
 
 ### Issue 10: Unverifiable Data Point -- "30% Copilot acceptance rate" (MINOR)
 
-**File:** `docs/reference/risk-uncertainty.md` (line 46)
+**File:** `docs/references/risk-uncertainty.md` (line 46)
 
 **Claim:** "Only 30% of Copilot suggestions accepted as-is [3]"
 
@@ -363,7 +363,7 @@ These are reasonable characterizations but are not directly stated in the cited 
 
 ### Issue 18: Non-Numbered Citation Reference (MINOR)
 
-**File:** `docs/reference/context-engineering.md` (lines 49, 115)
+**File:** `docs/references/context-engineering.md` (lines 49, 115)
 
 **Claim:** "Frontier thinking LLMs can follow ~150-200 instructions with reasonable consistency" sourced as "[CLAUDE.md research]" -- not a numbered citation in citations.md.
 
@@ -466,9 +466,9 @@ Coding 16-41% of developer time [33][34]
 
 | Link | File | Target | Resolves? |
 |------|------|--------|-----------|
-| `[../citations.md](../citations.md)` | reference/*.md files | docs/citations.md | PASS |
+| `[../citations.md](../citations.md)` | references/*.md files | docs/citations.md | PASS |
 | `[citations.md](citations.md)` | deliverable line 420 | docs/citations.md | PASS |
-| `[risk-uncertainty.md](reference/risk-uncertainty.md)` | deliverable line 251 | docs/reference/risk-uncertainty.md | PASS |
+| `[risk-uncertainty.md](references/risk-uncertainty.md)` | deliverable line 251 | docs/references/risk-uncertainty.md | PASS |
 | `docs/audit/citation-audit.md` | README line 81 | File does not exist | FAIL (Issue 14) |
 | `docs/audit/consistency-review.md` | README line 82 | This file (being created) | PASS |
 | Section anchors in TOC | deliverable lines 16-27 | Internal sections | PASS (all 11 match) |

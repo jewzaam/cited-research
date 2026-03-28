@@ -145,11 +145,11 @@
 - **Fix applied:** URL updated to `https://opentelemetry.io/docs/platforms/kubernetes/getting-started/`.
 
 ### FAIL 2: Operator Count Inconsistency in Decision Tables — **Status: RESOLVED**
-- **Files:** `docs/reference/integration-pattern.md` vs `docs/python-otel-logging.md` and `README.md`
+- **Files:** `docs/references/integration-pattern.md` vs `docs/python-otel-logging.md` and `README.md`
 - **Issue:** `integration-pattern.md` said "High (2-3 operators)" while other files listed specific operators.
 - **Fix applied:** Changed to "High (+ OTEL Op + Loki Op + COO)" to match other files.
 
 ### FAIL 3: Missing Citation in integration-pattern.md — **Status: RESOLVED**
-- **Files:** `docs/reference/integration-pattern.md`
+- **Files:** `docs/references/integration-pattern.md`
 - **Issue:** Fidelity-loss claim lacked citation [30].
 - **Fix applied:** Added `[30]` citation to the statement.

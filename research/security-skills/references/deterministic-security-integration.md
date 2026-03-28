@@ -6,7 +6,7 @@ skills/plugins trigger based on heuristic description matching, not
 deterministic rules.
 
 **Citations**: All `[DS-N]` references point to
-[deterministic-security-citations.md](deterministic-security-citations.md).
+[deterministic-security-citations.md](../deterministic-security-citations.md).
 
 ---
 
@@ -444,7 +444,7 @@ strongest to weakest enforcement:
 Research conducted 2026-03-27 using WebSearch and WebFetch. Sources [DS-1]
 and [DS-2] were fully fetched via WebFetch. All other sources were accessed
 via WebSearch result summaries. Full citation details in
-[deterministic-security-citations.md](deterministic-security-citations.md).
+[deterministic-security-citations.md](../deterministic-security-citations.md).
 
 10 research dimensions were investigated: hooks architecture, skills
 triggering, PreToolUse security gates, PostToolUse validation, CI/CD gating,

@@ -38,13 +38,13 @@ on both Windows and Linux. 97 web sources, independently verified.
 
 | Dimension | File |
 |-----------|------|
-| DPI / HiDPI Scaling | [reference/dpi-scaling.md](reference/dpi-scaling.md) |
-| Theming | [reference/theming.md](reference/theming.md) |
-| Fonts | [reference/fonts.md](reference/fonts.md) |
-| Window Management | [reference/window-management.md](reference/window-management.md) |
-| System Tray | [reference/system-tray.md](reference/system-tray.md) |
-| Events / Input | [reference/events-input.md](reference/events-input.md) |
-| Packaging | [reference/packaging.md](reference/packaging.md) |
+| DPI / HiDPI Scaling | [references/dpi-scaling.md](references/dpi-scaling.md) |
+| Theming | [references/theming.md](references/theming.md) |
+| Fonts | [references/fonts.md](references/fonts.md) |
+| Window Management | [references/window-management.md](references/window-management.md) |
+| System Tray | [references/system-tray.md](references/system-tray.md) |
+| Events / Input | [references/events-input.md](references/events-input.md) |
+| Packaging | [references/packaging.md](references/packaging.md) |
 
 ## Audit Reports
 

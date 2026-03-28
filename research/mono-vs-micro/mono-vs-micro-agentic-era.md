@@ -466,16 +466,16 @@ Based on the evidence:
 
 ## 12. Methodology Notes
 
-Full reference data is organized in `docs/reference/`:
+Full reference data is organized in `docs/references/`:
 
 | File | Dimension |
 |------|-----------|
-| [`architecture-tradeoffs.md`](reference/architecture-tradeoffs.md) | Architecture trade-offs, quantified data, reversal cases |
-| [`ai-agents-and-architecture.md`](reference/ai-agents-and-architecture.md) | AI agent interaction with architectures, METR RCT, context windows |
-| [`open-source-commercial.md`](reference/open-source-commercial.md) | Open-source commercial models, license changes, Baldwin & Clark |
-| [`competitive-moats.md`](reference/competitive-moats.md) | Moat durability, Tailwind case, 2 AM accountability |
-| [`operational-complexity.md`](reference/operational-complexity.md) | Quantified ops costs, K8s costs, SRE ratios, database complexity |
-| [`migration-patterns.md`](reference/migration-patterns.md) | Modular monolith, Strangler Fig, DDD, reversals |
+| [`architecture-tradeoffs.md`](references/architecture-tradeoffs.md) | Architecture trade-offs, quantified data, reversal cases |
+| [`ai-agents-and-architecture.md`](references/ai-agents-and-architecture.md) | AI agent interaction with architectures, METR RCT, context windows |
+| [`open-source-commercial.md`](references/open-source-commercial.md) | Open-source commercial models, license changes, Baldwin & Clark |
+| [`competitive-moats.md`](references/competitive-moats.md) | Moat durability, Tailwind case, 2 AM accountability |
+| [`operational-complexity.md`](references/operational-complexity.md) | Quantified ops costs, K8s costs, SRE ratios, database complexity |
+| [`migration-patterns.md`](references/migration-patterns.md) | Modular monolith, Strangler Fig, DDD, reversals |
 | [`citations.md`](citations.md) | All 140 citations with credibility assessments |
 
 All sources were accessed on 2026-03-25. Credibility levels range from "Very High" (peer-reviewed, authoritative practitioners) to "Low-Medium" (vendor claims, opinion pieces). The citation registry notes data extracted, credibility level, and any caveats for each source.

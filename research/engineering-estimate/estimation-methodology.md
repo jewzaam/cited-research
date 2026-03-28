@@ -227,7 +227,7 @@ Sprint_Capacity = Team_Size x Hours_Per_Sprint x Focus_Factor x Weighted_AI_Mult
 | Parameter | Range | Source |
 |---|---|---|
 | Focus_Factor | 0.60 - 0.90 | Standard [sprint research] |
-| Weighted_AI_Multiplier | 1.0 - 1.3 (weighted average across task mix; individual tasks may reach 1.5x per [team-sizing.md](reference/team-sizing.md)) | Section 4 |
+| Weighted_AI_Multiplier | 1.0 - 1.3 (weighted average across task mix; individual tasks may reach 1.5x per [team-sizing.md](references/team-sizing.md)) | Section 4 |
 | Rework_Factor | 0.05 - 0.15 | [27] (+9% bugs, +91% review) |
 
 ### Velocity Recalibration Protocol
@@ -252,7 +252,7 @@ Sprint_Capacity = Team_Size x Hours_Per_Sprint x Focus_Factor x Weighted_AI_Mult
 
 ### AI-Specific Risk Categories
 
-Nine risk categories unique to or amplified by AI-assisted development (see [risk-uncertainty.md](reference/risk-uncertainty.md) for details):
+Nine risk categories unique to or amplified by AI-assisted development (see [risk-uncertainty.md](references/risk-uncertainty.md) for details):
 
 | # | Risk | Probability | Estimation Impact |
 |---|---|---|---|

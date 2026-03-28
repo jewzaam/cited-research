@@ -48,7 +48,7 @@
 
 - [Full deliverable](docs/personal-assistant-analysis.md) — 8-section analysis with 220 cited sources
 - [Citations](docs/citations.md) — all sources with URLs, extracted data, quality notes
-- [Reference files](docs/reference/) — per-dimension deep dives
+- [Reference files](docs/references/) — per-dimension deep dives
 - [Audit reports](docs/audit/) — independent citation and consistency verification
 
 ## Methodology

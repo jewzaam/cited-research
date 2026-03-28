@@ -8,12 +8,11 @@ This project uses **per-dimension citation files** with dimension-prefixed numbe
 
 | Prefix | Dimension | File | Citation Count |
 |--------|-----------|------|---------------|
-| [1]-[20] | AI-Generated Code Trust | Inline in [ai-code-trust-analysis.md](ai-code-trust-analysis.md) (original citation file was overwritten by concurrent agent) | 20 |
-| [1]-[27] | AI-Generated Test Trust (duplicate) | [citations-old.md](citations-old.md) (mislabeled — contains test trust citations, same as test-trust-citations.md) | 27 |
+| [1]-[20] | AI-Generated Code Trust | Inline in [references/ai-code-trust-analysis.md](references/ai-code-trust-analysis.md) | 20 |
 | [1]-[27] | AI-Generated Test Trust | [test-trust-citations.md](test-trust-citations.md) | 27 |
 | [24]-[78] | Dependency Risk Tools | [dependency-tools-citations.md](dependency-tools-citations.md) | 55 |
 | [SM-1]-[SM-23] | Claude Code Security Model | [security-model-citations.md](security-model-citations.md) | 23 |
-| [1]-[50] | Security Skills & Plugins | [security-skills-analysis.md](security-skills-analysis.md) (inline) | 50 |
+| [1]-[50] | Security Skills & Plugins | Inline in [references/security-skills-analysis.md](references/security-skills-analysis.md) | 50 |
 | [DS-1]-[DS-30] | Deterministic Security | [deterministic-security-citations.md](deterministic-security-citations.md) | 30 |
 | [SC-1]-[SC-23] | Supply Chain Attacks | [supply-chain-citations.md](supply-chain-citations.md) | 23 |
 | [HG-1]-[HG-16] | Hook & Permission Gaps | [hook-gaps-citations.md](hook-gaps-citations.md) | 16 |

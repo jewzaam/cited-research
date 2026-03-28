@@ -43,7 +43,7 @@ X11, not points [11].
 **Future:** Tk 9.0 (released Oct 2024) is natively scaling-aware [12], but Python
 does not yet bundle it (Python 3.13 ships Tk 8.6) [2].
 
-See [reference/dpi-scaling.md](reference/dpi-scaling.md) for full details.
+See [references/dpi-scaling.md](references/dpi-scaling.md) for full details.
 
 ## 2. Theming and Native Appearance
 
@@ -64,7 +64,7 @@ Windows additionally has winnative/vista/xpnative; Linux does not.
 **ttk vs classic tk:** Use ttk widgets whenever available. Classic tk is required
 only for Canvas, Text, Listbox, Menu, Message, and OptionMenu [22].
 
-See [reference/theming.md](reference/theming.md) for full details.
+See [references/theming.md](references/theming.md) for full details.
 
 ## 3. Font Handling
 
@@ -94,7 +94,7 @@ Most emoji above U+1F600 raise `TclError` [32]. Color emoji rendering requires
 Direct2D (Windows) or Noto Color Emoji (Linux, but causes X errors in some
 configurations [33]). Stick to BMP symbols.
 
-See [reference/fonts.md](reference/fonts.md) for full details.
+See [references/fonts.md](references/fonts.md) for full details.
 
 ## 4. Window Management
 
@@ -133,7 +133,7 @@ opened Dec 2024 [48].
 dimensions on Linux [51]. Use the `screeninfo` library for reliable per-monitor
 detection [52].
 
-See [reference/window-management.md](reference/window-management.md) for full details.
+See [references/window-management.md](references/window-management.md) for full details.
 
 ## 5. System Tray
 
@@ -157,7 +157,7 @@ cannot install this for them.
 3. Document GNOME extension requirement
 4. Run tray in daemon thread; dispatch callbacks via `root.after(0, fn)` [54]
 
-See [reference/system-tray.md](reference/system-tray.md) for full details.
+See [references/system-tray.md](references/system-tray.md) for full details.
 
 ## 6. Events and Input
 
@@ -191,7 +191,7 @@ lost when the process exits [74].
 Stick to `<Control>`, `<Shift>`, `<Alt>` for cross-platform bindings. Do not use
 Command, Option, or Mod4 (Windows key) outside their native platform [71].
 
-See [reference/events-input.md](reference/events-input.md) for full details.
+See [references/events-input.md](references/events-input.md) for full details.
 
 ## 7. Packaging and Distribution
 
@@ -216,7 +216,7 @@ See [reference/events-input.md](reference/events-input.md) for full details.
   platform-specific artifacts in parallel [96].
 - **Auto-update:** tufup (TUF-based, packaging-agnostic) [95].
 
-See [reference/packaging.md](reference/packaging.md) for full details.
+See [references/packaging.md](references/packaging.md) for full details.
 
 ## Cross-Cutting Concerns
 

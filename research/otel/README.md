@@ -51,13 +51,13 @@ For your OpenShift scenario, there are two viable paths:
 - [Glossary](docs/glossary.md) — definitions of terms (OTLP, CLF, ViaQ, etc.)
 
 ### Reference Files
-- [Python Logging + OTEL](docs/reference/python-logging-otel.md) — bridge pattern,
+- [Python Logging + OTEL](docs/references/python-logging-otel.md) — bridge pattern,
   LoggingHandler, packages, data model
-- [Export Options](docs/reference/export-options.md) — stdout, OTLP gRPC/HTTP, env vars
-- [OpenShift Logging](docs/reference/openshift-logging.md) — Vector, CLF, OTLP support
-- [Collector Architecture](docs/reference/collector-architecture.md) — DaemonSet vs
+- [Export Options](docs/references/export-options.md) — stdout, OTLP gRPC/HTTP, env vars
+- [OpenShift Logging](docs/references/openshift-logging.md) — Vector, CLF, OTLP support
+- [Collector Architecture](docs/references/collector-architecture.md) — DaemonSet vs
   sidecar, Filelog Receiver, LokiStack forwarding
-- [Integration Pattern](docs/reference/integration-pattern.md) — recommended wiring,
+- [Integration Pattern](docs/references/integration-pattern.md) — recommended wiring,
   trade-offs, decision matrix
 
 ### Audit Reports

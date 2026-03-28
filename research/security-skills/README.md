@@ -48,49 +48,45 @@ The single most impactful action: **write PreToolUse hooks for dependency scanni
 
 ```
 ├── README.md                              ← You are here
-└── docs/
-    ├── security-analysis.md               ← Full analysis (start here)
-    ├── citations.md                       ← Master citation index
-    │
-    ├── # Per-dimension analyses
-    ├── dependency-risk-tools.md           ← Dim 1: npm/Python tool comparison
-    ├── ai-code-trust-analysis.md          ← Dim 2: AI code vulnerability rates
-    ├── ai-generated-test-trust.md         ← Dim 3: Test failure modes
-    ├── claude-code-security-model.md      ← Dim 5: Hooks, sandbox, permissions
-    ├── security-skills-analysis.md        ← Dim 8: Existing ecosystem
-    ├── deterministic-security-integration.md ← Dim 9: Deterministic enforcement
-    │
-    ├── # Per-dimension citation files
-    ├── dependency-tools-citations.md
-    ├── citations-old.md                   ← AI code trust citations
-    ├── test-trust-citations.md
-    ├── security-model-citations.md
-    ├── deterministic-security-citations.md
-    ├── supply-chain-citations.md
-    ├── hook-gaps-citations.md
-    ├── external-resource-citations.md
-    ├── encapsulation-bypass-citations.md
-    │
-    ├── reference/                         ← 50+ reference files by topic
-    │   ├── supply-chain-attacks.md        ← Dim 6: Attack patterns
-    │   ├── hook-permission-gaps.md        ← Dim 7: Defense gaps
-    │   ├── external-resources.md          ← Dim 4: WebFetch/MCP risks
-    │   ├── npm-audit.md, pip-audit.md, socket-dev.md, snyk.md, ...
-    │   ├── academic-studies-landmark.md, academic-studies-recent.md, ...
-    │   ├── hooks-system.md, permission-modes.md, sandbox-execution.md, ...
-    │   └── ...
-    │
-    └── audit/                             ← Per-dimension audit reports
-        ├── citation-audit.md
-        ├── consistency-review.md
-        ├── dependency-tools-citation-audit.md
-        ├── dependency-tools-consistency-review.md
-        ├── deterministic-security-citation-audit.md
-        ├── deterministic-security-consistency-review.md
-        ├── security-model-citation-audit.md
-        └── security-model-consistency.md
+├── security-analysis.md                   ← Full analysis (start here)
+├── citations.md                           ← Master citation index
+│
+├── # Per-dimension citation files
+├── dependency-tools-citations.md
+├── test-trust-citations.md
+├── security-model-citations.md
+├── deterministic-security-citations.md
+├── supply-chain-citations.md
+├── hook-gaps-citations.md
+├── external-resource-citations.md
+├── encapsulation-bypass-citations.md
+│
+├── references/                            ← Per-dimension analyses and reference files
+│   ├── dependency-risk-tools.md           ← Dim 1: npm/Python tool comparison
+│   ├── ai-code-trust-analysis.md          ← Dim 2: AI code vulnerability rates
+│   ├── ai-generated-test-trust.md         ← Dim 3: Test failure modes
+│   ├── external-resources.md              ← Dim 4: WebFetch/MCP risks
+│   ├── claude-code-security-model.md      ← Dim 5: Hooks, sandbox, permissions
+│   ├── supply-chain-attacks.md            ← Dim 6: Attack patterns
+│   ├── hook-permission-gaps.md            ← Dim 7: Defense gaps
+│   ├── security-skills-analysis.md        ← Dim 8: Existing ecosystem
+│   ├── deterministic-security-integration.md ← Dim 9: Deterministic enforcement
+│   ├── npm-audit.md, pip-audit.md, socket-dev.md, snyk.md, ...
+│   ├── academic-studies-landmark.md, academic-studies-recent.md, ...
+│   ├── hooks-system.md, permission-modes.md, sandbox-execution.md, ...
+│   └── ...
+│
+└── audit/                                 ← Per-dimension audit reports
+    ├── citation-audit.md
+    ├── consistency-review.md
+    ├── dependency-tools-citation-audit.md
+    ├── dependency-tools-consistency-review.md
+    ├── deterministic-security-citation-audit.md
+    ├── deterministic-security-consistency-review.md
+    ├── security-model-citation-audit.md
+    └── security-model-consistency.md
 ```
 
 ## Methodology
 
-Nine research dimensions investigated by independent sub-agents in parallel. ~261 citation entries (~200 unique after deduplication), all discovered via WebSearch in-session. Two independent verification agents audit the output for citation accuracy and cross-file consistency. See [docs/security-analysis.md](docs/security-analysis.md) for full methodology and limitations.
+Nine research dimensions investigated by independent sub-agents in parallel. ~261 citation entries (~200 unique after deduplication), all discovered via WebSearch in-session. Two independent verification agents audit the output for citation accuracy and cross-file consistency. See [security-analysis.md](security-analysis.md) for full methodology and limitations.

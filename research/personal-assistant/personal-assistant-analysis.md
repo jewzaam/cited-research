@@ -7,7 +7,7 @@ Date: 2026-03-26
 
 ### Methodology
 
-This analysis covers 8 research dimensions investigated via parallel sub-agents, each performing independent web searches. Every factual claim cites a numbered source from [citations.md](citations.md). Two independent audit agents verified citations and cross-file consistency after writing. Reference files in [reference/](reference/) contain full per-dimension findings.
+This analysis covers 8 research dimensions investigated via parallel sub-agents, each performing independent web searches. Every factual claim cites a numbered source from [citations.md](citations.md). Two independent audit agents verified citations and cross-file consistency after writing. Reference files in [references/](references/) contain full per-dimension findings.
 
 ### Core Constraint
 

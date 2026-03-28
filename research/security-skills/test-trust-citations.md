@@ -79,4 +79,4 @@ from WebSearch result summaries, not direct page visits.
 ---
 
 Full citation details (authors, venues, extracted data, quality assessments)
-are documented in each reference file under `reference/`.
+are documented in each reference file under `references/`.
