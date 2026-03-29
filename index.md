@@ -108,3 +108,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** content sanitization and filtering, architectural defenses, domain and URL allowlisting, detection and monitoring, open-source tools and frameworks, limitations and open problems
 - **Last revised:** 2026-03-29
 - **Status:** Active
+
+## [Best Practices for Citation-Backed Research Using Agentic AI](research/agentic-research-best-practices/README.md)
+
+- **Path:** [research/agentic-research-best-practices/](research/agentic-research-best-practices/)
+- **Summary:** How a single human operator using an LLM-backed CLI agent can produce verifiable, auditable research documents. Key finding: agentic research works because the methodology makes unreliability visible, not because agents are reliable. Covers multi-agent architectures (90.2% improvement with coordinator-worker), writer-verifier separation (770M model matching GPT-4 at 400× lower cost), 20-30% source inaccessibility as normal operating condition, and expert persona prompts damaging factual accuracy by 3.6pp.
+- **Dimensions:** multi-agent research architectures, source verification, web search and retrieval strategies, prompt engineering for research agents, human-in-the-loop validation, limitations and failure modes
+- **Last revised:** 2026-03-29
+- **Status:** Active
