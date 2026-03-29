@@ -68,3 +68,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** architecture and enforcement mechanisms, policy model and expressiveness, threat model coverage, security model comparison, agent compatibility, maturity and ecosystem, developer workstation applicability, minimal viable hardware
 - **Last revised:** 2026-03-28
 - **Status:** Active
+
+## Git Worktree Workflows for AI-Assisted Development
+
+- **Path:** `research/git-worktree-ai-dev/`
+- **Summary:** How git worktrees enable parallel development with AI coding agents. Claude Code, Cursor, and Copilot CLI all ship native worktree support. Covers mechanics (shared objects, per-worktree HEAD/index), tool adoption, workflow patterns (multi-agent parallel execution, team lead coordination, speculative implementation), CI/CD implications (hooks sharing, build cache invalidation, pnpm deduplication), six conflict types, and comparison with alternatives (GitButler virtual branches, stacked diffs, containers). Key finding: 3-5 parallel agents is the practical ceiling; worktrees isolate files but not databases/ports/Docker.
+- **Dimensions:** core worktree mechanics, AI coding agent usage, parallel development patterns, CI/CD implications, limitations and failure modes, team workflow patterns, comparison with alternatives
+- **Last revised:** 2026-03-29
+- **Status:** Active
