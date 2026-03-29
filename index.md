@@ -52,3 +52,19 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** productivity multipliers, estimation frameworks, context engineering, orchestrator role, risk and uncertainty, team sizing, non-code estimation, existing tools
 - **Last revised:** 2026-03-27
 - **Status:** Active
+
+## Claude Agent SDK vs Claude Code Skills for Deterministic Agentic Behavior
+
+- **Path:** `research/agent-sdk-vs-skills/`
+- **Summary:** Three-layer model for deterministic agentic behavior: enforcement (SDK hooks, deny rules), structure (AgentDefinition, allowed_tools, permission modes), and guidance (skills, CLAUDE.md). Structure is the middle ground — deterministic agent boundaries with probabilistic reasoning within them. All three layers are complementary; production systems should use all three.
+- **Dimensions:** SDK architecture, skills/commands architecture, determinism spectrum, failure modes and bypass, composability, production adoption, hybrid architectures
+- **Last revised:** 2026-03-28
+- **Status:** Active
+
+## NVIDIA OpenShell as a Security Boundary for Agentic Tool Usage
+
+- **Path:** `research/openshell-security-boundary/`
+- **Summary:** Evaluates whether NVIDIA OpenShell — an out-of-process security runtime using Landlock LSM, seccomp BPF, and OPA/Rego policy enforcement — addresses the six critical security gaps identified in the security-skills research. Conclusion: substantially mitigates four of six gaps (command encapsulation, regex evasion, TOCTOU, config weaponization), partially mitigates data exfiltration, does not address prompt injection. Viable for developer workstations (~2-2.5 GB RAM, no GPU), premature for production (no third-party audit, alpha status).
+- **Dimensions:** architecture and enforcement mechanisms, policy model and expressiveness, threat model coverage, security model comparison, agent compatibility, maturity and ecosystem, developer workstation applicability, minimal viable hardware
+- **Last revised:** 2026-03-28
+- **Status:** Active
