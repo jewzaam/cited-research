@@ -69,6 +69,14 @@ the path, summary, dimensions covered, and last revision date.
 - **Last revised:** 2026-03-28
 - **Status:** Active
 
+## Safe Use of GWS CLI for Read-Only Operations
+
+- **Path:** `research/gws-readonly-safety/`
+- **Summary:** Security best practices for using the gws CLI with readonly OAuth scopes across Google Workspace APIs (Calendar, Meet, Drive, Docs, Sheets). Key findings: drive.readonly is restricted (not just sensitive), refresh tokens are plaintext and never expire by default, Sheets is the rate limit bottleneck at 60 reads/min, and the meet-enrich subprocess wrapper follows all security best practices. 33 sources, all verified.
+- **Dimensions:** OAuth scope minimization, token storage and credential lifecycle, API rate limits and quotas, error handling patterns, data exposure via readonly access, subprocess and CLI security
+- **Last revised:** 2026-03-29
+- **Status:** Active
+
 ## Git Worktree Workflows for AI-Assisted Development
 
 - **Path:** `research/git-worktree-ai-dev/`
