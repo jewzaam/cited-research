@@ -5,50 +5,114 @@
 Searchable index of all research topics in this repository. Each entry includes
 the path, summary, dimensions covered, and last revision date.
 
-## Monolith vs Microservices in the Agentic AI Era
+## [Monolith vs Microservices in the Agentic AI Era](research/mono-vs-micro/README.md)
 
-- **Path:** `research/mono-vs-micro/`
+- **Path:** [research/mono-vs-micro/](research/mono-vs-micro/)
 - **Summary:** Whether a commercially supported open-source product should stay monolith or pivot to microservices, given that AI agents may erode the operational-complexity moat that drives conversion to paid tiers. Conclusion: monolith-first with modular boundaries; invest in durable moats (SLA accountability, data network effects).
 - **Dimensions:** architecture trade-offs, AI agents and architecture, open-source commercial models, competitive moats, operational complexity, migration patterns
 - **Last revised:** 2026-03-27
 - **Status:** Active
 
-## AI-Assisted Development Security Analysis
+## [AI-Assisted Development Security Analysis](research/security-skills/README.md)
 
-- **Path:** `research/security-skills/`
+- **Path:** [research/security-skills/](research/security-skills/)
 - **Summary:** Security risks across five surfaces of AI coding assistants: dependencies, generated code, generated tests, external resources, and permission gaps. Identifies command encapsulation bypass as a critical gap and recommends PreToolUse/PostToolUse hook strategies.
 - **Dimensions:** dependency risks, code vulnerability patterns, test trust, external resource risks, permission model gaps, deterministic security integration
 - **Last revised:** 2026-03-27
 - **Status:** Active
 
-## Python Logging + OpenTelemetry on OpenShift
+## [Python Logging + OpenTelemetry on OpenShift](research/otel/README.md)
 
-- **Path:** `research/otel/`
+- **Path:** [research/otel/](research/otel/)
 - **Summary:** How Python's logging module integrates with OpenTelemetry via a bridge pattern, export options (stdout, OTLP, Collector), and fit for a Python app on OpenShift with the Logging Operator.
 - **Dimensions:** Python logging + OTEL integration, export options, OpenShift logging stack, Collector architecture, integration pattern
 - **Last revised:** 2026-03-27
 - **Status:** Active
 
-## Tkinter Cross-Platform Best Practices
+## [Tkinter Cross-Platform Best Practices](research/tkinter-cross-platform/README.md)
 
-- **Path:** `research/tkinter-cross-platform/`
+- **Path:** [research/tkinter-cross-platform/](research/tkinter-cross-platform/)
 - **Summary:** Citation-backed research on building tkinter desktop applications that work correctly on Windows and Linux. Covers DPI scaling, theming, fonts, window management, system tray, events, and packaging with 97 verified sources.
 - **Dimensions:** DPI/HiDPI scaling, theming, fonts, window management, system tray, events/input, packaging
 - **Last revised:** 2026-03-27
 - **Status:** Active
 
-## Personal Assistant Software Analysis
+## [Personal Assistant Software Analysis](research/personal-assistant/README.md)
 
-- **Path:** `research/personal-assistant/`
+- **Path:** [research/personal-assistant/](research/personal-assistant/)
 - **Summary:** Whether to build or buy a read-only advisory personal assistant that aggregates Jira, GitHub, Google Workspace, Slack, and Claude into prioritized action lists. Recommendation: build using Claude API + MCP servers at $6-13/month.
 - **Dimensions:** existing PA tools, Claude as brain, Jira status monitoring, GitHub activity surfacing, Google Workspace signal extraction, Slack as data source, build vs buy, privacy and data control
 - **Last revised:** 2026-03-27
 - **Status:** Active
 
-## Engineering Estimation for AI-Assisted Development
+## [Engineering Estimation for AI-Assisted Development](research/engineering-estimate/README.md)
 
-- **Path:** `research/engineering-estimate/`
+- **Path:** [research/engineering-estimate/](research/engineering-estimate/)
 - **Summary:** Methodology for estimating software development work where AI writes implementation code. Synthesized from 84 sources including 8 RCTs. Classifies tasks by spec quality into categories with multiplier ranges (0.50x-1.25x of traditional estimates).
 - **Dimensions:** productivity multipliers, estimation frameworks, context engineering, orchestrator role, risk and uncertainty, team sizing, non-code estimation, existing tools
 - **Last revised:** 2026-03-27
+- **Status:** Active
+
+## [Claude Agent SDK vs Claude Code Skills for Deterministic Agentic Behavior](research/agent-sdk-vs-skills/README.md)
+
+- **Path:** [research/agent-sdk-vs-skills/](research/agent-sdk-vs-skills/)
+- **Summary:** Three-layer model for deterministic agentic behavior: enforcement (SDK hooks, deny rules), structure (AgentDefinition, allowed_tools, permission modes), and guidance (skills, CLAUDE.md). Structure is the middle ground — deterministic agent boundaries with probabilistic reasoning within them. All three layers are complementary; production systems should use all three.
+- **Dimensions:** SDK architecture, skills/commands architecture, determinism spectrum, failure modes and bypass, composability, production adoption, hybrid architectures
+- **Last revised:** 2026-03-28
+- **Status:** Active
+
+## [NVIDIA OpenShell as a Security Boundary for Agentic Tool Usage](research/openshell-security-boundary/README.md)
+
+- **Path:** [research/openshell-security-boundary/](research/openshell-security-boundary/)
+- **Summary:** Evaluates whether NVIDIA OpenShell — an out-of-process security runtime using Landlock LSM, seccomp BPF, and OPA/Rego policy enforcement — addresses the six critical security gaps identified in the security-skills research. Conclusion: substantially mitigates four of six gaps (command encapsulation, regex evasion, TOCTOU, config weaponization), partially mitigates data exfiltration, does not address prompt injection. Viable for developer workstations (~2-2.5 GB RAM, no GPU), premature for production (no third-party audit, alpha status).
+- **Dimensions:** architecture and enforcement mechanisms, policy model and expressiveness, threat model coverage, security model comparison, agent compatibility, maturity and ecosystem, developer workstation applicability, minimal viable hardware
+- **Last revised:** 2026-03-28
+- **Status:** Active
+
+## [Safe Use of GWS CLI for Read-Only Operations](research/gws-readonly-safety/README.md)
+
+- **Path:** [research/gws-readonly-safety/](research/gws-readonly-safety/)
+- **Summary:** Security best practices for using the gws CLI with readonly OAuth scopes across Google Workspace APIs (Calendar, Meet, Drive, Docs, Sheets). Key findings: drive.readonly is restricted (not just sensitive), refresh tokens are plaintext and never expire by default, Sheets is the rate limit bottleneck at 60 reads/min, and the meet-enrich subprocess wrapper follows all security best practices. 33 sources, all verified.
+- **Dimensions:** OAuth scope minimization, token storage and credential lifecycle, API rate limits and quotas, error handling patterns, data exposure via readonly access, subprocess and CLI security
+- **Last revised:** 2026-03-29
+- **Status:** Active
+
+## [Git Worktree Workflows for AI-Assisted Development](research/git-worktree-ai-dev/README.md)
+
+- **Path:** [research/git-worktree-ai-dev/](research/git-worktree-ai-dev/)
+- **Summary:** How git worktrees enable parallel development with AI coding agents. Claude Code, Cursor, and Copilot CLI all ship native worktree support. Covers mechanics (shared objects, per-worktree HEAD/index), tool adoption, workflow patterns (multi-agent parallel execution, team lead coordination, speculative implementation), CI/CD implications (hooks sharing, build cache invalidation, pnpm deduplication), six conflict types, and comparison with alternatives (GitButler virtual branches, stacked diffs, containers). Key finding: 3-5 parallel agents is the practical ceiling; worktrees isolate files but not databases/ports/Docker.
+- **Dimensions:** core worktree mechanics, AI coding agent usage, parallel development patterns, CI/CD implications, limitations and failure modes, team workflow patterns, comparison with alternatives
+- **Last revised:** 2026-03-29
+- **Status:** Active
+
+## [Dark Theme Calendar UI Color Palettes](research/dark-theme-calendar-ui/README.md)
+
+- **Path:** [research/dark-theme-calendar-ui/](research/dark-theme-calendar-ui/)
+- **Summary:** Color palette design for TkInter Canvas-based calendar day view on a dark (#252525) background. Key finding: event block fills must satisfy a narrow luminance band (L = 0.156-0.183) for dual WCAG compliance — 3:1 against background AND 4.5:1 for white text. Provides a four-color palette (conflict/1:1/meeting/tentative), border-based status encoding, and timeline grid specifications. No major calendar app publishes dark-mode hex values.
+- **Dimensions:** calendar app dark palettes, WCAG contrast ratios, colorblind-safe palette design, border and opacity patterns, dark theme event block colors, canvas/timeline visualization
+- **Last revised:** 2026-03-29
+- **Status:** Active
+
+## [Lightweight Local Web UI for CLI-Backed Tools](research/local-web-ui-cli/README.md)
+
+- **Path:** [research/local-web-ui-cli/](research/local-web-ui-cli/)
+- **Summary:** Best practices for building a local-only web application as a conversational UI for CLI tools (e.g., `claude -p`). Recommended stack: FastAPI (native async + built-in SSE), htmx SSE extension (under 200 LOC for streaming chat), marked.js client-side rendering, highlight.js, lazy-loaded Mermaid. Key finding: localhost is NOT a security boundary — CVE-2025-49596 demonstrated RCE via DNS rebinding against a directly analogous tool; TrustedHostMiddleware + 127.0.0.1 binding are mandatory. System tray adds complexity with no value for developer audiences (pystray unmaintained, GNOME requires extensions).
+- **Dimensions:** Python web micro-frameworks, markdown-to-HTML rendering, streaming subprocess output, minimal frontend patterns, system tray integration, localhost security
+- **Last revised:** 2026-03-29
+- **Status:** Active
+
+## [Prompt Injection Defenses for LLM Agents Fetching External Content](research/prompt-injection-defenses/README.md)
+
+- **Path:** [research/prompt-injection-defenses/](research/prompt-injection-defenses/)
+- **Summary:** Defenses against prompt injection when LLM agents ingest untrusted external content (web pages, documents, API responses). Key finding: architectural defenses (CaMeL, type-directed separation, agent isolation) achieve 0% ASR but trade flexibility, while production classifiers are routinely bypassed at 70-88% ASR. No defense provides deterministic guarantees; defense is about raising attack cost and reducing blast radius.
+- **Dimensions:** content sanitization and filtering, architectural defenses, domain and URL allowlisting, detection and monitoring, open-source tools and frameworks, limitations and open problems
+- **Last revised:** 2026-03-29
+- **Status:** Active
+
+## [Best Practices for Citation-Backed Research Using Agentic AI](research/agentic-research-best-practices/README.md)
+
+- **Path:** [research/agentic-research-best-practices/](research/agentic-research-best-practices/)
+- **Summary:** How a single human operator using an LLM-backed CLI agent can produce verifiable, auditable research documents. Key finding: agentic research works because the methodology makes unreliability visible, not because agents are reliable. Covers multi-agent architectures (90.2% improvement with coordinator-worker), writer-verifier separation (770M model matching GPT-4 at 400× lower cost), 20-30% source inaccessibility as normal operating condition, and expert persona prompts damaging factual accuracy by 3.6pp.
+- **Dimensions:** multi-agent research architectures, source verification, web search and retrieval strategies, prompt engineering for research agents, human-in-the-loop validation, limitations and failure modes
+- **Last revised:** 2026-03-29
 - **Status:** Active
