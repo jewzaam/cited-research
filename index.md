@@ -92,3 +92,19 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** calendar app dark palettes, WCAG contrast ratios, colorblind-safe palette design, border and opacity patterns, dark theme event block colors, canvas/timeline visualization
 - **Last revised:** 2026-03-29
 - **Status:** Active
+
+## [Lightweight Local Web UI for CLI-Backed Tools](research/local-web-ui-cli/README.md)
+
+- **Path:** [research/local-web-ui-cli/](research/local-web-ui-cli/)
+- **Summary:** Best practices for building a local-only web application as a conversational UI for CLI tools (e.g., `claude -p`). Recommended stack: FastAPI (native async + built-in SSE), htmx SSE extension (under 200 LOC for streaming chat), marked.js client-side rendering, highlight.js, lazy-loaded Mermaid. Key finding: localhost is NOT a security boundary — CVE-2025-49596 demonstrated RCE via DNS rebinding against a directly analogous tool; TrustedHostMiddleware + 127.0.0.1 binding are mandatory. System tray adds complexity with no value for developer audiences (pystray unmaintained, GNOME requires extensions).
+- **Dimensions:** Python web micro-frameworks, markdown-to-HTML rendering, streaming subprocess output, minimal frontend patterns, system tray integration, localhost security
+- **Last revised:** 2026-03-29
+- **Status:** Active
+
+## [Prompt Injection Defenses for LLM Agents Fetching External Content](research/prompt-injection-defenses/README.md)
+
+- **Path:** [research/prompt-injection-defenses/](research/prompt-injection-defenses/)
+- **Summary:** Defenses against prompt injection when LLM agents ingest untrusted external content (web pages, documents, API responses). Key finding: architectural defenses (CaMeL, type-directed separation, agent isolation) achieve 0% ASR but trade flexibility, while production classifiers are routinely bypassed at 70-88% ASR. No defense provides deterministic guarantees; defense is about raising attack cost and reducing blast radius.
+- **Dimensions:** content sanitization and filtering, architectural defenses, domain and URL allowlisting, detection and monitoring, open-source tools and frameworks, limitations and open problems
+- **Last revised:** 2026-03-29
+- **Status:** Active
