@@ -84,3 +84,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** core worktree mechanics, AI coding agent usage, parallel development patterns, CI/CD implications, limitations and failure modes, team workflow patterns, comparison with alternatives
 - **Last revised:** 2026-03-29
 - **Status:** Active
+
+## [Dark Theme Calendar UI Color Palettes](research/dark-theme-calendar-ui/README.md)
+
+- **Path:** [research/dark-theme-calendar-ui/](research/dark-theme-calendar-ui/)
+- **Summary:** Color palette design for TkInter Canvas-based calendar day view on a dark (#252525) background. Key finding: event block fills must satisfy a narrow luminance band (L = 0.156-0.183) for dual WCAG compliance — 3:1 against background AND 4.5:1 for white text. Provides a four-color palette (conflict/1:1/meeting/tentative), border-based status encoding, and timeline grid specifications. No major calendar app publishes dark-mode hex values.
+- **Dimensions:** calendar app dark palettes, WCAG contrast ratios, colorblind-safe palette design, border and opacity patterns, dark theme event block colors, canvas/timeline visualization
+- **Last revised:** 2026-03-29
+- **Status:** Active
