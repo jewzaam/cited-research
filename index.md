@@ -124,3 +124,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** mutmut 3.x mutation mechanism, function discovery and skip logic, editable install interaction, Python 3.13+ multiprocessing compatibility, known issues and workarounds
 - **Last revised:** 2026-03-29
 - **Status:** Active
+
+## [Obsidian.md for Personal Assistant Documentation and Automation](research/obsidian-pa-integration/README.md)
+
+- **Path:** [research/obsidian-pa-integration/](research/obsidian-pa-integration/)
+- **Summary:** Whether Obsidian.md can serve as the human-facing documentation surface for a CLI-first personal assistant that writes to it programmatically. Conclusion: yes — vaults are plain markdown files the PA writes directly, with CLI (80+ commands), REST API plugin, and Dataview dashboards available when Obsidian is running. Canvas files are plain JSON for visual task boards. Primary risk is community plugin dependency.
+- **Dimensions:** Obsidian CLI, URI scheme, Local REST API plugin, Dataview plugin, Templater and Daily Notes, Canvas, vault structure and linking, Linux desktop integration, sync and conflict handling, alternatives comparison
+- **Last revised:** 2026-03-30
+- **Status:** Active
