@@ -43,23 +43,23 @@ For your OpenShift scenario, there are two viable paths:
 
 ## Full Documentation
 
-- **[Full Analysis](docs/python-otel-logging.md)** — detailed findings, architecture
+- **[Full Analysis](python-otel-logging.md)** — detailed findings, architecture
   options, and recommendation
-- **[Citations](docs/citations.md)** — all 40 sources with URLs and extracted data
+- **[Citations](citations.md)** — all 40 sources with URLs and extracted data
 
 ### Other
-- [Glossary](docs/glossary.md) — definitions of terms (OTLP, CLF, ViaQ, etc.)
+- [Glossary](glossary.md) — definitions of terms (OTLP, CLF, ViaQ, etc.)
 
 ### Reference Files
-- [Python Logging + OTEL](docs/references/python-logging-otel.md) — bridge pattern,
+- [Python Logging + OTEL](references/python-logging-otel.md) — bridge pattern,
   LoggingHandler, packages, data model
-- [Export Options](docs/references/export-options.md) — stdout, OTLP gRPC/HTTP, env vars
-- [OpenShift Logging](docs/references/openshift-logging.md) — Vector, CLF, OTLP support
-- [Collector Architecture](docs/references/collector-architecture.md) — DaemonSet vs
+- [Export Options](references/export-options.md) — stdout, OTLP gRPC/HTTP, env vars
+- [OpenShift Logging](references/openshift-logging.md) — Vector, CLF, OTLP support
+- [Collector Architecture](references/collector-architecture.md) — DaemonSet vs
   sidecar, Filelog Receiver, LokiStack forwarding
-- [Integration Pattern](docs/references/integration-pattern.md) — recommended wiring,
+- [Integration Pattern](references/integration-pattern.md) — recommended wiring,
   trade-offs, decision matrix
 
 ### Audit Reports
-- [Citation Audit](docs/audit/citation-audit.md)
-- [Consistency Review](docs/audit/consistency-review.md)
+- [Citation Audit](audit/citation-audit.md)
+- [Consistency Review](audit/consistency-review.md)

@@ -10,7 +10,7 @@ audit the output for citation accuracy and cross-file consistency.
 
 Each research topic lives in its own directory under `research/`:
 
-```
+```text
 research/<topic-slug>/
 ├── README.md              # Standalone summary and decision framework
 ├── <deliverable>.md       # Full analysis with methodology
