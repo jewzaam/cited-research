@@ -164,3 +164,19 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** kanban mechanics, multi-user collaboration, best practices, risks and tensions, tooling automation, agentic automation, comparison with dedicated tools, monorepo considerations
 - **Last revised:** 2026-03-30
 - **Status:** Active
+
+## [Documentation Tooling and Quality Assessment](research/doc-tooling-and-quality/README.md)
+
+- **Path:** [research/doc-tooling-and-quality/](research/doc-tooling-and-quality/)
+- **Summary:** Tools and frameworks for authoring, reviewing, and evaluating open source project documentation. Recommended $0 stack: MkDocs Material (site generator), Vale + markdownlint (linting), lychee (link checking), Diátaxis (quality framework), Google style guide (enforced via Vale), GitHub Actions (CI). Commercial AI doc platforms not worth the cost for solo developers.
+- **Dimensions:** documentation site generators, documentation linting and review tools, documentation quality frameworks, AI-assisted documentation tools, CI integration patterns, agentic documentation lifecycle
+- **Last revised:** 2026-03-30
+- **Status:** Active
+
+## [Claude Code Session Dashboard: Competitive Landscape](research/claude-code-session-dashboard/README.md)
+
+- **Path:** [research/claude-code-session-dashboard/](research/claude-code-session-dashboard/)
+- **Summary:** What tools exist for monitoring and managing parallel AI coding agent sessions, and how they compare to a purpose-built Claude Code session dashboard. Covers 30+ tools across IDE-native agents (Cursor, Copilot), cross-agent browsers (AgentsView, Agent Sessions), terminal multiplexer orchestrators (agtx, Superset), and TUI dashboards (ccboard). Key finding: no single tool matches claude-dashboard's combination of git status per session, one-click window foregrounding, system tray overlay, and permission notification.
+- **Dimensions:** Claude Code session monitoring, AI coding agent session managers, terminal multiplexer approaches, community GitHub projects, multi-agent session aggregators, feature comparison
+- **Last revised:** 2026-03-30
+- **Status:** Active
