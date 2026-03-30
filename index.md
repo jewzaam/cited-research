@@ -132,3 +132,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** Obsidian CLI, URI scheme, Local REST API plugin, Dataview plugin, Templater and Daily Notes, Canvas, vault structure and linking, Linux desktop integration, sync and conflict handling, alternatives comparison
 - **Last revised:** 2026-03-30
 - **Status:** Active
+
+## [n8n: Workflow Automation Platform Analysis](research/n8n/README.md)
+
+- **Path:** [research/n8n/](research/n8n/)
+- **Summary:** What n8n is, how it compares to alternatives (Zapier, Make, Temporal, Windmill, Airflow), and how it fits into agentic AI orchestration workflows. n8n uniquely combines visual drag-and-drop with 70+ LangChain AI nodes, self-hosting, and MCP support. Best for teams needing AI agent orchestration with visual workflows and cost efficiency; not suitable for mission-critical transactional workflows.
+- **Dimensions:** platform overview and architecture, comparison with alternatives, AI and LLM integration, agentic orchestration patterns, self-hosting and operations, integration ecosystem and extensibility
+- **Last revised:** 2026-03-30
+- **Status:** Active
