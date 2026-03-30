@@ -136,3 +136,8 @@ All sources were visited in-session via WebSearch or WebFetch on 2026-03-30.
 
 [39] FreeCodeCamp. "Using GitHub Native Features for a Mid-Size Distributed Team." freecodecamp.org/news/using-github-native-features-for-a-mid-size-distributed-team-3acdfd0f027c/. Tier 3.
 - Data extracted: Discovery agent reported: case study of 15-person team (10 developers) using GitHub native features.
+
+## Additional Sources (Added 2026-03-30)
+
+[40] Vibe Kanban. "Vibe Kanban." vibekanban.com/. Tier 3.
+- Data extracted: Multi-agent orchestration platform by Bloop AI Limited. Supports 9 AI agents: Claude Code, ChatGPT, Gemini, OpenCode, Cursor, Amp, Aider, Copilot, Windsurf. Three-phase workflow: Plan → Prompt → Review. Automated git worktree creation for parallel agent execution. Features: kanban board interface, built-in code review with syntax highlighting, integrated browser for QA, hierarchical task breakdown (parent tasks with sub-issues), automatic status updates when agents start work or PRs are created/merged. Community metrics: 100,000+ PRs created, 30,000+ active users, 24.1k GitHub stars. Entry point: `npx vibe-kanban`.

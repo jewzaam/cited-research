@@ -277,10 +277,12 @@ reports [27]. Read-only by default; write operations require explicit approval
 
 ### Kanban as Agent Task Queue
 
-An emerging pattern treats kanban boards as task queues for AI agents. Tools
-like Vibe Kanban orchestrate multiple agents (Claude Code, Cursor, Copilot) in
-parallel using isolated git worktrees. VS Code Agent Kanban provides
-'plan'/'implement' verbs for Copilot with task tracking.
+An emerging pattern treats kanban boards as task queues for AI agents. Vibe
+Kanban [40] orchestrates 9 AI agents (Claude Code, Cursor, Copilot, Gemini,
+ChatGPT, Amp, Aider, OpenCode, Windsurf) in parallel using automated git
+worktree creation, with a Plan → Prompt → Review workflow. The platform
+reports 30,000+ active users and 100,000+ PRs created [40]. VS Code Agent
+Kanban provides 'plan'/'implement' verbs for Copilot with task tracking.
 
 ### Practical Workflow: Issue → AI → PR
 

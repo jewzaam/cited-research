@@ -74,7 +74,7 @@ An emerging category of tools treats kanban boards as task queues for AI agents:
 | Tool | Approach |
 |------|----------|
 | VS Code Agent Kanban | Copilot Chat integration with 'plan'/'implement' verbs, git worktree support |
-| Vibe Kanban | Parallel agent orchestration (Claude Code, Cursor, Copilot, Gemini CLI) with isolated worktrees |
+| Vibe Kanban [40] | Parallel agent orchestration across 9 AI agents (Claude Code, Cursor, Copilot, Gemini, ChatGPT, Amp, Aider, OpenCode, Windsurf) with automated git worktree creation. Plan → Prompt → Review workflow. 30,000+ active users, 100,000+ PRs created |
 | Agent Kanban | AI agents as first-class team members with cryptographic identities |
 
 **Key innovation**: parallel agent execution with isolated git worktrees removes sequential queuing constraint.
