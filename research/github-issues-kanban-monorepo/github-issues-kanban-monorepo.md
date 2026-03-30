@@ -40,15 +40,15 @@ automatically updates the field value [3].
 
 Two workflows are enabled by default: status→Done on issue close, and
 status→Done on PR merge [2]. Additional automations include auto-archive,
-auto-add from repos, and auto-set status on item addition [2]. There is **no
-state machine** — any status can transition to any other status without
-constraints [2].
+auto-add from repos, and auto-set status on item addition [2]. Built-in
+automations focus on lifecycle events; there are no configurable transition
+rules restricting which statuses can change to which others [2].
 
 ### Notable Limitations
 
 - No cross-field OR filtering [4]
 - No multi-select custom fields [1]
-- No private/personal views — all views visible to project members [6]
+- No private/personal views — all views visible to project members (GitHub community discussions report this limitation but no single authoritative source documents it)
 - Sorting disables manual reorder within columns [3]
 - Cannot group/slice/sort by title, labels, reviewers, or linked PRs [3]
 
@@ -86,20 +86,23 @@ established best practice exists [12]. The two obvious approaches — separate
 projects per team (metadata doesn't sync) vs. single unified project
 (scalability concerns) — both have significant drawbacks [12].
 
-**View privacy**: All views are visible to everyone with project access [6].
-Teams cannot create private views, leading to view clutter in large organizations.
+**View privacy**: All views are visible to everyone with project access.
+Teams cannot create private views, leading to view clutter in large
+organizations. (Widely reported in GitHub community discussions; no single
+authoritative source.)
 
 ### Team Size Friction Points
 
 | Size | Experience |
 |------|-----------|
 | 2-5 devs | Minimal friction; informal communication suffices |
-| 5-15 devs | Boundary confusion emerges; need CODEOWNERS, label conventions [13] |
-| 15+ devs | Exponential communication paths; heavy tooling investment required [14] |
+| 5-15 devs | Boundary confusion emerges; need explicit CODEOWNERS [13], label conventions |
+| 15+ devs | Exponential communication paths; heavy tooling investment required |
 
 Microsoft scaled to 25,000 engineers on GitHub, but required significant tooling
-and process investment [14]. Multiple sources consistently cite **20-30
-developers** as the threshold where GitHub Projects starts showing strain [24].
+and process investment [14] (source inaccessible; claim from search snippets
+only). One practitioner source suggests most teams under 30 developers never
+need to switch from GitHub Projects [24].
 
 See [references/multi-user-patterns.md](references/multi-user-patterns.md) for
 full details.
@@ -167,11 +170,12 @@ insufficient.
 
 **Notification fatigue**: Active mono-repos generate overwhelming notification
 volume. The common failure mode is "notification bankruptcy" — users disable
-notifications entirely, then miss critical updates [20].
+notifications entirely, then miss critical updates. (Widely reported in GitHub
+community discussions and practitioner blogs; no single authoritative source.)
 
 **Permission granularity**: To close issues or add labels, users need write
-access to the entire repository [13]. No issues-only permissions exist. Custom
-roles require Enterprise accounts [13].
+access to the entire repository [13]. No issues-only permissions exist.
+CODEOWNERS requires write access, not the triage role [13].
 
 **No native reporting**: GitHub lacks velocity charts, burndown diagrams,
 cycle time analytics, or throughput metrics [20][24]. Third-party tools fill
@@ -179,25 +183,24 @@ the gap but add cost and integration overhead.
 
 ### Mono-Repo-Specific Risks
 
-**Ownership ambiguity**: When everyone has access to everything, ownership
-becomes unclear [34]. CODEOWNERS only affects PR reviews, not issue routing
-[13].
+**Ownership ambiguity**: Mono-repos with shared access suffer from unclear
+ownership boundaries [34]. CODEOWNERS only affects PR reviews, not issue
+routing [13].
 
 **Cross-cutting concerns**: Issues spanning multiple packages have no native
-mechanism for tracking impact across areas. Draft items in Projects cannot be
-assigned milestones or labels [12].
+mechanism for tracking impact across areas [12].
 
-**Label chaos**: Labels are repo-scoped with no organization-wide management
-[15]. Without discipline, taxonomy fragments across teams.
+**Label chaos**: GitHub labels are repository-scoped. Without discipline,
+taxonomy fragments across teams [15].
 
 ### Common Failure Modes
 
-1. Cross-team coordination collapse → teams revert to spreadsheets [12]
-2. Notification bankruptcy → critical updates missed [20]
-3. Permission gridlock → fork workflows conflict with issue management [13]
-4. Analytics blindness → no velocity data for planning [20][24]
+1. Cross-team coordination collapse → teams lose visibility across areas [12]
+2. Notification bankruptcy → critical updates missed
+3. Permission friction → write-access requirements conflict with least-privilege [13]
+4. Analytics blindness → no velocity data for planning [24]
 5. Backlog rot → issues accumulate without triage [21]
-6. Automation exhaustion → workflow limits at enterprise scale [18]
+6. Automation limits → GITHUB_TOKEN cannot access Projects, workflows are repo-specific [18]
 
 See [references/risks-and-tensions.md](references/risks-and-tensions.md) for
 full details.
@@ -321,10 +324,10 @@ full details.
 
 **Consider dedicated tools when**:
 - Team exceeds 30 developers [24]
-- Non-technical stakeholders need access [20]
-- Advanced Agile metrics required [24]
-- Multi-level hierarchy needed [19]
-- Regulatory compliance requires formal workflows [24]
+- Non-technical stakeholders need regular access [20]
+- Advanced Agile metrics required (velocity, burndown) [24]
+- Multi-level hierarchy needed (epics, stories, subtasks) [19]
+- Formal workflow enforcement required [2]
 
 ### Migration Stories
 
@@ -364,12 +367,12 @@ content analysis [27].
 
 ### CI Integration
 
-Mono-repo build tools (Nx, Turborepo, Bazel) provide affected-package detection
-[33][34], but this data doesn't feed into GitHub Issues natively. Teams must build
+Mono-repo build tools (Nx, Turborepo, Bazel) provide affected-package detection,
+but this data doesn't feed into GitHub Issues natively [33]. Teams must build
 custom workflows to surface CI results in issue metadata.
 
-Change-based testing reduces CI time dramatically (45 min → <10 min in practice)
-[34]. GitHub Actions path filters enable subdirectory-based triggers [33].
+GitHub Actions path filters enable subdirectory-based triggers for selective
+CI per package [33].
 
 ### Notification Routing
 

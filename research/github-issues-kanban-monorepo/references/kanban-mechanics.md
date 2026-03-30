@@ -58,7 +58,7 @@ Additional built-in automations [2]:
 - Auto-add items from repositories matching filters
 - Auto-set status to "Todo" when items are added
 
-No state machine transition rules exist — any status can change to any other status [2].
+Built-in automations focus on lifecycle events; no configurable transition rules restrict which statuses can change to which others [2].
 
 ## Item Limits
 
@@ -90,8 +90,8 @@ GitHub's tasklists feature (for epic-like hierarchies) was closed as "not planne
 
 - No cross-field OR filtering [4]
 - No multi-select custom fields [1]
-- No private/personal views — all views visible to everyone with project access [6]
-- No view-level permissions [6]
-- No custom field change history in issue timelines [6]
+- No private/personal views — all views visible to everyone with project access (widely reported in community discussions)
+- No view-level permissions (widely reported in community discussions)
+- No custom field change history in issue timelines (widely reported in community discussions)
 - Column limits are advisory only, not enforced [3]
 - Sorting disables manual reorder within columns [3]

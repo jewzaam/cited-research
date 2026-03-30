@@ -12,7 +12,7 @@ GitHub Issues have a **flat structure** with no native epics, parent-child relat
 
 ## Notification Fatigue
 
-GitHub's notification system creates overwhelming noise for active projects. Clicking notifications removes them even if work remains. The notifications page becomes unmanageable with dozens of items. Issues waiting for responses fall off the list without tracking [20].
+GitHub's notification system creates overwhelming noise for active projects. Clicking notifications removes them even if work remains. The notifications page becomes unmanageable with dozens of items. (Widely reported in GitHub community discussions and practitioner blogs.)
 
 **Common failure mode**: users disable notifications entirely, then miss critical updates ("notification bankruptcy").
 
@@ -67,7 +67,7 @@ GitHub's permission model is coarse-grained [13]:
 
 ## Workflow Enforcement
 
-No built-in workflow state machines exist [2]. Any status can change to any other status — no transition rules, required approvals, or guard conditions [2]. Teams wanting structured workflows must build them via GitHub Actions [18].
+Built-in automations focus on lifecycle events (close→Done, merge→Done) with no configurable transition rules, required approvals, or guard conditions [2]. Teams wanting structured workflows must build them via GitHub Actions [18].
 
 ## Label Management at Scale
 
