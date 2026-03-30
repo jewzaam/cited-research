@@ -116,3 +116,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** multi-agent research architectures, source verification, web search and retrieval strategies, prompt engineering for research agents, human-in-the-loop validation, limitations and failure modes
 - **Last revised:** 2026-03-29
 - **Status:** Active
+
+## [mutmut 3.x Mutation Testing Setup Issues](research/mutmut-3x-setup/README.md)
+
+- **Path:** [research/mutmut-3x-setup/](research/mutmut-3x-setup/)
+- **Summary:** Why mutmut 3.x (3.5.0) reports "0 files mutated" or crashes with RuntimeError in common Python project setups. Key findings: all decorated functions are silently skipped (open issue #387), editable installs conflict with the mutants/ copy mechanism (#486), set_start_method('fork') at module level is a mutmut bug not a Python 3.13 change (#466). Source code analysis of __main__.py and file_mutation.py confirms root causes.
+- **Dimensions:** mutmut 3.x mutation mechanism, function discovery and skip logic, editable install interaction, Python 3.13+ multiprocessing compatibility, known issues and workarounds
+- **Last revised:** 2026-03-29
+- **Status:** Active
