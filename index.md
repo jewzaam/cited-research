@@ -140,3 +140,27 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** platform overview and architecture, comparison with alternatives, AI and LLM integration, agentic orchestration patterns, self-hosting and operations, integration ecosystem and extensibility
 - **Last revised:** 2026-03-30
 - **Status:** Active
+
+## [Todoist for Personal Assistant Integration](research/todoist/README.md)
+
+- **Path:** [research/todoist/](research/todoist/)
+- **Summary:** Whether Todoist is the right personal task management tool for an advisory PA (Claude API + MCP) that already covers Jira, GitHub, Google Workspace, and Slack. Conclusion: yes — Todoist has the best API, the only vendor-maintained MCP server (409 stars), and a data model purpose-built for personal tasks. Alternatives (Trello, TickTick, Microsoft To Do) are weaker on API quality, MCP ecosystem, or data model fit. Pro tier (~$5/mo) recommended for full PA utility.
+- **Dimensions:** Todoist platform and API capabilities, MCP server availability, PA integration architecture, alternatives comparison (Trello/TickTick/Microsoft To Do), sync and interoperability
+- **Last revised:** 2026-03-30
+- **Status:** Active
+
+## [Notion vs Obsidian: What Notion Is](research/notion-vs-obsidian/README.md)
+
+- **Path:** [research/notion-vs-obsidian/](research/notion-vs-obsidian/)
+- **Summary:** What Notion is and how it compares to Obsidian.md across six dimensions. Notion is a cloud-first collaboration platform (blocks, databases, real-time co-editing, AI tools); Obsidian is a local-first markdown editor for personal knowledge management. Key trade-offs: Notion excels at team collaboration and structured databases, Obsidian excels at privacy, offline reliability, and data portability.
+- **Dimensions:** platform overview and architecture, data model comparison, collaboration and sharing, automation and API, offline and local-first, use case fit
+- **Last revised:** 2026-03-30
+- **Status:** Active
+
+## [GitHub Issues as Kanban for Multi-User Mono-Repos](research/github-issues-kanban-monorepo/README.md)
+
+- **Path:** [research/github-issues-kanban-monorepo/](research/github-issues-kanban-monorepo/)
+- **Summary:** Using GitHub Issues and Projects (v2) as a kanban board for multiple users in a single mono-repo. GitHub Projects is competent for teams under 20-30 developers; beyond that, lack of hierarchy, reporting, and permission granularity drives teams to dedicated tools. AI agent integration (Claude Code, Copilot, Agentic Workflows) is closing the automation gap. CODEOWNERS only affects PRs, not issues.
+- **Dimensions:** kanban mechanics, multi-user collaboration, best practices, risks and tensions, tooling automation, agentic automation, comparison with dedicated tools, monorepo considerations
+- **Last revised:** 2026-03-30
+- **Status:** Active
