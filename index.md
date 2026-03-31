@@ -180,3 +180,19 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** Claude Code session monitoring, AI coding agent session managers, terminal multiplexer approaches, community GitHub projects, multi-agent session aggregators, feature comparison
 - **Last revised:** 2026-03-30
 - **Status:** Active
+
+## [Best Practices for Unit Testing Tkinter Applications](research/tkinter-unit-testing/README.md)
+
+- **Path:** [research/tkinter-unit-testing/](research/tkinter-unit-testing/)
+- **Summary:** How to test tkinter applications effectively. Core finding: architectural separation (MVC/MVP) is the foundation — test business logic without tkinter, reserve thin integration tests for widget wiring. CPython's generator-based `run_in_tk_mainloop` is the most robust mainloop handling pattern. Widget tests cost ~150-200ms each. No GUI-specific coverage tools exist for tkinter; property-based testing applies to logic but is too slow for widgets.
+- **Dimensions:** test architecture patterns, testing frameworks and tools, widget interaction testing, mainloop and async challenges, mocking and isolation strategies, real-world project examples, property-based testing, test-induced race conditions, coverage for event-driven code
+- **Last revised:** 2026-03-31
+- **Status:** Active
+
+## [Bias in Agentic Research and How to Combat It](research/agentic-research-bias/README.md)
+
+- **Path:** [research/agentic-research-bias/](research/agentic-research-bias/)
+- **Summary:** How LLM-based agentic research tools systematically bias output at every pipeline stage — from human question framing through search, retrieval, synthesis, verification, and consumption. Key findings: sycophancy adds 45pp face-preservation over humans, single-engine search misses 84.9% of results, LLMs amplify citation popularity by median 1,326 citations, automation bias increases errors by 26%, and 76.7% of reviewers never check references. Structural mitigations (writer-verifier separation, minority veto ensembles, multi-engine search) have evidence; prompt debiasing largely does not.
+- **Dimensions:** LLM intrinsic biases, search and retrieval bias, source selection bias, synthesis and framing bias, structural mitigations, human operator bias, epistemic monoculture, verification paradox, automation bias, reflexivity problem
+- **Last revised:** 2026-03-31
+- **Status:** Active
