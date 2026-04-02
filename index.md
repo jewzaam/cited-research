@@ -196,3 +196,179 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** LLM intrinsic biases, search and retrieval bias, source selection bias, synthesis and framing bias, structural mitigations, human operator bias, epistemic monoculture, verification paradox, automation bias, reflexivity problem
 - **Last revised:** 2026-03-31
 - **Status:** Active
+
+## [JWT Authentication in FastAPI](research/jwt-auth-fastapi/README.md)
+
+- **Path:** [research/jwt-auth-fastapi/](research/jwt-auth-fastapi/)
+- **Summary:** Best practices for JWT authentication in FastAPI applications — library choice (PyJWT, not python-jose), dependency injection validation patterns, algorithm confusion attacks (three CVEs scored 8.2-9.3 in 2026), token refresh rotation (RFC 9700), enterprise IdP integration (Keycloak, Azure AD, Auth0), and testing with RSA token factories. 37 sources, 22 verified, 0 inaccurate.
+- **Dimensions:** JWT validation patterns, token refresh strategies, library comparison, OpenAPI integration, security pitfalls, enterprise IdP integration, testing patterns
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [Cyclomatic Complexity Testing in Python](research/cyclomatic-complexity-python/README.md)
+
+- **Path:** [research/cyclomatic-complexity-python/](research/cyclomatic-complexity-python/)
+- **Summary:** How cyclomatic complexity metrics inform test strategy, tooling, and CI enforcement for Python projects. McCabe's threshold of 10 remains the standard (NIST, 1996). CC provides an upper bound for branch coverage test cases, not an exact count. Recommended stack: ruff (C901), xenon (CI gate), wily (trend tracking), complexipy (cognitive complexity). Cognitive complexity (SonarSource) measures understandability, not testability — use both together.
+- **Dimensions:** complexity fundamentals, Python measurement tools, thresholds and enforcement, complexity-driven test strategy, CI/CD integration patterns, cognitive vs cyclomatic complexity, refactoring patterns
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [LangGraph Agent Orchestration Patterns](research/langgraph-agent-orchestration/README.md)
+
+- **Path:** [research/langgraph-agent-orchestration/](research/langgraph-agent-orchestration/)
+- **Summary:** LangGraph's graph-based programming model (Pregel/BSP runtime, StateGraph, checkpointing), multi-agent routing patterns (supervisor uses more tokens, swarm slightly outperforms on accuracy per τ-bench benchmark), fault tolerance (interrupt() for HITL, RetryPolicy, crash recovery via super-step checkpoints), alternatives comparison (CrewAI, AutoGen/MS Agent Framework, Claude Agent SDK, OpenAI Agents SDK, Google ADK), Temporal integration (two-layer architecture with Grid Dynamics migration case study), and production readiness (LangGraph Platform GA May 2025, ~400 beta companies, LangSmith + OpenTelemetry observability). 43 sources, 16 verified, 2 partial, 0 inaccurate.
+- **Dimensions:** programming model, multi-agent routing patterns, fault tolerance and HITL, alternatives comparison, workflow engine integration, production readiness and observability
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [React Flow and Graph Layout for Workflow Editors](research/react-flow-workflow-editors/README.md)
+
+- **Path:** [research/react-flow-workflow-editors/](research/react-flow-workflow-editors/)
+- **Summary:** React Flow architecture, graph layout algorithms (Dagre vs ELK), workflow editor patterns, flat-graph ↔ nested-tree representation mismatch, performance characteristics, competitive analysis (n8n, Node-RED, Retool, Windmill, Cloudflare), and accessibility. Key findings: ELK over Dagre for complex workflows, Zustand for state (React Flow uses it internally), bridge pattern for graph↔tree sync, WCAG 2.2 SC 2.5.7 requires non-drag alternatives for all operations. 49 sources, independently audited.
+- **Dimensions:** React Flow architecture and API, graph layout algorithms, workflow editor patterns, graph-tree representation mismatch, React Flow performance, competitive workflow editor UX, accessibility, state management and data flow
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [React 19 and the React Compiler](research/react-19-compiler/README.md)
+
+- **Path:** [research/react-19-compiler/](research/react-19-compiler/)
+- **Summary:** Citation-backed analysis of React 19's API changes and the React Compiler (v1.0). The compiler auto-memoizes components at build time — Meta reports up to 12% faster loads and 2.5x faster interactions, but independent testing fixed only 2 of 9 re-render cases. Covers new hooks (use, useActionState, useOptimistic), Actions, state management compatibility (Redux OK, MobX/Recoil incompatible), migration from React 18, and comparison with SolidJS/Svelte 5/Vue 3.5.
+- **Dimensions:** React 19 API changes, React Compiler internals, compiler-friendly code patterns, state management library compatibility, React 18→19 migration, framework comparison, developer tooling and debugging
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [Frontend State Management: TanStack Query 5 + Zustand 5](research/frontend-state-management/README.md)
+
+- **Path:** [research/frontend-state-management/](research/frontend-state-management/)
+- **Summary:** Best practices for separating server state (API cache) from client state (UI/editing) in React applications using TanStack Query 5 and Zustand 5. Covers optimistic updates, cache invalidation, selectors, middleware, WebSocket integration patterns, alternatives comparison (Redux Toolkit, Jotai, Valtio, Recoil archived), and React 19/Compiler compatibility. Key finding: never store server data in Zustand; the combination handles 90%+ of state needs at ~12 KB gzipped total.
+- **Dimensions:** server vs client state separation, TanStack Query 5 patterns, Zustand 5 patterns, combination patterns, alternatives comparison, real-time/WebSocket state, React 19 and React Compiler compatibility
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [SQLModel as Unified Schema Layer](research/sqlmodel-unified-schema/README.md)
+
+- **Path:** [research/sqlmodel-unified-schema/](research/sqlmodel-unified-schema/)
+- **Summary:** SQLModel's dual-metaclass architecture (Pydantic v2 + SQLAlchemy 2.0), trade-offs of the unified model pattern, and fitness for a FastAPI project using composable base classes, template expression bypass, asyncpg, and Alembic. Key finding: table=True models silently skip validation (by design), 19x performance overhead on analytical queries, and 0.0.x versioning with single maintainer creates stability risk. 48 sources, independently audited.
+- **Dimensions:** architecture and internals, known limitations and pitfalls, unified vs separated model patterns, maintenance and ecosystem health, inheritance and composition patterns, validation bypass patterns, async session and driver compatibility
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [Zod + React Hook Form for Schema-Driven Validation](research/zod-react-hook-form/README.md)
+
+- **Path:** [research/zod-react-hook-form/](research/zod-react-hook-form/)
+- **Summary:** Zod 4 migration, react-hook-form complex patterns (nested, arrays, conditional, cross-field), @hookform/resolvers Zod 4 support (v5.0.0+), FastAPI 422 error mapping to form fields, cross-stack schema sharing via OpenAPI intermediary (@hey-api/openapi-ts), form library performance comparison (RHF vs Formik vs Final Form), and Zod-TypeScript integration (inference, branded types, composition). 65 sources, independently audited.
+- **Dimensions:** Zod 4 architecture and migration, complex form patterns, server error mapping, cross-stack schema sharing, form library performance, Zod-TypeScript integration, @hookform/resolvers integration
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [Multi-Provider LLM Routing via Gateway APIs](research/multi-provider-llm-routing/README.md)
+
+- **Path:** [research/multi-provider-llm-routing/](research/multi-provider-llm-routing/)
+- **Summary:** LLM gateway landscape evaluation: OpenRouter, LiteLLM, Portkey, Bifrost, and alternatives. Intelligent routing reduces costs 35-85% at 95% frontier quality (RouteLLM). Provider reliability data shows OpenAI/Anthropic each had 20+ incidents in Dec 2025. Practical Recommendations project: keep OpenRouter at current scale, add fallback chains, implement cost-based routing.
+- **Dimensions:** gateway platforms and architecture, gateway vs direct integration trade-offs, routing patterns and strategies, failover and resilience, security and compliance, open-source self-hosted routing, cost modeling and optimization
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [LLM Token Budgeting and Context Management](research/llm-token-budgeting/README.md)
+
+- **Path:** [research/llm-token-budgeting/](research/llm-token-budgeting/)
+- **Summary:** Token budgeting patterns, context management strategies, cost control, and memory architectures for multi-agent LLM systems. Key findings: effective context is 60-70% of advertised (80% practical ceiling), Agent Contracts achieve 90% token reduction with conservation laws, memory pointers and PTC prevent overflow better than summarization, prompt caching delivers 90% savings on reads. 61 sources including 12 academic papers.
+- **Dimensions:** token budget allocation patterns, context window management strategies, token counting tools and APIs, LLM cost tracking and control, LangChain/LangGraph memory patterns, context overflow handling and recovery, multi-provider token economics, context performance benchmarks
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [Multi-Agent System Observability](research/multi-agent-observability/README.md)
+
+- **Path:** [research/multi-agent-observability/](research/multi-agent-observability/)
+- **Summary:** Observability for systems orchestrating multiple AI agents via LangGraph within Temporal workflows. OpenTelemetry GenAI semantic conventions (Development status) are converging as the standard, adopted by Datadog, Langfuse, OpenLLMetry, and Phoenix. Multi-agent conventions (task hierarchies, team coordination) are in proposal stage. Cost and quality metrics have no OTEL standard. Recommended stack: Temporal TracingInterceptor + OpenLLMetry + Langfuse (self-hosted) with W3C Baggage for cross-system correlation. 32 sources, independently audited.
+- **Dimensions:** agent observability challenges, OpenTelemetry GenAI conventions, LangGraph tracing ecosystem, cross-system trace propagation, cost and token budget monitoring, alerting patterns for agent systems
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [OPA for API Authorization](research/opa-api-authorization/README.md)
+
+- **Path:** [research/opa-api-authorization/](research/opa-api-authorization/)
+- **Summary:** Evaluates Open Policy Agent for API authorization in a Python/FastAPI project. OPA is the most mature general-purpose policy engine (CNCF Graduated, 11.5k stars) but for API-only authorization, Cerbos offers a stronger fit — purpose-built, async Python SDK, YAML+CEL policies, sub-millisecond evaluation. OPA is better only if the project also needs infrastructure policy enforcement. Covers architecture, deployment models, Rego patterns, lifecycle, alternatives (Casbin, Cedar, Cerbos, OpenFGA), performance (1ms target, 20x memory multiplier), and security (3 CVEs since 2022). 56 sources, independently audited.
+- **Dimensions:** OPA architecture and project state, deployment models, FastAPI integration patterns, Rego policy patterns, policy lifecycle management, alternatives comparison, performance characteristics, security considerations
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [OpenAPI-Driven Type-Safe Frontend Development](research/openapi-driven-frontend/README.md)
+
+- **Path:** [research/openapi-driven-frontend/](research/openapi-driven-frontend/)
+- **Summary:** End-to-end type safety from FastAPI backend to React frontend using OpenAPI-generated TypeScript types. The openapi-typescript ecosystem (openapi-typescript + openapi-fetch + openapi-react-query) is recommended: 2.7M weekly downloads, 7 KB total runtime, type-only generation avoids maintaining generated code. Covers tool comparison (vs orval, hey-api), RFC 9457 error handling, contract-first vs code-first, spec evolution (Stripe's version change modules), CI/CD patterns (oasdiff, Schemathesis), monorepo type management, and bundle/tree-shaking impact. 33 sources, independently audited.
+- **Dimensions:** OpenAPI-TypeScript ecosystem, monorepo type management, spec evolution, error type safety, contract-first vs code-first, generated client limitations, CI/CD integration patterns, performance and bundle impact
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [Redis Caching Patterns for Async Python](research/redis-async-python/README.md)
+
+- **Path:** [research/redis-async-python/](research/redis-async-python/)
+- **Summary:** Redis integration patterns for FastAPI + asyncpg applications. redis-py async is the canonical client (aioredis merged in 4.2.0). Cache-aside with TTL is the primary pattern; allkeys-lru for general caching. Streams for reliable messaging, Pub/Sub for broadcast invalidation. Covers connection pooling (BlockingConnectionPool recommended), pipeline batching (~4.7x speedup), retry/circuit breaker patterns, eviction policies, persistence options, memory optimization (6.5x savings via hash sharding), and Prometheus monitoring. 21 sources, independently audited.
+- **Dimensions:** async Redis client ecosystem, caching patterns and FastAPI integration, cache invalidation strategies, temporary result store pattern, Streams vs Pub/Sub, operational considerations, connection lifecycle and error handling
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [Temporal Workflow Orchestration Patterns](research/temporal-workflow-orchestration/README.md)
+
+- **Path:** [research/temporal-workflow-orchestration/](research/temporal-workflow-orchestration/)
+- **Summary:** Temporal's programming model, failure semantics, and operational characteristics for a project using YAML-driven workflow definitions and PostgreSQL state sync. Key findings: interpreter pattern is the recommended approach for declarative workflows despite Temporal's code-first philosophy; activity-based database writes are the most robust external sync pattern; Cloud is ~50% faster than self-hosted (376ms vs 750ms E2E p50); retry defaults are 1s initial/2.0 backoff/unlimited attempts; event history hard limit 51,200 events or 50 MB. For AI orchestration, Temporal's workflow/activity separation naturally handles non-deterministic LLMs — OpenAI Codex and Replit Agent 3 run on it. 60 sources, independently audited.
+- **Dimensions:** core programming model, declarative workflow definitions, failure retry and compensation, operational cost and infrastructure, alternatives comparison for AI orchestration, external state sync patterns, Python SDK patterns
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [RFC 9457 Problem Details for HTTP APIs](research/rfc9457-problem-details/README.md)
+
+- **Path:** [research/rfc9457-problem-details/](research/rfc9457-problem-details/)
+- **Summary:** RFC 9457 specification (five optional standard members, extension mechanism, about:blank default), FastAPI implementation (three third-party libraries, no native support), type URI design patterns (resolvable HTTPS, URN-based, IANA registry), extension patterns (validation errors, rate limiting, operational tracking), OpenAPI integration, adoption landscape (Cloudflare confirmed; Stripe and GitHub do NOT use it despite blog claims), client-side handling, and testing approaches. 32 sources, independently audited.
+- **Dimensions:** RFC 9457 specification, FastAPI libraries and patterns, type URI design, extension member patterns, OpenAPI spec generation, adoption landscape, client-side handling, testing and validation
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [Prompt Injection Defenses in Agent Orchestrators](research/prompt-injection-agent-orchestrators/README.md)
+
+- **Path:** [research/prompt-injection-agent-orchestrators/](research/prompt-injection-agent-orchestrators/)
+- **Summary:** Attack vectors and defenses specific to multi-agent orchestrators that execute tools and actions. Key findings: architectural defenses (SEAgent MAC, Progent DSL, CaMeL capability tokens) achieve 0% ASR on benchmarks but none are deployed in production. Control-flow hijacking reaches 97-100% ASR on orchestrators even when individual agents refuse harmful actions. Detection classifiers fail on inter-agent and tool-output injection surfaces. Practical defense is defense-in-depth: deterministic tool controls, architectural separation, output sanitization, sandboxing, short-lived credentials. 47 sources including 22 peer-reviewed papers, independently audited.
+- **Dimensions:** orchestrator-specific attack vectors, production orchestrator defenses, least-privilege tool access, prompt injection detection, framework security boundaries, confused deputy problem, defense-in-depth architectures
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [MSW and Mock-Driven Frontend Development](research/msw-mock-driven-development/README.md)
+
+- **Path:** [research/msw-mock-driven-development/](research/msw-mock-driven-development/)
+- **Summary:** MSW architecture (Service Worker + @mswjs/interceptors class extension), mock synchronization (OpenAPI-driven codegen via @msw/source, openapi-msw, msw-auto-mock, Orval), testing lifecycle integration (Vitest/Jest/Storybook/Playwright), @msw/data for stateful mocking, alternatives comparison (MSW ~13.5M/week vs Nock ~5.8M/week vs Mirage JS ~331K/week), trade-offs of mock-driven development (API drift, maintenance burden, false confidence), and TypeScript code generation. Nock migrated to @mswjs/interceptors in 2025. Contract testing via pact-msw-adapter bridges mocking and verification. 31 sources, independently audited.
+- **Dimensions:** MSW architecture, mock-API sync and contract testing, testing lifecycle integration, mock data management at scale, alternatives comparison, trade-offs of mock-driven development, TypeScript and code generation
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [Visual Workflow Builder UX Patterns](research/visual-workflow-builder-ux/README.md)
+
+- **Path:** [research/visual-workflow-builder-ux/](research/visual-workflow-builder-ux/)
+- **Summary:** Comparative analysis of UX patterns across production workflow builders (n8n, Retool, Zapier, Power Automate, Prefect, Airflow). Key findings: visual workflow diff is absent from all major platforms (largest gap), progressive disclosure is the dominant cognitive load strategy, draft/publish model is universal, React Flow provides the strongest out-of-the-box accessibility, and no workflow builder supports real-time collaborative editing. 49 sources, independently audited (97.1% accuracy for verifiable sources).
+- **Dimensions:** interaction patterns, complexity management, cognitive load and learnability, onboarding and progressive disclosure, validation UX, versioning and collaboration, accessibility
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [Model Context Protocol (MCP) for Tool Integration](research/mcp-tool-integration/README.md)
+
+- **Path:** [research/mcp-tool-integration/](research/mcp-tool-integration/)
+- **Summary:** Deep-dive into MCP — the protocol, ecosystem, production deployment patterns, and security model. MCP standardizes LLM-tool integration via JSON-RPC 2.0 over stdio and Streamable HTTP. ~20,000 servers on GitHub, adopted by OpenAI and Google DeepMind. Security is the critical concern: 72.8% tool poisoning ASR, 53% static credentials, 9 breaches in 2025, OWASP MCP Top 10 created. Protocol provides no rate limiting, access control, or audit logging — gateway layer required for production. 45 sources, 73.7% verified, 0% inaccurate.
+- **Dimensions:** specification and protocol, MCP vs native tool-use APIs, server ecosystem, production deployment patterns, langchain-mcp-adapters vs SDK, rate limiting and access control, security model and attack surfaces, clients and host architectures
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [PatternFly 6 Enterprise Design System](research/patternfly-6-design-system/README.md)
+
+- **Path:** [research/patternfly-6-design-system/](research/patternfly-6-design-system/)
+- **Summary:** Citation-backed analysis of PatternFly 6, Red Hat's open-source design system for enterprise React applications. 92 components built on a three-layer design token system (palette/base/semantic) with built-in light, dark, and high-contrast (beta) themes. Targets WCAG 2.2 Level AA. Supports React 17/18/19 but has no documented RSC or Next.js support. 135K weekly npm downloads vs MUI's 8.5M — niche enterprise positioning, not general-purpose adoption. 42 sources, 40 verified, 2 partial, 0 inaccurate.
+- **Dimensions:** architecture and component catalog, competitive comparison, accessibility, customization, limitations and pain points, React integration, community and maintenance
+- **Last revised:** 2026-04-02
+- **Status:** Active
+
+## [Post-Quantum Cryptography Landscape](research/pqc/README.md)
+
+- **Path:** [research/pqc/](research/pqc/)
+- **Summary:** NIST PQC standards (FIPS 203/204/205), algorithm characteristics (ML-KEM, ML-DSA, SLH-DSA, FN-DSA, HQC), quantum threat timeline (50% CRQC probability by 2037-2040), regulatory convergence on 2035 (CNSA 2.0, NIST IR 8547, UK NCSC, EU CRA), implementation ecosystem readiness (OpenSSL 3.5, Go 1.24, 50%+ browser PQ traffic), hybrid approaches (X25519MLKEM768), and broken candidates (SIKE, Rainbow, KyberSlash). 49 sources, 18 verified, 5 partial, 0 inaccurate.
+- **Dimensions:** NIST standardization status, algorithm families and characteristics, quantum threat timeline, migration guidance and regulatory landscape, implementation ecosystem, hybrid cryptography approaches, known vulnerabilities and broken candidates
+- **Last revised:** 2026-04-02
+- **Status:** Active
