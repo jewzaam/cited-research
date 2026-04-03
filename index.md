@@ -372,3 +372,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** NIST standardization status, algorithm families and characteristics, quantum threat timeline, migration guidance and regulatory landscape, implementation ecosystem, hybrid cryptography approaches, known vulnerabilities and broken candidates
 - **Last revised:** 2026-04-02
 - **Status:** Active
+
+## [RAG for Heterogeneous Document Lookup](research/rag-heterogeneous-document-lookup/README.md)
+
+- **Path:** [research/rag-heterogeneous-document-lookup/](research/rag-heterogeneous-document-lookup/)
+- **Summary:** RAG strategies for effective lookup across heterogeneous content types: markdown research documents, JIRA issues (JSON with hierarchies), email, meeting notes, transcripts, and calendar metadata. Key findings: chunk by document type (not uniformly), embed metadata with content text, use hybrid search (BM25 + dense + RRF), and preserve document relationships as metadata. Recommended lightweight stack: BGE-M3 embeddings + Qdrant or SQLite-Vector+FTS5. 47 sources, 41 verified, 3 partial, 0 inaccurate.
+- **Dimensions:** chunking strategies, embedding model selection, metadata-enriched retrieval, hybrid search architecture, hierarchical document handling, indexing pipeline architecture, retrieval quality evaluation, lightweight tooling stack
+- **Last revised:** 2026-04-02
+- **Status:** Active
