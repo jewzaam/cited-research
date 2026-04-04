@@ -380,3 +380,27 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** chunking strategies, embedding model selection, metadata-enriched retrieval, hybrid search architecture, hierarchical document handling, indexing pipeline architecture, retrieval quality evaluation, lightweight tooling stack
 - **Last revised:** 2026-04-02
 - **Status:** Active
+
+## [Discord Bot Architecture for Personal Automation](research/discord-bot-architecture/README.md)
+
+- **Path:** [research/discord-bot-architecture/](research/discord-bot-architecture/)
+- **Summary:** How Discord bots work for personal automation: gateway vs HTTP interactions, bot registration and server lockdown, message lifecycle, slash commands vs message content intent, Python library comparison (discord.py recommended), webhook vs bot tradeoffs, rate limits and message constraints, presence indicators, and deployment patterns. 27 sources, 25 verified, 2 partial (resolved), 0 inaccurate.
+- **Dimensions:** gateway vs HTTP interactions, bot registration and server lockdown, message lifecycle, Python libraries, webhook vs bot tradeoffs, rate limits and message constraints, status/presence indicators, slash commands vs message content intent, deployment and hosting patterns
+- **Last revised:** 2026-04-04
+- **Status:** Active
+
+## [Anthropic API Usage Tracking and Limits](research/anthropic-api-usage-tracking/README.md)
+
+- **Path:** [research/anthropic-api-usage-tracking/](research/anthropic-api-usage-tracking/)
+- **Summary:** What the Anthropic API exposes for monitoring usage, enforcing rate limits, and tracking cost — and what wrapper applications must build themselves. Covers 18 rate limit response headers, the Admin API Usage & Cost endpoints, client-side spend tracking from the usage object, SDK extension points (Python/TypeScript), and patterns for surfacing cost to end users via proxies and observability platforms.
+- **Dimensions:** response headers, rate limit structure, billing and usage endpoints, client-side spend tracking, SDK-level usage hooks, cost surfacing patterns
+- **Last revised:** 2026-04-04
+- **Status:** Active
+
+## [Astrophotography Processing with Free Open Source Software (2026)](research/astrophotography-foss-processing/README.md)
+
+- **Path:** [research/astrophotography-foss-processing/](research/astrophotography-foss-processing/)
+- **Summary:** How to process public domain deep sky imaging data using modern FOSS tools (Siril, GraXpert, StarNet V2). Covers data sources (MAST, ESA, community archives), end-to-end workflows, calibration/stacking fundamentals, broadband/narrowband processing, JWST archive data, and curated YouTube tutorials.
+- **Dimensions:** public data sources, FOSS software landscape, processing workflows, YouTube tutorials, calibration and stacking, narrowband and broadband techniques
+- **Last revised:** 2026-04-04
+- **Status:** Active
