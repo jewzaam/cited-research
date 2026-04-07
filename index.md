@@ -404,3 +404,67 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** public data sources, FOSS software landscape, processing workflows, YouTube tutorials, calibration and stacking, narrowband and broadband techniques
 - **Last revised:** 2026-04-04
 - **Status:** Active
+
+## [Windmill: Workflow Orchestration for a Personal AI Assistant](research/windmill/README.md)
+
+- **Path:** [research/windmill/](research/windmill/)
+- **Summary:** Code-first workflow engine (Rust/AGPL-3.0) evaluated for a personal AI assistant. Native Bash execution, workspace-scoped credential encryption, full REST API with OpenAPI + MCP server (40+ tools), extended cron scheduling. Wins on top 2 requirements (CLI execution, credential isolation) vs n8n, loses on resource footprint (~2-4 GB vs ~100 MB) and ecosystem size (16K vs 150K stars). Worth hands-on evaluation.
+- **Dimensions:** platform overview, licensing, self-hosting, CLI/script execution, credential management, scheduling, API management, webhook support, execution history, retry/error handling, AI/LLM integration, community/maturity, limitations, n8n comparison, verdict
+- **Last revised:** 2026-04-07
+- **Status:** Active
+
+## [Kestra: Workflow Orchestration for a Personal AI Assistant](research/kestra/README.md)
+
+- **Path:** [research/kestra/](research/kestra/)
+- **Summary:** Open-source (Apache 2.0) orchestration platform with declarative YAML workflows and first-class shell/CLI execution across 13 languages. Podman Compose officially supported on Fedora. Server-side secret() resolution isolates credentials from API callers. Stronger fit than n8n for CLI-centric workflows; trade-off is higher resource consumption (4 GiB minimum vs ~100 MB idle). Worth hands-on evaluation.
+- **Dimensions:** platform overview, licensing, self-hosting, CLI/script execution, credential management, scheduling, API management, webhook support, execution history, retry/error handling, AI/LLM integration, community/maturity, limitations, n8n comparison, verdict
+- **Last revised:** 2026-04-07
+- **Status:** Active
+
+## [Inngest: Workflow Orchestration for a Personal AI Assistant](research/inngest/README.md)
+
+- **Path:** [research/inngest/](research/inngest/)
+- **Summary:** Code-first event-driven durable execution platform (SSPL→Apache 2.0, ~5.2K stars, Go/TypeScript) evaluated for a personal AI assistant. No native CLI/script execution primitive — requires writing subprocess wrappers inside step.run(), which is undocumented. Strong on credential isolation (secrets never reach engine), execution tracing (waterfall + OTEL), and retry/error handling (default-on + Replay). Not recommended for hands-on evaluation due to #1 requirement gap (CLI execution).
+- **Dimensions:** platform overview, licensing, self-hosting, CLI/script execution, credential management, scheduling, API management, webhook support, execution history, retry/error handling, AI/LLM integration, community/maturity, limitations, n8n comparison, verdict
+- **Last revised:** 2026-04-07
+- **Status:** Active
+
+## [Prefect: Workflow Orchestration for a Personal AI Assistant](research/prefect/README.md)
+
+- **Path:** [research/prefect/](research/prefect/)
+- **Summary:** Python-native workflow orchestration framework (Apache-2.0, 22K stars) evaluated for a personal AI assistant. Shell execution via ShellOperation/subprocess, encrypted credential blocks loaded at runtime (PA never sees secrets), comprehensive REST API, cron/interval/RRule scheduling, configurable retries with exponential backoff and jitter. Primary gap: webhooks are Cloud-only. Stronger orchestration engine than n8n (retries, scheduling, unlimited history, license) but more ceremony for simple CLI-on-schedule patterns. Worth hands-on evaluation.
+- **Dimensions:** platform overview, licensing, self-hosting, CLI/script execution, credential management, scheduling, API management, webhook support, execution history, retry/error handling, AI/LLM integration, community/maturity, limitations, n8n comparison, verdict
+- **Last revised:** 2026-04-07
+- **Status:** Active
+
+## [Temporal: Workflow Orchestration for a Personal AI Assistant](research/temporal/README.md)
+
+- **Path:** [research/temporal/](research/temporal/)
+- **Summary:** Durable execution engine (MIT, 19.4K stars, Go) evaluated for a personal AI assistant. Satisfies every PA requirement — CLI execution via Activities, architectural credential isolation (Worker env, invisible to API callers), Schedules with overlap/backfill/pause, built-in exponential retry, per-step Event History with Web UI. Trade-off: every workflow requires Activity + Workflow + Worker code (no visual builder). Conditionally worth hands-on — only if n8n's credential isolation, retry reliability, or licensing prove insufficient.
+- **Dimensions:** platform overview, licensing, self-hosting, CLI/script execution, credential management, scheduling, API management, webhook support, execution history, retry/error handling, AI/LLM integration, community/maturity, limitations, n8n comparison, verdict
+- **Last revised:** 2026-04-07
+- **Status:** Active
+
+## [Tines: Workflow Orchestration Platform Analysis](research/tines/README.md)
+
+- **Path:** [research/tines/](research/tines/)
+- **Summary:** Proprietary no-code SOAR platform ($1.125B valuation, $272M raised) evaluated for a personal AI assistant. Not viable: self-hosting requires paid Business/Enterprise tier, CLI execution requires Command-over-HTTP workaround (not on free tier), Community Edition limits (3 flows, 25K events/month, cloud-only) are below PA minimum requirements. Strong credential isolation and MCP support, but n8n is strictly superior on every critical dimension for personal use.
+- **Dimensions:** platform overview, licensing, self-hosting, CLI/script execution, credential management, scheduling, API management, webhook support, execution history, retry/error handling, AI/LLM integration, community/maturity, limitations, n8n comparison, verdict
+- **Last revised:** 2026-04-07
+- **Status:** Active
+
+## [Hatchet: Workflow Orchestration for a Personal AI Assistant](research/hatchet/README.md)
+
+- **Path:** [research/hatchet/](research/hatchet/)
+- **Summary:** MIT-licensed, PostgreSQL-based task queue and durable execution engine (Go, 6.8K stars, YC W24) evaluated for a personal AI assistant. No native shell/CLI executor — every command needs custom subprocess wrapper code in Python/TypeScript/Go workers. Six-service Docker deployment is heavier than n8n's single container. UTC-only scheduling, 1000 log lines/task limit. Strong on credential isolation, REST+gRPC API, and durable execution with event sourcing. Not recommended for hands-on evaluation due to #1 requirement gap (CLI execution).
+- **Dimensions:** platform overview, licensing, self-hosting, CLI/script execution, credential management, scheduling, API management, webhook support, execution history, retry/error handling, AI/LLM integration, community/maturity, limitations, n8n comparison, verdict
+- **Last revised:** 2026-04-07
+- **Status:** Active
+
+## [Activepieces: Workflow Orchestration for a Personal AI Assistant](research/activepieces/README.md)
+
+- **Path:** [research/activepieces/](research/activepieces/)
+- **Summary:** MIT-licensed (OSI-approved), TypeScript/Fastify/React workflow automation platform (YC S22, 21.6k stars) evaluated for a personal AI assistant. Critical finding: `AP_EXECUTION_MODE` defaults to `UNSANDBOXED`, enabling shell/CLI execution out of the box — meets the #1 requirement. Single Docker container deployment viable for personal use. REST API with 15 endpoint groups (API keys may require Platform edition). 4-retry limit with no DLQ. 15-30x slower than n8n on simple tasks in sandboxed mode (untested in UNSANDBOXED). Recommended for hands-on evaluation.
+- **Dimensions:** platform overview, licensing, self-hosting, CLI/script execution, credential management, scheduling, API management, webhook support, execution history, retry/error handling, AI/LLM integration, community/maturity, limitations, n8n comparison, verdict
+- **Last revised:** 2026-04-07
+- **Status:** Active
