@@ -2,7 +2,7 @@
 
 # Model Context Protocol (MCP) for Tool Integration
 
-A citation-backed analysis of the Model Context Protocol — its specification, ecosystem, production deployment patterns, security model, and relevance to the application's tool integration architecture.
+A citation-backed analysis of the Model Context Protocol — its specification, ecosystem, production deployment patterns, security model, and relevance to tool integration architecture in LangGraph-based agent systems.
 
 ## Methodology
 
@@ -16,7 +16,7 @@ The protocol has achieved rapid adoption: OpenAI integrated it in March 2025, Go
 
 The security picture is concerning: 72.8% attack success rate for tool poisoning on o1-mini [11], 53% of servers using static credentials [15], 9 documented breach incidents in 2025 [17], and Anthropic's own first-party servers containing critical CVEs [17]. The OWASP Foundation has created a dedicated MCP Top 10 [13].
 
-For application specifically: MCP is the right protocol choice for tool integration, but production deployment requires a gateway architecture for security, rate limiting, and observability — capabilities the protocol itself does not provide.
+For LangGraph-based agent systems: MCP is the right protocol choice for tool integration, but production deployment requires a gateway architecture for security, rate limiting, and observability — capabilities the protocol itself does not provide.
 
 ## 2. Protocol Overview
 
@@ -98,7 +98,7 @@ See [references/production-deployment.md](references/production-deployment.md) f
 
 ## 6. langchain-mcp-adapters vs MCP SDK
 
-The application uses `langchain-mcp-adapters` [20] for MCP integration. Key trade-offs:
+A LangGraph-based system using `langchain-mcp-adapters` [20] for MCP integration. Key trade-offs:
 
 | Dimension | langchain-mcp-adapters | MCP Python SDK |
 |-----------|----------------------|----------------|
@@ -171,7 +171,7 @@ See [references/clients-and-hosts.md](references/clients-and-hosts.md) for the f
 
 ## 10. Practical Recommendations
 
-Based on this research, recommendations for the application's MCP integration:
+Based on this research, recommendations for MCP integration in a LangGraph-based agent system:
 
 1. **Keep langchain-mcp-adapters** for tool integration — it provides the right abstraction for LangGraph workflows. Be aware that output schemas are lost during conversion and sampling is not supported [20][21].
 

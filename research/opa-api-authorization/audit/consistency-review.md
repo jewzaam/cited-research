@@ -4,7 +4,7 @@
 
 **Review Date**: 2026-04-02  
 **Reviewer**: Internal consistency audit (no prior context)  
-**Scope**: All markdown files in `/home/nmalik/source/cited-research/research/opa-api-authorization/`
+**Scope**: All markdown files in `research/opa-api-authorization/`
 
 ## Executive Summary
 

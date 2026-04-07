@@ -5,7 +5,7 @@
 
 **Review Date:** 2026-04-02
 **Reviewer:** Consistency Audit Agent
-**Scope:** All markdown files in /home/nmalik/source/cited-research/research/react-flow-workflow-editors/
+**Scope:** All markdown files in research/react-flow-workflow-editors/
 
 ## Executive Summary
 

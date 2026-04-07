@@ -3,7 +3,7 @@
 
 **Review Date:** 2026-04-02  
 **Reviewer:** Agent (no context from research conversation)  
-**Scope:** All markdown files in `/home/nmalik/source/cited-research/research/rag-heterogeneous-document-lookup/`
+**Scope:** All markdown files in `research/rag-heterogeneous-document-lookup/`
 
 ---
 

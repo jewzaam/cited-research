@@ -27,7 +27,7 @@ reconstruction after failures [1]. Workflows can run for years [1], support
 three message types (Queries, Signals, Updates) [2], and partition work via
 dynamically allocated Task Queues [3] and Child Workflows [4].
 
-For the application specifically: YAML-driven workflow definitions fit
+YAML-driven workflow definitions fit
 Temporal's **interpreter pattern** — a single deterministic workflow that
 reads and executes DSL definitions [31]. Temporal's Python SDK provides
 sandbox-based determinism enforcement [15], Pydantic-compatible data
@@ -330,10 +330,10 @@ See [references/alternatives-comparison.md](references/alternatives-comparison.m
 
 ## 8. External State Sync
 
-### Recommended Patterns for the application
+### Recommended Patterns
 
 Eight patterns were analyzed for syncing Temporal state to PostgreSQL. Ranked
-by suitability for the nexus use case:
+by suitability for YAML-driven workflow orchestration:
 
 1. **Activity-based writes** — most robust for real-time sync. Workflow
    controls timing, activities handle idempotent writes. Use Run ID +

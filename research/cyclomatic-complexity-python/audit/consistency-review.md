@@ -4,7 +4,7 @@
 
 Conducted: 2026-04-02
 Reviewer: Internal consistency audit (no prior context from research session)
-Scope: All markdown files in `/home/nmalik/source/cited-research/research/cyclomatic-complexity-python/`
+Scope: All markdown files in `research/cyclomatic-complexity-python/`
 
 ## Summary
 

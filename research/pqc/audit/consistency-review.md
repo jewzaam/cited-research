@@ -3,7 +3,7 @@
 
 **Review Date:** 2026-04-02
 **Reviewer:** Independent consistency reviewer (no context from research conversation)
-**Scope:** All markdown files in `/home/nmalik/source/cited-research/research/pqc/`
+**Scope:** All markdown files in `research/pqc/`
 
 ## Summary
 

@@ -108,7 +108,7 @@ construction rather than detection.
 - Build toolchain complexity
 - Generated code may not match project conventions
 
-### Recommendation for frontend
+### Recommendation
 
 The OpenAPI intermediary approach via **@hey-api/openapi-ts** is the strongest
 option:

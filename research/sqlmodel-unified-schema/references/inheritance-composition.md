@@ -3,7 +3,7 @@
 # Inheritance & Composition Patterns
 
 Model inheritance, mixins, and composable field sets in SQLModel, including
-assessment of patterns used in the application.
+assessment of composable base class patterns.
 
 ## SQLAlchemy Inheritance Strategies
 
@@ -136,10 +136,10 @@ Key guidance: "Only inherit from data models, don't inherit from table models"
 [3]. If inheritance creates excessive complexity, "duplicating fields may be
 clearer" [3].
 
-## application Project Pattern Assessment
+## Pattern Assessment
 
-The application uses composable base classes: BaseResource, NamedResource,
-SoftDeletableResource, UserOwnedResource, Resource. Based on the research:
+Composable base classes (BaseResource, NamedResource,
+SoftDeletableResource, UserOwnedResource, Resource) based on the research:
 
 **Pattern compatibility:**
 - This maps directly to the mixin pattern documented in [15][16]

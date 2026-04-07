@@ -2,7 +2,7 @@
 
 **Reviewer:** Sonnet 4.5 (claude-sonnet-4-5@20250929)
 **Review Date:** 2026-03-30
-**Scope:** All markdown files in `/home/nmalik/source/cited-research/research/doc-tooling-and-quality/`
+**Scope:** All markdown files in `research/doc-tooling-and-quality/`
 **Context:** No prior knowledge of research conversation — independent consistency verification
 
 ## Summary

@@ -4,7 +4,7 @@
 
 ## Summary
 
-This audit compares claims made in `/home/nmalik/source/cited-research/research/agentic-research-bias/` against fetched source content from `/tmp/cited-research/agentic-research-bias/`. Each numbered citation was evaluated for accuracy.
+This audit compares claims made in `research/agentic-research-bias/` against fetched source content from `/tmp/cited-research/agentic-research-bias/`. Each numbered citation was evaluated for accuracy.
 
 ## Grading Criteria
 

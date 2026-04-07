@@ -87,8 +87,8 @@ The deliverable presents a table of "Practical properties for widgets" with 5 sp
 Deliverable references `[citations.md](citations.md)` which should be `[citations.md](./citations.md)` or just `citations.md` depending on Markdown renderer.
 
 **Test:** In the file structure:
-- `/home/nmalik/source/cited-research/research/tkinter-unit-testing/deliverable.md`
-- `/home/nmalik/source/cited-research/research/tkinter-unit-testing/citations.md`
+- `research/tkinter-unit-testing/deliverable.md`
+- `research/tkinter-unit-testing/citations.md`
 
 The link `[citations.md](citations.md)` should work in most renderers.
 

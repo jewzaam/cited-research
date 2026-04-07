@@ -4,7 +4,7 @@
 
 **Review Date:** 2026-04-02  
 **Reviewer:** Independent consistency auditor (no context from research session)  
-**Scope:** All markdown files in `/home/nmalik/source/cited-research/research/langgraph-agent-orchestration/`
+**Scope:** All markdown files in `research/langgraph-agent-orchestration/`
 
 ## Executive Summary
 

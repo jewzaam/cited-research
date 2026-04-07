@@ -14,7 +14,7 @@ three-layer design token system with built-in light, dark, and high-contrast
 
 PatternFly is **not** a general-purpose component library — it is Red Hat's
 product design language (135K weekly downloads vs. MUI's 8.5M). For teams
-already in the Red Hat ecosystem (like frontend), it provides enterprise-specific
+already in the Red Hat ecosystem, it provides enterprise-specific
 components (Login Page, Masthead, Wizard) and consistent design language that
 general-purpose alternatives lack.
 

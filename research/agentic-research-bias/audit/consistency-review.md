@@ -5,7 +5,7 @@
 
 Review Date: 2026-03-31  
 Reviewer: Independent verification agent (no prior research context)  
-Scope: All markdown files in /home/nmalik/source/cited-research/research/agentic-research-bias/
+Scope: All markdown files in research/agentic-research-bias/
 
 ---
 
@@ -642,7 +642,7 @@ Each reference file includes a "Gaps and Limitations" section. Sample assessment
 
 - File: agentic-research-bias.md, line 5
 - Link: `[citations.md](citations.md)`
-- Target: /home/nmalik/source/cited-research/research/agentic-research-bias/citations.md
+- Target: research/agentic-research-bias/citations.md
 - Resolution: PASS - Link resolves correctly (same directory)
 
 ---
@@ -651,7 +651,7 @@ Each reference file includes a "Gaps and Limitations" section. Sample assessment
 
 - File: agentic-research-bias.md, line 6
 - Link: `[references/](references/)`
-- Target: /home/nmalik/source/cited-research/research/agentic-research-bias/references/
+- Target: research/agentic-research-bias/references/
 - Resolution: PASS - Link resolves correctly
 
 ---
@@ -660,7 +660,7 @@ Each reference file includes a "Gaps and Limitations" section. Sample assessment
 
 - File: agentic-research-bias.md, line 132
 - Link: `[llm-intrinsic-biases.md](references/llm-intrinsic-biases.md)`
-- Target: /home/nmalik/source/cited-research/research/agentic-research-bias/references/llm-intrinsic-biases.md
+- Target: research/agentic-research-bias/references/llm-intrinsic-biases.md
 - Resolution: PASS - Link resolves correctly
 
 ---
@@ -669,7 +669,7 @@ Each reference file includes a "Gaps and Limitations" section. Sample assessment
 
 - File: llm-intrinsic-biases.md, line 10
 - Link: `[citations.md](../citations.md)`
-- Target: /home/nmalik/source/cited-research/research/agentic-research-bias/citations.md
+- Target: research/agentic-research-bias/citations.md
 - Resolution: PASS - Relative path resolves correctly
 
 ---
@@ -678,7 +678,7 @@ Each reference file includes a "Gaps and Limitations" section. Sample assessment
 
 - File: human-operator-bias.md, line 4
 - Link: `[../citations.md](../citations.md)` (link text is the path)
-- Target: /home/nmalik/source/cited-research/research/agentic-research-bias/citations.md
+- Target: research/agentic-research-bias/citations.md
 - Resolution: PASS - Link resolves correctly, but format differs from other reference files
 
 **Note:** This formatting inconsistency is documented as MINOR-001.
@@ -689,7 +689,7 @@ Each reference file includes a "Gaps and Limitations" section. Sample assessment
 
 - File: README.md, line 48
 - Link: `[Full analysis](agentic-research-bias.md)`
-- Target: /home/nmalik/source/cited-research/research/agentic-research-bias/agentic-research-bias.md
+- Target: research/agentic-research-bias/agentic-research-bias.md
 - Resolution: PASS - Link resolves correctly
 
 ---

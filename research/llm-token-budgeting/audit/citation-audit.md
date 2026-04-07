@@ -6,8 +6,8 @@ Independent verification that every citation in the deliverable accurately repre
 
 ## Audit Methodology
 
-1. Read deliverable at `/home/nmalik/source/cited-research/research/llm-token-budgeting/llm-token-budgeting.md`
-2. Read citations file at `/home/nmalik/source/cited-research/research/llm-token-budgeting/citations.md`
+1. Read deliverable at `research/llm-token-budgeting/llm-token-budgeting.md`
+2. Read citations file at `research/llm-token-budgeting/citations.md`
 3. Check fetch manifest at `/tmp/cited-research/llm-token-budgeting/fetch-manifest.md` for full-text vs snippet-only sources
 4. Verify each claim against citation entry
 5. Flag discrepancies, unverifiable claims, and snippet-only quantitative assertions
@@ -35,7 +35,7 @@ This section lists only INACCURATE and UNVERIFIABLE citations. Citations not lis
 
 **Citation entry says**: "Performance grows increasingly unreliable with length. Degradation faster with lower needle-question similarity. Shuffled haystacks improve performance vs logical flow. Degradation onset: 250-500 words (position accuracy), 2,500+ words (significant drops)."
 
-**Analysis**: The citation entry does not mention "40% fill" as a threshold for diminishing returns. The deliverable correctly flags this as "(operator review: single-source claim)" indicating awareness of limited sourcing, and the reference file at `/home/nmalik/source/cited-research/research/llm-token-budgeting/references/context-performance-benchmarks.md` line 106 also flags this: "The 40% threshold is derived from a single source and should be validated against specific use cases before relying on it for production decisions."
+**Analysis**: The citation entry does not mention "40% fill" as a threshold for diminishing returns. The deliverable correctly flags this as "(operator review: single-source claim)" indicating awareness of limited sourcing, and the reference file at `research/llm-token-budgeting/references/context-performance-benchmarks.md` line 106 also flags this: "The 40% threshold is derived from a single source and should be validated against specific use cases before relying on it for production decisions."
 
 **Conclusion**: The 40% claim appears in the deliverable and reference files but is not supported by citation [13] as written. This was properly flagged by the research team as requiring validation. The claim should either be sourced to a different citation or removed.
 

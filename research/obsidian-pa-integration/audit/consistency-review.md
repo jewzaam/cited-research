@@ -3,7 +3,7 @@
 
 **Review Date:** 2026-03-30
 **Reviewer:** Independent consistency verification agent
-**Scope:** All markdown files in `/home/nmalik/source/cited-research/research/obsidian-pa-integration/`
+**Scope:** All markdown files in `research/obsidian-pa-integration/`
 
 ---
 

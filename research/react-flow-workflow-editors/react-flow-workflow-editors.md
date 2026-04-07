@@ -4,8 +4,7 @@
 
 A citation-backed analysis of React Flow's architecture, graph layout algorithms,
 workflow editor patterns, and the representation mismatch between visual editors and
-execution engines. Written to inform the frontend workflow builder.
-
+execution engines. 
 **49 sources** cited. All claims traced to URLs visited in-session. Two independent
 review agents audited the output.
 
@@ -140,7 +139,7 @@ Pinpoint Engineering evaluated three algorithms sequentially [20]:
 2. Dagre: couldn't handle "fixed node positioning" for branch order [20]
 3. ELK (7.8 MB): final choice — dynamic sizing, custom spacing, branching [20]
 
-**Recommendation for frontend**: Given custom node types (triggers, conditions, loops,
+**Recommendation**: Given custom node types (triggers, conditions, loops,
 actions, AI agents, approvals) and the need for sub-flows, ELK is the appropriate choice.
 The ~1.4 MB bundle cost is justified by edge routing and hierarchy support [4] [20].
 
@@ -211,7 +210,7 @@ Temporal argues graphs "don't show the real control flow" [10]:
 - **Error handling**: "Completely break down" — compensation paths in complex workflows
   create "an unmanageable monstrosity" [10]
 
-This is relevant to frontend's AI agent nodes, which involve dynamic tool selection —
+This is relevant to AI agent nodes, which involve dynamic tool selection —
 exactly the case where Temporal argues graphs fail [10].
 
 ## 6. State Management
@@ -326,14 +325,14 @@ Full accessibility likely requires multi-representation:
 2. Table/list alternative (screen reader users)
 3. Code definition (most accessible) — as Windmill [13] and Retool's tree view [14] demonstrate
 
-## 10. Recommendations for frontend
+## 10. Practical Recommendations
 
 Based on this research:
 
 1. **Keep @xyflow/react** — it is the dominant library for custom React-based workflow
    editors [46], with active maintenance, MIT license, and the largest ecosystem.
 
-2. **Migrate layout to ELK** — the frontend builder has custom node types, conditional
+2. **Migrate layout to ELK** — the workflow builder has custom node types, conditional
    branching, and AI agent nodes that require ELK's hierarchy support and edge routing.
    Dagre's sub-flow limitations [4] and performance issues at scale [30] make it
    inadequate for growth.
@@ -343,7 +342,7 @@ Based on this research:
 
 4. **Implement the bridge pattern** for graph↔tree transformation — n8n's
    `useCanvasMapping` [11] demonstrates the approach: a reactive composable that
-   transforms between the domain model and the graph model. For frontend, this means
+   transforms between the domain model and the graph model. In practice, this means
    a `useWorkflowMapping` that converts between the backend's nested tree and React
    Flow's flat graph.
 

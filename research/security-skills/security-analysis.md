@@ -107,7 +107,7 @@ Ten categories of risk that hook/permission systems do NOT address [HG-1 through
 
 **Critical caveat:** Sandboxing escape hatch `allowUnsandboxedCommands` defaults to true [SM-6]. macOS sandbox-exec is deprecated by Apple.
 
-### 2.2 Your Hook Setup (from ~/source/my-claude-stuff/)
+### 2.2 Hook Setup (from Claude Code configuration)
 
 Your `block_commands.py` blocks: git mutations, sudo/su, recursive delete, publishing commands, network tools, pipe-to-shell, GWS CLI mutations, GitHub CLI mutations.
 

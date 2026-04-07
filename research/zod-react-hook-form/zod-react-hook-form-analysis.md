@@ -20,14 +20,14 @@ results.
 6. [Cross-Stack Schema Sharing (Zod ↔ Pydantic)](#6-cross-stack-schema-sharing-zod-pydantic)
 7. [Performance Comparison](#7-performance-comparison)
 8. [Zod + TypeScript Deep Integration](#8-zod-typescript-deep-integration)
-9. [Recommendations for frontend](#9-recommendations-for-frontend)
+9. [Practical Recommendations](#9-practical-recommendations)
 10. [Limitations and Gaps](#10-limitations-and-gaps)
 
 ---
 
 ## 1. Introduction
 
-The frontend workflow builder uses Zod for schema validation and react-hook-form
+The workflow builder uses Zod for schema validation and react-hook-form
 for form state management, connected via @hookform/resolvers. Forms for each
 node type (actions, conditions, loops, AI agents) feature nested fields, dynamic
 arrays, and conditional validation. Server-side errors from FastAPI 422
@@ -323,7 +323,7 @@ React Final Form uses a subscription-based Observer pattern similar in concept
 to react-hook-form but with explicit subscription configuration [46]. It has the
 smallest bundle size but appears to have reduced maintenance activity [46].
 
-### Performance Tips for frontend
+### Performance Tips
 
 1. Use `register` for native inputs, `Controller` only for external controlled
    components [6][11]
@@ -372,7 +372,7 @@ excessively deep" errors in large projects (100k+ LoC) [58]. The Viget team's
 Zod 3→4 migration was prompted by exactly this issue with `useWatch` on nested
 discriminated unions [24]. Zod 4.1.8+ includes fixes [58].
 
-## 9. Recommendations for frontend
+## 9. Practical Recommendations
 
 ### Immediate Actions
 

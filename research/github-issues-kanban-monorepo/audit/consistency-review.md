@@ -4,7 +4,7 @@ Independent cross-file consistency audit performed 2026-03-30 by review agent wi
 
 ## Methodology
 
-Reviewed all files in `/home/nmalik/source/cited-research/research/github-issues-kanban-monorepo/`:
+Reviewed all files in `research/github-issues-kanban-monorepo/`:
 - README.md
 - github-issues-kanban-monorepo.md (main deliverable)
 - citations.md

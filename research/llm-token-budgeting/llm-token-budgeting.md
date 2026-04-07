@@ -424,7 +424,7 @@ for full analysis.
 ## Recommendations for Multi-Agent Systems
 
 Based on the evidence above, for a LangGraph-based multi-agent system with
-OpenRouter (such as the application):
+OpenRouter:
 
 ### 1. Budget Architecture
 

@@ -151,7 +151,7 @@ Design for containment when (not if) injection succeeds:
 
 ## Practical Defense Stack for Orchestrator Builders
 
-Based on evidence from all dimensions, an orchestrator like application should
+Based on evidence from all dimensions, an agent orchestrator should
 implement (in priority order):
 
 1. **Architectural separation** — Never pass untrusted data directly to

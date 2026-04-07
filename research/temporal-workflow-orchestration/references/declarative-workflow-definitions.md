@@ -92,9 +92,9 @@ Declarative workflow definitions face a **dual versioning problem**:
 The interpreter is "code" subject to Temporal's replay rules, while the DSL
 definition is "data" — but the boundary must be carefully maintained.
 
-## Relevance to application
+## Practical Relevance
 
-The application uses YAML-driven workflow definitions with activity types
+YAML-driven workflow definitions with activity types
 (API, Script, Agentic, Approval, AAP Job Template). This aligns with the
 interpreter pattern where:
 

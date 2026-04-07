@@ -5,7 +5,7 @@
 LLM gateways route requests across multiple providers (OpenAI, Anthropic,
 Google, etc.) through a unified API. This research evaluates the gateway
 landscape, routing strategies, and trade-offs — with specific recommendations
-for the application, which currently uses OpenRouter.
+covering OpenRouter and alternatives as LLM gateways.
 
 ## Key Finding
 

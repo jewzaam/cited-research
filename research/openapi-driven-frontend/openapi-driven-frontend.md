@@ -88,7 +88,7 @@ for full details.
 
 ## 3. End-to-End Type Chain Architecture
 
-For a FastAPI + React monorepo (the frontend pattern):
+For a FastAPI + React monorepo:
 
 ```
 FastAPI (Python)                    Frontend (TypeScript)
@@ -328,9 +328,9 @@ for full details.
 
 ---
 
-## 11. Recommendations for frontend
+## 11. Practical Recommendations
 
-Based on this research, for the frontend pipeline (FastAPI + React + TanStack
+Based on this research, for a FastAPI + React + TanStack
 Query monorepo):
 
 1. **Keep the current stack**: openapi-typescript + openapi-fetch +

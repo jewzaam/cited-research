@@ -11,7 +11,7 @@
 1. Read all deliverable files (mutmut-3x-analysis.md, citations.md, 5 reference dimension files)
 2. Read all pre-fetched source content in /tmp/cited-research/mutmut-3x-setup/
 3. Verify each claim against the corresponding source
-4. For source code citations, verify line numbers against actual files in /home/nmalik/source/mutmut/
+4. For source code citations, verify line numbers against actual files in the mutmut source tree
 
 ---
 
@@ -68,7 +68,7 @@
 - Line 1367: exit_code 33 for "no tests" ✓
 - Lines 1024-1038: "Stopping early" error message ✓
 
-**Source confirms**: All line numbers verified against actual source file at /home/nmalik/source/mutmut/src/mutmut/__main__.py.
+**Source confirms**: All line numbers verified against actual source file at `src/mutmut/__main__.py` in the mutmut source tree.
 
 ---
 
@@ -82,7 +82,7 @@
 - Lines 171-177: Decorator skip with rationale comments ✓
 - Lines 369-375: `group_by_top_level_node()` discards mutations not in functions ✓
 
-**Source confirms**: All line numbers verified against actual source file at /home/nmalik/source/mutmut/src/mutmut/file_mutation.py.
+**Source confirms**: All line numbers verified against actual source file at `src/mutmut/file_mutation.py` in the mutmut source tree.
 
 ---
 
@@ -93,7 +93,7 @@
 - Lines 51-54: non-matching mutant calls original ✓
 - Lines 55-61: matching mutant dispatches to specific mutant function ✓
 
-**Source confirms**: All line numbers verified against actual source file at /home/nmalik/source/mutmut/src/mutmut/trampoline_templates.py.
+**Source confirms**: All line numbers verified against actual source file at `src/mutmut/trampoline_templates.py` in the mutmut source tree.
 
 ---
 

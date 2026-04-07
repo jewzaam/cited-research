@@ -303,7 +303,7 @@ for the full timeline, deployment details, and observability setup.
 
 ## 8. Practical Implications
 
-Based on this research, the application's architecture (Temporal for durable
+Based on this research, an architecture using Temporal for durable
 execution, LangGraph for agent routing within an "agentic" Temporal activity)
 aligns with the two-layer pattern documented in [13] and [22]. Key
 considerations:
@@ -323,11 +323,11 @@ considerations:
    traces workflow execution. No documented pattern for unified observability
    across both layers.
 
-5. **Routing patterns.** For the application's supervisor-style routing to specialist
+5. **Routing patterns.** For supervisor-style routing to specialist
    agents, the Command-based routing pattern [1] is the modern approach,
    replacing conditional edges for cleaner code.
 
-6. **HITL.** If application needs human approval workflows, `interrupt()` within
+6. **HITL.** For human approval workflows, `interrupt()` within
    LangGraph activities is the recommended pattern [3][11]. Temporal Signals
    provide an alternative at the workflow level [19].
 

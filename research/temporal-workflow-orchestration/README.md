@@ -13,7 +13,7 @@ non-deterministic Activities through an append-only Event History. Workflows can
 run for years, support three message types (Queries, Signals, Updates), and
 partition work via Task Queues and Child Workflows.
 
-For YAML-driven workflows (as used by the application): Temporal's
+For YAML-driven workflows: Temporal's
 **interpreter pattern** — a single deterministic workflow that reads and
 executes DSL definitions — is the recommended approach, despite Temporal's
 explicit code-first philosophy. External state sync to PostgreSQL is best

@@ -5,7 +5,7 @@ LLM Token Budgeting Research
 
 **Review Date:** 2026-04-02
 **Reviewer:** Independent consistency audit agent
-**Scope:** All files in `/home/nmalik/source/cited-research/research/llm-token-budgeting/`
+**Scope:** All files in `research/llm-token-budgeting/`
 
 ## Executive Summary
 

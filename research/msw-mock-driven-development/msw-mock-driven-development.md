@@ -224,11 +224,11 @@ The risks are addressable through a layered approach: **contract testing** (via 
 
 **@msw/source** generates handlers at runtime via `fromOpenApi()` with no build step [14]. Response resolution follows a priority chain: literal examples, schema evolution with format-aware faker generation (uuid, email, date-time, etc.), then 504 defaults [14].
 
-## Recommendations for frontend
+## Practical Recommendations
 
-Based on the research findings, specific recommendations for the frontend project:
+Based on the research findings, specific recommendations for a React + FastAPI project:
 
-1. **Use openapi-msw for type-safe handlers.** The frontend project has an OpenAPI-driven FastAPI backend, making `createOpenApiHttp<paths>()` a natural fit [15]. Generate types with OpenAPI-TS from the FastAPI-generated OpenAPI spec, and handler paths, params, and responses will be constrained at compile time. This catches mock drift at build time rather than runtime.
+1. **Use openapi-msw for type-safe handlers.** A project with an OpenAPI-driven FastAPI backend, making `createOpenApiHttp<paths>()` a natural fit [15]. Generate types with OpenAPI-TS from the FastAPI-generated OpenAPI spec, and handler paths, params, and responses will be constrained at compile time. This catches mock drift at build time rather than runtime.
 
 2. **Add pact-msw-adapter for contract testing against the FastAPI backend.** The adapter converts MSW interactions recorded during tests into Pact contracts [17]. This creates a verification loop: frontend mocks generate contracts, and the FastAPI backend validates against them. Contract tests scale linearly and run in milliseconds [29], unlike E2E tests that require the full stack (Temporal, Redis, PostgreSQL).
 

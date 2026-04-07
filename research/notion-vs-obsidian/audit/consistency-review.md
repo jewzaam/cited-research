@@ -3,7 +3,7 @@
 # Internal Consistency Review
 
 **Date:** 2026-03-30
-**Scope:** All markdown files in `/home/nmalik/source/cited-research/research/notion-vs-obsidian/`
+**Scope:** All markdown files in `research/notion-vs-obsidian/`
 **Reviewer:** Independent consistency reviewer (no context from research conversation)
 **Method:** Numerical cross-checking, citation verification (50%+ spot-check), formula validation, completeness audit, contradiction detection
 
@@ -171,8 +171,8 @@ The "2,600+" figure is flagged as "single-source claim, unverified" but does not
 
 **Problem:**
 The link uses `../../` to navigate from `references/` up two levels, but the actual path structure is:
-- Current file: `/home/nmalik/source/cited-research/research/notion-vs-obsidian/references/data-model.md`
-- Target: `/home/nmalik/source/cited-research/research/obsidian-pa-integration/`
+- Current file: `research/notion-vs-obsidian/references/data-model.md`
+- Target: `research/obsidian-pa-integration/`
 
 Correct relative path from `references/data-model.md` should be `../../obsidian-pa-integration/` (which is what's used, so this needs verification).
 

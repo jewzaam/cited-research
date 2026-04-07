@@ -4,7 +4,7 @@
 
 **Review Date:** 2026-04-02  
 **Reviewer:** Internal consistency auditor (no context from research conversation)  
-**Scope:** All markdown files in `/home/nmalik/source/cited-research/research/openapi-driven-frontend/`
+**Scope:** All markdown files in `research/openapi-driven-frontend/`
 
 ---
 

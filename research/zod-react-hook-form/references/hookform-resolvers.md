@@ -94,7 +94,7 @@ ArkType is 20-40x faster than Zod [51]. For performance-critical forms, this is
 worth noting, though ecosystem integration (resolvers, community, documentation)
 favors Zod.
 
-## Integration Pattern for frontend
+## Integration Pattern
 
 ```typescript
 import { z } from 'zod';

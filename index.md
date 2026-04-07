@@ -264,7 +264,7 @@ the path, summary, dimensions covered, and last revision date.
 ## [Multi-Provider LLM Routing via Gateway APIs](research/multi-provider-llm-routing/README.md)
 
 - **Path:** [research/multi-provider-llm-routing/](research/multi-provider-llm-routing/)
-- **Summary:** LLM gateway landscape evaluation: OpenRouter, LiteLLM, Portkey, Bifrost, and alternatives. Intelligent routing reduces costs 35-85% at 95% frontier quality (RouteLLM). Provider reliability data shows OpenAI/Anthropic each had 20+ incidents in Dec 2025. Practical Recommendations project: keep OpenRouter at current scale, add fallback chains, implement cost-based routing.
+- **Summary:** LLM gateway landscape evaluation: OpenRouter, LiteLLM, Portkey, Bifrost, and alternatives. Intelligent routing reduces costs 35-85% at 95% frontier quality (RouteLLM). Provider reliability data shows OpenAI/Anthropic each had 20+ incidents in Dec 2025. Practical recommendations: keep OpenRouter at current scale, add fallback chains, implement cost-based routing.
 - **Dimensions:** gateway platforms and architecture, gateway vs direct integration trade-offs, routing patterns and strategies, failover and resilience, security and compliance, open-source self-hosted routing, cost modeling and optimization
 - **Last revised:** 2026-04-02
 - **Status:** Active

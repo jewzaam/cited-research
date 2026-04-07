@@ -41,7 +41,7 @@ by specification-driven sync tools and contract testing.
 ## Files
 
 - [Full analysis](msw-mock-driven-development.md) — 7-section deliverable
-  with methodology and frontend recommendations
+  with methodology and practical recommendations
 - [Citations](citations.md) — 31 sources with tier ratings and caveats
 - [references/](references/) — One file per research dimension:
   - [MSW Architecture](references/msw-architecture.md)

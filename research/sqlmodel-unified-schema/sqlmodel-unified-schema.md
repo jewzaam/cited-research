@@ -35,7 +35,7 @@ significant trade-offs:
 - Need stable type checker support (frequently broken by minor versions) [42][43][44]
 - Depend on semantic versioning guarantees (still 0.0.x after 4+ years) [14]
 
-For the application specifically: SQLModel supports the composable base
+SQLModel supports the composable base
 class hierarchy pattern [15][16], and the template expression bypass is
 achievable via `WrapValidator` [4] or `model_construct()` [5]. The async
 stack (asyncpg + Alembic) works but requires SQLAlchemy-level configuration
@@ -172,9 +172,9 @@ chain: `(Mixin1, Mixin2, BaseModel, table=True)` [16].
 **`__table_args__` handling** across multiple mixins requires `@declared_attr`
 with manual tuple/dict polymorphism — described as "hacky" by implementers [16].
 
-### application Pattern Assessment
+### Pattern Assessment
 
-The application's composable hierarchy (BaseResource → NamedResource →
+A composable hierarchy (BaseResource → NamedResource →
 SoftDeletableResource → UserOwnedResource → Resource) maps directly to the
 mixin pattern [15][16]. This is supported by SQLModel, with caveats:
 
@@ -190,7 +190,7 @@ For full details, see
 
 ## 5. Validation Bypass Patterns
 
-For the application's template expression pattern (`${...}`), multiple
+For a template expression pattern (`${...}`), multiple
 approaches are available:
 
 | Approach | How | Best For |
@@ -201,7 +201,7 @@ approaches are available:
 | Union types | `Union[int, TemplateExpr]` with custom type [4] | Type-safe template handling |
 | table=True bypass | Validation already suppressed on table models [8][9] | Not recommended (undocumented) |
 
-**Recommended for the application:** `WrapValidator` with a reusable `Annotated` type:
+**Recommended approach:** `WrapValidator` with a reusable `Annotated` type:
 
 ```python
 def allow_templates(value, handler):
@@ -339,11 +339,11 @@ For full details, see
 
 ---
 
-## 9. Recommendations for the application Project
+## 9. Practical Recommendations
 
 ### Continue Using SQLModel — With Mitigations
 
-The application's existing SQLModel investment is reasonable given:
+An existing SQLModel investment is reasonable given:
 1. The composable base class hierarchy works with the mixin pattern [15][16]
 2. Template expression bypass is achievable via `WrapValidator` [4]
 3. Async with asyncpg works via SQLAlchemy's async layer [6][22]

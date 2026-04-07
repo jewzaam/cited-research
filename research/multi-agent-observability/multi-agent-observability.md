@@ -316,7 +316,7 @@ Recommended thresholds from practitioner sources:
 
 ---
 
-## 8. Recommendations for application
+## 8. Practical Recommendations
 
 Based on the research, recommendations for a system orchestrating AI
 agents via LangGraph within Temporal workflows:

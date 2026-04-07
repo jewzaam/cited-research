@@ -19,7 +19,7 @@ For production: LangGraph Platform (GA May 2025, ~400 beta companies)
 requires Redis + PostgreSQL for self-hosted deployment. LangSmith and
 OpenTelemetry provide observability. Top challenge: LLM unpredictability.
 
-The Temporal + LangGraph two-layer pattern (the application's approach) is sound but
+The Temporal + LangGraph two-layer pattern is sound but
 rare — Grid Dynamics is the only documented production migration. Consider
 whether Temporal's durability subsumes LangGraph's checkpointing.
 

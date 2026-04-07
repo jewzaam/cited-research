@@ -24,9 +24,9 @@ maintaining 95% of frontier model performance [29]. RouteLLM (LMSYS)
 demonstrated that only 14-26% of queries actually need GPT-4-class models —
 the rest can be handled by cheaper alternatives [29].
 
-**For application specifically:** OpenRouter's 5.5% fee is reasonable for a project
-that needs multi-model support without infrastructure overhead. If application
-scales to high volume or needs compliance controls, migrating to self-hosted
+**At moderate scale:** OpenRouter's 5.5% fee is reasonable for a system
+that needs multi-model support without infrastructure overhead. At high volume
+or when compliance controls are needed, migrating to self-hosted
 LiteLLM is straightforward (same OpenAI-compatible API). The routing layer
 is not the bottleneck — the choice between gateway and direct integration
 matters less than having fallback chains and cost controls in place.
@@ -277,10 +277,10 @@ not a multi-provider gateway [55].
 See [references/open-source-routing.md](references/open-source-routing.md)
 for comprehensive comparison.
 
-## 8. Recommendations for application
+## 8. Practical Recommendations
 
-Based on the application's current architecture (OpenRouter as unified gateway, routing
-to Claude/GPT-4/Gemini/Llama by invocation type):
+For an architecture using OpenRouter as unified gateway with routing
+to Claude/GPT-4/Gemini/Llama by invocation type:
 
 ### Keep OpenRouter (Current Scale)
 
@@ -293,7 +293,7 @@ by [2][5][20]:
 
 ### Add Resilience (Low Effort)
 
-1. **Fallback chains in the application's orchestrator** — if OpenRouter itself goes
+1. **Fallback chains in the orchestrator** — if OpenRouter itself goes
    down (46+ outages/year [6]), fall back to direct provider APIs for
    critical models
 2. **Spending limits** — set per-key daily limits on OpenRouter [20]
@@ -301,7 +301,7 @@ by [2][5][20]:
 
 ### Consider Migration (If Scaling)
 
-If application scales to high volume or needs compliance controls:
+At high volume or needs compliance controls:
 - **LiteLLM** — same OpenAI-compatible API, self-hosted, broadest provider
   support. Pin to verified Docker images given the March 2026 incident [16].
 - **Portkey** — if observability and enterprise features matter more than
@@ -309,7 +309,7 @@ If application scales to high volume or needs compliance controls:
 
 ### Implement Cost-Based Routing
 
-The highest-ROI improvement is cost-based routing within the application's orchestrator:
+The highest-ROI improvement is cost-based routing within the orchestrator layer:
 - Route simple tasks (summarization, classification) to cheaper models
 - Reserve frontier models for complex reasoning
 - RouteLLM showed 75% savings with 95% quality retention [29]

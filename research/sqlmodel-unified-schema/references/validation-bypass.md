@@ -3,11 +3,11 @@
 # Validation Bypass Patterns
 
 Techniques for selectively skipping Pydantic validation in SQLModel/Pydantic
-v2, relevant to the application's template expression pattern.
+v2, relevant to template expression patterns in SQLModel projects.
 
 ## The Problem
 
-The application uses template expressions (`${...}`) in model fields that
+Template expressions (`${...}`) in model fields that
 must bypass Pydantic type checking. For example, a field typed as `int` might
 hold `"${workflow.step.output}"` during workflow definition. Standard Pydantic
 validation would reject this.
@@ -156,7 +156,7 @@ bypassing all field-level validation [38].
 
 ## Recommended Approach for Template Expressions
 
-For the application's `${...}` pattern, the `WrapValidator` approach
+For the `${...}` template pattern, the `WrapValidator` approach
 (option 3) provides the best balance:
 
 1. **Targeted** — only bypasses validation for template strings

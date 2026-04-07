@@ -235,7 +235,7 @@ fixtures and examples.
 
 ## Key Decisions
 
-Based on this research, recommendations for REDACTED:
+Based on this research, practical recommendations:
 
 1. **Library:** PyJWT with `[crypto]` extras [1][8]
 2. **Algorithm:** RS256 if integrating with an enterprise IdP; HS256 only

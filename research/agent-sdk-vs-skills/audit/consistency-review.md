@@ -63,7 +63,7 @@ Scope: All files in `research/agent-sdk-vs-skills/`
 **Status:** OPEN
 
 **Expected:** `audit/citation-audit.md` resolves to an existing file
-**Actual:** `/home/nmalik/source/cited-research/research/agent-sdk-vs-skills/audit/citation-audit.md` does not exist. The file index in the deliverable and the supporting files table in the README both reference it.
+**Actual:** `research/agent-sdk-vs-skills/audit/citation-audit.md` does not exist. The file index in the deliverable and the supporting files table in the README both reference it.
 
 **Impact:** Readers following the link will get a 404. The deliverable's file index implies a completed audit artifact that was never created.
 

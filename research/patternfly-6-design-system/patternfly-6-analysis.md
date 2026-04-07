@@ -15,8 +15,8 @@ MUI's 8.5M [23][24], and 856 GitHub stars vs. MUI's 98K [28][29]. This reflects
 its purpose — it is Red Hat's internal design language for products like OpenShift,
 not a general-purpose component library competing for community adoption.
 
-For frontend, PatternFly 6 is the right choice because the project already uses
-it and benefits from consistency with the Red Hat product ecosystem. The key
+For a project already using PatternFly, version 6 is the right choice because it
+benefits from consistency with the Red Hat product ecosystem. The key
 considerations are: understand the token system for customization, plan for
 dark theme image handling, and accept that RSC/Next.js support is undocumented.
 
@@ -228,7 +228,7 @@ meetings, all recorded [12]. Feature requests via GitHub Discussions [12].
 
 Active maintenance: last push to patternfly-react was April 2, 2026 [28].
 
-## 8. Recommendations for frontend
+## 8. Practical Recommendations
 
 1. **Use semantic tokens exclusively** for custom styling. Never reference
    palette tokens or hardcode hex values [6][8].
@@ -237,7 +237,7 @@ Active maintenance: last push to patternfly-react was April 2, 2026 [28].
    images need one of four manual approaches [7].
 
 3. **Accept the RSC gap.** PatternFly does not support React Server Components.
-   If frontend needs SSR, use it with a client-side rendering pattern.
+   For SSR, use it with a client-side rendering pattern.
 
 4. **Leverage codemods for upgrades.** Run `npx @patternfly/pf-codemods@latest`
    before manual migration work [3][17].
@@ -245,7 +245,7 @@ Active maintenance: last push to patternfly-react was April 2, 2026 [28].
 5. **Test accessibility with aXe.** PatternFly provides accessible components,
    but implementation responsibility lies with the developer [5].
 
-6. **Prefer RhUi-prefixed icon variants** (per frontend convention) and import
+6. **Prefer RhUi-prefixed icon variants** and import
    from `@patternfly/react-icons`.
 
 ## 9. Limitations of This Research

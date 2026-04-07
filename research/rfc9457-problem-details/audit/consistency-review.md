@@ -5,7 +5,7 @@
 
 **Review Date:** 2026-04-02
 **Reviewer:** Automated consistency audit (no prior context)
-**Scope:** All markdown files in `/home/nmalik/source/cited-research/research/rfc9457-problem-details/`
+**Scope:** All markdown files in `research/rfc9457-problem-details/`
 
 ## Executive Summary
 

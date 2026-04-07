@@ -3,7 +3,7 @@
 # External State Sync Patterns
 
 Approaches for syncing Temporal execution state to an external database,
-relevant to the application's background sync service mirroring Temporal
+relevant to a background sync service mirroring Temporal
 state to PostgreSQL.
 
 ## Pattern 1: Visibility Store as Built-in Sync
@@ -12,7 +12,7 @@ Temporal's visibility subsystem already provides an external SQL store of
 workflow execution state [11][12]. For PostgreSQL 12+, the visibility store
 supports custom search attributes and SQL-like List Filters [11].
 
-For audit/query purposes, application could:
+For audit/query purposes, an application could:
 - Query the visibility tables directly via Temporal's gRPC Visibility API
 - Use the **dual-visibility** feature to write to a secondary store —
   "read from only one Visibility store at a time, but can configure your
@@ -105,7 +105,7 @@ Temporal's persistence is inherently event-sourced [10]:
 - **Execution table**: mutable state snapshot (current checkpoint) [10]
 - **Visibility store**: read-optimized projection [11]
 
-application's PostgreSQL sync service is effectively a second read model. The
+The PostgreSQL sync service is effectively a second read model. The
 dual-visibility feature [12] demonstrates Temporal's own support for
 multiple read stores.
 

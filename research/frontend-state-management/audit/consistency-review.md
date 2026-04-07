@@ -4,7 +4,7 @@
 
 **Reviewer:** Independent consistency audit agent (no context from research conversation)  
 **Date:** 2026-04-02  
-**Scope:** All markdown files in `/home/nmalik/source/cited-research/research/frontend-state-management/`
+**Scope:** All markdown files in `research/frontend-state-management/`
 
 ## Executive Summary
 

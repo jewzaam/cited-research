@@ -3,7 +3,7 @@
 
 **Review Date:** 2026-04-02  
 **Reviewer:** Consistency Audit Agent (no prior research context)  
-**Scope:** All markdown files in `/home/nmalik/source/cited-research/research/visual-workflow-builder-ux/`
+**Scope:** All markdown files in `research/visual-workflow-builder-ux/`
 
 ---
 

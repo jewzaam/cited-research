@@ -4,7 +4,7 @@
 
 **Review Date:** 2026-04-02
 **Reviewer:** Automated consistency audit agent (no prior context from research session)
-**Scope:** All markdown files in `/home/nmalik/source/cited-research/research/patternfly-6-design-system/`
+**Scope:** All markdown files in `research/patternfly-6-design-system/`
 
 ## Executive Summary
 

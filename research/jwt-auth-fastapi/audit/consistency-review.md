@@ -4,7 +4,7 @@
 
 **Review Date:** 2026-04-02  
 **Reviewer:** Consistency Audit Agent (Claude Sonnet 4.5)  
-**Scope:** All markdown files in `/home/nmalik/source/cited-research/research/jwt-auth-fastapi/`
+**Scope:** All markdown files in `research/jwt-auth-fastapi/`
 
 ## Executive Summary
 

@@ -4,7 +4,7 @@
 
 **Review Date:** 2026-04-02  
 **Reviewer:** Internal Consistency Agent (no context from research conversation)  
-**Scope:** All markdown files in /home/nmalik/source/cited-research/research/msw-mock-driven-development/
+**Scope:** All markdown files in research/msw-mock-driven-development/
 
 ## Summary
 
@@ -478,7 +478,7 @@
 **Link:** `[Full analysis](msw-mock-driven-development.md)`
 
 **Expected:** File exists at relative path  
-**Actual:** File exists at /home/nmalik/source/cited-research/research/msw-mock-driven-development/msw-mock-driven-development.md  
+**Actual:** File exists at research/msw-mock-driven-development/msw-mock-driven-development.md  
 **Status:** PASS  
 
 **Grade:** PASS
@@ -491,7 +491,7 @@
 **Link:** `[Citations](citations.md)`
 
 **Expected:** File exists at relative path  
-**Actual:** File exists at /home/nmalik/source/cited-research/research/msw-mock-driven-development/citations.md  
+**Actual:** File exists at research/msw-mock-driven-development/citations.md  
 **Status:** PASS  
 
 **Grade:** PASS

@@ -4,7 +4,7 @@
 
 **Review Date:** 2026-04-02  
 **Reviewer:** Claude Code (Claude Sonnet 4.5)  
-**Scope:** All markdown files in `/home/nmalik/source/cited-research/research/prompt-injection-agent-orchestrators/`
+**Scope:** All markdown files in `research/prompt-injection-agent-orchestrators/`
 
 ## Summary
 
