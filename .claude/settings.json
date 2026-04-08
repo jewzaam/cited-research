@@ -1,0 +1,11 @@
+{
+    "permissions": {
+        "allow": [
+            "Write(/tmp/cited-research/**)",
+            "Edit(/tmp/cited-research/**)",
+            "Read(/tmp/cited-research/**)",
+            "Glob(/tmp/cited-research/**)",
+            "WebFetch"
+        ]
+    }
+}

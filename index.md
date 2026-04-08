@@ -468,3 +468,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** platform overview, licensing, self-hosting, CLI/script execution, credential management, scheduling, API management, webhook support, execution history, retry/error handling, AI/LLM integration, community/maturity, limitations, n8n comparison, verdict
 - **Last revised:** 2026-04-07
 - **Status:** Active
+
+## [C4 Architecture Model: Application to Small and Large Projects](research/c4-architecture/README.md)
+
+- **Path:** [research/c4-architecture/](research/c4-architecture/)
+- **Summary:** How the C4 model applies at different project scales — from single-purpose apps to monorepos and fragmented multi-repo platforms. Key finding: Levels 1-2 (Context + Container) deliver the majority of value regardless of scale; the difference is how you manage the model (two diagrams vs. model-driven composition). Covers tooling (9 tools in 3 categories), diagrams-as-code, auto-generation, and when to choose alternatives (arc42, 4+1, ArchiMate).
+- **Dimensions:** C4 fundamentals, small project application, large project monorepo, large project fragmented platform, tooling ecosystem, diagrams-as-code and living documentation, criticisms and limitations
+- **Last revised:** 2026-04-08
+- **Status:** Active
