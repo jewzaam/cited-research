@@ -476,3 +476,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** C4 fundamentals, small project application, large project monorepo, large project fragmented platform, tooling ecosystem, diagrams-as-code and living documentation, criticisms and limitations
 - **Last revised:** 2026-04-08
 - **Status:** Active
+
+## [Roblox Luau game development](research/roblox-luau-game-development/README.md)
+
+- **Path:** [research/roblox-luau-game-development/](research/roblox-luau-game-development/)
+- **Summary:** Citation-backed technical reference and decision framework for writing Luau code on Roblox. Covers the Luau language (types, syntax, sandbox, native codegen), script types and execution contexts, client-server communication (RemoteEvent/RemoteFunction/UnreliableRemoteEvent), performance (frame budget, task library, Parallel Luau), architecture frameworks (Knit archived, Fusion, Matter, Roact/React-Lua, roblox-ts/Flamework), data persistence (DataStoreService limits, ProfileStore session locking), development tooling (Rojo, luau-lsp, StyLua, selene, Wally, Jest-Lua, Lune), and security (server authority, attacker capability model, validation patterns).
+- **Dimensions:** Luau language vs standard Lua, script types and execution contexts, client-server communication, performance best practices, architecture patterns and frameworks, data persistence, development tooling and workflow, security and exploits
+- **Last revised:** 2026-04-11
+- **Status:** Active
