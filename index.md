@@ -492,3 +492,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** container and VM isolation, orchestrator patterns, permission and capability models, Claude Code headless operation, blast radius containment, human-in-the-loop escalation, observability of isolated agents
 - **Last revised:** 2026-04-12
 - **Status:** Active
+
+## [Claude Agent SDK: Getting Cost Information](research/claude-code-sdk-cost-tracking/README.md)
+
+- **Path:** [research/claude-code-sdk-cost-tracking/](research/claude-code-sdk-cost-tracking/)
+- **Summary:** How to extract cost data from the Claude Agent SDK (`@anthropic-ai/claude-agent-sdk` / `claude-agent-sdk`). The SDK exposes per-step tokens on AssistantMessage, per-model breakdown via modelUsage, and an authoritative total via total_cost_usd on ResultMessage. No session-level aggregate or per-subagent breakdown exists — both must be built by the caller. Covers the API surface, streaming events, token accounting model with pricing, and 7 implementation patterns from basic extraction to budget enforcement.
+- **Dimensions:** SDK API surface for cost data, streaming events and real-time usage, token accounting model, implementation patterns
+- **Last revised:** 2026-04-12
+- **Status:** Active
