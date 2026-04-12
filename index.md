@@ -484,3 +484,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** Luau language vs standard Lua, script types and execution contexts, client-server communication, performance best practices, architecture patterns and frameworks, data persistence, development tooling and workflow, security and exploits
 - **Last revised:** 2026-04-11
 - **Status:** Active
+
+## [Safe Isolated Agent Development with Orchestration](research/agent-sandbox-orchestration/README.md)
+
+- **Path:** [research/agent-sandbox-orchestration/](research/agent-sandbox-orchestration/)
+- **Summary:** How to sandbox AI coding agents performing risky work (destructive tests, experimental code) with an orchestrator managing the fleet. Key finding: Podman rootless + `--cap-drop ALL` + `--dangerously-skip-permissions` inside the container + shell-loop orchestrator is proportional for dev workstations; upgrade to Firecracker/Kata for untrusted code. Covers container/VM isolation, orchestrator patterns (shell loops, Temporal, LangGraph, agtx, dmux), permission models, Claude Code headless operation, blast radius containment, human escalation, and observability without weakening boundaries.
+- **Dimensions:** container and VM isolation, orchestrator patterns, permission and capability models, Claude Code headless operation, blast radius containment, human-in-the-loop escalation, observability of isolated agents
+- **Last revised:** 2026-04-12
+- **Status:** Active
