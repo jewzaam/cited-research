@@ -500,3 +500,4 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** SDK API surface for cost data, streaming events and real-time usage, token accounting model, implementation patterns
 - **Last revised:** 2026-04-12
 - **Status:** Active
+
