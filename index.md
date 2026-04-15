@@ -524,3 +524,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** product overview and architecture, features and capabilities, platform and integration support, pricing and licensing, competitive positioning, company and market presence, security and compliance
 - **Last revised:** 2026-04-15
 - **Status:** Active
+
+## [Unbound Force: AI Agent Swarm Evaluation](research/unbound-force/README.md)
+
+- **Path:** [research/unbound-force/](research/unbound-force/)
+- **Summary:** Evaluation of Unbound Force — a multi-agent AI development ecosystem built on OpenCode — across architecture, Claude Code compatibility, and adoption viability. Three novel components (Gaze contract coverage, Dewey knowledge graph MCP, Replicator coordination MCP) are MCP-portable to Claude Code. Key finding: bus factor = 1 (96.5% of commits from single maintainer), 1 GitHub star total, Dewey had 3 major versions in 14 days. Full stack requires OpenCode; cherry-picking MCP components is viable but carries significant maturity risk. 38 sources, 31 verified, 5 partial, 2 retracted.
+- **Dimensions:** architecture and design philosophy, component deep-dive, Claude Code compatibility, alternatives comparison, project maturity, adoption risk
+- **Last revised:** 2026-04-15
+- **Status:** Active
