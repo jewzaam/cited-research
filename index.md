@@ -508,3 +508,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** format specifications and syntax, token efficiency benchmarks, ecosystem adoption and tooling, practical tradeoffs for agent systems, reasoning pattern formats
 - **Last revised:** 2026-04-13
 - **Status:** Active
+
+## [Release Hardening for AI-Assisted Products](research/ai-assisted-release-hardening/README.md)
+
+- **Path:** [research/ai-assisted-release-hardening/](research/ai-assisted-release-hardening/)
+- **Summary:** How to harden release processes when software is AI-generated. Key finding: SAST tools miss 97.8% of formally-proven vulnerabilities in AI code, and 43% of AI code that passes QA fails in production. Covers vulnerability patterns (55.8% mean rate across 7 LLMs), static analysis gaps, testing strategies (mutation + PBT), code review practices, supply chain attacks (package hallucination, prompt injection CVEs), regulatory landscape (EU AI Act, UK Code, NIST, ISO 42001), CI/CD quality gates, and industry policies (Amazon, Microsoft, GitHub/GitLab).
+- **Dimensions:** vulnerability patterns, static analysis effectiveness, testing strategies, code review practices, supply chain and provenance, regulatory compliance, CI/CD quality gates, industry practices
+- **Last revised:** 2026-04-15
+- **Status:** Active
