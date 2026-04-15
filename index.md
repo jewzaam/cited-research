@@ -516,3 +516,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** vulnerability patterns, static analysis effectiveness, testing strategies, code review practices, supply chain and provenance, regulatory compliance, CI/CD quality gates, industry practices
 - **Last revised:** 2026-04-15
 - **Status:** Active
+
+## [Visual TOM from Absyss](research/visual-tom/README.md)
+
+- **Path:** [research/visual-tom/](research/visual-tom/)
+- **Summary:** Product analysis of Visual TOM, a workload automation and job scheduling platform from Absyss (France, founded 1990, €13.4M revenue). Covers architecture (client/server with 6 components), 12+ OS families (mainframe through cloud), MFT, SAP integration, 21 open-source connectors, flexible licensing (3 models, 3 metrics), and competitive positioning (Gartner MQ 2024 Niche Player, EMA 2025 Radar). 27 sources, 116/128 claims verified, 2 inaccurate (resolved).
+- **Dimensions:** product overview and architecture, features and capabilities, platform and integration support, pricing and licensing, competitive positioning, company and market presence, security and compliance
+- **Last revised:** 2026-04-15
+- **Status:** Active
