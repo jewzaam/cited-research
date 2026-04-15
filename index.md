@@ -501,3 +501,10 @@ the path, summary, dimensions covered, and last revision date.
 - **Last revised:** 2026-04-12
 - **Status:** Active
 
+## [Formats for Agentic Thought: TOON vs JSON vs TRON](research/agentic-thought-formats/README.md)
+
+- **Path:** [research/agentic-thought-formats/](research/agentic-thought-formats/)
+- **Summary:** Comparative analysis of structured data formats (TOON, TRON, JSON, YAML, XML, CSV) and reasoning patterns (CoT, ToT, ReAct, Reflexion, GoT, LATS) for AI agent systems. Key finding: TOON saves 13-22% vs compact JSON on input data, but all major LLM providers require JSON Schema for tool calls and structured output — no constrained decoding exists for alternative formats. Use alternative formats for input context, JSON for output. For reasoning patterns, CoT + self-consistency outperforms complex strategies on matched token budgets.
+- **Dimensions:** format specifications and syntax, token efficiency benchmarks, ecosystem adoption and tooling, practical tradeoffs for agent systems, reasoning pattern formats
+- **Last revised:** 2026-04-13
+- **Status:** Active
