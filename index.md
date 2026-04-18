@@ -540,3 +540,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** game overview and EA state, progression systems inventory, early-game optimization, mid-to-late progression and bottlenecks, resource and economy optimization, combat/build/loadout meta, patch volatility and guide freshness
 - **Last revised:** 2026-04-17
 - **Status:** Active
+
+## [Agentic Code Quality: Tools, Patterns, and Evidence for LLM-Generated Python Code](research/agentic-code-quality/README.md)
+
+- **Path:** [research/agentic-code-quality/](research/agentic-code-quality/)
+- **Summary:** Tools, patterns, and evidence for addressing LLM code quality risks (1.7x more issues per PR, ~48% duplicate code growth) in Python codebases. Five pillars: testing discipline (tdd-guard hooks, PBT, mutation testing), duplicate detection (Ruff SIM+C4+PTH, Refurb, jscpd), quality evaluation (Self-Refine, Reflexion, CriticGPT, CodeRabbit/Qodo Merge), parallel implementation (best-of-N, git worktrees, model diversity), and integration (Claude Code 26 hook events, Fowler's "Keep Quality Left" gate ordering). Biggest gap: no tool has built-in YAGNI/necessity detection. 44 sources, independently audited.
+- **Dimensions:** testing discipline, duplicate detection, quality evaluation, parallel implementation, integration patterns
+- **Last revised:** 2026-04-18
+- **Status:** Active
