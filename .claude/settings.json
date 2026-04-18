@@ -5,6 +5,7 @@
             "Edit(/tmp/cited-research/**)",
             "Read(/tmp/cited-research/**)",
             "Glob(/tmp/cited-research/**)",
+            "Bash(python ~/.claude/skills/cited-research/scripts/multi-search.py --query *)",
             "WebFetch"
         ]
     }

@@ -532,3 +532,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** architecture and design philosophy, component deep-dive, Claude Code compatibility, alternatives comparison, project maturity, adoption risk
 - **Last revised:** 2026-04-15
 - **Status:** Active
+
+## [StarRupture Progression Optimization](research/starrupture-progression-optimization/README.md)
+
+- **Path:** [research/starrupture-progression-optimization/](research/starrupture-progression-optimization/)
+- **Summary:** Progression-optimization guide for StarRupture (Creepy Jar, Steam EA launched 2026-01-06, current version 0.2.1 as of 2026-04-16). Three dominant decisions: spend Data Points on Recipe Station unlocks (not corp-level acceleration), treat post-Rupture as the primary farming window (Ignitium 2,000 DP/bundle, Glowcap 90 DP each), and build distributed satellite bases rather than a single expanding megabase. Audience: solo/duo first-playthrough. Includes corporation-unlock priority (Moon Energy L3 Map first), Goliath farming (5,000 DP/kill), the Satellite POI key-card chain (soft-lock risk), and staleness flags for pre-Update-1 (April 9, 2026) guides. 50 sources, 32 verified, 4 partial, 1 inaccurate, 14 inaccessible — mod cost currency contradiction ([15] War Bonds vs. [50] BBM) and Moon Energy L2/L3 Map-unlock conflict surfaced explicitly.
+- **Dimensions:** game overview and EA state, progression systems inventory, early-game optimization, mid-to-late progression and bottlenecks, resource and economy optimization, combat/build/loadout meta, patch volatility and guide freshness
+- **Last revised:** 2026-04-17
+- **Status:** Active
