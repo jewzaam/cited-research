@@ -108,3 +108,15 @@ The honest assessment: these protections are necessary but not sufficient. They 
 - **This document's self-assessment** is inherently limited by the reflexivity problem it describes. The biases it identifies are the biases it is capable of identifying — not necessarily all biases present.
 - **The structural protections listed** have not been empirically validated as a set. Each component has supporting evidence, but their combined effectiveness in producing less-biased research output has not been measured.
 - **The "key question"** posed in this document cannot be definitively answered by the document itself. External evaluation by researchers aware of these biases is required — and those researchers are themselves subject to the human operator biases documented in [human-operator-bias.md](human-operator-bias.md).
+
+---
+
+## 2026-04-18 Update
+
+- **Reasoning-model metacognition is real but limited [112]:** ICLR 2026. Ackerman shows frontier LLMs exhibit metacognitive abilities in two areas: assessing confidence on factual/reasoning questions, anticipating own responses strategically. Abilities are "limited in resolution," emerge contextually, differ qualitatively from human metacognition. Token-probability analysis shows "presence of an upstream internal signal." Post-training procedures materially affect metacognitive capacity.
+- **Self-rewarding correction succeeds when integrated [113]:** arXiv 2502.19613. Two-stage RL framework integrating generator and verifier into single model. On Llama-3 and Qwen-2.5 math: "Surpasses intrinsic self-correction capabilities and achieves performance comparable to systems that rely on external reward models." A working architectural counter to the reflexivity framing.
+- **Emergent introspective awareness [116]:** Transformer Circuits. LLMs develop internal state detection via DPO post-training. Mechanistic evidence of traceable confidence circuit. 0% false positive rate. DPO (not SFT) as enabling condition. Caveat: peaks at ~20% accuracy in early experiments — signal exists but is faint.
+- **R1-Zero emergent self-verification [117]:** Self-verification emerged from RL reward signal alone, without SFT. AIME 2025 88.9%, GPQA Diamond 87.7%.
+- **LLMs cannot self-correct reasoning yet [114]:** ICLR 2024. Intrinsic self-correction without external feedback frequently performs WORSE than initial response. Scope: non-reasoning models. The reflexivity claim holds for that generation of models; reasoning-model architectures are a partial exception.
+- **Dunning-Kruger in LLMs [76]:** 4 models, 24,000 trials. Kimi K2 ECE=0.726 at 23.3% accuracy vs Claude Haiku 4.5 ECE=0.122 at 75.4%. Poorer performers markedly more overconfident — capability-stratified view of the original 69-80%-regardless-of-correctness finding.
+- **Autocorrelation caveat [115]:** April 2026. 42% of turn-level LLM conversation findings fail cluster-robust correction. Non-memoryless metrics most affected (33% fail). The specific 64.5% self-correction blind-spot rate [22] may not survive cluster-robust replication — its direction is likely correct but magnitude is uncertain.

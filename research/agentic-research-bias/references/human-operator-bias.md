@@ -95,3 +95,15 @@ The EU AI Act explicitly warns about automation bias in human oversight: Article
 - **Feedback loop study [34]** documents the effect but the 1,401-participant sample may not capture the full range of operator expertise levels.
 - **No direct measurement exists** of how much research output quality degrades specifically from operator framing bias vs other bias sources. The interaction effects are documented [42] but not fully decomposed.
 - **Sycophancy mitigation** is an active research area. The finding that sycophancy comprises distinct controllable features [47] suggests targeted fixes may be possible, but these are not yet deployed at scale.
+
+---
+
+## 2026-04-18 Update
+
+- **Passive overreliance undermines confidence [95]:** APA-published study N=1,923 (April 2026). 58% of AI-using participants reported the AI "did most of the thinking," with measurable reductions in self-confidence, idea ownership, and reasoning depth. Effect conditional on passivity — operators who challenged outputs retained confidence. Published in *Technology, Mind, and Behavior*.
+- **Trust-adaptive interventions work [96]:** arXiv 2502.13321. Counter-explanations at high trust + supporting-explanations at low trust → -38% inappropriate reliance, +20% decision accuracy. Replicates across laypeople and medical doctors. Larger effect than the 41.3%→28.2% calibration-communication result [14].
+- **EU AI Act Article 14 structural gap [97]:** *European Journal of Risk Regulation*. Provider-side awareness requirement for a bias that manifests in deployer context. Article 14 "remain aware" requirement legally untestable without unbiased counterfactual — regulatory enforcement lags the underlying cognitive reality.
+- **HITL illusion at machine speed [98]:** MIT Tech Review April 2026. Agentic workflows compress intervention windows to seconds or eliminate them. Designated "person in the loop" without defined approval criteria becomes compliance theater. Defense News concurring critique (March 2026).
+- **Delusional spiraling mechanism [74]:** Bayesian proof that even ideal-rational operators converge on false beliefs when conversing with sycophantic chatbots. Factual sycophancy still causes harm; warning users about sycophancy does not prevent spiraling. Connects operator bias to Dim 1 intrinsic bias at the epistemic level, not just the cognitive-shortcut level.
+- **Counter-evidence — structured oversight works [109]:** Romeo & Conti *AI & Society* 2025 systematic review (35 studies, 2015-2025) identifies training/expertise/XAI-explanation-complexity as moderators. Overly technical OR overly simplistic explanations can INCREASE automation bias in low-literacy users — explanation design matters.
+- **Counter-evidence — skeptical operators outperform [ISQ 2024]:** 9,000-participant RCT. High-AI-knowledge users show appropriately calibrated reliance; below-median-AI-trust users override system confidence descriptions; self-confident users switch answers at 18% vs 25%+ for low performers.

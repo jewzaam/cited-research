@@ -15,12 +15,11 @@ The citeable literature is not a representative sample of all knowledge. It is f
 
 | Finding | Data | Source |
 |---|---|---|
-| Papers with significant results 3× more likely to publish | Clinical trials study | [71] |
+| Papers with significant results 3.9× more likely to publish (55% vs 14%) | Clinical trials study | [82] (direct; supersedes [71]) |
 | Meta-analyses rarely correct for publication bias | Only 18% address it, 4% use corrected estimates | [60] |
-| 90% of retracted papers continue to be cited | Post-retraction citation study | [46] |
-| 96% of post-retraction citations fail to mention the retraction | Same study | [46] |
+| 94.6% of post-retraction citations fail to mention the retraction (direct primary source, 7,813 papers, 48,134 contexts) | Hsiao & Schneider, QSS 2022 | [81] (supersedes [46]) |
 
-When agentic research requires citations, it draws from a literature that over-represents significant findings by 3× [71]. Null results, replications, and negative findings — often the most important correctives — are systematically excluded from the citeable pool. Meta-analyses that could correct this rarely do — only 4% base conclusions on bias-corrected estimates [60].
+When agentic research requires citations, it draws from a literature that over-represents significant findings by ~3.9× (55% of published trials favored the new therapy vs 14% of unpublished, Dickersin 1987 direct) [82]. Null results, replications, and negative findings — often the most important correctives — are systematically excluded from the citeable pool. Meta-analyses that could correct this rarely do — only 4% base conclusions on bias-corrected estimates [60].
 
 ---
 
@@ -96,9 +95,37 @@ Verification tools are less effective outside Western, English-language, large-s
 
 ## Gaps and Limitations
 
-- **Publication bias data [71]** is from 1987 (Dickersin et al.). The 3× figure is well-established but dated. [60] (Ropovik et al. 2021) covers meta-analytic practices rather than the base publication bias rate.
+- **Publication bias data [82]** is from 1987 (Dickersin et al., now direct-sourced). The 3.9× figure is well-established but dated. [60] (Ropovik et al. 2021) covers meta-analytic practices rather than the base publication bias rate.
 - **Paywall statistics [19]** are from a 2025 study. Open-access mandates (Plan S, NIH policy) are changing the landscape, but the 75% figure reflects the current citeable corpus.
 - **GhostCite [12]** is a large-scale study (2.2M citations) but focused on specific fields. Reviewer behavior may vary across disciplines.
 - **"Faux polyglots" [54]** is from a university press release (Tier 2), not a peer-reviewed study. The claim is directionally supported by other multilingual bias research but the specific data is limited.
 - **Qualitative research disadvantage** is argued from structural analysis rather than a single empirical study measuring the effect. The claim is well-supported by the epistemology literature but lacks a citation-backed quantitative measurement.
 - **No counterfactual measurement** exists: how much worse would research quality be without citation requirements? The verification paradox does not argue against citations — it argues that citations are an insufficient and biased proxy for epistemic quality.
+
+---
+
+## 2026-04-18 Update
+
+### Venue-level citation-hallucination crisis
+
+The prior research established that LLMs hallucinate citations at an average 49.71% rate [12] and that 76.7% of reviewers don't verify references. The 2026 evidence base now documents that **this problem has reached peer-reviewed conference venues**:
+
+| Finding | Source | Data |
+|---------|--------|------|
+| ACL/NAACL/EMNLP 2024-2025 papers with hallucinated refs | [83] HalluCitation | Nearly 300 papers, most in 2025; over 100 at EMNLP 2025 alone |
+| Deep-research-agent URL hallucination | [87] Rao et al. | 3-13% of citation URLs fabricated; 5-18% non-resolving overall (10 models, 221K URLs) |
+| RAG unfaithfulness despite correctness | [88] Wallat et al. | 57% of RAG citations lack faithfulness — model post-rationalizes citations after generating from internal priors |
+| First hallucination-detection benchmark | [86] CiteAudit | 5-stage pipeline — claim extraction, evidence retrieval, passage matching, reasoning, calibrated judgment |
+| "Frankenstein citations" mechanics | [107] Nature news | AI combines real author names, real venues, plausible dates, real co-author pairings into nonexistent refs with format-valid fake DOIs |
+
+### AI fact-checking and discernment decay
+
+- A 1-month CHI 2026 study (N=67) quantifies the discernment-decay problem [108]: **+21% immediate assisted gain followed by -15.3% unassisted decline by week 4**. Agreement with AI trended upward (23% → 28.5%). AI-assisted fact-checking does not build durable discernment skills; it creates dependency.
+
+### Automated citation-verification tools (partial counter)
+
+- Counter-discovery surfaced that specialized citation-verification tools (Citely, LibKey, urlhealth [87]) claim 90%+ detection accuracy against large reference databases. However, commercial LLM-based verifiers like GPT-5.2 reportedly flag ~50% of legitimate citations as hallucinated per third-party coverage of CiteAudit — the dual-error problem (hallucinate at generation, false-positive at verification) remains severe.
+
+### Dickersin direct-sourcing
+
+- The publication-bias claim now traces to [82] (PubMed direct: Dickersin et al. 1987) rather than [71] (Wikipedia indirect). Direct data: 271 unpublished + 1,041 published trials. 14% vs 55% favored new therapy (ratio ≈ 3.9x). p<0.001.

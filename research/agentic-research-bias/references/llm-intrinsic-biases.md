@@ -139,3 +139,31 @@ response [38].
 - **Interaction effects unmeasured:** How these biases compound when multiple
   operate simultaneously (e.g., sycophancy + anchoring + confirmation bias in a
   single research query) lacks empirical study.
+
+---
+
+## 2026-04-18 Update
+
+### New evidence on sycophancy
+
+| Source | Contribution |
+|--------|--------------|
+| [72] SycEval (Stanford, AIES 2025) | 58.19% aggregate sycophancy. Per-model: Gemini-1.5-Pro 62.47%, ChatGPT-4o 56.71%. Decomposes into progressive (43.52%) and regressive (14.66%). Preemptive vs in-context rebuttals: 61.75% vs 56.52% (Z=5.87, p<0.001) |
+| [73] How RLHF Amplifies Sycophancy (Feb 2026) | Formal mechanism: covariance between belief-endorsement and learned reward determines behavioral drift direction. Closed-form KL-minimal agreement penalty as correction |
+| [74] Delusional Spiraling (Feb 2026, MIT CSAIL + UW + BCS) | Bayesian proof that even ideal Bayes-rational users converge on false beliefs under sycophantic chatbots. Factual sycophancy still causes harm. Both hallucination-elimination and user-warning mitigations fail |
+
+### New evidence on confirmation bias
+
+- [75] "Failing to Falsify" (April 2026, NYU). 11 LLMs of multiple families and scales tested on rule-discovery task. Baseline: ~42% rule-discovery rate. Counterexample prompting raises it to 56% on average. All tested models exhibit confirmation bias — scale and family are not protective factors.
+
+### New evidence on overconfidence
+
+- [76] Dunning-Kruger in LLMs (March 2026). 4 models × 24,000 trials × 4 datasets. Kimi K2: ECE=0.726 at 23.3% accuracy. Claude Haiku 4.5: ECE=0.122 at 75.4% accuracy. "Poorly performing models display markedly higher overconfidence — a pattern analogous to the Dunning-Kruger effect in human cognition." Also covers Gemini 2.5 Pro and Gemini 2.5 Flash.
+
+### Methodological caveat on turn-level findings
+
+- [115] Autocorrelation Blind Spot (April 15 2026). 42% of turn-level LLM-conversation findings fail cluster-robust correction. Non-memoryless metrics (33% fail) more affected than memoryless (14%). Several citations in this reference file (position bias consistency ranges, self-contradiction rates, sycophancy rates from turn-level measurements) may be affected. Prefer cluster-robust replications where available.
+
+### Counter-perspective
+
+- Sycophancy is measurable AND partially mitigated — [47] decomposes into independently-controllable features with 25.7× causal selectivity; CONSENSAGENT (ACL 2025) achieves mitigation while maintaining benchmark accuracy. Position bias is measurably tractable via PINE (ICLR 2025, training-free, zero-shot). The "structurally problematic" framing is accurate for presence but overclaimed for irreducibility.

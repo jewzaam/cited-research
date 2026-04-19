@@ -216,3 +216,35 @@ LLM-generated content enters the scholarly record.
   complete agentic research pipeline with multiple mitigations applied
   simultaneously. Whether mitigations compose well or interfere with each
   other is unknown.
+
+---
+
+## 2026-04-18 Update
+
+### New mitigations with direct evidence
+
+| Mitigation | Evidence | Effect | Stage |
+|------------|----------|--------|-------|
+| Trust-adaptive interventions | Replicates across laypeople and medical doctors [96] | -38% inappropriate reliance, +20% accuracy | Consumption |
+| Multi-Persona Thinking (MPT) | Two bias benchmarks [94] | Lower bias than prompt-based methods; reasoning preserved | Synthesis |
+| Cultural debate with diverse personas (MACD) | English + Arabic [119] | 60%→80% no-bias rate; 86% via vote; Arabic 96.8% | Synthesis |
+| Identity-anonymization in MAD | Multi-model [120] | Substantial reduction in identity-driven sycophancy/self-bias | Synthesis |
+| Accumulate-not-replace training | LM + diffusion + VAE [102] | Test error finite upper bound (avoids model collapse) | Training |
+| Self-rewarding RL (two-stage) | Llama-3, Qwen-2.5 math [113] | Matches external-reward-model performance | Synthesis |
+| CriticGPT (scope: code only) | OpenAI eval [93] | 63% critic-over-human preference for code | Verification |
+
+### New structural ceilings discovered
+
+- **No Free Lunch in bias mitigation [91]:** 160 experiments across 4 techniques (Logit Steering, Activation Patching, BiasEdit, Prompt Debiasing) × 10 models on StereoSet. Targeted reduction on one axis frequently increases bias on others. 31.5% cross-axis spillover rate. Implication: multi-dimensional simultaneous evaluation is required — single-axis "wins" may be relocations.
+- **Multi-agent debate reduces to majority voting [90]:** NeurIPS 2025 Spotlight. Debate induces a martingale over agent belief trajectories — debate alone does not improve expected correctness. 7-benchmark empirical confirmation. "Simple ensembling methods remain strong and more reliable alternatives in many practical settings." Implication: the minority-veto result [17] retains support only because it explicitly privileges dissent over consensus, which standard MAD does not.
+- **Majority pressure suppresses correction [89]:** Knight-Knave-Spy controlled logic-puzzle study. Structural debate parameters produce "limited gains." Success depends on intrinsic reasoning and team diversity.
+- **LLM critics inherit teacher biases [92]:** Three misalignment factors identified. Biased LLM-generated synthetic data propagates and amplifies source biases downstream when used for RLHF feedback or data augmentation.
+- **Non-reasoning models cannot self-correct reasoning without external feedback [114]:** ICLR 2024. Intrinsic self-correction frequently degrades initial answer.
+
+### Reasoning-model caveat
+
+- The 64.5% self-correction blind-spot rate [22] was measured on 14 **non-reasoning** models. Reasoning models (o1/o3/R1-class) show partial but measurable metacognition per ICLR 2026 [112]. DeepSeek R1-Zero developed self-verification via RL reward signal alone — emergent metacognition without explicit self-correction training [117]. The mitigation ceiling does not uniformly apply to reasoning-model architectures.
+
+### Counter-evidence on prompt-based debiasing
+
+- While prompt-based debiasing fails broadly [16] and "succeeds" only via evasive answers in many benchmarks, several 2026 results show it works **conditionally**: in high-stakes recommendation contexts with explicit structured fairness objectives, up to 74% fairness improvement has been reported. The categorical "fails" framing overstates the picture; prompt-based approaches are domain-dependent.

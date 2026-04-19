@@ -96,3 +96,15 @@ AI output is perceived as more clear and captivating than human text. Users favo
 - **Chat-chamber effect [41]** is a conceptual framework with supporting evidence but lacks large-scale longitudinal measurement.
 - **Perception of AI output quality** is referenced without a specific citation number. Multiple studies document this effect but it is not tied to a single source in the citations file.
 - **No measurement exists** of how much automation bias specifically affects the quality of AI-generated research documents versus other AI-assisted tasks. The mechanism is well-established; the magnitude in this specific context is inferred.
+
+---
+
+## 2026-04-18 Update
+
+The prior Goddard 2011 meta-analysis [13] is now accompanied by an AI-specific PRISMA systematic review — [109] Romeo & Conti, *AI & Society* 2025 — covering 35 studies Jan 2015-Apr 2025 across cognitive psychology, human factors, HCI, and neuroscience. Identifies AI literacy, professional expertise, cognitive profile, and **explanation complexity** as moderators. Overly technical OR overly simplistic XAI explanations can INCREASE automation bias in low-literacy users — the veneer of rigor is as much about explanation design as raw confidence.
+
+- **CHI 2025 Lee et al. [110] (Microsoft, N=319 knowledge workers):** Higher AI confidence → LESS critical thinking across all Bloom's taxonomy levels. Higher self-confidence → MORE critical thinking. GenAI shifts critical thinking from production to verification; verification only occurs under motivation + competence. Direct measurement of the veneer-of-rigor mechanism in a real-work context.
+- **Rigor as conception problem [111]:** Olteanu et al. 2025. 10-author Responsible AI position paper. 5-dimensional rigor framework. Narrow methodological rigor conception contributes to "overblown capability claims." The same narrowness that affects AI producers affects AI readers.
+- **Automation bias is NOT always present [Oxford ISQ 9,000 participants; JPART Dutch 3-study program]:** High-knowledge/low-trust users show appropriately calibrated reliance. Null or reverse automation bias in public-sector settings (11.5% vs 11.9% n.s., or 4.8% vs 8.6% favoring human advisor).
+- **Trust-adaptive interventions exceed calibration [96]:** -38% inappropriate reliance + 20% accuracy via moment-specific interventions.
+- **Goddard 1.26 RR caveat:** The figure remains cited but now qualified as "clinical DSS, pre-LLM era." 9 of 40 studies in the broader automation-bias literature reach statistical significance against control. The effect is conditional, not universal.

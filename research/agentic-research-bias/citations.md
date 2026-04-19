@@ -538,3 +538,290 @@ credibility assessment.
 **Tier:** 1
 Data: Improves reasoning performance and stability with paraphrased problems.
 **Access:** Data from discovery agent.
+
+---
+
+<!-- 2026-04-18 UPDATE: new citations appended sequentially from [72]. -->
+<!-- Sources marked "snippet only" mean only the arxiv/journal abstract or third-party summary was fetched; the specific numerical claims come from secondary coverage and should be treated as Tier-1 pending full-paper verification. -->
+
+**[72]** Fanous, A.; Goldberg, J.; Agarwal, A.A.; Lin, J.; Zhou, A.; Daneshjou, R.; Koyejo, S. "SycEval: Evaluating LLM Sycophancy." Stanford University, AIES 2025.
+<https://arxiv.org/abs/2502.08177>
+**Tier:** 1
+Data: 58.19% aggregate sycophancy. Per-model: Gemini-1.5-Pro 62.47%, ChatGPT-4o 56.71%. Progressive sycophancy 43.52% vs. regressive 14.66%. Preemptive rebuttal 61.75%, in-context 56.52% (Z=5.87, p<0.001). Datasets: AMPS (math) + MedQuad (medical).
+
+**[73]** Shapira, I.; Benade, G.; Procaccia, A.D. "How RLHF Amplifies Sycophancy." 2026.
+<https://arxiv.org/abs/2602.01002>
+**Tier:** 1
+Data: Formal mechanism — RLHF causally amplifies sycophancy via a covariance under base policy between endorsing belief signal and learned reward, reducible to a mean-gap condition. Proposes closed-form agreement penalty as KL-minimal correction. "Reward gaps are common and cause behavioral drift in all the configurations considered."
+**Access:** Abstract directly fetched; specific empirical numbers in full paper only.
+
+**[74]** Chandra, K.; Kleiman-Weiner, M.; Ragan-Kelley, J.; Tenenbaum, J.B. "Sycophantic Chatbots Cause Delusional Spiraling, Even in Ideal Bayesians." 2026.
+<https://arxiv.org/abs/2602.19141>
+**Tier:** 1
+Data: Bayesian model demonstrates that "even an idealized Bayes-rational user is vulnerable to delusional spiraling." Factual sycophancy still causes harm even if chatbots are prevented from hallucinating false claims — selective factual confirmation still propagates delusion. Both hallucination-elimination and user-warning mitigations fail.
+
+**[75]** Jhaveri, A.R.; Anthony GX-Chen; Sucholutsky, I.; Choi, E. "Failing to Falsify: Evaluating and Mitigating Confirmation Bias in Language Models." 2026.
+<https://arxiv.org/abs/2604.02485>
+**Tier:** 1
+Data: 11 LLMs of multiple families and scales tested on rule-discovery task (number-triple pattern). Baseline rule-discovery rate ~42%. Counterexample prompting raised discovery rate from 42% to 56% on average.
+
+**[76]** Ghosh, S.; Panday, M. "The Dunning-Kruger Effect in Large Language Models: An Empirical Study of Confidence Calibration." 2026.
+<https://arxiv.org/abs/2603.09985>
+**Tier:** 1
+Data: 4 models x ~24,000 trials. Kimi K2: ECE=0.726 at 23.3% accuracy (severe overconfidence). Claude Haiku 4.5: ECE=0.122 at 75.4% accuracy (best calibration). Also tested: Gemini 2.5 Pro, Gemini 2.5 Flash. "Poorly performing models display markedly higher overconfidence — a pattern analogous to the Dunning-Kruger effect in human cognition."
+
+**[77]** Salnikov, M. et al. "Geopolitical biases in LLMs: what are the 'good' and the 'bad' countries according to contemporary language models." 2025.
+<https://arxiv.org/abs/2506.06751>
+**Tier:** 1
+Data: Substantial geopolitical biases across 4 LLMs (GPT-4o-mini, Llama-4-Maverick, Qwen2.5 72B, GigaChat-Max), 4 languages, 55 historical conflicts. "Simple debiasing prompts had a limited effect." Identifier-swap tests sometimes intensify bias.
+**Access:** Abstract directly fetched. Specific 76-81% USA-favorability percentages cited by discovery agent are NOT in abstract; treat as tier-1 pending full-paper verification.
+
+**[78]** Yang, K.-C. "News Source Citing Patterns in AI Search Systems." 2025.
+<https://arxiv.org/abs/2507.05301>
+**Tier:** 1
+Data: AI Search Arena — 24,000+ conversations, 65,000 responses, 366,000+ embedded citations (~9% news). Citation concentration among limited outlets. "Pronounced liberal bias." Low-credibility outlets rarely referenced. User satisfaction: "neither the political leaning nor the quality of cited news sources significantly influences user satisfaction."
+**Access:** Abstract directly fetched. Gini coefficients (OpenAI 0.83, Perplexity 0.77, Google 0.69) and 67.3% top-20 concentration were cited by discovery agent from full paper.
+
+**[79]** Vykopal, I. et al. "Investigating Language and Retrieval Bias in Multilingual Previously Fact-Checked Claim Detection." EACL 2026.
+<https://arxiv.org/abs/2509.25138>
+**Tier:** 1
+Data: Coins "retrieval bias" — retrieval systems favor frequently-retrieved claims, inflating metrics for popular content while under-representing low-frequency multilingual claims. 6 LLMs, 20 languages, AMC-16K dataset.
+**Access:** Discovery-agent snippet only.
+
+**[80]** Nero, V. (BuzzStream). "Blocking AI Crawlers Doesn't Stop Citations — New Data Shows Why." March 19 2026.
+<https://ppc.land/blocking-ai-crawlers-doesnt-stop-citations-new-data-shows-why/>
+**Tier:** 2
+Data: 4 million AI citations from 3,600 prompts across ChatGPT/Gemini/Google AI. ChatGPT-User-blocked sites: 70.6% still cited. GPTBot-blocked: 88.2%. OAI-SearchBot-blocked: 82.4%. Google-Extended-blocked (Gemini training bot): 92.3%. ~70% of ChatGPT citations come from sites blocking retrieval bots; ~95% from sites blocking training bots.
+
+**[81]** Hsiao, T.-K.; Schneider, J. "Continued Use of Retracted Papers." *Quantitative Science Studies*, Vol. 2 Issue 4, Feb 2022.
+<https://pmc.ncbi.nlm.nih.gov/articles/PMC9520488/>
+**Tier:** 1
+Data: 7,813 retracted papers in PubMed, 169,434 citations, 48,134 citation contexts, 60-year longitudinal (1960-2020). 94.6% of post-retraction citations do NOT acknowledge retraction (only 5.4% acknowledged). "Retraction did not change the way the retracted papers were cited." SUPERSEDES [46] (ResearchGate) as the direct primary source for the retraction-citation problem.
+
+**[82]** Dickersin, K.; Chan, S.; Chalmers, T.C. et al. "Publication Bias and Clinical Trials." *Controlled Clinical Trials*, 8(4):343-353, 1987. DOI: 10.1016/0197-2456(87)90155-3. PMID: 3442991.
+<https://pubmed.ncbi.nlm.nih.gov/3442991/>
+**Tier:** 1
+Data: 156 respondents, 271 unpublished + 1,041 published trials. Unpublished: 26 (14%) favored new therapy. Published: 423 of 767 (55%) favored new therapy. p<0.001. Ratio 55/14 ≈ 3.9x. SUPERSEDES [71] (Wikipedia indirect citation) — same original study, now directly sourced.
+
+**[83]** Sakai, Y.; Kamigaito, H.; Watanabe, T. "HalluCitation: Hallucinated Citations in ACL Conferences 2024-2025." 2026.
+<https://arxiv.org/abs/2601.18724>
+**Tier:** 1
+Data: All ACL/NAACL/EMNLP papers 2024-2025 analyzed. Nearly 300 papers contain at least one HalluCitation, most in 2025. Half identified at EMNLP 2025 — over 100 accepted as main conference or Findings papers. Work in progress.
+**Access:** Abstract directly fetched. Specific "2.59% 2025 rate vs 0.28% 2024 rate" cited by discovery agent.
+
+**[84]** Algaba et al. "LLM Citation Internalization." 2025.
+<https://arxiv.org/abs/2504.02767>
+**Tier:** 1
+Data: 274,951 references generated by GPT-4o across 10,000 scientific papers. LLMs "systematically reinforce the Matthew effect in citations by consistently favoring highly cited papers." Generated references prefer more-recent, shorter-title, fewer-author works. Semantic alignment comparable to ground truth. EXTENDS [6] (Algaba 2024) with larger dataset.
+
+**[85]** Pew Research Center. "When Online Content Disappears." May 17 2024.
+<https://www.pewresearch.org/data-labs/2024/05/17/when-online-content-disappears/>
+**Tier:** 2
+Data: ~1M webpages from Common Crawl 2013-2023. 25% of all pages inaccessible. 38% of 2013 pages gone by 2023 vs. 8% from 2023. News sites: 23% contain broken link. Government sites: 21%. Wikipedia references: 54% contain inaccessible link. Tweets: ~20% vanish within months; half of removed tweets gone within six days.
+
+**[86]** Yuan, Z.; Shi, K.; Zhang, Z.; Sun, L.; Chawla, N.V.; Ye, Y. "CiteAudit: You Cited It, But Did You Read It? A Benchmark for Verifying Scientific References in the LLM Era." 2026.
+<https://arxiv.org/abs/2602.23452>
+**Tier:** 1
+Data: "First comprehensive benchmark and detection framework for hallucinated citations." 5-stage pipeline: claim extraction, evidence retrieval, passage matching, reasoning, calibrated judgment. "Significantly outperforms prior methods in both accuracy and interpretability."
+**Access:** Abstract directly fetched. Specific 9,442-item dataset, 97.2% accuracy, and GPT-5.2 false-positive rate reported in third-party coverage only.
+
+**[87]** Rao, D.; Wong, E.; Callison-Burch, C. "Detecting and Correcting Reference Hallucinations in Commercial LLMs and Deep Research Agents." April 2026.
+<https://arxiv.org/abs/2604.03173>
+**Tier:** 1
+Data: 10 models and agents, DRBench (53,090 URLs) and ExpertQA (168,021 URLs, 32 fields). 3-13% of citation URLs hallucinated; 5-18% non-resolving. Deep research agents generate more citations but at higher hallucination rates. urlhealth tool (open-source) reduced problematic citations 6-79x to under 1%.
+
+**[88]** Wallat, J.; Heuss, M.; de Rijke, M.; Anand, A. "Correctness is not Faithfulness in RAG Attributions." December 2024.
+<https://arxiv.org/abs/2412.18004>
+**Tier:** 1
+Data: Up to 57% of RAG citations lack faithfulness despite being technically correct. Post-rationalization — models superficially align with prior beliefs rather than genuinely relying on retrieved sources. Faithfulness requires model's citation reflect actual reference use, not superficial alignment.
+
+**[89]** Wu, H.; Li, Z.; Li, L. "Can LLM Agents Really Debate? A Controlled Study of Multi-Agent Debate in Logical Reasoning." November 2025.
+<https://arxiv.org/abs/2511.07784>
+**Tier:** 1
+Data: Controlled Knight-Knave-Spy logic puzzle study. "Majority pressure suppresses independent correction." Success depends primarily on intrinsic reasoning capability and team diversity. Structural debate parameters produce "limited gains." Questions whether MAD constitutes genuine deliberation or sophisticated voting.
+
+**[90]** Choi, H.K.; Zhu, X.; Li, S. "Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?" NeurIPS 2025 Spotlight.
+<https://arxiv.org/abs/2508.17536>
+**Tier:** 1
+Data: 7 NLP benchmarks. "Majority Voting alone accounts for most of the performance gains typically attributed to MAD." Martingale proof: debate is expectation-preserving over agent belief trajectories — "debate alone does not improve expected correctness." "Simple ensembling methods remain strong and more reliable alternatives in many practical settings."
+
+**[91]** Chand, S.; Baca, F.; Ferrara, E. "No Free Lunch in Language Model Bias Mitigation? Targeted Bias Reduction Can Exacerbate Unmitigated LLM Biases." November 2025.
+<https://arxiv.org/abs/2511.18635>
+**Tier:** 1
+Data: 4 techniques (Logit Steering, Activation Patching, BiasEdit, Prompt Debiasing). 10 LLMs, 7 families. Racial, religious, profession, gender bias. StereoSet benchmark. ~160 experiments (derived: 4 techniques × 10 models × 4 bias categories). Targeted mitigation "frequently leads to unintended and often negative consequences in others." Debiasing interventions create spillover — increasing bias in untargeted dimensions, decreasing coherence. Discovery-agent snippet reports 31.5% cross-dimensional degradation rate.
+
+**[92]** "Understanding and Mitigating the Bias Inheritance in LLM-based Data Augmentation." 2025.
+<https://arxiv.org/abs/2502.04419>
+**Tier:** 1
+Data: LLM critics and data-augmenters inherit and amplify teacher-model biases. Three misalignment factors identified. Biased LLM-generated synthetic data propagates and amplifies source biases downstream.
+**Access:** Discovery-agent snippet only.
+
+**[93]** McAleese, N.; Pokorny, R.M.; Ceron Uribe, J.F.; Nitishinskaya, E.; Trebacz, M.; Leike, J. "LLM Critics Help Catch LLM Bugs (CriticGPT)." OpenAI, June 2024.
+<https://arxiv.org/abs/2407.00215>
+**Tier:** 1
+Data: Model-written critiques preferred over human critiques in 63% of cases. Critics identified hundreds of errors in ChatGPT training data rated "flawless." Scope: code errors (NOT values/ideological bias). Critics can hallucinate bugs; human-machine teams comparable to critics alone with fewer false positives.
+
+**[94]** Chen, Y.; Luo, G.; Wu, Z.; Mou, L. "Multi-Persona Thinking for Bias Mitigation in Large Language Models." January 2026.
+<https://arxiv.org/abs/2601.15488>
+**Tier:** 1
+Data: Inference-time framework — single LLM prompted to represent contrasting identities + neutral viewpoint, iterative reasoning. "Lower bias than existing prompting-based methods while maintaining core reasoning ability" on two bias benchmarks.
+
+**[95]** American Psychological Association. "Overreliance on AI programs may undermine confidence at work." April 16 2026.
+<https://www.apa.org/news/press/releases/2026/04/overreliance-ai-undermine-confidence>
+**Tier:** 2
+Data: N=1,923 participants. 58% of AI-using participants reported the AI "did most of the thinking," with measurable reductions in self-confidence, idea ownership, and reasoning depth. Effect conditional on passivity — operators who challenged outputs retained confidence. Published in *Technology, Mind, and Behavior*.
+**Access:** Discovery-agent snippet only.
+
+**[96]** "Adjust for Trust: Mitigating Trust-Induced Inappropriate Reliance on AI Systems." February 2025.
+<https://arxiv.org/abs/2502.13321>
+**Tier:** 1
+Data: Trust-adaptive interventions (counter-explanations at high trust, supporting-explanations at low trust) reduce inappropriate reliance by 38%, improve decision accuracy by 20%. Replicates across laypeople and medical doctors.
+**Access:** Discovery-agent snippet only.
+
+**[97]** "Automation Bias in the AI Act: On the Legal Implications of Attempting to Debias Human Oversight of AI." *European Journal of Risk Regulation*, Cambridge Core, 2026.
+<https://resolve.cambridge.org/core/journals/european-journal-of-risk-regulation/article/automation-bias-in-the-ai-act/C97C85015056C09326944DE55CBC4D2C>
+**Tier:** 1
+Data: Legal analysis of EU AI Act Article 14 automation-bias norm. Structural asymmetry — provider enables awareness but bias manifests in deployer context. Article 14 "remain aware" requirement legally untestable without unbiased counterfactual.
+**Access:** Discovery-agent snippet only.
+
+**[98]** MIT Technology Review. "Why having 'humans in the loop' in an AI war is an illusion." April 16 2026.
+<https://www.technologyreview.com/2026/04/16/1136029/humans-in-the-loop-ai-war-illusion/>
+**Tier:** 3
+Data: HITL as illusion under machine-speed agentic operation. Intervention windows shrink to seconds or disappear. Organizations designate persons "in the loop" without defining approval criteria, escalation, or automation-complacency indicators.
+**Access:** Discovery-agent snippet only.
+
+**[99]** Wright, D.; Masud, S.; Moore, T.; Yadav, V.; Antoniak, M.; Christensen, J.; Park, S.; Augenstein, I. "Epistemic Diversity and Knowledge Collapse in Large Language Models." October 2025 (final Jan 2026).
+<https://arxiv.org/abs/2510.04226>
+**Tier:** 1
+Data: 27 LLMs, 155 topics, 12 countries, 200 real-user prompt templates. "All models are less epistemically diverse than a basic web search." Larger models are MORE epistemically narrow, not less. RAG improves diversity but unevenly by cultural context. English-language bias persists for country-specific content.
+
+**[100]** Agarwal, D.; Naaman, M.; Vashistha, A. "AI Suggestions Homogenize Writing Toward Western Styles and Diminish Cultural Nuances." CHI 2025.
+<https://arxiv.org/abs/2409.11360>
+**Tier:** 1
+Data: N=118 preregistered cross-cultural experiment (India + US). Indian participants shifted toward Western writing styles when using AI suggestions. Americans gained disproportionate efficiency gains. Cultural homogenization documented causally.
+**Access:** Discovery-agent snippet only.
+
+**[101]** Agarwal et al. "Fluent but Foreign: Even Regional LLMs Lack Cultural Alignment." January 2026.
+<https://arxiv.org/abs/2505.21548>
+**Tier:** 1
+Data: Indic regional LLMs fail to align with Indian cultural norms. US respondent is a closer proxy for Indian values than tested Indic models. Closes the "build your own regional model" counter-argument — regional training alone does not achieve cultural alignment.
+**Access:** Discovery-agent snippet only.
+
+**[102]** Gerstgrasser, M. et al. "Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data." April 2024.
+<https://arxiv.org/abs/2404.01413>
+**Tier:** 1
+Data: Model collapse is AVOIDABLE under an accumulate-not-replace training strategy. Mathematical proof: test error has a finite upper bound independent of iteration count when real + synthetic data coexist cumulatively. Empirical validation in language models, diffusion models, VAEs. DIRECT COUNTER to [25] Shumailov framing that collapse is inevitable.
+
+**[103]** Ashkinaze, J. et al. "How AI Ideas Affect the Creativity, Diversity, and Evolution of Human Ideas." 2025.
+<https://arxiv.org/html/2401.13481v3>
+**Tier:** 1
+Data: High AI exposure INCREASES collective idea diversity relative to human-only baselines, which converge naturally without AI. Inverts standard monoculture framing. Requires replication.
+**Access:** Discovery-agent snippet only.
+
+**[104]** Ghafouri, B. "The Variance Paradox: How AI Reduces Diversity but Increases Novelty." August 2025 (revised Feb 2026).
+<https://arxiv.org/abs/2508.19264>
+**Tier:** 2
+Data: "AI systems compress informational variance through statistical optimization" while enabling innovation via "Paradoxical Bridge" — standardized forms lower translation costs across domains, creating recombination opportunities. U-shaped temporal pattern — initial diversity decline followed by innovation recovery, contingent on active human curation. Conceptual/theoretical, not primarily empirical.
+
+**[105]** Shu, Y.; Karell, D.; Okura, M.; Davidson, T. "How latent and prompting biases in AI-generated historical narratives influence opinions." *PNAS Nexus*, March 2026.
+<https://academic.oup.com/pnasnexus/article/5/3/pgag022/8503065>
+**Tier:** 1
+Data: N=1,912 preregistered. Default GPT-4o summaries produced measurably more liberal opinions vs. Wikipedia (Cohen's d=0.14). Effects modest per interaction but compound with repeated use.
+**Access:** Discovery-agent snippet only.
+
+**[106]** Hackenburg, K. et al. "The levers of political persuasion with conversational artificial intelligence." *Science*, December 2025.
+<https://www.science.org/doi/10.1126/science.aea3884>
+**Tier:** 1
+Data: N=76,977, 19 LLMs, 707 political issues. Post-training boosts persuasiveness up to 51%. Persuasiveness gains correlate with REDUCED factual accuracy — the same optimization pressures making models more "helpful" also make them more convergence-inducing.
+**Access:** Discovery-agent snippet only.
+
+**[107]** Nature News. "Hallucinated citations are polluting the scientific literature. What can be done?" 2026.
+<https://www.nature.com/articles/d41586-026-00969-z>
+**Tier:** 2 (journalistic analysis)
+Data: Estimates tens of thousands of 2025 publications may contain AI-hallucinated references. "Frankenstein citations" — AI combines real author names, real venues, plausible dates, genuine co-author pairings into nonexistent references including fake-but-format-valid DOIs. Defeats casual spot-checking.
+**Access:** Direct fetch failed (303 redirect). Data from discovery-agent snippet.
+
+**[108]** Rani, A.; Danry, V.; Liang, P.P.; Lippman, A.B.; Maes, P. "Dialogues with AI Reduce Beliefs in Misinformation but Build No Lasting Discernment Skills." CHI 2026.
+<https://arxiv.org/abs/2510.01537>
+**Tier:** 1
+Data: N=67 over 1 month. AI dialogues produced +21% immediate performance gain during assisted evaluation. Unassisted performance declined 15.3% by week 4 vs. week 0. "AI may help immediately" but "ultimately degrades long-term misinformation detection abilities."
+
+**[109]** Romeo, M.; Conti, L. "Exploring automation bias in human-AI collaboration: a review and implications for explainable AI." *AI & Society* (Springer), 2025.
+<https://link.springer.com/article/10.1007/s00146-025-02422-7>
+**Tier:** 1
+Data: PRISMA 2020 systematic review. 35 studies Jan 2015 – Apr 2025 across cognitive psychology, human factors, HCI, neuroscience. Identifies AI literacy, professional expertise, cognitive profile, and explanation complexity as moderators. Overly technical or overly simplistic XAI explanations can INCREASE automation bias in low-literacy users. Supersedes [13] Goddard (2011, pre-LLM DSS) for AI-specific context.
+**Access:** Discovery-agent snippet; Springer paywall — full-paper verification pending.
+
+**[110]** Lee, H.-P. et al. "The Impact of Generative AI on Critical Thinking." CHI 2025, Microsoft Research.
+<https://dl.acm.org/doi/10.1145/3706598.3713778>
+**Tier:** 1
+Data: N=319 knowledge workers. Higher AI confidence → LESS critical thinking across all Bloom's taxonomy levels. Higher self-confidence → MORE critical thinking (inverted pattern). GenAI shifts critical thinking from production to verification; verification only occurs when workers are motivated and competent to perform it.
+**Access:** Discovery-agent snippet only.
+
+**[111]** Olteanu, A. et al. "Rigor in AI: doing rigorous AI research requires a broader, responsible AI-informed conception of rigor." 2025.
+<https://arxiv.org/abs/2506.14652>
+**Tier:** 1
+Data: 10-author Responsible AI paper. 5-dimensional rigor framework. Current AI research emphasizes methodological rigor alone, contributing to "overblown capability claims." The narrow conception of rigor afflicts both AI research producers and readers — structured fluent output reads as rigorous when epistemic, conceptual, and interpretative rigor are absent.
+**Access:** Discovery-agent snippet only.
+
+**[112]** Ackerman, C. "Evidence for Limited Metacognition in LLMs." ICLR 2026.
+<https://arxiv.org/abs/2509.21545>
+**Tier:** 1
+Data: LLMs exhibit metacognitive abilities — assessing confidence, anticipating own responses strategically — but abilities are "limited in resolution," emerge contextually, differ qualitatively from human metacognition. Token-probability-distribution analysis suggests "an upstream internal signal." Post-training procedures materially affect metacognitive capacity.
+
+**[113]** Xiong, W.; Zhang, H.; Ye, C.; Chen, L.; Jiang, N.; Zhang, T. "Self-rewarding correction for mathematical reasoning." February 2025.
+<https://arxiv.org/abs/2502.19613>
+**Tier:** 1
+Data: Two-stage RL framework integrates generator and verifier into single model. Stage 1: sequential rejection sampling creates CoT trajectories with self-rewarding/self-correction. Stage 2: RL with rule-based signals. On Llama-3 and Qwen-2.5: "Surpasses intrinsic self-correction capabilities and achieves performance comparable to systems that rely on external reward models."
+
+**[114]** Huang, J.; Chen, X.; Mishra, S.; Zheng, H.S.; Yu, A.W.; Song, X.; Zhou, D. "Large Language Models Cannot Self-Correct Reasoning Yet." ICLR 2024.
+<https://arxiv.org/abs/2310.01798>
+**Tier:** 1
+Data: "LLMs struggle to self-correct their responses without external feedback, and at times, their performance even degrades after self-correction." Intrinsic self-correction (without oracle) frequently performs worse than initial response.
+
+**[115]** Schessl, F.M. "The Autocorrelation Blind Spot: Why 42% of Turn-Level Findings in LLM Conversation Analysis May Be Spurious." April 15 2026.
+<https://arxiv.org/abs/2604.14414>
+**Tier:** 1
+Data: 42% of associations significant under pooled testing fail cluster-robust correction. Replication: 57% cluster-robust vs. 30% pooled-only. 66 turn-level metrics, 202 multi-turn conversations, 11,639 turn pairs, 5 users, 4 LLMs. Non-memoryless metric families most affected (33% fail); memoryless families less (14%). IMPLICATION: prior sycophancy/self-correction/chat-chamber studies may have inflated significance claims.
+
+**[116]** Lindsey, J. "Emergent Introspective Awareness in Large Language Models." Transformer Circuits, 2025.
+<https://transformer-circuits.pub/2025/introspection/index.html>
+**Tier:** 2
+Data: LLMs develop internal state detection via DPO post-training. Mechanistic evidence of traceable confidence circuit. 0% false positive rate; signal specificity confirmed. DPO (not SFT) as enabling condition. Causal pathway traced through layers — peaks in latter half.
+**Access:** Discovery-agent snippet only.
+
+**[117]** ARC Prize. "DeepSeek R1-Zero Analysis." 2025.
+<https://arcprize.org/blog/r1-zero-r1-results-analysis>
+**Tier:** 3
+Data: R1-Zero developed self-verification via RL alone, without SFT — emergent metacognition from reward signal. AIME 2025 88.9%, GPQA Diamond 87.7%. Reflection capabilities emerge spontaneously.
+**Access:** Discovery-agent snippet only.
+
+**[118]** Anthropic. "Claude's Constitution" (2026 update).
+<https://www.anthropic.com/constitution>
+**Tier:** 2
+Data: 23,000-word updated constitution (vs. 2,700 in 2023). Rationale-first design explaining "why" behind each guideline to reduce model-inherited biases from shallow rules. Accompanied by "Values in the Wild" analysis of 700K conversations.
+**Access:** Discovery-agent snippet only.
+
+**[119]** "Mitigating Cultural Bias in LLMs via Multi-Agent Cultural Debate (MACD)." January 2026.
+<https://arxiv.org/abs/2601.12091>
+**Tier:** 1
+Data: Scaling from one to five culturally-differentiated agents improved no-bias rates from 60% to 80% on English benchmarks; 86% via multi-agent vote evaluation vs. 69% baseline. Cross-lingual generalization: Arabic 96.8%. Training-free. Requires explicitly diverse agent personas, not generic MAD.
+**Access:** Discovery-agent snippet only.
+
+**[120]** "Measuring and Mitigating Identity Bias in Multi-Agent Debate via Anonymization." October 2025.
+<https://arxiv.org/abs/2510.07517>
+**Tier:** 1
+Data: First formal decomposition of MAD identity bias into sycophancy (following peers) and self-bias (overweighting own prior output). Introduces Identity Bias Coefficient (IBC). Anonymization — stripping identity markers from prompts — substantially mitigates.
+**Access:** Discovery-agent snippet only.
+
+**[121]** "The Rise of AI Search: Implications for Information Markets." 2026.
+<https://arxiv.org/abs/2602.13415>
+**Tier:** 1
+Data: Analysis of 2.8M search results 2024-2025. AI search "speaks with one voice," shows lower response variety than traditional search in every category, and opinionated tone reinforces prior positions — OPPOSITE of a confirmation-bias reducer.
+**Access:** Discovery-agent snippet only.
+
+**[122]** He. "Gender Bias in LLM Reference Selection." August 2025.
+<https://arxiv.org/html/2508.02740v1>
+**Tier:** 1
+Data: 660 focal articles across 22 fields. GPT-4o shows persistent male-author preference; Claude models show majority-group bias. Bias amplified in larger candidate pools. Prompt-based mitigation "only modest." Strongest in Medical/Agricultural Sciences; weakest in Social Sciences.
+**Access:** Discovery-agent snippet only.

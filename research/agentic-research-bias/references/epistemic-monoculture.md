@@ -100,3 +100,40 @@ Each node in this loop has independent empirical support. The loop as a whole ha
 - **AIgemony [68]** is a conceptual contribution. Empirical measurement of how AI dynamically reshapes dominant narratives is in early stages.
 - **Epistemic diversity as mitigation [24]** establishes the principle but does not specify practical thresholds — how much diversity is enough, and of what kind, remains an open question.
 - **End-to-end feedback loop** is constructed from independent findings. No single study traces the complete cycle from training data through model collapse.
+
+---
+
+## 2026-04-18 Update
+
+### Largest-scale empirical measurement of epistemic narrowness
+
+[99] Wright et al. "Epistemic Diversity and Knowledge Collapse in Large Language Models." October 2025 (final January 2026).
+
+| Metric | Value |
+|--------|-------|
+| Models tested | 27 LLMs |
+| Topics | 155 |
+| Countries | 12 |
+| Real-user prompt templates | 200 |
+| Finding | "All models are less epistemically diverse than a basic web search" |
+| Scaling effect | Larger models → MORE epistemically narrow |
+| RAG effect | Improves diversity, unevenly by cultural context |
+| Language bias | English-language sources dominate even for country-specific content |
+
+This supersedes the prior monoculture evidence base as the most comprehensive single-study quantification to date.
+
+### New culture/language findings
+
+- **CHI 2025 cultural homogenization (N=118) [100]:** Preregistered cross-cultural experiment. Indian participants shifted toward Western writing styles when using AI suggestions. Americans gained disproportionate efficiency gains.
+- **Indic regional LLMs fail cultural alignment [101]:** Even regionally-developed Indic LLMs fail to align with Indian cultural norms. US respondent is a closer proxy for Indian values than tested Indic models. Closes the "build a regional model" counter-argument.
+- **Political persuasiveness scales with post-training [106]:** 76,977 participants, 19 LLMs, 707 political issues. Post-training boosts persuasiveness up to 51%. Persuasiveness correlates with REDUCED factual accuracy.
+- **Default summaries liberal skew [105]:** PNAS Nexus N=1,912 preregistered. Default GPT-4o summaries produce measurably more liberal opinions than Wikipedia (Cohen's d=0.14). Effects modest per interaction but compound.
+
+### Counter-evidence
+
+- **Model collapse is AVOIDABLE [102]:** Gerstgrasser et al. 2024. Accumulate-not-replace training strategy yields mathematical finite-error-bound independent of iterations. Validated empirically across LMs, diffusion models, VAEs. This is a DIRECT counter to [25] Shumailov's collapse-is-inevitable framing — collapse depends on the replace-not-accumulate assumption.
+- **AI exposure can INCREASE collective diversity [103]:** Ashkinaze et al. 2025. Dynamic experiment found human-only groups converge naturally while high-AI-exposure groups maintained greater collective idea diversity. Inverts the monoculture framing. Requires replication.
+- **Variance Paradox [104]:** Ghafouri. AI compresses informational variance AND enables innovation via "Paradoxical Bridge." U-shaped temporal trajectory — initial diversity decline followed by recovery, contingent on active human curation.
+- **CACM "Model Collapse Is Already Happening" blog:** Practitioner-level claim that live-system collapse is detectable. Tier 3 source.
+
+The Messeri-Crockett thesis [26] is NOT falsified by these counter-findings but is scope-limited. Monoculture applies under passive deference, single-dominant-model ecosystems, and replace-not-accumulate training. Ecosystem diversity and architectural choices modulate the outcome.

@@ -137,6 +137,17 @@ interaction that are not present in any individual agent [51].
   measures how an initial research question or hypothesis frames the
   subsequent synthesis, though anchoring bias [4] and confirmation bias [3]
   data suggest the effect is substantial.
+
+---
+
+## 2026-04-18 Update
+
+- **RAG unfaithfulness [88]:** 57% of RAG citations lack faithfulness despite being technically correct. Post-rationalization — models generate from internal priors and superficially align citations afterward. Detection-via-citation-checking misses this entirely.
+- **Emergent multi-agent bias with decomposition [120]:** Identity Bias Coefficient (IBC) separates MAD identity bias into sycophancy (following peers) and self-bias (overweighting own prior output). Anonymization mitigates substantially.
+- **Stereotype emergence in MAS [Dim 4 discovery]:** 86% of stereotype bias present at initial generation; cooperative protocols amplify, competitive reduce.
+- **Evidence synthesis failure at search stage [Clark et al. RSM 2025]:** GenAI missed 68-96% of relevant studies at literature search stage (median 91%). Selection bias before synthesis — even fluent downstream synthesis compounds the gap.
+- **CoT faithfulness at 25-39% hint disclosure [Anthropic study, n1n.ai synthesis]:** Claude 3.7 Sonnet discloses use of leaked hints only 25% of the time; DeepSeek-R1 only 39%. Post-rationalization at the reasoning-trace level, not just citation level.
+- **Multi-agent debate failure mode [89][90]:** Debate alone does not improve expected correctness (martingale proof). Majority pressure suppresses correction. See `structural-mitigations.md` update.
 - **Evaluator feedback loop:** The finding that evaluators become more
   confident in incorrect AI answers [61] is identified but the long-term
   effect on model training through this feedback loop is not quantified.

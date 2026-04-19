@@ -120,3 +120,14 @@ content is progressively excluded from AI-accessible sources.
 - **Missing: language bias in retrieval.** The geographic bias data [8][9]
   captures output bias but not whether retrieval itself is skewed toward
   English-language sources when researching non-English topics.
+
+---
+
+## 2026-04-18 Update
+
+- **Geopolitical bias in LLM outputs [77]:** 4 LLMs, 4 languages, 55 historical conflicts. Substantial prejudice toward specific national narratives. Simple debiasing prompts have limited effect.
+- **News-source concentration [78]:** AI Search Arena — 366,000+ citations, 24,000+ conversations. Citation concentration among a limited number of outlets. Pronounced liberal skew. User satisfaction NOT driven by political leaning or source quality — driven by response length alone.
+- **Retrieval bias [79] (EACL 2026):** Retrieval systems favor frequently-retrieved claims, inflating metrics for popular content while under-representing low-frequency multilingual claims. Closes part of the "language bias in retrieval" gap flagged above.
+- **Crawler-blocking ineffectiveness [80]:** 4M-citation analysis across ChatGPT/Gemini/Google. Sites blocking AI crawlers are still cited 70.6-92.3% of the time depending on bot variant. ~70% of ChatGPT citations come from sites blocking retrieval bots.
+- **AI search does NOT reduce confirmation bias [121]:** 2.8M search results 2024-2025. AI search "speaks with one voice," shows lower response variety than traditional search, reinforces prior positions. Contradicts optimistic "LLM search aggregates diverse views" framing.
+- **Crawler-to-referral ratios evolving [20 extended]:** Q1 2026 data shows ClaudeBot blocking grew 9.6%→10.1% of DISALLOW rules; ratios now differ materially from the 2025 Cloudflare baseline (ClaudeBot now 20,583:1 per Q1 2026 data vs. 73,000:1 in 2025 — flagged for methodology reconciliation).

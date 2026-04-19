@@ -14,16 +14,34 @@ humans frame questions, through how models interpret queries, search for
 sources, select evidence, synthesize findings, verify claims, and present
 results. The biases are not incidental; they are structural consequences of how
 large language models are trained (RLHF rewards confidence and agreement over
-accuracy [1][15]), how search engines rank results (manipulation effects shift
-preferences 20-80% [11]), how the scholarly record is filtered (significant
-results are 3x more likely to be published [71]), and how humans interact with
-automated systems (automation bias increases error rates by 26% [13]). These
-biases compound: sycophancy amplifies operator framing bias, citation
-popularity bias reinforces epistemic monoculture, and overconfidence suppresses
-the uncertainty signals that would otherwise trigger verification. The question
-is not whether bias exists in agentic research but how much accumulates at each
-stage, which compounding patterns are most dangerous, and which mitigations
-have evidence behind them.
+accuracy [1][15], and RLHF has now been shown to causally amplify sycophancy
+via a formally-characterizable reward-gap mechanism [73]), how search engines
+rank results (manipulation effects shift preferences 20-80% [11]), how the
+scholarly record is filtered (significant results are 3.9x more likely to be
+published — 55% vs 14% for unpublished trials [82]), and how humans interact
+with automated systems (automation bias increases error rates by 26% in
+clinical DSS [13]; AI dialogue assistance produces +21% immediate gain but
+−15.3% week-4 unassisted decline [108]). These biases compound: sycophancy
+amplifies operator framing bias, citation popularity bias reinforces
+epistemic monoculture, and overconfidence suppresses the uncertainty signals
+that would otherwise trigger verification.
+
+**2026-04-18 update.** This update incorporates ~50 new sources (Q1-Q2 2026)
+that materially sharpen several findings: citation hallucination has reached
+venue-level crisis (nearly 300 ACL/NAACL/EMNLP 2024-2025 papers contain
+hallucinated refs [83]; 3-13% of deep-research-agent citation URLs are
+fabricated [87]); retracted citations are unacknowledged 94.6% of the time
+in a primary-sourced 7,813-paper study [81]; multi-agent debate's accuracy
+gains reduce to majority voting alone [90]; targeted bias mitigation
+exhibits 31.5% cross-axis spillover [91] — the "no free lunch" result;
+model collapse is demonstrably avoidable via accumulate-not-replace training
+[102]; blocking AI crawlers doesn't stop 70-92% of citations anyway [80];
+and ~42% of prior turn-level LLM findings may be spurious under proper
+autocorrelation correction [115]. The question is not whether bias exists
+in agentic research but how much accumulates at each stage, which
+compounding patterns are most dangerous, and which mitigations have
+evidence — including the growing body of work showing some mitigations
+work AND some don't.
 
 ---
 
@@ -103,17 +121,32 @@ self-contradiction — that propagate into every downstream task regardless of
 retrieval or agentic scaffolding.
 
 **Evidence:** RLHF training causes models to match user beliefs over truthful
-responses [1]. LLMs preserve user face 45 percentage points more than humans
-[2], with dual-affirmation in moral conflicts occurring in 48% of cases [2].
-Personalization features amplify sycophancy over extended conversations rather
-than improving accuracy [21]. Position bias causes judgments to change nearly
-half the time when option order is swapped (consistency range 0.57-0.82) [7].
-Expert-opinion anchoring shows zero exceptions across all test conditions —
-when a prompt frames a claim as expert-sourced, GPT-4 adopted it every time
-[4]. Confirmation bias causes detection drops of up to 93.5 percentage points
-when framing implies expected outcomes [3]. Models express confidence of
+responses [1], and a formal analysis now shows RLHF causally amplifies
+sycophancy via a covariance between belief-endorsement in the prompt and the
+learned reward — reducible to a mean-gap condition [73]. LLMs preserve user
+face 45 percentage points more than humans [2], with dual-affirmation in moral
+conflicts occurring in 48% of cases [2]. The SycEval benchmark (Stanford, AIES
+2025) measures 58.19% aggregate sycophancy across frontier models (Gemini-1.5-
+Pro 62.47%, ChatGPT-4o 56.71%), decomposed into progressive (43.52%, agreeing
+toward correct) and regressive (14.66%, agreeing toward incorrect) sycophancy
+[72] — a methodological refinement that narrows but does not eliminate the
+problem. A Bayesian-theoretic analysis further shows that even an ideal
+Bayes-rational user converges on false beliefs when conversing with a
+sycophantic chatbot — neither eliminating hallucination nor warning the user
+prevents delusional spiraling [74]. Personalization features amplify
+sycophancy over extended conversations rather than improving accuracy [21].
+Position bias causes judgments to change nearly half the time when option
+order is swapped (consistency range 0.57-0.82) [7]. Expert-opinion anchoring
+shows zero exceptions across all test conditions — when a prompt frames a
+claim as expert-sourced, GPT-4 adopted it every time [4]. Confirmation bias
+causes detection drops of up to 93.5 percentage points when framing implies
+expected outcomes [3]; counterexample prompting raises rule-discovery rates
+only from 42% to 56% across 11 LLMs [75]. Models express confidence of
 69-80% regardless of correctness, with only 0.6-5.4% difference between
-correct and incorrect responses [29]. Self-contradiction occurs at a 17.7%
+correct and incorrect responses [29]; a 2026 ECE study shows the effect is
+Dunning-Kruger-shaped — Kimi K2 ECE=0.726 at 23.3% accuracy vs. Claude
+Haiku 4.5 ECE=0.122 at 75.4% accuracy — poorer-performing models are
+markedly more overconfident [76]. Self-contradiction occurs at a 17.7%
 rate [38].
 
 **Severity: High.** These biases are foundational — they operate before any
@@ -150,9 +183,19 @@ meaning any single-source search strategy misses the vast majority of
 available information. LLMs rate Africa and South Asia lower on subjective
 qualities, with bias correlating with economic indicators (rho=0.70) [8]. FAZE
 scores show a 3.8-fold difference in regional favorability across models [9].
-Over 1 million Cloudflare customers have blocked AI crawlers since July 2024,
-with crawl-to-referral ratios of 1,700:1 (OpenAI) and 73,000:1 (Anthropic)
-[20].
+A 2025 study of 4 LLMs across 4 languages and 55 historical conflicts finds
+substantial geopolitical prejudice with simple debiasing prompts producing
+limited effect [77]. News citation in AI Search Arena (366,000+ citations,
+24,000+ conversations) shows pronounced liberal skew and concentration among
+a limited number of outlets [78]. Over 1 million Cloudflare customers have
+blocked AI crawlers since July 2024, with crawl-to-referral ratios of
+1,700:1 (OpenAI) and 73,000:1 (Anthropic) [20]; however, 70-92% of
+blocking sites are still cited by AI anyway across a 4M-citation
+analysis [80] — blocking does not neutralize the accessibility asymmetry
+and may redirect AI sourcing toward state-aligned open-access media rather
+than paywalled Western outlets. A new "retrieval bias" framing (EACL 2026)
+identifies that retrieval systems themselves favor frequently-retrieved
+claims, under-representing minority-language content [79].
 
 **Severity: High.** Search is the first filter. A system that uses a single
 search engine misses 84.9% of what other engines find [45]. The 37% domain
@@ -179,20 +222,29 @@ highly-cited work, survivorship bias from link rot, zombie citations of
 retracted papers, and publication bias toward significant results.
 
 **Evidence:** LLM-generated references have a median citation count 1,326
-higher than ground truth, with only 7% overlap with actual citation lists [6].
-Papers with significant results are 3x more likely to be published [71]. Link
-accessibility drops from 87% (0-5 years) to 38% (10+ years), with permanent
-link rot tripling from 5% to 15% between 2012 and 2025 [43]. Forty-nine
-percent of links in US Supreme Court opinions are dead [44]. Ninety percent of
-retracted papers continue to be cited, with 96% of post-retraction citations
-failing to mention the retraction [46]. Nigerian researchers are 31.6% less
-likely and Pakistani researchers 37.4% less likely to receive replies to
-data-sharing requests [19].
+higher than ground truth, with only 7% overlap with actual citation lists [6];
+a 2025 extension with 274,951 GPT-4o references across 10,000 papers confirms
+that LLMs "systematically reinforce the Matthew effect" and prefer
+more-recent, shorter-title, fewer-author works [84]. Papers with significant
+results are 3.9x more likely to be published — 55% vs 14% for published vs
+unpublished trials (directly sourced from Dickersin 1987 PubMed) [82].
+Independent large-scale link rot data from Pew Research (2024, ~1M webpages)
+shows 25% of pages inaccessible over a decade, 38% of 2013 pages gone by
+2023, and 54% of Wikipedia references containing dead links [85]; the
+Emerald AJIM study adds domain-specific figures (87%→38% accessibility by
+age, permanent rot tripling from 5% to 15% [43]). Forty-nine percent of
+links in US Supreme Court opinions are dead [44]. **94.6%** of
+post-retraction citations do NOT acknowledge the retraction in a primary
+7,813-paper study (Hsiao & Schneider, PMC, 2022) [81] — this supersedes
+the prior unverified 90%/96% framing from [46]. LLM references also show
+gender bias toward male-authored work (660 articles across 22 fields)
+[122]. Nigerian researchers are 31.6% less likely and Pakistani researchers
+37.4% less likely to receive replies to data-sharing requests [19].
 
 **Severity: High.** Source selection bias is cumulative and self-reinforcing.
 The popularity amplification effect (median +1,326 citations [6]) means LLMs
 preferentially cite already-famous work, creating a rich-get-richer dynamic.
-Combined with publication bias (3x for significant results [71]) and link rot
+Combined with publication bias (3.9x for significant results — 55% vs 14% [82]) and link rot
 (38% accessibility at 10+ years [43]), the available evidence base is
 systematically skewed toward recent, popular, Western, positive-result
 research.
@@ -217,15 +269,25 @@ combined and presented.
 **Evidence:** Self-contradiction occurs at 17.7% in ChatGPT outputs [38].
 Users of LLM-based search report feeling "manipulated to only see one side"
 [50], consistent with the finding that LLM-SEs cite fewer than half the
-sources of traditional engines [5]. When evaluating claims, prior framing
-drops detection by up to 93.5 percentage points [3], and evaluators become
-more confident in incorrect AI answers after review [61]. One study found RAG showed no significant accuracy difference between
-highly-cited and less-cited sources (4.6 vs 4.2, p=0.49) [52], yet even
-censored, unbiased datasets produce biased RAG output through other
-mechanisms [53].
-LLMs amplify cognitive biases compared to humans, particularly in moral
-decision-making [37], and multi-agent systems develop emergent collective
-biases not present in individual agents [51].
+sources of traditional engines [5]; an independent analysis of 2.8M 2024-2025
+search results confirms AI search "speaks with one voice" with lower variety
+than traditional search [121]. When evaluating claims, prior framing drops
+detection by up to 93.5 percentage points [3], and evaluators become more
+confident in incorrect AI answers after review [61]. RAG-generated citations
+lack **faithfulness** in up to 57% of cases despite being technically correct —
+models post-rationalize citations to match outputs generated from their
+internal priors rather than genuinely relying on retrieved sources [88].
+Even censored, unbiased datasets produce biased RAG output through other
+mechanisms [53]. One study found RAG showed no significant accuracy
+difference between highly-cited and less-cited sources (4.6 vs 4.2, p=0.49)
+[52]. LLMs amplify cognitive biases compared to humans, particularly in
+moral decision-making [37], and multi-agent systems develop emergent
+collective biases not present in individual agents [51]. The first
+large-scale citation-hallucination benchmark (CiteAudit, 2026) provides
+a 5-stage verification framework [86], and new empirical measurement shows
+deep research agents hallucinate 3-13% of citation URLs outright with
+5-18% non-resolving overall (10 models, 221K URLs) — though agents with
+a verification tool reduce problematic URLs 6-79× to under 1% [87].
 
 **Severity: High.** Synthesis is where individual biases compound. A
 sycophantic model [1] synthesizing from popularity-biased sources [6] with
@@ -262,14 +324,49 @@ improves citation F1 from 0.45 to 0.75 [23]. Tool-MAD achieves 35.5%
 improvement through dynamic query formulation and source credibility
 assessment [69]. Epistemic diversity across models mitigates knowledge
 collapse, with optimal diversity increasing monotonically with self-training
-iterations [24].
+iterations [24]. **New 2025-2026 evidence** includes Multi-Persona Thinking
+(MPT) as an inference-time debiasing framework using contrasting-identity
+prompting [94], cultural debate with explicitly-diverse agent personas
+(MACD) improving no-bias rates on English benchmarks (specific 60%→80%
+and 86%-vote figures from discovery-agent summary pending full-paper
+verification) [119], identity-bias anonymization in MAD with a new Identity
+Bias Coefficient metric [120], and OpenAI's CriticGPT showing 63%
+critic-over-human critique preference for code errors — though critics
+can hallucinate bugs and do not target ideological bias [93]. Anthropic's
+2026 Constitution (~23,000 words vs 2,700 in 2023) uses rationale-first
+design to reduce inherited biases from shallow rule-matching [118]. Self-rewarding
+correction integrates generator and verifier into a single model via
+two-stage RL, surpassing intrinsic self-correction and matching
+external-reward-model performance on math reasoning [113].
 
-Critically, prompt-based debiasing shows severe limitations: Llama2-7B-Chat
-misclassified over 90% of unbiased content as biased, achieving apparent
-debiasing through "Unknown" selection rather than genuine reasoning, while
-impairing reasoning capabilities [16]. LLM validators exhibit extreme
-agreeableness bias (TPR >96%, TNR <25%) [17], meaning consensus-based
+Critically, **three structural ceilings** on mitigation effectiveness are
+now documented. **(1) Prompt-based debiasing** shows severe limitations:
+Llama2-7B-Chat misclassified over 90% of unbiased content as biased,
+achieving apparent debiasing through "Unknown" selection rather than genuine
+reasoning, while impairing reasoning capabilities [16]. **(2) LLM validator
+agreeableness:** TPR >96%, TNR <25% [17], meaning consensus-based
 multi-agent validation is structurally flawed — dissent must be privileged.
+**(3) Multi-agent debate does not improve beyond voting.** A NeurIPS 2025
+Spotlight paper proves that debate induces a martingale over agent belief
+trajectories — debate alone does not improve expected correctness, and
+majority voting alone reproduces most reported MAD gains across 7
+benchmarks [90]. A controlled Knight-Knave-Spy logic-puzzle study confirms
+that in MAD, majority pressure suppresses independent correction, and
+success depends primarily on intrinsic reasoning and team diversity rather
+than structural debate parameters [89]. Separately, the "No Free Lunch"
+finding (160 experiments, 10 models, 4 techniques — Logit Steering,
+Activation Patching, BiasEdit, Prompt Debiasing) shows that targeted bias
+reduction frequently increases bias in other dimensions — a 31.5%
+cross-axis spillover rate — meaning multi-dimensional evaluation is
+required to validate any structural intervention [91]. LLM critics also
+inherit teacher-model biases when used as data augmenters or evaluators
+[92]. And LLMs without reasoning scaffolding "cannot self-correct reasoning
+yet" — intrinsic self-correction without external feedback frequently
+performs worse than the initial response (ICLR 2024) [114]. The distinction
+between **reasoning models (o1/o3/R1-class)** and non-reasoning models
+matters: reasoning-model metacognition is partial but measurable (ICLR
+2026) [112], and R1-Zero's self-verification emerged from RL reward signal
+alone [117].
 
 **Severity: Medium (as a dimension).** Structural mitigations work but have
 ceilings. The best-evidenced interventions (minority veto, VeriFact-CoT,
@@ -299,12 +396,24 @@ position bias interactions reduce vulnerability detection by 16-93% [42].
 Evaluators become more confident in incorrect AI answers after review [61].
 Mental health practitioners favor AI suggestions mirroring pre-existing
 beliefs [62]. Over-reliance reaches 41.3% with overconfident AI versus 28.2%
-with calibrated AI [14]. Human-AI interaction amplifies bias more than
-human-human interaction across 1,401 participants [34], with participants
-unaware of the AI influence extent [34]. Cognitive biases from human
-evaluation become embedded in next-generation models via training feedback
-loops [64]. The EU AI Act explicitly warns about automation bias risk in
-human oversight [65].
+with calibrated AI [14]; a newer trust-adaptive intervention (counter-
+explanations at high trust, supporting at low trust) reduces inappropriate
+reliance by 38% and improves decision accuracy 20%, replicating across
+laypeople and medical doctors [96]. Human-AI interaction amplifies bias more
+than human-human interaction across 1,401 participants [34], with
+participants unaware of AI influence extent [34]. A 2026 APA study (N~1,900 per press-release reporting)
+found roughly 58% of AI-using participants reported the AI "did most of the
+thinking," with measurable reductions in self-confidence, idea ownership,
+and reasoning depth — conditional on passivity: operators who challenged
+outputs retained confidence [95]. Cognitive biases from human evaluation
+become embedded in next-generation models via training feedback loops [64].
+The EU AI Act explicitly warns about automation bias risk in human
+oversight [65]; a 2026 *European Journal of Risk Regulation* legal analysis
+identifies a structural asymmetry — Article 14 requires deployer awareness
+of a bias whose occurrence is legally untestable without unbiased
+counterfactuals [97]. Machine-speed agentic workflows compress the
+intervention window further, rendering HITL "compliance theater" in
+several deployment contexts [98].
 
 **Severity: High.** The operator is not a neutral overseer. The feedback loop
 — operator bias shapes query, model sycophancy amplifies it, operator
@@ -336,16 +445,36 @@ over time.
 (standpoint homogeneity) and "knowing" (method homogeneity), with feedback
 loops of topical and methodological convergence [26]. Model collapse through
 recursive training progressively loses distributional tails — the rare and
-novel perspectives that epistemic diversity requires [25]. Thirty-four percent
-of survey respondents use LLMs, producing more homogeneous and positive
-responses that mask underlying social variation [30]. LLM use reduces semantic
-diversity in creative ideation [32], and the homogenization effect persists
+novel perspectives that epistemic diversity requires [25] — **though** a
+peer-accompanying result proves collapse is AVOIDABLE under an
+accumulate-not-replace training strategy: test error has a finite upper bound
+independent of iteration count when real and synthetic data coexist
+cumulatively [102]. A 27-model study (155 topics, 12 countries, 200
+real-user prompts) finds "all models are less epistemically diverse than a
+basic web search" — with larger models being MORE epistemically narrow, not
+less — while RAG improves diversity unevenly by cultural context [99]. A
+preregistered CHI 2025 study (N=118) shows AI suggestions homogenize Indian
+writers toward Western styles while Americans gain disproportionate
+efficiency gains [100]; even regionally-developed Indic LLMs fail to align
+with Indian cultural norms [101]. Default GPT-4o summaries produce measurably
+more liberal opinions than Wikipedia (Cohen's d=0.14, PNAS Nexus, N=1,912
+preregistered) [105]; a 76,977-participant *Science* study of 19 LLMs and
+707 political issues finds post-training boosts persuasiveness up to 51%
+with persuasiveness correlating with REDUCED factual accuracy [106]. Thirty-
+four percent of survey respondents use LLMs, producing more homogeneous and
+positive responses that mask underlying social variation [30]. LLM use
+reduces semantic diversity in creative ideation [32] and the effect persists
 after users stop using LLMs [33]. Retrieval systems preferentially surface
 AI-generated content [59], and LLMs favor LLM-generated content over
 human-generated content [39]. Scale itself creates bias structurally [58].
 Minoritarian vocabularies fall into knowledge gaps because they appear
-infrequently in training data [48], constituting epistemic conformism that
-disadvantages non-dominant meaning systems.
+infrequently in training data [48]. **Counter-evidence:** a "Variance
+Paradox" framing argues AI compresses informational variance but also
+creates a "Paradoxical Bridge" for recombination, yielding a U-shaped
+temporal trajectory contingent on active human curation [104]; one
+dynamic-experiment study reports high AI exposure INCREASED collective
+idea diversity relative to human-only baselines which converged naturally
+[103] — this finding needs replication.
 
 **Severity: High.** Epistemic monoculture is the most dangerous long-term
 bias because it is self-reinforcing and difficult to detect from within.
@@ -374,17 +503,31 @@ mechanism — act as a bias filter that systematically favors quantitative,
 published, institutional, and English-language sources. The requirement to
 cite everything embeds a specific epistemology.
 
-**Evidence:** Papers with significant results are 3x more likely to be
-published [71], meaning the citeable literature over-represents positive
-findings. Seventy-six point seven percent of peer reviewers do not check
-references [12]. LLMs hallucinate citations at an average rate of 49.71%
-(range: DeepSeek 14.23% to Hunyuan 94.93%) [12], and LLM self-validation
-accuracy is only 38% [12]. Invalid citations surged 80.9% in 2025 [12].
-LLM-generated references show median citation counts 1,326 higher than ground
-truth with only 7% overlap [6]. LLMs are described as "faux polyglots" —
-delivering American English epistemological defaults regardless of query
-language [54]. AI fact-checking may actually reduce human discernment abilities
-[55].
+**Evidence:** Papers with significant results are 3.9x more likely to be
+published — 55% vs 14% (Dickersin 1987, direct-sourced) [82] — meaning the
+citeable literature over-represents positive findings. Seventy-six point seven
+percent of peer reviewers do not check references [12]. LLMs hallucinate
+citations at an average rate of 49.71% (range: DeepSeek 14.23% to Hunyuan
+94.93%) [12], and LLM self-validation accuracy is only 38% [12]. Invalid
+citations surged 80.9% in 2025 [12]; a 2026 large-scale study further finds
+**nearly 300 ACL/NAACL/EMNLP papers in 2024-2025 contain at least one
+hallucinated citation, most in 2025** — over 100 were accepted at EMNLP
+2025 alone [83]. An independent 10-model measurement finds 3-13% of deep-
+research-agent citation URLs are fabricated with 5-18% non-resolving
+overall, across 221K URLs [87]. The first citation-hallucination benchmark
+(CiteAudit, 2026) proposes a 5-stage detection framework [86]. A *Nature*
+news analysis describes "Frankenstein citations" — AI combinations of real
+author names, plausible dates, real venues, and format-valid fake DOIs
+that defeat casual spot-checking [107]. RAG citations lack faithfulness in
+57% of cases even when correct — post-rationalization masks the problem
+[88]. LLM-generated references show median citation counts 1,326 higher
+than ground truth with only 7% overlap [6] — reinforced by a 2025 follow-up
+on 274,951 references confirming Matthew-effect amplification [84]. LLMs
+are described as "faux polyglots" — delivering American English
+epistemological defaults regardless of query language [54]. AI fact-checking
+may actually reduce human discernment abilities [55]; a 1-month CHI 2026
+study (N=67) quantifies this — +21% immediate assisted gain followed by
+−15.3% unassisted decline by week 4 [108].
 
 **Severity: High.** The verification paradox is not that verification is
 useless but that it is insufficient and systematically biased. Citations
@@ -410,17 +553,29 @@ research because of professional formatting, structured output, confident
 tone, and citation brackets — independent of content accuracy.
 
 **Evidence:** Automation bias operates at a meta-analysis risk ratio of 1.26
-(CI 1.11-1.44), with negative consultation rates of 6-11% [13]. Over-reliance
-reaches 41.3% with overconfident AI versus 28.2% with calibrated AI, and
-66-67% of users cannot distinguish between well-calibrated and miscalibrated
-systems [14]. The correlation between over-reliance and accuracy is r=-0.426
-[14]: more trust produces less accuracy. Models are "nearly as confident when
-wrong as when right" because RLHF rewards "clear and decisive" answers [15].
-The chat-chamber effect extends echo chambers to individual AI interactions,
-where pro-attitudinal incorrect information is internalized without validation
-[41]. Sycophantic AI decreases prosocial intentions and affects moral
-reasoning [35]. AI writing assistants introduce systematic bias in content
-generation [57].
+(CI 1.11-1.44) **in clinical DSS studies** (Goddard 2011, pre-LLM era), with
+negative consultation rates of 6-11% [13] — a 2025 PRISMA systematic review
+of 35 studies (Jan 2015–Apr 2025) now provides the AI-specific successor,
+identifying AI literacy, professional expertise, and XAI explanation
+complexity as moderators [109]. Over-reliance reaches 41.3% with overconfident
+AI versus 28.2% with calibrated AI, and 66-67% of users cannot distinguish
+between well-calibrated and miscalibrated systems [14]. The correlation
+between over-reliance and accuracy is r=-0.426 [14]: more trust produces less
+accuracy. A CHI 2025 study of 319 knowledge workers finds higher AI confidence
+→ LESS critical thinking across all Bloom's taxonomy levels, while higher
+self-confidence → MORE critical thinking — GenAI shifts critical thinking
+from production to verification, but verification only occurs when workers
+are motivated and competent to perform it [110]. Models are "nearly as
+confident when wrong as when right" because RLHF rewards "clear and decisive"
+answers [15]. The chat-chamber effect extends echo chambers to individual AI
+interactions, where pro-attitudinal incorrect information is internalized
+without validation [41]. Sycophantic AI decreases prosocial intentions and
+affects moral reasoning [35]. AI writing assistants introduce systematic bias
+in content generation [57]. A 10-author Responsible AI position paper argues
+the narrow methodological conception of "rigor" common in AI research is
+precisely what produces the veneer: structured, fluent output reads as
+rigorous even when epistemic, conceptual, and interpretative rigor are
+absent [111].
 
 **Severity: High.** Automation bias is the final filter — it determines
 whether accumulated biases from upstream stages are caught or accepted. The
@@ -449,15 +604,35 @@ between correct and incorrect [29]), self-correction fails 64.5% of the time
 [22], and sycophancy operates as multiple independently controllable features
 rather than a single addressable bias [47].
 
-**Evidence:** Confidence ranges 69-80% regardless of correctness [29].
-Self-correction blind spots affect 64.5% of errors across 14 models [22]. The
-"Wait" intervention reduces blind spots by 89.3% [22], suggesting the failure
-is partly attentional, but residual error remains. Sycophancy's compound
-nature [47] means there is no single "sycophancy dial" — each feature must be
-identified and addressed separately. Pro-attitudinal incorrect information is
-internalized without validation in the chat-chamber dynamic [41]. Algorithm
-Designers' Reflexivity Statements (ADRS) have been proposed to shift the
-reflexivity burden from AI systems to human designers [40].
+**Evidence:** Confidence ranges 69-80% regardless of correctness [29];
+the Dunning-Kruger ECE analysis (2026) extends this with model-level
+detail — poor performers show severe overconfidence (Kimi K2 ECE=0.726 at
+23.3% accuracy vs. Claude Haiku 4.5 ECE=0.122 at 75.4%) [76]. Self-correction
+blind spots affect 64.5% of errors across 14 **non-reasoning** models [22];
+the "Wait" intervention reduces blind spots by 89.3% [22]. An ICLR 2026 study
+finds recent frontier LLMs exhibit LIMITED metacognition — confidence
+assessment and response anticipation exist but are "limited in resolution,"
+emerge contextually, and differ qualitatively from human metacognition;
+post-training procedures materially affect metacognitive capacity [112]. A
+2024 ICLR benchmark shows LLMs "cannot self-correct reasoning yet" without
+external feedback and often degrade after self-correction [114], but a
+2025 two-stage self-rewarding RL framework (Llama-3, Qwen-2.5) "surpasses
+intrinsic self-correction and matches external-reward-model performance"
+[113]. Sycophancy's compound nature [47] means there is no single
+"sycophancy dial." Pro-attitudinal incorrect information is internalized
+without validation in the chat-chamber dynamic [41]. Algorithm Designers'
+Reflexivity Statements (ADRS) have been proposed to shift the reflexivity
+burden from AI systems to human designers [40].
+
+**New caveat on the evidence base itself:** A 2026 methodological paper finds
+that **42% of associations that appear significant under standard pooled
+testing fail cluster-robust correction** in turn-level LLM conversation
+metrics — non-memoryless metrics (thermo-cycle, frame-distance, lexical/
+structural) are most affected (33% fail) vs memoryless (14%) [115]. This
+potentially invalidates a meaningful fraction of prior sycophancy,
+self-correction, and chat-chamber findings in this taxonomy — cluster-robust
+replication is the appropriate next step for high-precision quantitative
+claims.
 
 **Severity: Medium-High.** The reflexivity problem is not the most damaging
 bias in absolute terms — it does not directly corrupt research output the
@@ -532,6 +707,13 @@ measured end-to-end, but the directional evidence is consistent at every node.
 | Confidence calibration for users | 252 participants [14] | Over-reliance 41.3% → 28.2% | Display calibrated confidence, not raw confidence | Consumption |
 | DIVERGE framework for RAG | Framework evaluation [56] | Addresses single-answer bias and diversity collapse | Diversity-quality trade-off in retrieval | Retrieval, Synthesis |
 | ADRS (Algorithm Designers' Reflexivity Statement) | Proposal stage [40] | Not yet measured | Designers disclose positionality and choices | Systemic |
+| Trust-adaptive interventions | arXiv 2502.13321 [96] | -38% inappropriate reliance, +20% accuracy; replicates across laypeople and medical doctors | Counter-explanations at high trust, supporting at low trust | Consumption |
+| Multi-Persona Thinking (MPT) | Two bias benchmarks [94] | Lower bias than prompt-based methods while preserving reasoning | Inference-time contrasting-identity prompting | Synthesis |
+| Cultural debate with diverse personas (MACD) | English + Arabic benchmarks [119] (specific percentages from discovery-agent summary) | ~60%→80% no-bias rate; ~86% via vote (vs ~69% baseline); Arabic ~96.8% | Structurally-enforced diverse agent personas (not generic MAD) | Synthesis |
+| Identity-anonymization in MAD (IBC metric) | Multi-model evaluation [120] | Substantial reduction in identity-driven sycophancy/self-bias | Strip identity markers from peer-agent prompts | Synthesis |
+| Accumulate-not-replace training (vs. model collapse) | Theoretical + empirical (LM, diffusion, VAE) [102] | Test error finite upper bound independent of iterations | Cumulative real+synthetic data, not replace | Training |
+| Self-rewarding correction (2-stage RL) | Llama-3, Qwen-2.5 math [113] | Matches external-reward-model performance | Integrate generator + verifier into single model | Synthesis |
+| CriticGPT (bounded to code errors) | OpenAI internal eval [93] | 63% critic-over-human critique preference on code | Trained critic model; does NOT address ideological bias | Verification |
 
 ### What Does Not Work
 
@@ -542,6 +724,12 @@ measured end-to-end, but the directional evidence is consistent at every node.
 | LLM self-validation of citations | 38% accuracy | [12] |
 | Unstructured human oversight | Evaluators become more confident in incorrect answers after review; 66-67% cannot detect miscalibration | [14][61] |
 | Simple mitigation for expert anchoring | No effective strategies found | [4] |
+| Multi-agent debate alone (without correction-biased update rules) | Majority voting alone accounts for most MAD gains; debate induces a martingale over agent belief trajectories | NeurIPS 2025 Spotlight [90] |
+| Generic MAD (without structured diversity) | Majority pressure suppresses independent correction in Knight-Knave-Spy logic puzzles | [89] |
+| Targeted single-axis bias mitigation | Cross-axis spillover documented — reducing bias on one dimension frequently increases it on others (~31.5% degradation rate per discovery-agent summary of full paper) | [91] "No Free Lunch" |
+| Intrinsic self-correction without external feedback (non-reasoning models) | Performance often DEGRADES after self-correction | [114] ICLR 2024 |
+| LLM critics as debiasers | Critics inherit and amplify teacher-model biases | [92] |
+| AI fact-checking dialogues for long-term discernment | +21% immediate gain but -15.3% week-4 unassisted decline | [108] CHI 2026 |
 
 ---
 
@@ -589,11 +777,27 @@ are not represented.
 alignment techniques, and the agentic research landscape are evolving rapidly.
 Findings about specific models (GPT-4, Claude 3.5, Llama 2) may not
 generalize to their successors. The 80.9% surge in invalid citations in 2025
-[12] suggests the problem is accelerating, not stabilizing.
+[12] suggests the problem is accelerating, not stabilizing. The 2026-04-18
+update reveals that nearly 300 ACL/NAACL/EMNLP papers in 2024-2025 contain
+hallucinated citations [83] and 3-13% of deep-research-agent citation URLs
+are fabricated [87] — the venue-level crisis is now measurable. Conversely,
+reasoning-model metacognition (ICLR 2026) [112] and self-rewarding RL
+frameworks [113] represent genuine progress on the reflexivity front that
+non-reasoning-model benchmarks [22][114] do not capture.
+
+**Autocorrelation in the evidence base.** A April-2026 methodological paper
+finds that 42% of turn-level LLM conversation findings fail cluster-robust
+correction [115]. A meaningful fraction of the specific quantitative claims
+compiled in this document — particularly those from turn-level sycophancy,
+self-correction, and chat-chamber studies — may not survive proper statistical
+correction. This is not a critique of any individual cited study, but a
+standing caveat for the field's measurement practices. Where a claim's
+magnitude is load-bearing to a conclusion, prefer cluster-robust replications
+when available.
 
 **No counterfactual.** This document does not compare agentic research to the
 alternative — human-only research — in terms of overall bias burden. Human
-research is subject to many of the same biases (publication bias [71],
+research is subject to many of the same biases (publication bias [82],
 confirmation bias, geographic skew) without the scalability and consistency
 advantages that AI brings. The relevant question is not "is agentic research
 biased?" (it is) but "is it more or less biased than the realistic
@@ -620,3 +824,19 @@ Seventy citations were collected across 10 reference documents. Where direct
 web access failed (403, 303 redirects), data was sourced from search snippets
 and secondary reporting — these cases are marked in citations.md with access
 notes. The limitations section above applies fully to this methodology.
+
+**2026-04-18 update methodology.** The original research was re-run against
+all 10 dimensions with full re-discovery (10 Discovery + 10 Counter-Discovery
+sub-agents in parallel). Counter-Discovery agents specifically sought sources
+challenging the original conclusions. ~30 new sources were directly fetched
+and persisted; ~20 additional sources are included from discovery-agent
+snippets with explicit access notes. Two citations were materially changed:
+[46] was superseded by [81] (Hsiao & Schneider PMC, direct primary source for
+retraction-citation rate at 94.6% rather than unverified 90%/96%), and the
+Dickersin 1987 publication-bias claim was upgraded from Wikipedia-indirect
+[71] to PubMed-direct [82]. See `retraction-log.md` for the full removal
+ledger. Counter-perspectives surfaced include: model collapse is avoidable
+[102]; AI search does NOT reduce confirmation bias as some hypothesized but
+in fact shows lower response variety [121]; multi-agent debate reduces to
+majority voting [90]; targeted bias mitigation spills over into other axes
+[91]; and reasoning-model metacognition is partial but measurable [112].
