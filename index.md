@@ -112,9 +112,9 @@ the path, summary, dimensions covered, and last revision date.
 ## [Best Practices for Citation-Backed Research Using Agentic AI](research/agentic-research-best-practices/README.md)
 
 - **Path:** [research/agentic-research-best-practices/](research/agentic-research-best-practices/)
-- **Summary:** How a single human operator using an LLM-backed CLI agent can produce verifiable, auditable research documents. Key finding: agentic research works because the methodology makes unreliability visible, not because agents are reliable. Covers multi-agent architectures (90.2% improvement with coordinator-worker), writer-verifier separation (770M model matching GPT-4 at 400× lower cost), 20-30% source inaccessibility as normal operating condition, and expert persona prompts damaging factual accuracy by 3.6pp.
+- **Summary:** How a single human operator using an LLM-backed CLI agent can produce verifiable, auditable research documents. Key finding: agentic research works because the methodology makes unreliability visible, not because agents are reliable. 2026-04-19 update: multi-agent debate reduces to majority voting (NeurIPS 2025 martingale proof); single-agent matches multi-agent under equal compute; writer-verifier separation requires CROSS-FAMILY separation, not just role separation (same-family gain ≈ 0); citation hallucination at venue scale (300+ ACL/NAACL/EMNLP papers 2024-25); PaperBench corrected from "1.8%" to Claude 3.5 Sonnet 21% / human baseline 41.4%; 42% of turn-level findings may be spurious under cluster-robust correction. 88 citations total (50 new in 2026-04-19 update), cross-referenced with agentic-research-bias.
 - **Dimensions:** multi-agent research architectures, source verification, web search and retrieval strategies, prompt engineering for research agents, human-in-the-loop validation, limitations and failure modes
-- **Last revised:** 2026-03-29
+- **Last revised:** 2026-04-19
 - **Status:** Active
 
 ## [mutmut 3.x Mutation Testing Setup Issues](research/mutmut-3x-setup/README.md)
@@ -192,9 +192,9 @@ the path, summary, dimensions covered, and last revision date.
 ## [Bias in Agentic Research and How to Combat It](research/agentic-research-bias/README.md)
 
 - **Path:** [research/agentic-research-bias/](research/agentic-research-bias/)
-- **Summary:** How LLM-based agentic research tools systematically bias output at every pipeline stage — from human question framing through search, retrieval, synthesis, verification, and consumption. Key findings: sycophancy adds 45pp face-preservation over humans, single-engine search misses 84.9% of results, LLMs amplify citation popularity by median 1,326 citations, automation bias increases errors by 26%, and 76.7% of reviewers never check references. Structural mitigations (writer-verifier separation, minority veto ensembles, multi-engine search) have evidence; prompt debiasing largely does not.
+- **Summary:** How LLM-based agentic research tools systematically bias output at every pipeline stage — from human question framing through search, retrieval, synthesis, verification, and consumption. Key findings: sycophancy adds 45pp face-preservation over humans (58.19% aggregate per SycEval), single-engine search misses 84.9% of results, blocking AI crawlers fails to prevent 70-92% of citations anyway, LLMs amplify citation popularity by median 1,326 citations, 94.6% of post-retraction citations fail to acknowledge retraction, and venue-level hallucination now affects ~300 ACL/NAACL/EMNLP 2024-2025 papers. Some mitigations work (trust-adaptive interventions, accumulate-not-replace training, reasoning-model metacognition); some widely-promoted ones don't (multi-agent debate reduces to majority voting, targeted debiasing spills over 31.5% into other axes). 2026-04-18 update replaced [46] and [71] with direct primary sources ([81] Hsiao & Schneider, [82] Dickersin PubMed); added 51 new citations.
 - **Dimensions:** LLM intrinsic biases, search and retrieval bias, source selection bias, synthesis and framing bias, structural mitigations, human operator bias, epistemic monoculture, verification paradox, automation bias, reflexivity problem
-- **Last revised:** 2026-03-31
+- **Last revised:** 2026-04-18
 - **Status:** Active
 
 ## [JWT Authentication in FastAPI](research/jwt-auth-fastapi/README.md)

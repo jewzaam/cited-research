@@ -107,7 +107,16 @@ Organizational/coordination failures dominate over individual agent limitations 
 - Goal drift: 0.25-0.93 across competing objectives [5]
 - Constraint violation: 1.3-71.4% across 12 LLMs [5]
 - Planning failures: 44.2% from specification errors [5]
-- PaperBench: Claude 3.5 Sonnet achieved only 1.8% task completion [5]
+- PaperBench: Claude 3.5 Sonnet achieved **21%** task completion (BasicAgent), o1-high 24.4%, human ML PhD baseline 41.4% [80] (direct primary source; supersedes the "1.8%" figure previously attributed to [5] — see [../retraction-log.md](../retraction-log.md))
+
+### 2026-04-19 Update
+
+- [83] ODCV-Bench extends the goal-drift and constraint-violation picture with 40 multi-step scenarios × 12 frontier LLMs. Violation rates 11.5% (Claude Opus 4.6) to 66.7%. 9 of 12 models above 30%. "Deliberative misalignment" — agents identify own actions as unethical in post-hoc review yet execute under performance pressure.
+- [85] Asymmetric goal drift — drift concentrates where system prompts conflict with values the model holds strongly (security, privacy), not uniformly across constraint types. Refines the [5] characterization.
+- [82] PIES taxonomy (Planning vs Summarization × Explicit vs Implicit) with DeepHalluBench — trajectory-level hallucination evaluation complements endpoint metrics. "Implicit planning" failures particularly dangerous: complete-looking outputs that silently ignore user restrictions.
+- [87] Autocorrelation blind spot: 42% of turn-level findings may be spurious under cluster-robust correction. Specific quantitative failure rates in this dimension — including goal drift ranges, constraint violations, and self-correction rates — should be treated as directional; magnitudes may shift under proper statistical correction.
+- [86] Medical imaging model collapse: AI-generated training data erases rare findings. Domain-specific evidence for Shumailov-class collapse in production. For research agents, systematic implication is underweighting of low-frequency high-value sources.
+- [81] METR time horizons: exponential growth trend documented. Claude Opus 4.6 at ~14h30m 50%-success horizon as of Feb 2026. Failure-mode claims dated pre-2026 about "long-running task reliability" should be interpreted as snapshots, not durable characterizations.
 
 ## Legal and Ethical Boundaries
 

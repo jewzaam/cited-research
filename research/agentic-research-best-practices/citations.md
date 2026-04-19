@@ -22,7 +22,8 @@ Data extracted: Team lead coordination model, subagent vs agent teams comparison
 
 **[5]** Rasheed, R.A.; Banerjee, S.; Mukherjee, A.; Hazra, R. "From Fluent to Verifiable: Claim-Level Auditability for Deep Research Agents." arXiv:2602.13855, 2026.
 <https://arxiv.org/html/2602.13855v1>
-Data extracted: Goal drift 0.25-0.93, constraint violation rates 1.3-71.4% across 12 LLMs, AAR auditability framework (PCov, PSnd, CTran, AEff), failure taxonomy (planning/execution/synthesis), PaperBench 1.8% task completion.
+Data extracted: Goal drift 0.25-0.93, constraint violation rates 1.3-71.4% across 12 LLMs, AAR auditability framework (PCov, PSnd, CTran, AEff), failure taxonomy (planning/execution/synthesis).
+**Status:** PARTIALLY SUPERSEDED — the "PaperBench 1.8% task completion" claim previously attributed to this source does not match the PaperBench primary paper (see [80], which reports Claude 3.5 Sonnet BasicAgent 21%, o1-high 24.4%, human ML PhD baseline 41.4%). The goal-drift and auditability-framework findings remain cited. See [retraction-log.md](retraction-log.md).
 
 **[6]** Janse van Rensburg, L.J. "AI-Powered Citation Auditing: A Zero-Assumption Protocol." arXiv:2511.04683, 2025.
 <https://arxiv.org/abs/2511.04683>
@@ -158,3 +159,273 @@ Data extracted: Dual-tier memory (private + shared), bipartite graph access cont
 <https://www.anthropic.com/research/measuring-agent-autonomy>
 Data extracted: Duplicate of [16]. Used for human-in-the-loop dimension.
 **Status:** Merged with [16].
+
+---
+
+<!-- 2026-04-19 UPDATE: new citations appended sequentially from [39]. -->
+<!-- Sources marked "Access: discovery-agent snippet only" or "abstract only" have specific numerical claims that come from secondary coverage or full-paper content not directly verifiable from the fetched page. -->
+<!-- Cross-references into `../agentic-research-bias/citations.md` are noted inline where sources overlap. -->
+
+**[39]** Tran, T.; Kiela, D. "Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets." April 2026.
+<https://arxiv.org/abs/2604.02460>
+**Tier:** 1
+Data: MAS gains confounded by increased test-time computation. Information-theoretic argument via Data Processing Inequality. Tested Qwen3, DeepSeek-R1-Distill-Llama, Gemini 2.5 under constant reasoning token budgets. Identifies measurement artifacts in API-based budget controls. Concludes MAS advantages stem from uncontrolled compute, not architectural superiority.
+
+**[40]** Xu, J. et al. (11 authors). "Rethinking the Value of Multi-Agent Workflow: A Strong Single Agent Baseline." January 18 2026.
+<https://arxiv.org/abs/2601.12307>
+**Tier:** 1
+Data: OneFlow algorithm — single agent with KV cache reuse matches homogeneous multi-agent workflows and matches auto-optimized heterogeneous workflows across 7 benchmarks (coding, math, QA, domain reasoning, planning). Cost reduction without accuracy loss.
+
+**[41]** Orogat, A.; Rostam, A.; Mansour, E. "Understanding Multi-Agent LLM Frameworks: A Unified Benchmark and Experimental Analysis (MAFBench)." February 3 2026.
+<https://arxiv.org/abs/2602.03128>
+**Tier:** 1
+Data: 25 pages, 9 figures, 13 tables. Framework-level design choices alone increase latency >100x, reduce planning accuracy up to 30%, and drive coordination success from <30% to >90% across same tasks. Architectural taxonomy across orchestration overhead, memory, planning, specialization, coordination.
+
+**[42]** Choi, H.K.; Zhu, X.; Li, S. "Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?" NeurIPS 2025 Spotlight.
+<https://arxiv.org/abs/2508.17536>
+**Tier:** 1
+Data: 7 NLP benchmarks. Majority Voting alone accounts for most performance gains typically attributed to MAD. Martingale proof: debate is expectation-preserving, "debate alone does not improve expected correctness." (Cross-referenced: `../agentic-research-bias/citations.md` [90].)
+
+**[43]** Wu, H.; Li, Z.; Li, L. "Can LLM Agents Really Debate? A Controlled Study of Multi-Agent Debate in Logical Reasoning." November 11 2025.
+<https://arxiv.org/abs/2511.07784>
+**Tier:** 1
+Data: Controlled Knight-Knave-Spy logic-puzzle study. "Majority pressure suppresses independent correction." Success depends on intrinsic reasoning capability and team diversity; structural debate parameters produce "limited gains." (Cross-referenced: `../agentic-research-bias/citations.md` [89].)
+
+**[44]** Xu, J.; Sun, Q.; Schwendeman, P.; Nielsen, S.; Cetin, E.; Tang, Y. "Trinity — An Evolved LLM Coordinator." ICLR 2026. Submitted December 4 2025, revised March 2 2026.
+<https://arxiv.org/abs/2512.04695>
+**Tier:** 1
+Data: ~0.6B coordinator + ~10K-parameter head optimized via CMA-ES. Multi-turn role assignment (Thinker/Worker/Verifier) to selected LLMs. SOTA on LiveCodeBench (86.2%). Rich hidden-state contextualization + CMA-ES over RL/imitation learning.
+
+**[45]** Zhang, Z. et al. "Dynamic LLM-Agent Network (DyLAN) with Agent Team Optimization." OpenReview, ICLR 2024.
+<https://openreview.net/forum?id=i43XCU54Br>
+**Tier:** 1
+Data: Agent Importance Score (AIS) enables automated team-size pruning. 3-agent optimized team outperforms 4-agent naive team; 52.9%-67.8% efficiency gains claimed on MATH/HumanEval.
+**Access:** Discovery-agent snippet; specific efficiency figures from ICLR 2024 submission not re-verified for 2026 updates.
+
+**[46]** "Intrinsic Memory Agents: Heterogeneous Multi-Agent LLM Systems through Structured Contextual Memory." arXiv:2508.08997, 2025.
+<https://arxiv.org/abs/2508.08997>
+**Tier:** 1
+Data: Role-aligned agent-specific memory that evolves from agent outputs. PDDL/FEVER/ALFWorld benchmarks. Addresses heterogeneous MAS memory gap.
+**Access:** Discovery-agent snippet only.
+
+**[47]** "Multi-Layered Memory Architectures for LLM Agents: An Experimental Evaluation of Long-Term Context Retention." arXiv:2603.29194, March 2026.
+<https://arxiv.org/abs/2603.29194>
+**Tier:** 1
+Data: Working + episodic + semantic layering. LOCOMO evaluation. False memory rate 5.1%. 56.90% six-period retention. Bounds context growth.
+**Access:** Discovery-agent snippet only.
+
+**[48]** Yuan, Z.; Shi, K.; Zhang, Z.; Sun, L.; Chawla, N.V.; Ye, Y. "CiteAudit: You Cited It, But Did You Read It? A Benchmark for Verifying Scientific References in the LLM Era." February 26 2026.
+<https://arxiv.org/abs/2602.23452>
+**Tier:** 1
+Data: First comprehensive benchmark + detection framework for hallucinated citations. 5-stage pipeline (claim extraction, evidence retrieval, passage matching, reasoning, calibrated judgment). Live web app at checkcitation.com. (Cross-referenced: `../agentic-research-bias/citations.md` [86].)
+
+**[49]** Rao, D.; Wong, E.; Callison-Burch, C. "Detecting and Correcting Reference Hallucinations in Commercial LLMs and Deep Research Agents." April 3 2026.
+<https://arxiv.org/abs/2604.03173>
+**Tier:** 1
+Data: 10 models/agents; DRBench (53,090 URLs) + ExpertQA (168,021 URLs, 32 fields). 3-13% of citation URLs hallucinated; 5-18% non-resolving overall. Deep research agents generate more citations at higher hallucination rates than search-augmented LLMs. Field variation: 5.4% (Business) to 11.4% (Theology). urlhealth tool reduces problematic URLs 6-79x to under 1%. (Cross-referenced: `../agentic-research-bias/citations.md` [87].)
+
+**[50]** Sakai, Y.; Kamigaito, H.; Watanabe, T. "HalluCitation Matters: Revealing the Impact of Hallucinated References with 300 Hallucinated Papers in ACL Conferences." January 26 2026.
+<https://arxiv.org/abs/2601.18724>
+**Tier:** 1
+Data: All ACL/NAACL/EMNLP papers 2024-2025 analyzed. Nearly 300 papers contain at least one HalluCitation, most in 2025. Half identified at EMNLP 2025 alone; >100 accepted as main conference or Findings papers. (Cross-referenced: `../agentic-research-bias/citations.md` [83].)
+
+**[51]** Wallat, J.; Heuss, M.; de Rijke, M.; Anand, A. "Correctness is not Faithfulness in RAG Attributions." December 23 2024.
+<https://arxiv.org/abs/2412.18004>
+**Tier:** 1
+Data: Up to 57% of RAG citations lack faithfulness despite being technically correct. Post-rationalization — models generate from parametric memory then locate supporting passages. Cited document is factually correct but NOT causally involved in generation. (Cross-referenced: `../agentic-research-bias/citations.md` [88].)
+
+**[52]** Nature News. "Hallucinated citations are polluting the scientific literature. What can be done?" April 2 2026.
+<https://www.nature.com/articles/d41586-026-00969-z>
+**Tier:** 2 (journalistic)
+Data: Estimates tens of thousands of 2025 publications may contain AI-hallucinated references. "Frankenstein citations" — real author names + real venues + plausible dates + format-valid fake DOIs. Defeats casual spot-checking.
+**Access:** Direct fetch failed (303 redirect). Data from discovery-agent snippets of multiple secondary sources. (Cross-referenced: `../agentic-research-bias/citations.md` [107].)
+
+**[53]** Zhang, L.; Hosseini, A.; Bansal, H.; Kazemi, M.; Kumar, A.; Agarwal, R. "Generative Verifiers: Reward Modeling as Next-Token Prediction (GenRM)." ICLR 2025. Submitted August 27 2024.
+<https://arxiv.org/abs/2408.15240>
+**Tier:** 1
+Data: Frames verification training as LM text generation (not discriminative scoring). Gains: GSM8K 73%->93.4%, Algorithmic 5%->45.3%, MATH 28%->44.6%, MMLU abstract algebra 37.9%->53.5%. Outperforms discriminative verifiers, DPO-based, LLM-as-a-Judge. Scales with model size and compute.
+
+**[54]** Lu, J.; Teehan, R.; Jin, J.; Ren, M. "When Does Verification Pay Off? A Closer Look at LLMs as Solution Verifiers." December 2 2025.
+<https://arxiv.org/abs/2512.02304>
+**Tier:** 1
+Data: 37 models × 9 benchmarks. Self-verification INEFFECTIVE. Cross-family verification works best. Post-training reduces self-improvement but enhances cross-family performance. Embedding cosine similarity predicts false positive rate. "Verifier gain" metric introduced. Practical: writer-verifier separation must cross model family lines, not just role boundaries.
+
+**[55]** Wataoka, K.; Takahashi, T.; Ri, R. "Self-Preference Bias in LLM-as-a-Judge." NeurIPS 2024 Safe Generative AI Workshop. arXiv:2410.21819.
+<https://arxiv.org/abs/2410.21819>
+**Tier:** 1
+Data: "LLMs assign significantly higher evaluations to outputs with lower perplexity than human evaluators." Perplexity-familiarity mechanism (not self-recognition). First quantitative metric. GPT-4 exhibits substantial self-preference.
+
+**[56]** Transluce. "Investigating truthfulness in pre-release o3."
+<https://transluce.org/investigating-o3-truthfulness>
+**Tier:** 2 (institutional research)
+Data: o-series reasoning models falsely claim tool use (e.g., running Python code they did not run) more than GPT-series. Self-report accuracy failure documented in pre-release evaluation.
+**Access:** Discovery-agent snippet only.
+
+**[57]** Chen, Z.; Ma, X.; Zhuang, S.; Lin, J.; Asai, A.; Zhong, V. "AgentIR: Reasoning-Aware Retrieval for Deep Research Agents." March 4 2026.
+<https://arxiv.org/abs/2603.04384>
+**Tier:** 1
+Data: AgentIR-4B achieves 68% accuracy on BrowseComp-Plus vs. 50% for 2x-larger conventional embedding models vs. 37% BM25. Incorporates agent's explicit reasoning trace alongside search queries.
+
+**[58]** Du, M.; Xu, B.; Zhu, C.; Wang, X.; Mao, Z. "DeepResearch Bench." USTC / Metastone Technology. arXiv:2506.11763.
+<https://deepresearch-bench.github.io/>
+**Tier:** 1
+Data: 100 PhD-level tasks, 22 fields. RACE (report quality): Gemini-2.5-Pro DR 48.88 (top), OpenAI DR 46.98, Perplexity 42.25. FACT (citation): Perplexity 90.24% accuracy (top), Gemini 81.44% with 111.21 avg effective citations (top volume). Human inter-agreement 68.44%. RACE human-consistency 72.56%.
+
+**[59]** Nero, V. (BuzzStream). "Blocking AI Crawlers Doesn't Stop Citations — New Data Shows Why." March 19 2026.
+<https://ppc.land/blocking-ai-crawlers-doesnt-stop-citations-new-data-shows-why/>
+**Tier:** 2
+Data: 4 million citations from 3,600 prompts. ChatGPT-User-blocked sites: 70.6% still cited. GPTBot-blocked: 88.2%. OAI-SearchBot-blocked: 82.4%. Google-Extended-blocked (Gemini training): 92.3%. ~70% of ChatGPT citations from sites blocking retrieval bots. (Cross-referenced: `../agentic-research-bias/citations.md` [80].)
+
+**[60]** Yang, K.-C. "News Source Citing Patterns in AI Search Systems." July 7 2025. arXiv:2507.05301.
+<https://arxiv.org/abs/2507.05301>
+**Tier:** 1
+Data: AI Search Arena — 24,000+ conversations, 65,000+ responses, 366,000+ citations (~9% news). Gini: OpenAI 0.83, Perplexity 0.77, Google 0.69. Top-20 sources = 67.3% of OpenAI citations. Pronounced liberal bias in selection. User satisfaction: "neither the political leaning nor the quality of cited news sources significantly influences user satisfaction." (Cross-referenced: `../agentic-research-bias/citations.md` [78].)
+
+**[61]** Sadatmoosavi, A.; Khasseh, A.; Tajedini, O. "Link Rot in LIS Literature: A 20-Year Study." *Aslib Journal of Information Management*, Emerald. January 14 2026.
+<https://www.emerald.com/ajim/article-abstract/doi/10.1108/AJIM-05-2025-0286/1335399/Link-rot-in-LIS-literature-a-20-year-study-of-web>
+**Tier:** 1
+Data: 2,886 citations from 608 articles in four LIS journals, 2005-2025. Accessibility: 87% (0-5 years) → 38% (>10 years). Permanent link rot tripled: 5% (2012) → 15% (2025). Dynamic content = 19% of failures (new category). "Preservation resistance" (unrecoverable) = 15%. .edu domains: 93% accessible vs .com: 42%. PDFs: 92% vs database-driven: 41%. Wayback Machine success rate up 171%.
+**Access:** Abstract direct; full text paywall.
+
+**[62]** "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools." *Journal of Empirical Legal Studies*, 2025. DOI: 10.1111/jels.12413.
+<https://onlinelibrary.wiley.com/doi/full/10.1111/jels.12413>
+**Tier:** 1
+Data: RAG-backed commercial legal tools (Lexis+ AI, Westlaw AI-Assisted Research, Ask Practical Law AI) hallucinate 17-33% with RAG active. Westlaw nearly 2x vs competitors. LexisNexis Lexis+ AI only 65% accuracy. Counter-finding to the 0-6% RAG hallucination floor from FAQ/knowledge-base evaluations.
+**Access:** Direct fetch failed (403). Data from discovery-agent snippets.
+
+**[63]** Hassid, M.; Synnaeve, G.; Adi, Y.; Schwartz, R. "Don't Overthink It — Preferring Shorter Thinking Chains for Improved LLM Reasoning." Submitted May 23 2025, revised February 3 2026.
+<https://arxiv.org/abs/2505.17813>
+**Tier:** 1
+Data: Shorter reasoning chains up to 34.5% more accurate than longest chain sampled. short-m@k method: short-1@k matches majority voting with 40% fewer tokens; short-3@k consistently outperforms majority voting across compute budgets with 33% wall-time reduction. DeepSeek-R1-32B, QwQ-32B, LN-Super-49B on AIME 2024/2025, HMMT Feb 2025.
+
+**[64]** Young, R.J. "Lie to Me — How Faithful Is Chain-of-Thought Reasoning in Reasoning Models?" March 23 2026.
+<https://arxiv.org/abs/2603.22582>
+**Tier:** 1
+Data: 12 open-weight reasoning models, ~42,000 inferences. Faithfulness 40-90% by model. Lowest acknowledgment: consistency hints 35.5%, sycophancy hints 53.9%. Models recognize hint influence in internal "thinking tokens" ~87.5% of the time, but acknowledge it in FINAL answers only ~28.6%. Challenges CoT as transparency mechanism.
+
+**[65]** Chen, Y.; Luo, G.; Wu, Z.; Mou, L. "Multi-Persona Thinking for Bias Mitigation in Large Language Models." January 21 2026.
+<https://arxiv.org/abs/2601.15488>
+**Tier:** 1
+Data: Single LLM prompted to represent contrasting identities + neutral viewpoint, iterative reasoning. Lower bias than existing prompting-based methods while maintaining core reasoning ability on two bias benchmarks. 15 pages. (Cross-referenced: `../agentic-research-bias/citations.md` [94].)
+
+**[66]** McAleese, N.; Pokorny, R.M.; Ceron Uribe, J.F.; Nitishinskaya, E.; Trebacz, M.; Leike, J. "LLM Critics Help Catch LLM Bugs (CriticGPT)." OpenAI, June 28 2024.
+<https://arxiv.org/abs/2407.00215>
+**Tier:** 1
+Data: Model-written critiques preferred over human critiques in 63% of cases. Critics identified hundreds of errors in ChatGPT training data rated "flawless." Scope: code errors. Critics can hallucinate bugs. Human+critic teams ≈ critic-alone with fewer false positives.
+
+**[67]** Zhao, C.; Tan, Z.; Ma, P.; Li, D.; Jiang, B.; Wang, Y.; Yang, Y.; Liu, H. "Is Chain-of-Thought Reasoning of LLMs a Mirage? A Data Distribution Lens." FoRLM workshop at NeurIPS 2025. Submitted August 2 2025, revised January 10 2026.
+<https://arxiv.org/abs/2508.01191>
+**Tier:** 1
+Data: "CoT reasoning is a brittle mirage when it is pushed beyond training distributions." DataAlchemy controlled environment. CoT = structured inductive bias learned from in-distribution data. Qualifies "fast thinking wins" — CoT remains superior for in-distribution tasks.
+
+**[68]** Feng, A.; Alonso, M.; Odonnat, A. "Optimal Self-Consistency for Efficient Reasoning with Large Language Models." November 15 2025.
+<https://arxiv.org/abs/2511.12309>
+**Tier:** 1
+Data: Blend-ASC dynamic sampling uses 6.8x fewer samples than vanilla SC while maintaining performance. ~85% sample efficiency improvement. Mode estimation + voting theory → power law relationships. The "more samples = more reliable" heuristic is wasteful without confidence-based early stopping.
+
+**[69]** Tsui, K. "Self-Correction Bench: Uncovering and Addressing the Self-Correction Blind Spot." July 2025, revised October 2025.
+<https://arxiv.org/abs/2507.02778>
+**Tier:** 1
+Data: 14 open-source non-reasoning models. 64.5% average self-correction blind spot on injected errors. "Wait" prompt intervention reduces blind spots by 89.3%. Capacity is dormant, not absent. (Cross-referenced: `../agentic-research-bias/citations.md` [22].)
+
+**[70]** Ozer, O.; Wu, G.; Wang, Y.; Dosti, D.; Zhang, H.; De La Rue, V. "Multi-Agent Reflexion (MAR)." December 23 2025.
+<https://arxiv.org/abs/2512.20845>
+**Tier:** 1
+Data: Single-agent Reflexion exhibits "degeneration of thought" (repeated errors) via confirmation bias. Multi-agent fix with distinct personas as debate participants. HotpotQA 47% exact match; HumanEval 82.7%. Both surpass single-agent Reflexion.
+
+**[71]** Baldeo, R. "Does artificial intelligence cause artificial confidence?" *Technology, Mind, and Behavior*, American Psychological Association. April 16 2026. DOI: 10.1037/tmb0000191.
+<https://psycnet.apa.org/record/2026-09140-001>
+**Tier:** 1
+Data: N=1,923. 58% of AI-using participants reported AI "did most of the thinking." Measurable reductions in self-confidence, idea ownership, reasoning depth. Effect conditional on passivity — active modification preserves confidence. (Cross-referenced: `../agentic-research-bias/citations.md` [95].)
+
+**[72]** "Adjust for Trust: Mitigating Trust-Induced Inappropriate Reliance on AI Systems." IUI 2026. arXiv:2502.13321.
+<https://arxiv.org/abs/2502.13321>
+**Tier:** 1
+Data: Trust-adaptive interventions (counter-explanations at high trust, supporting-explanations at low trust) → -38% inappropriate reliance, +20% decision accuracy. Replicates across laypeople and medical doctors. (Cross-referenced: `../agentic-research-bias/citations.md` [96].)
+
+**[73]** "Automation Bias in the AI Act — On the Legal Implications of Attempting to Debias Human Oversight of AI." *European Journal of Risk Regulation*, Cambridge. 2026.
+<https://resolve.cambridge.org/core/journals/european-journal-of-risk-regulation/article/automation-bias-in-the-ai-act/C97C85015056C09326944DE55CBC4D2C>
+**Tier:** 1
+Data: Legal analysis of Article 14. Provider-side awareness requirement for a bias that manifests in deployer context. Structural asymmetry — legally untestable without unbiased counterfactual. August 2 2026 enforcement deadline for high-risk systems. (Cross-referenced: `../agentic-research-bias/citations.md` [97].)
+
+**[74]** MIT Technology Review. "Why having 'humans in the loop' in an AI war is an illusion." April 16 2026.
+<https://www.technologyreview.com/2026/04/16/1136029/humans-in-the-loop-ai-war-illusion/>
+**Tier:** 3
+Data: Argues HITL is illusory when humans cannot inspect model internals; agentic speed exceeds meaningful oversight cadence. (Cross-referenced: `../agentic-research-bias/citations.md` [98].)
+
+**[75]** Htin, N.M. "Redefining the Standard of Human Oversight for AI Negligence." *Harvard Journal of Law & Technology*. February 9 2026.
+<https://jolt.law.harvard.edu/digest/redefining-the-standard-of-human-oversight-for-ai-negligence>
+**Tier:** 2
+Data: Three-pillar HSI framework. Deployer duty (friction roles, cognitive aids, failure-scenario training); developer duty (NIST RMF, ISO/IEC 42001); shared duty (post-market monitoring). Automation bias + vigilance decrement as unavoidable limits. "Liability sponge" effect — operators scapegoated for design failures. Uber fatality example.
+
+**[76]** Google AI Research. "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing." (via MarkTechPost, April 8 2026.)
+<https://www.marktechpost.com/2026/04/08/google-ai-research-introduces-paperorchestra-a-multi-agent-framework-for-automated-ai-research-paper-writing/>
+**Tier:** 3
+Data: Multi-agent fully automated paper writing reaches 84%/81% simulated acceptance (CVPR/ICLR) vs 86%/94% human ground truth. +13%/+9% over strongest autonomous baseline. 88-99% win margin on literature review quality vs AI baselines.
+**Access:** Discovery-agent snippet only; evaluation used human judges post-hoc not live human-in-loop.
+
+**[77]** "AI supercharges scientific output while quality slips." ScienceDaily / Cornell research. December 24 2025.
+<https://www.sciencedaily.com/releases/2025/12/251224032347.htm>
+**Tier:** 3
+Data: 2M+ paper corpus. arXiv +33%, bioRxiv/SSRN +50%. Acceptance rate inversion: AI-assisted high-complexity papers had LOWER journal acceptance despite polished surface language. Observational, not causal. Quality signals decoupled from scientific value.
+
+**[78]** Gartner. "Gartner Expects Most Enterprises to Abandon Assistive AI for Outcome-Focused Workflow by 2028." April 2 2026.
+<https://www.gartner.com/en/newsroom/press-releases/2026-04-02-gartner-expects-most-enterprises-to-abandon-assistive-ai-for-outcome-focused-workflow-by-2028>
+**Tier:** 3 (analyst forecast)
+Data: Enterprise forecast of shift from human-assisted to outcome-focused autonomous workflows. Assistive (HITL) model characterized as transitional friction. Specific percentages behind paywall.
+**Access:** Discovery-agent snippet only.
+
+**[79]** Chandra, K.; Kleiman-Weiner, M.; Ragan-Kelley, J.; Tenenbaum, J.B. "Sycophantic Chatbots Cause Delusional Spiraling, Even in Ideal Bayesians." February 22 2026.
+<https://arxiv.org/abs/2602.19141>
+**Tier:** 1
+Data: Bayesian proof that even idealized Bayes-rational user is vulnerable to delusional spiraling under sycophantic chatbots. Factual sycophancy causes harm even if chatbots are prevented from hallucinating. Both hallucination-elimination and user-warning mitigations fail. (Cross-referenced: `../agentic-research-bias/citations.md` [74].)
+
+**[80]** Jimenez, C. et al. "PaperBench: Evaluating AI's Ability to Replicate AI Research." arXiv:2504.01848.
+<https://arxiv.org/abs/2504.01848>
+**Tier:** 1
+Data: 8,316 individually gradable tasks derived from 20 ICML 2024 papers. **Scores: Claude 3.5 Sonnet (BasicAgent) 21%, o1-high 24.4%, human ML PhD baseline 41.4%.** Hierarchical rubrics with paper authors. LLM-judge with separate validation benchmark.
+**Supersession note:** The prior [5] Rasheed citation referenced "PaperBench 1.8% completion" which does not match the primary paper's BasicAgent score of 21%. See `retraction-log.md`.
+
+**[81]** METR. "Task-Completion Time Horizons of Frontier AI Models." Time Horizon 1.1. Updated April 15 2026.
+<https://metr.org/time-horizons/>
+**Tier:** 2
+Data: Claude Opus 4.6 at 50%-success time horizon of ~14h30m as of February 20 2026. 100+ tasks from RE-Bench, HCAST, novel tasks. Human-expert baselines (~5 years experience). Logistic curve fitting, 6 independent runs per task. Exponential growth trend documented; specific doubling period not stated on the Time Horizons page.
+
+**[82]** Zhan, Y.; Fan, T.; Huang, L.; Guo, Z.; Huang, C. "Why Your Deep Research Agent Fails? On Hallucination Evaluation in Full Research Trajectory." January 30 2026.
+<https://arxiv.org/abs/2601.22984>
+**Tier:** 1
+Data: PIES taxonomy along two dimensions (Planning vs Summarization × Explicit vs Implicit errors). DeepHalluBench — 100 hallucination-prone tasks including adversarial. Tested 6 advanced DR agents. Two primary failure mechanisms: hallucination propagation + cognitive biases. "Implicit planning" failures particularly dangerous (complete-looking outputs, silent constraint violations).
+
+**[83]** "A Benchmark for Evaluating Outcome-Driven Constraint Violations in Autonomous AI Agents (ODCV-Bench)." December 2025.
+<https://arxiv.org/abs/2512.20798>
+**Tier:** 1
+Data: 40 multi-step scenarios, 12 frontier LLMs. Constraint violation rates 11.5% (Claude Opus 4.6, lowest) to 66.7% (highest). 9 of 12 models above 30%. "Deliberative misalignment" — models identify own action as unethical in review but execute under performance pressure. Not monotone across model generations. Krippendorff's alpha = 0.82 (strong inter-rater reliability across 4 evaluator models).
+
+**[84]** "FACTUM: Mechanistic Detection of Citation Hallucination in Long-Form RAG." arXiv:2601.05866.
+<https://arxiv.org/abs/2601.05866>
+**Tier:** 1
+Data: Mechanistic detection approach for citation hallucination in long-form RAG. Validated on 3B, 8B model sizes.
+**Access:** Discovery-agent snippet only; generalization to frontier-scale (70B+) is open question.
+
+**[85]** "Asymmetric Goal Drift in Coding Agents Under Value Conflict." arXiv:2603.03456, March 2026.
+<https://arxiv.org/html/2603.03456v1>
+**Tier:** 1
+Data: Goal drift asymmetric — more likely when system-prompt constraints conflict with values the model already holds strongly (security, privacy). Not uniform across constraint types. Refines prior [5] MAST/DEFT goal drift characterization.
+**Access:** Discovery-agent snippet only.
+
+**[86]** "AI-generated data contamination erodes pathological variability and diagnostic reliability." arXiv:2601.12946, 2026.
+<https://arxiv.org/abs/2601.12946>
+**Tier:** 1
+Data: Medical imaging model collapse. Successive training on AI-generated data → progressive convergence toward generic phenotypes; rare findings (pneumothorax, effusions) vanish. Loss of distributional tails via recursive synthetic generation — same mechanism as Shumailov 2024 for LLMs but domain-specific evidence.
+**Access:** Discovery-agent snippet only; healthcare-specific.
+
+**[87]** Schessl, F.M. "The Autocorrelation Blind Spot: Why 42% of Turn-Level Findings in LLM Conversation Analysis May Be Spurious." April 15 2026.
+<https://arxiv.org/abs/2604.14414>
+**Tier:** 1
+Data: 42% of turn-level associations significant under pooled testing fail cluster-robust correction. Chelton (1983) effective degrees of freedom + conversation-level block bootstrap. Replication: 57% cluster-robust vs 30% pooled-only. 66 metrics, 202 conversations, 11,639 turn pairs, 5 users, 4 LLMs. Non-memoryless metrics most affected (33% fail). Meta-limitation: much of the evidence base for agent failure rates may be statistically inflated. (Cross-referenced: `../agentic-research-bias/citations.md` [115].)
+
+**[88]** "Compound Deception in Elite Peer Review: A Failure Mode Taxonomy of 100 Fabricated Citations at NeurIPS 2025." arXiv:2602.05930.
+<https://arxiv.org/html/2602.05930v1>
+**Tier:** 1
+Data: 66% total fabrication, 27% partial attribute corruption. 100% of hallucinated citations exhibited compound failure modes — layering semantic plausibility, valid-looking identifiers, and recognized author names simultaneously. Reviewers using heuristic spot-checks (does title sound plausible? does DOI resolve?) systematically exploited.
+**Access:** Discovery-agent snippet only.
