@@ -224,9 +224,9 @@ the path, summary, dimensions covered, and last revision date.
 ## [React Flow and Graph Layout for Workflow Editors](research/react-flow-workflow-editors/README.md)
 
 - **Path:** [research/react-flow-workflow-editors/](research/react-flow-workflow-editors/)
-- **Summary:** React Flow architecture, graph layout algorithms (Dagre vs ELK), workflow editor patterns, flat-graph ↔ nested-tree representation mismatch, performance characteristics, competitive analysis (n8n, Node-RED, Retool, Windmill, Cloudflare), and accessibility. Key findings: ELK over Dagre for complex workflows, Zustand for state (React Flow uses it internally), bridge pattern for graph↔tree sync, WCAG 2.2 SC 2.5.7 requires non-drag alternatives for all operations. 49 sources, independently audited.
+- **Summary:** Citation-backed analysis of React Flow's architecture, graph layout algorithms, workflow editor patterns, and the flat-graph ↔ nested-tree representation mismatch. Recommendations: keep @xyflow/react, migrate Dagre→ELK for complex workflows (library-only 39 KB vs 1.4 MB; bundled-with-deps 136 KB vs 7.8 MB per Pinpoint), use Zustand for state, implement a bridge pattern (like n8n's useCanvasMapping) for graph↔tree sync, provide multi-representation accessibility. Maintainer-acknowledged performance ceiling around 1,000 complex nodes — Canvas-based renderer recommended beyond that. Counter-perspectives from Temporal and LangChain challenge the visual-builder category for complex workflows. Russell et al. taxonomy cites 43 control-flow patterns (20 original + 23 new). 54 sources, two rounds of audit.
 - **Dimensions:** React Flow architecture and API, graph layout algorithms, workflow editor patterns, graph-tree representation mismatch, React Flow performance, competitive workflow editor UX, accessibility, state management and data flow
-- **Last revised:** 2026-04-02
+- **Last revised:** 2026-04-19
 - **Status:** Active
 
 ## [React 19 and the React Compiler](research/react-19-compiler/README.md)

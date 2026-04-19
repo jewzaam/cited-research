@@ -5,6 +5,7 @@ Every research add or update to this repo, newest first.
 ## 2026-04-19
 
 - Updated [Best Practices for Citation-Backed Research Using Agentic AI](research/agentic-research-best-practices/)
+- Updated [React Flow and Graph Layout for Workflow Editors](research/react-flow-workflow-editors/)
 
 ## 2026-04-18
 

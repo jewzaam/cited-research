@@ -33,7 +33,7 @@ This review assessed internal consistency across 11 markdown files comprising 49
 
 ### ISSUE-001: Dagre Bundle Size Inconsistency (MODERATE)
 
-**Status:** OPEN
+**Status:** RESOLVED (2026-04-19 update — bundle-size disambiguation applied inline; see [citations.md](../citations.md) [4] and [20] entries, plus the "Bundle-size measurement disambiguation" note in [graph-layout-algorithms.md](../references/graph-layout-algorithms.md))
 
 **Category:** Numerical Consistency
 
@@ -57,7 +57,7 @@ Main deliverable states Dagre bundle size as "~39 KB" in section 3 (line 96) but
 
 ### ISSUE-002: d3-hierarchy Bundle Size Inconsistency (MINOR)
 
-**Status:** OPEN
+**Status:** RESOLVED (2026-04-19 update — bundle-size disambiguation applied inline; see [citations.md](../citations.md) [4] and [20] entries, plus the "Bundle-size measurement disambiguation" note in [graph-layout-algorithms.md](../references/graph-layout-algorithms.md))
 
 **Category:** Numerical Consistency
 
@@ -90,7 +90,7 @@ The "136 KB" appears in graph-tree-transformation.md line 139 quoting Pinpoint E
 
 ### ISSUE-003: ELK Bundle Size Minor Variance (MINOR)
 
-**Status:** OPEN
+**Status:** RESOLVED (2026-04-19 update — bundle-size disambiguation applied inline; see [citations.md](../citations.md) [4] and [20] entries, plus the "Bundle-size measurement disambiguation" note in [graph-layout-algorithms.md](../references/graph-layout-algorithms.md))
 
 **Category:** Numerical Consistency
 
@@ -118,7 +118,7 @@ Similar to ISSUE-002, Pinpoint Engineering reports "ELK.js (7.8 MB)" while React
 
 ### ISSUE-004: Missing Estimation Marker for SVG Performance Ceiling (MINOR)
 
-**Status:** OPEN
+**Status:** RESOLVED (2026-04-19 update — bundle-size disambiguation applied inline; see [citations.md](../citations.md) [4] and [20] entries, plus the "Bundle-size measurement disambiguation" note in [graph-layout-algorithms.md](../references/graph-layout-algorithms.md))
 
 **Category:** Estimation Markers
 
@@ -148,7 +148,7 @@ The "(est.)" marker is present in the table. However, the text following states:
 
 ### ISSUE-005: README Cross-Reference to Non-Existent Audit File (MINOR)
 
-**Status:** OPEN
+**Status:** RESOLVED (2026-04-19 update — bundle-size disambiguation applied inline; see [citations.md](../citations.md) [4] and [20] entries, plus the "Bundle-size measurement disambiguation" note in [graph-layout-algorithms.md](../references/graph-layout-algorithms.md))
 
 **Category:** Cross-Reference Links
 
@@ -175,7 +175,7 @@ At the time the README was written, this file did not exist yet (it is being cre
 
 ### ISSUE-006: Node Count Ceiling Claim Traceability (MINOR)
 
-**Status:** OPEN
+**Status:** RESOLVED (2026-04-19 update — bundle-size disambiguation applied inline; see [citations.md](../citations.md) [4] and [20] entries, plus the "Bundle-size measurement disambiguation" note in [graph-layout-algorithms.md](../references/graph-layout-algorithms.md))
 
 **Category:** Completeness
 
