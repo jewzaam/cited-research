@@ -548,3 +548,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** testing discipline, duplicate detection, quality evaluation, parallel implementation, integration patterns
 - **Last revised:** 2026-04-18
 - **Status:** Active
+
+## [Goose AI Agent: What It Is and Whether You Need It](research/goose-ai-agent/README.md)
+
+- **Path:** [research/goose-ai-agent/](research/goose-ai-agent/)
+- **Summary:** Open-source, model-agnostic AI agent (Block/AAIF, Rust, Apache 2.0) evaluated against Claude Code. Same Sonnet 4.5 model scores 72.7% SWE-bench via Claude Code vs ~45% via Goose — scaffolding matters as much as the model. Goose wins on cost ($0 with local models), privacy (fully offline), and model freedom (15+ providers). Claude Code wins on benchmark quality, deterministic automation (hooks), and mature multi-agent (Agent Teams). Two documented security incidents: Operation Pale Fire (successful prompt injection via Unicode-poisoned recipes) and 1-click RCE (web mode removed). 70 sources, independently audited (14 verified, 0 inaccurate).
+- **Dimensions:** platform overview and architecture, extension ecosystem and MCP integration, LLM provider flexibility, subagent and parallel execution, security model and known vulnerabilities, comparison with Claude Code, project maturity and governance
+- **Last revised:** 2026-04-20
+- **Status:** Active
