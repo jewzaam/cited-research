@@ -556,3 +556,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** platform overview and architecture, extension ecosystem and MCP integration, LLM provider flexibility, subagent and parallel execution, security model and known vulnerabilities, comparison with Claude Code, project maturity and governance
 - **Last revised:** 2026-04-20
 - **Status:** Active
+
+## [Quantifiable Metrics for Kubernetes Upgrade Validation](research/kubernetes-upgrade-validation-metrics/README.md)
+
+- **Path:** [research/kubernetes-upgrade-validation-metrics/](research/kubernetes-upgrade-validation-metrics/)
+- **Summary:** What metrics exist for validating software upgrades in operator-deployed Kubernetes platforms — and what doesn't exist despite being expected. Key findings: no platform publishes P95/P99 upgrade duration SLOs, DORA counts rollbacks as failures (not a success metric), conformance tests cover only ~5-6% of the e2e suite, CSV Succeeded doesn't guarantee operator health. Most quantitative metrics come from data integrity (etcd/PostgreSQL checksums), workload continuity (kube-state-metrics PDB/restart gauges), and OpenShift CI (95%/70%/<1% thresholds). 75 sources, independently audited.
+- **Dimensions:** data integrity verification, functional smoke coverage, upgrade duration SLOs, rollback success rate, stateful workload continuity, version skip validation, API compatibility regression, operator lifecycle upgrade mechanics
+- **Last revised:** 2026-04-20
+- **Status:** Active

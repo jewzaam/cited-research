@@ -4,6 +4,7 @@ Every research add or update to this repo, newest first.
 
 ## 2026-04-20
 
+- Added [Quantifiable Metrics for Kubernetes Upgrade Validation](research/kubernetes-upgrade-validation-metrics/)
 - Added [Goose AI Agent: What It Is and Whether You Need It](research/goose-ai-agent/)
 
 ## 2026-04-19
