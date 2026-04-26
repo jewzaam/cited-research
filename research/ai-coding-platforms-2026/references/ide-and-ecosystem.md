@@ -28,7 +28,7 @@ GitHub Copilot has the **broadest IDE coverage** in this comparison (8+ editors)
 
 - **Bob-IDE** ships VS Code-compatible extension support with first-run import from VS Code, plus settings import from Cursor and Windsurf [27]. Whether this means VS Code Marketplace access or OpenVSX is not clear from fetched sources.
 
-- **Windsurf** retained the legacy VS Code Marketplace ID `Codeium.codeium` for its plugin distribution despite the rebrand [21]. Plugin lineup spans 40+ IDEs per agent research.
+- **Windsurf** retained the legacy VS Code Marketplace ID `Codeium.codeium` for its plugin distribution despite the rebrand [21]. The plugin lineup spans multiple IDEs; the specific count is not surfaced in any in-session-fetched primary source and was removed from quantitative claims in this update.
 
 - **GitHub Copilot's marketplace strength** is structural — it ships in the dominant Microsoft-owned VS Code marketplace and integrates with the GitHub identity / repo system that millions of developers already use [12][15].
 

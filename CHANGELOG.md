@@ -5,6 +5,7 @@ Every research add or update to this repo, newest first.
 ## 2026-04-26
 
 - Added [AI Coding Platforms Compared (Individual / Small-Team Lens, 2026)](research/ai-coding-platforms-2026/)
+- Updated [AI Coding Platforms Compared (Individual / Small-Team Lens, 2026)](research/ai-coding-platforms-2026/) — added Dimension 9 (real cost at typical usage), calibrated against one buyer's measured 13-day Claude Code Pro session log; expanded citations from 40 to 58; applied audit Priority 1-3 fixes.
 - Added [Dup-check / anti-reinvention checks for AI-generated code](research/dup-check-anti-reinvention/)
 
 ## 2026-04-20

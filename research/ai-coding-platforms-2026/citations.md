@@ -59,7 +59,7 @@ Privacy Mode ON: zero data retention with model providers; "None of your code wi
 
 **[10]** Zeff, Maxwell. "Cursor apologizes for unclear pricing changes that upset users." *TechCrunch*, July 7, 2025.
 <https://techcrunch.com/2025/07/07/cursor-apologizes-for-unclear-pricing-changes-that-upset-users/>
-**Tier:** 3
+**Tier:** 3 (corrected 2026-04-26 from prior Tier 1; TechCrunch is industry trade journalism, not peer-reviewed/institutional)
 June 16, 2025: Cursor switched Pro plan from "500 fast responses + unlimited slower" to a $20 usage credit billed at API rates. Users on Anthropic Claude models ran out of requests "rather quickly." CEO Michael Truell apology blog post July 4, 2025: "We recognize that we didn't handle this pricing rollout well and we're sorry." Anysphere offered refunds.
 
 **[11]** Massimo et al. "[Critical] Cursor 2.1.50 - Multiple regressions: random sandbox, context loss, file corruption, save failures." *Cursor Forum*, December 2025.
@@ -136,7 +136,7 @@ Windsurf 2.0 + Devin-in-Windsurf launched April 15, 2026. Hybrid workflow: plan 
 
 **[23]** Wiggers, Kyle. "Cognition, maker of the AI coding agent Devin, acquires Windsurf." *TechCrunch*, July 14, 2025.
 <https://techcrunch.com/2025/07/14/cognition-maker-of-the-ai-coding-agent-devin-acquires-windsurf/>
-**Tier:** 3
+**Tier:** 3 (corrected 2026-04-26 from prior Tier 1; TechCrunch is industry trade journalism, not peer-reviewed/institutional)
 Acquisition signed July 14, 2025 (first call Friday after 5 p.m., agreement Monday morning). Deal price NOT disclosed. Acquired: Windsurf product/IP, all Windsurf employees not hired by Google in concurrent reverse-acquihire (~250 remaining), 350+ enterprise customers, hundreds of thousands of daily active users, $82M ARR. Context: OpenAI's $3B acquisition offer expired hours before Google's $2.4B reverse-acquihire of CEO Varun Mohan, co-founder Douglas Chen, and research leaders. Cognition waived vesting cliffs for retained employees.
 
 **[24]** "Models." *Windsurf Docs*, n.d.
@@ -234,3 +234,97 @@ Independent coverage of Windsurf 2.0: launched April 15, 2026. Adds the "Agent C
 <https://cognition.ai/blog/windsurf>
 **Tier:** 2
 Cognition's announcement page for the Windsurf acquisition. Used as supporting source for [23].
+
+---
+
+## API rate cards and subscription-to-API mapping (added 2026-04-26 update)
+
+**[41]** "Pricing." *Anthropic Claude API Docs*, accessed 2026-04-26.
+<https://platform.claude.com/docs/en/about-claude/pricing>
+**Tier:** 2
+Per-million-token rate card for all Claude models. Opus 4.7/4.6/4.5: $5 base input, $25 output, $0.50 cache read (10% of input), $6.25 5m cache write (1.25x input), $10 1h cache write (2x input). Sonnet 4.6/4.5: $3 / $15 / $0.30 / $3.75 / $6. Haiku 4.5: $1 / $5 / $0.10 / $1.25 / $2. Batch API: 50% off all rates. 1M-token context at standard pricing for Opus 4.7/4.6 and Sonnet 4.6 (no surcharge). Opus 4.7 uses a new tokenizer that "may use up to 35% more tokens for the same fixed text" vs prior models. Opus 4.6 Fast Mode (research preview): 6x rates ($30 input, $150 output). Web search tool: $10 per 1,000 searches. Code execution: 1,550 free hours/month/org, then $0.05/hour/container. Data residency (US-only): 1.1x multiplier on all token categories.
+
+**[42]** "Prompt caching." *Anthropic Claude API Docs*, accessed 2026-04-26.
+<https://platform.claude.com/docs/en/build-with-claude/prompt-caching>
+**Tier:** 2
+Cache pricing multipliers stack with the Batch API discount and data residency. 5-minute cache write = 1.25x base input price. 1-hour cache write = 2x base input price. Cache read (hit) = 0.1x base input price. "A cache hit costs 10% of the standard input price, which means caching pays off after just one cache read for the 5-minute duration (1.25x write), or after two cache reads for the 1-hour duration (2x write)."
+
+**[43]** "Using Claude Code with your Pro or Max plan." *Anthropic Help Center*, accessed 2026-04-26.
+<https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan>
+**Tier:** 2
+Pro and Max plan usage limits are shared across Claude (web/desktop/mobile) and Claude Code, "meaning all activity in both tools counts against the same usage limits." When limits hit, options for Pro: upgrade to Max 5x, enable extra usage, switch to pay-as-you-go API, or wait for reset. For Max: upgrade to Max 20x, enable extra usage, switch to pay-as-you-go API, or wait. "All transitions to API credit usage require explicit user consent." Anthropic does NOT publish absolute token, message, or hour caps for any plan in this article.
+
+**[44]** "What is the Max plan?" *Anthropic Help Center*, accessed 2026-04-26.
+<https://support.claude.com/en/collections/12394590-max-plan>
+**Tier:** 2
+Max 5x ($100/mo) provides "5 times more usage per session than the Pro plan." Max 20x ($200/mo) provides "20x more usage per session." Both Max tiers operate two weekly limits in parallel: one cross-model and one Sonnet-specific, both reset 7 days from session start. Anthropic reserves the right to "limit your usage in other ways, such as weekly and monthly caps or model and feature usage, at our discretion." Specific numerical limits are NOT provided in this article.
+
+**[45]** "Manage extra usage for paid Claude plans." *Anthropic Help Center*, accessed 2026-04-26.
+<https://support.claude.com/en/articles/12005970-manage-extra-usage-for-paid-claude-plans>
+**Tier:** 2
+Extra usage billed at standard API rates. Daily redemption limit of $2,000. Available on Pro, Max 5x, Max 20x. Not available on mobile apps — must enable via web. Plan limits reset every 5 hours regardless of extra usage status. Monthly spending caps adjustable, auto-reload optional. Note: the support help-center article ID in the URL has shifted between fetches; an audit-time live fetch returned a Teams/Enterprise variant. The Pro/Max-applicable content above was extracted from the in-session fetch on 2026-04-26 and is consistent with [44]'s description of overage being available on Pro and both Max tiers; readers should re-verify against the current help-center listing.
+
+**[46]** Anderson, Tim. "Anthropic admits Claude Code quota issues as users report Pro plan exhaustion." *The Register*, 2026-03-31.
+<https://www.theregister.com/2026/03/31/anthropic_claude_code_limits/>
+**Tier:** 3
+Pro subscriber quote: "maxed out every Monday and resets at Saturday... out of 30 days I get to use Claude 12." Max 5x quote: "I used up Max 5 in 1 hour of working, before I could work 8 hours." Anthropic statement: "people are hitting usage limits in Claude Code way faster than expected. We're actively investigating... it's the top priority for the team." Documents 2026-03-26 peak-hour throttle (Anthropic engineer Thariq Shihipar: "affect around 7 percent of users"), 2026-03-28 promotion ending (doubled-usage outside six-hour peak window), prompt cache 5-minute default with 1-hour at 2x, and user reports of 10-20x cost inflation from cache bugs.
+
+**[47]** "Models and pricing." *Cursor Docs*, accessed 2026-04-26.
+<https://cursor.com/docs/models-and-pricing>
+**Tier:** 2
+Per-model rate card. Anthropic models match Anthropic API prices (no Cursor markup): Opus 4.6/4.7 $5/$25/$0.50; Sonnet 4.6 $3/$15/$0.30. OpenAI: GPT-5.5 $5/$30/$0.50 (Max Mode required); GPT-5.4 $2.50/$15/$0.25 (90% cache discount); GPT-5.3-Codex $1.75/$14/$0.175. Google: Gemini 3.1 Pro $2/$12/$0.20; Gemini 3 Flash $0.50/$3. Cursor's Composer 2: $0.50/$2.50/$0.20. Plan inclusions: Pro $20 = "$20" of API usage included; Pro+ $60 = "$70" of API usage; Ultra $200 = "$400" of API usage. Max Mode: standard rates with 20% surcharge on legacy request-based plans. Cursor Token Rate $0.25/M applies on Teams plans only (not individual Pro/Pro+/Ultra). Composer 2 standalone pool size described as "generous" — not numerically published.
+
+**[48]** "June 2025 pricing changes." *Cursor Blog*, June 2025.
+<https://cursor.com/blog/june-2025-pricing>
+**Tier:** 2
+On 2025-06-16, Cursor switched Pro from "500 fast requests + unlimited slower" to a $20 monthly credit at API pricing. Stated benchmarks: $20 covers "approximately 225 Claude Sonnet 4 requests, 550 Gemini requests, or 650 GPT 4.1 requests" using median consumption. New models "spend an order of magnitude more tokens per request" for long-horizon agentic tasks. No cutoff at exactly $20 (short grace period). Overage: usage-based billing at the same API rates, or decline further spending.
+
+**[49]** "API Pricing." *OpenAI Developer Platform*, accessed 2026-04-26.
+<https://developers.openai.com/api/docs/pricing>
+**Tier:** 2
+Per-million-token rate card. GPT-5.5: $5 input / $0.50 cached / $30 output. GPT-5.4: $2.50 / $0.25 / $15. GPT-5.4 mini: $0.75 / $0.075 / $4.50. GPT-5.4 nano: $0.20 / $0.02 / $1.25. GPT-5.3-codex: $1.75 / $0.175 / $14. Cached input is 90% off base input across the GPT-5.4 family. Batch API: 50% off all rates. Data residency: 10% uplift on regional processing endpoints.
+
+**[50]** "Gemini API pricing." *Google AI for Developers*, accessed 2026-04-26.
+<https://ai.google.dev/gemini-api/docs/pricing>
+**Tier:** 2
+Gemini 3.1 Pro Preview: $2 input / $0.20 cached / $12 output (≤200K context). Over 200K: $4 / $0.40 / $18. Gemini 2.5 Pro: $1.25 / $0.125 / $10 (≤200K). Gemini 3 Flash Preview: $0.50 / $0.05 / $3. Gemini 2.5 Flash: $0.30 / $0.03 / $2.50. Gemini 2.5 Flash-Lite: $0.10 / $0.01 / $0.40. Cache storage: $4.50/M tokens/hour for Pro models, $1.00/M tokens/hour for Flash. Batch + Flex tiers: 50% off standard rates. Priority tier: 80% premium over standard.
+
+**[51]** "Premium requests." *GitHub Copilot Docs*, accessed 2026-04-26.
+<https://docs.github.com/en/copilot/concepts/billing/copilot-requests>
+**Tier:** 2
+Premium request multiplier table. 0x (no premium consumed): GPT-4.1, GPT-4o, GPT-5 mini, Raptor mini. 0.25x: GPT-5.4 nano, Grok Code Fast 1. 0.33x: Claude Haiku 4.5, Gemini 3 Flash, GPT-5.4 mini. 1x: Sonnet 4/4.5/4.6, Gemini 2.5 Pro, Gemini 3.1 Pro, GPT-5.2, GPT-5.2-Codex, GPT-5.3-Codex, GPT-5.4. 3x: Opus 4.5, Opus 4.6. 7.5x: Opus 4.7, GPT-5.5. 30x: Opus 4.6 fast mode (preview). Token-per-premium-request equivalent is NOT published — billing unit is the request, not the token. Tokens per request varies by model and conversation depth.
+
+**[52]** "Quota." *Windsurf Docs*, accessed 2026-04-26.
+<https://docs.windsurf.com/windsurf/accounts/quota>
+**Tier:** 2
+March 2026 onwards quota system: "Your budget is based on how many tokens the model uses for each request. The cost per token varies by model." "Your daily quota is more than 1/7 of your weekly quota, enabling users who work on weekends to fully use their weekly allowance." Free models (SWE-1.5, SWE-1.6, SWE-1, SWE-1-mini, swe-grep) "don't count against your quota at all." Plan-specific quota numbers are NOT published in the docs. Extra usage beyond included quota: billed at API list prices based on token consumption.
+
+**[53]** "Bobcoins." *IBM Bob Docs*, accessed 2026-04-26.
+<https://bob.ibm.com/docs/ide/account/bobcoins>
+**Tier:** 2
+1 bobcoin = $0.50 USD overage rate. "Every token processed by Bob, both input and output, contributes to your usage." "One bobcoin represents a standardized amount of computational resources." No public token-per-bobcoin conversion ratio is documented. Pro plan ($20/mo + $3 support) includes 40 bobcoins. Pro Plus ($60/mo + $9): 160 bobcoins. Ultra ($200/mo + $30): 500 bobcoins. Enterprise: 1,000-bobcoin packs at $500.
+
+**[54]** "The real cost of AI coding in 2026: pricing, token waste, and how to cut it." *MorphLLM*, accessed 2026-04-26.
+<https://www.morphllm.com/ai-coding-costs>
+**Tier:** 3
+Subscription stack: Claude Pro $20 + Cursor Pro $20 + ChatGPT Plus $20 + GitHub Copilot Pro $10 = $70/mo typical heavy-user stack ($840/yr). API spend ranges: Claude Code as daily agent reports "$500-2000/month in API costs." Eight-month case: "10 billion tokens... over $15,000 at API rates" vs "$800 on Max subscription." "Daily cost of agent-heavy Claude Code usage: $20-40." 90th-percentile spend "under $12/day (~$360/month ceiling)" per Anthropic data cited in piece. "70% of coding agent tokens are waste." Documented inefficiency: "21,000 input tokens for a one-line typo fix"; broader "stuck agent loop" analysis. Cost-reduction levers cited: model routing + context compaction (40-70%), prompt caching (90% on repeated prefixes), Batch API (50% off). Note: an earlier draft of this entry referenced a "47-iteration loop" example; the live source surfaced in audit does not contain that specific number — the typo example is the directly verifiable case.
+
+**[55]** "Agentic Coding Costs Explained." *Vantage Blog*, accessed 2026-04-26.
+<https://www.vantage.sh/blog/agentic-coding-costs>
+**Tier:** 3
+A 50-turn Opus 4.6 agentic session at API rates costs roughly $6 due to growing context (5K tokens at turn 1 to 35K+ by turn 50). Two such sessions per day = ~$360/mo of Opus API spend before any subscription cap kicks in. Team-scale Opus usage estimates reach $6,000/month at API rates. Retry loops compound cost at higher context sizes. The agentic cost curve is non-linear in turn count due to context accumulation.
+
+**[56]** Sevak Avakians. "Claude Code limit hit on Max plan: what to do next." *Medium*, accessed 2026-04-26.
+<https://medium.com/@sevakavakians/claude-code-limit-hit-on-max-plan-what-to-do-next-60389024e0af>
+**Tier:** 4
+Author paid for Max ($200/mo) and reports an Opus weekly-limit lockout: "Opus weekly limit reached · resets Oct 6, 1pm." Lockout documented in the piece spans approximately 3 days (Oct 3 to Oct 6). Author migrated to Gemini CLI for the lockout duration. Direct evidence that the $200 Max plan can become unavailable for multiple days at a time. The "weekly limit" framing in the in-app message implies the mechanical maximum is 7 days, but the documented case in this article is ~3 days.
+
+**[57]** "The Flat-Rate AI Coding Subscription Era is Ending." *Activated Thinker / Medium*, April 2026.
+<https://medium.com/activated-thinker/the-flat-rate-ai-coding-subscription-era-is-ending-what-github-copilot-claude-code-and-cursor-9763e043a63a>
+**Tier:** 3
+Documents three structural changes verifiable in the live source: Anthropic reduced default prompt cache TTL from 1 hour to 5 minutes (an effective hidden price increase since cached prefixes invalidate faster, forcing more re-computation), Cursor moved frontier models behind Max Mode mid-cycle, GitHub paused new Pro/Pro+ signups. Frames flat-rate subscriptions as a "customer-acquisition tactic" no longer compatible with agentic compute demands. The subscription-vs-API breakeven analysis sits at the Max tier ($100-200/mo), not the Pro tier ($20/mo), for users with sustained agentic workloads. Note: an earlier draft of this entry attributed an "Antigravity credit system" change to this article; the live source does not mention Antigravity — that change is documented in [19] instead.
+
+**[58]** "GitHub Copilot Pauses New Sign-ups: Agentic AI Usage Limits." *The Next Web*, April 2026.
+<https://thenextweb.com/news/github-copilot-signup-pause-agentic-ai-usage-limits>
+**Tier:** 3
+GitHub VP Joe Binder quote on the rationale for pausing Pro/Pro+ signups: "a handful of requests can exceed the plan price." Direct admission that individual-tier plan economics could not sustain agentic demand. Confirms Free signups remained open while Pro/Pro+ paused 2026-04-20.

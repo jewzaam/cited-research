@@ -4,6 +4,15 @@
 
 Monthly costs, free-tier ceilings, and where the spending wall hits in real use. See [`citations.md`](../citations.md) for sources.
 
+> **Real-cost calibration:** This file documents *list-price* economics. For
+> what these prices mean against one buyer's measured 13-day usage profile
+> (49.8M non-cache + 32.6M cache tokens, weekend-heavy, ~33 active hours), see
+> [`real-cost-at-typical-usage.md`](real-cost-at-typical-usage.md). A $20/mo
+> sticker price covers $100-$1,000 of subscription-equivalent value at heavy
+> agentic loads, but is documented to break under sustained agentic use across
+> at least four platforms (Cursor [10], Anthropic [5][46], GitHub Copilot
+> [13][58], Antigravity [19]).
+
 ## Headline pricing table — individual entry tier through Pro+
 
 | Platform | Free tier | Entry paid | Mid paid | Top individual | Currently accepting new individual signups? |
@@ -14,7 +23,7 @@ Monthly costs, free-tier ceilings, and where the spending wall hits in real use.
 | **Gemini Code Assist** | **Free** (1,000 req/user/day) [17] | Google AI Pro $19.99/mo (shared limits across CLI + Code Assist + Antigravity) [19] | — | Google AI Ultra $249.99/mo [19] | Yes |
 | **Gemini CLI** | **Free** (60 req/min, 1,000/day with personal Google auth; Flash-only on free API key as of March 2026) | Same shared Google AI Pro/Ultra subscriptions | — | — | Yes |
 | **Antigravity** | **$0** during public preview, weekly rate limits [19] | Google AI Pro $19.99/mo [19] | — | Google AI Ultra $249.99/mo [19] | Yes (preview) |
-| **Windsurf** | **Free $0** | **Pro $20/mo** (unlimited) [21] | — | **Max $200/mo** (unlimited; Devin Cloud sessions) [21] | Yes |
+| **Windsurf** | **Free $0** | **Pro $20/mo** (formerly "unlimited" [21]; token-based weekly+daily quota since March 2026 [52]) | — | **Max $200/mo** (Devin Cloud sessions [21]; daily limits removed Apr 6, 2026 [52]; weekly token quota remains, undisclosed numbers) | Yes |
 | **IBM Bob** | 30-day trial, **40 bobcoins** [26][29] | **Pro $20/mo + $3 support** (40 bobcoins) [26][29] | **Pro Plus $60/mo + $9** (160 bobcoins) [26][29] | **Ultra $200/mo + $30** (500 bobcoins) [26][29] | Yes (self-serve) |
 
 ## Where the spending wall hits

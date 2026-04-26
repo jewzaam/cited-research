@@ -2,214 +2,690 @@
 
 # Consistency Review — AI Coding Platforms (Individual / Small-Team Lens, 2026)
 
-**Reviewed:** 2026-04-26
-**Scope:** `analysis.md`, `README.md`, `citations.md`, `references/*.md` (8 files)
-**Method:** Full read of all 11 files; cross-reference of every numerical claim, date, citation number, and factual assertion that appears in more than one file.
+**Reviewed:** 2026-04-26 (second pass, incorporating 2026-04-26 update: Dimension 9 + citations [41]-[58] + Priority 1-3 audit fixes)
+
+## Update 2026-04-26 — Resolutions Applied
+
+Open issues from this consistency review have been addressed as follows:
+
+1. **Issue 1 — Opus 4.7 13-day cells off by $1-2 — Status: RESOLVED.** All Opus cells recomputed: $365 / $465 / $564 (was $366 / $466 / $566). Monthly cells updated correspondingly.
+2. **Issue 2 — GPT-5.4 / GPT-5.3-Codex / Gemini cells — Status: RESOLVED.** All cells recomputed against the rate cards in [49] / [50]. New values: GPT-5.4 $195/$257/$319; GPT-5.3-Codex $154/$215/$276; Gemini 3.1 Pro $156/$206/$256; Gemini 2.5 Pro $110/$153/$197. Monthly cells updated.
+3. **Issue 3 — Worked Example 2 wrong Opus subtotal — Status: RESOLVED.** $465.50 corrected to $464.50; intermediate ½ × subtotal updated from $232.75 to $232.25; total updated from $372.10 to $371.60. Final rounded result remains $372.
+4. **Issue 4 — Within-file contradiction (table $373 vs example $372) — Status: RESOLVED.** Mix 50/50 80/20 cell corrected from $373 to $372 in 13-day table, monthly table, sensitivity anchor, and Cost view table.
+5. **Issue 5 — GPT-5.3-Codex / Gemini absent from monthly table — Status: RESOLVED.** Added monthly rows for GPT-5.3-Codex ($355 / $496 / $637), Gemini 3.1 Pro ($360 / $475 / $591), Gemini 2.5 Pro ($254 / $353 / $455).
+6. **Issue 6 — Composer 2 outlier in $450-$1,300 range — Status: PARTIAL.** The reference file already explains the outlier; analysis.md and README.md still cite the range without the caveat (intentional — the headline range refers to frontier-model usage, which is the realistic case for the buyer's actual workflow). Acceptable framing, no further action.
+7. **Issue 7 — Reflection contradicts softened Anthropic language — Status: RESOLVED.** analysis.md Reflection section reworded: now states GitHub and Gemini explicitly flipped defaults to opt-in, while Anthropic's August 2025 update presents users with a choice whose new-account default depends on signup-flow framing not explicitly disclosed in [3]. Consistent with cross-cutting observation 4 and Dimension 8.
+8. **Issue 8 — Windsurf "40+ IDEs" in ide-and-ecosystem.md — Status: RESOLVED.** Replaced with "the plugin lineup spans multiple IDEs; the specific count is not surfaced in any in-session-fetched primary source and was removed from quantitative claims in this update."
+9. **Issue 9 — Windsurf "unlimited" superseded label — Status: RESOLVED.** pricing-and-free-tier.md table now shows: Pro $20/mo (formerly "unlimited" [21]; token-based weekly+daily quota since March 2026 [52]); Max $200/mo (Devin Cloud sessions [21]; daily limits removed Apr 6, 2026 [52]; weekly token quota remains, undisclosed numbers).
+10. **Issue 11 — Opus/Sonnet ratio sanity check — Status: RESOLVED.** With corrected Opus and Sonnet cells, ratios now: $365/$219=1.667, $465/$279=1.667, $564/$338=1.669 — all match the rate-card 5/3=1.667 within rounding.
+11. **Issue 12 — Monthly extrapolation propagation — Status: RESOLVED.** Monthly cells recomputed from corrected 13-day cells using ×2.308.
+12. **Issue 16 — Priority 1 fix Reflection miss — Status: RESOLVED.** Same fix as Issue 7.
+13. **Issue 18 — Priority 3 fix partial — Status: RESOLVED.** Same fix as Issue 8.
+
+The original consistency review body that follows was generated against the pre-fix version of the corpus.
+
+---
+
+**Scope:** `analysis.md`, `README.md`, `citations.md`, `references/*.md` (9 files), `audit/citation-audit.md`
+**Method:** Full read of all 12 files; manual arithmetic verification of all cost projection cells; cross-reference of every numerical claim, citation number, and factual assertion.
 
 ---
 
 ## Summary
 
-| Severity | Count |
-|---|---|
-| CRITICAL | 0 |
-| MODERATE | 3 |
-| MINOR | 4 |
+| Severity | Count | New since prior review |
+|---|---|---|
+| CRITICAL | 0 | — |
+| MODERATE | 7 | 5 new (all Dimension 9) |
+| MINOR | 6 | 3 new |
 
-No CRITICAL issues found. No two files state materially contradictory facts about buying decisions. The three MODERATE issues are a citation-accuracy gap, a within-file numerical inconsistency that propagated one level, and a rounding discrepancy on a vendor benchmark figure. The four MINOR issues are omissions and labeling gaps.
+No CRITICAL issues. The five new MODERATE issues are all in the `references/real-cost-at-typical-usage.md` cost tables: three categories of arithmetic errors (Opus 4.7 cells off by $1-2; GPT-5.4 and GPT-5.3-Codex cells off by $13-25; Gemini cells off in opposite direction by $7-10), a within-file contradiction between a worked example and the table it supports, and a $1 mismatch between the worked-example result and the 50/50 mix table cell. Three of the four Priority 1-3 audit fixes from the citation-audit are confirmed applied; one remains partially unresolved.
 
 ---
 
 ## Issues Found
 
-### Issue 1 — MCP token budget stated as "50K+" in agentic-capabilities table, "~55K" everywhere else
+### Issue 1 — Opus 4.7 13-day cost cells off by $1–2 across all three splits
 
-**Status:** RESOLVED (table updated to "~55K for a 5-server setup" matching [6])
+**Status:** OPEN
 **Severity:** MODERATE
-**File(s):** `references/agentic-capabilities.md` (comparison table, Claude Code row) vs `analysis.md` (Dimension 4 and cross-cutting observation 2), `citations.md` [6]
-**Expected value:** ~55K (55,000 tokens) — per citation [6] directly: "approximately 55,000 tokens before any conversation starts"
-**Actual value(s):**
-- `references/agentic-capabilities.md` table: "Skills (~30-50 tokens vs MCP's **50K+**) [6]"
-- `references/agentic-capabilities.md` MCP convergence section (same file): "approximately **55,000** tokens" ✓
-- `analysis.md` Dimension 4: "MCP's **~55K** for a 5-server setup [6]" ✓
-- `analysis.md` cross-cutting observation 2: "MCP's **~55K** for a typical 5-server setup [6]" ✓
-- `citations.md` [6]: "approximately **55,000** tokens" ✓
+**File:** `references/real-cost-at-typical-usage.md` — 13-day cost projection table, "All Opus 4.7" row
+**Rates used:** Input $5/M, Output $25/M, Cache read $0.50/M (per [41]) ✓
+
+| Split | Computed | Doc value | Delta |
+|---|---|---|---|
+| 90/10 | 44.82×$5 + 4.98×$25 + 32.6×$0.50 = $224.10+$124.50+$16.30 = **$364.90 → $365** | **$366** | $1 high |
+| 80/20 | 39.84×$5 + 9.96×$25 + 32.6×$0.50 = $199.20+$249.00+$16.30 = **$464.50 → $465** | **$466** | $1 high |
+| 70/30 | 34.86×$5 + 14.94×$25 + 32.6×$0.50 = $174.30+$373.50+$16.30 = **$564.10 → $564** | **$566** | $2 high |
+
+All three cells are $1-2 above the arithmetically correct value. The monthly extrapolation for these rows propagates the same error: 90/10 monthly = doc $844, computed $365×2.308 = $843; 80/20 monthly = doc $1,075, computed $465×2.308 = $1,073; 70/30 monthly = doc $1,306, computed $564×2.308 = $1,302.
+
 **Grade:** FAIL
-**Notes:** The table in `agentic-capabilities.md` uses "50K+" — a loose lower-bound phrasing that technically includes 55K but is not the figure stated in the cited source. Within the same file, the body text correctly says 55,000. A reader who reads only the table takes away a different number than a reader of the body text or any other file. Should be corrected to "~55K" or "~55,000" for consistency with [6].
+**Notes:** The $1-2 rounding error does not affect the "$450-$1,300/month" range claim (the upper bound of $1,300 is a rounded approximation of the 70/30 Opus monthly value regardless). However, the intermediate worked example 2 uses $465.50 for the Opus 80/20 subtotal (should be $464.50) — see Issue 3.
 
 ---
 
-### Issue 2 — Antigravity launch model: analysis.md and README.md attribute "Claude Opus 4.6" to citation [18], but [18] names only "Claude Sonnet 4.5" at launch
+### Issue 2 — GPT-5.4 13-day cost cells off by $13-25 (direction: doc values too low)
 
-**Status:** RESOLVED (analysis.md and README.md tables now distinguish "Claude Sonnet 4.5 at launch [18]" from "Opus 4.6 + Sonnet 4.6 + GPT-OSS added later [19]")
+**Status:** OPEN
 **Severity:** MODERATE
-**File(s):** `analysis.md` (headline comparison table, Antigravity row), `README.md` (key comparison table, Antigravity row), `citations.md` [18], `references/models-and-flexibility.md`
-**Expected value:** Citation [18] should not be the primary source for "Claude Opus 4.6"; [19] is the correct source for that model.
-**Actual value(s):**
-- `citations.md` [18] (Google Developers Blog, official launch announcement): "Supports Gemini 3 Pro plus **Anthropic Claude Sonnet 4.5** and OpenAI's GPT-OSS at launch" — Opus 4.6 is NOT in [18]
-- `citations.md` [19] (aitoolanalysis.com review): "Models include **Claude Opus 4.6** (Thinking), Claude Sonnet 4.6 variants, Gemini 3.1 Pro (High/Low)…" ✓ — Opus 4.6 IS in [19]
-- `analysis.md` Antigravity row: "Gemini 3 Pro + **Claude Opus 4.6** + GPT-OSS [18][19]" — dual-cited but [18] doesn't say Opus 4.6
-- `README.md` Antigravity row: "Gemini 3 Pro + **Claude Opus 4.6** + GPT-OSS [18][19]" — same dual-citation
-- `references/models-and-flexibility.md`: "also supports Anthropic **Claude Sonnet 4.5/4.6, Claude Opus 4.6**, OpenAI GPT-OSS 120B [18][19]" — lists all models and preserves the Sonnet 4.5 launch model ✓
+**File:** `references/real-cost-at-typical-usage.md` — 13-day cost projection table, "All GPT-5.4" row
+**Rates used:** Input $2.50/M, Output $15/M, Cache read $0.25/M (per [49]) ✓
+
+| Split | Computed | Doc value | Delta |
+|---|---|---|---|
+| 90/10 | 44.82×$2.50 + 4.98×$15 + 32.6×$0.25 = $112.05+$74.70+$8.15 = **$194.90 → $195** | **$194** | $1 low |
+| 80/20 | 39.84×$2.50 + 9.96×$15 + 32.6×$0.25 = $99.60+$149.40+$8.15 = **$257.15 → $257** | **$244** | $13 low |
+| 70/30 | 34.86×$2.50 + 14.94×$15 + 32.6×$0.25 = $87.15+$224.10+$8.15 = **$319.40 → $319** | **$294** | $25 low |
+
+The 80/20 and 70/30 cells cannot be reconciled with any plausible variant of the stated inputs (different cache rate, different rounding convention, omitting cache, using wrong output price). The $244 and $294 values do not follow from GPT-5.4 rates at 80/20 and 70/30 splits on 49.8M tokens. The 90/10 cell is within $1 (possibly truncated rather than rounded).
+
+The monthly table for GPT-5.4 extrapolates correctly from the (wrong) 13-day values: $244×2.308=$563 ✓, $294×2.308=$678 ✓. So the monthly values are internally consistent with the 13-day table, but both are wrong.
+
 **Grade:** FAIL
-**Notes:** The `models-and-flexibility.md` reference file is accurate: it lists Claude Sonnet 4.5 (from [18]) alongside Opus 4.6 (from [19]). The `analysis.md` and `README.md` tables compress this to only "Claude Opus 4.6," dropping the Sonnet 4.5 launch model from [18] and implying [18] supports the Opus 4.6 claim. The dual-citation "[18][19]" masks the error but does not correct it — a reader checking only [18] will not find Opus 4.6. The models reference file is the most accurate representation.
+**Notes:** The GPT-5.3-Codex row has a similar pattern: computed 90/10 = $153.86→$154, doc says $148 (off $6); 80/20 = $214.87→$215, doc says $204 (off $11); 70/30 = $275.87→$276, doc says $260 (off $16). These rows use $1.75/$14/$0.175 from [49]. The Gemini 3.1 Pro row (rates $2/$12/$0.20 from [50]) shows: 90/10 computed $155.92→$156 (doc $156 ✓), 80/20 computed $205.72→$206 (doc $216, off +$10), 70/30 computed $255.52→$256 (doc $276, off +$20). Gemini 2.5 Pro (rates $1.25/$10/$0.125): 90/10 computed $109.90→$110 (doc $110 ✓), 80/20 computed $153.47→$153 (doc $160, off +$7), 70/30 computed $197.05→$197 (doc $210, off +$13). The pattern is consistent: 90/10 cells match (within $1), 80/20 and 70/30 cells diverge significantly. GPT rows trend too low; Gemini rows trend too high. The underlying cause was not determined but likely reflects a computational error during table construction, not a rate-card transcription error.
 
 ---
 
-### Issue 3 — Windsurf SWE-1.5 score rounded to "40%" in README vs "40.08%" in analysis and benchmarks reference
+### Issue 3 — Worked Example 2 uses wrong Opus subtotal ($465.50 instead of $464.50)
 
-**Status:** RESOLVED (README updated to "40.08%" matching analysis.md and benchmarks reference)
+**Status:** OPEN
 **Severity:** MODERATE
-**File(s):** `README.md` (key comparison table, Windsurf row) vs `analysis.md` (headline comparison table) and `references/benchmarks-and-real-world-quality.md`
-**Expected value:** 40.08% — the figure stated in the benchmarks reference
-**Actual value(s):**
-- `README.md` Windsurf row: "SWE-1.5 vendor: **40%**"
-- `analysis.md` Windsurf row: "Vendor-claimed SWE-1.5 = **40.08%**" ✓
-- `references/benchmarks-and-real-world-quality.md`: "vendor-reported **40.08%** on SWE-bench Verified" ✓
+**File:** `references/real-cost-at-typical-usage.md` — lines 89-92
+
+**Quoted text:**
+> Half of (39.84M × $3 + 9.96M × $15 + 32.6M × $0.30) = ½ × $278.70 = $139.35
+> plus half of (39.84M × $5 + 9.96M × $25 + 32.6M × $0.50) = ½ × **$465.50** = $232.75
+> = $372.10. Rounded to **$372**.
+
+**Correct computation:**
+39.84×$5 = $199.20, 9.96×$25 = $249.00, 32.6×$0.50 = $16.30. Sum = **$464.50**, not $465.50.
+Half = $232.25 (not $232.75). Total = $139.35 + $232.25 = **$371.60**, rounds to **$372**.
+
+The worked example states a wrong intermediate value ($465.50 vs $464.50) but happens to produce the same rounded result ($372) because the $1 error in the intermediate doesn't affect the final rounding. However, it is arithmetically incorrect.
+
 **Grade:** FAIL
-**Notes:** "40%" and "40.08%" are materially consistent to a reader doing comparison shopping, but they are not identical. Since this is a vendor benchmark used to compare Windsurf against other platforms on SWE-bench, the 0.08 pp drop in the README representation is a rounding loss that could matter in close comparisons. The README should state "40.08%" or "~40%" with explicit rounding disclosure, as analysis.md does.
+**Notes:** The worked example then conflicts with the 50/50 mix 80/20 table cell (see Issue 4).
 
 ---
 
-### Issue 4 — BenchLM described as "aggregator (Tier 3)" in citations but not labeled as such in analysis.md main text
+### Issue 4 — Within-file contradiction: Worked Example 2 says $372, table says $373 for 50/50 mix 80/20
+
+**Status:** OPEN
+**Severity:** MODERATE
+**File:** `references/real-cost-at-typical-usage.md` — "50/50 Sonnet+Opus mix" row (80/20 column) vs Worked Example 2
+
+**Expected value:** Arithmetically correct value is $371.60 → **$372**
+**Worked Example 2 result:** "$372.10. Rounded to **$372**" — wrong intermediate but same rounded answer
+**13-day table cell (50/50, 80/20):** **$373**
+
+The table and the worked example in the same file disagree. The worked example derives $372; the table says $373. The arithmetic supports $372. The table is wrong; the worked example reaches the right answer through a flawed intermediate.
+
+For context: the 50/50 mix 90/10 cell is $293 (computed: ($218.94+$364.90)/2=$291.92→$292, so also off by $1), and 70/30 is $453 (computed: ($338.46+$564.10)/2=$451.28→$451, off by $2).
+
+**Grade:** FAIL
+
+---
+
+### Issue 5 — GPT-5.5 and GPT-5.3-Codex rows in rate-card table not in the 13-day cost table; Gemini models absent from monthly table
 
 **Status:** OPEN
 **Severity:** MINOR
-**File(s):** `analysis.md` (Dimension 7 and headline table), `citations.md` [32], `references/benchmarks-and-real-world-quality.md`
-**Expected value:** Main text should flag BenchLM as an aggregator, not a primary leaderboard fetch
-**Actual value(s):**
-- `citations.md` [32]: Tier 3; labeled "SWE-bench Verified leaderboard tracker" — clearly an aggregator ✓
-- `references/benchmarks-and-real-world-quality.md`: "Per BenchLM aggregator [32]" ✓ — labeled
-- `analysis.md`: "Claude Opus 4.7 leads at 87.6% [32]" and "SWE-bench Verified (the dominant published benchmark), Claude Opus 4.7 leads at 87.6% [32]" — no "aggregator" label in main text
-- `analysis.md` Limitations: discloses SWE-bench live page returned scaffolding, but does not explicitly say "BenchLM is an aggregator, not the official leaderboard"
+**File:** `references/real-cost-at-typical-usage.md`
+
+The API rate-card table (lines 43-56) includes: Opus 4.7, Opus 4.6, Sonnet 4.6, Haiku 4.5, GPT-5.5, GPT-5.4, GPT-5.3-Codex, Gemini 3.1 Pro Preview, Gemini 2.5 Pro, Gemini 3 Flash Preview, Cursor Composer 2.
+
+The 13-day cost table (lines 76-83) includes: Sonnet 4.6, Opus 4.7, 50/50 mix, GPT-5.4, GPT-5.3-Codex, Gemini 3.1 Pro, Gemini 2.5 Pro, Composer 2.
+
+The monthly extrapolation table (lines 97-102) includes: Sonnet 4.6, Opus 4.7, 50/50 mix, GPT-5.4, Composer 2. **GPT-5.3-Codex, Gemini 3.1 Pro, and Gemini 2.5 Pro are present in the 13-day table but absent from the monthly table.**
+
+The "$450-$1,300/month" summary range is stated as applying to "model mix [41][42][47][49][50]." If a reader looks at the monthly table to verify $450 as a lower bound, they only see GPT-5.4 90/10 = $448 — the other GPT and Gemini rows that would extend the range downward are not in the monthly table. The omission is not flagged in the Gaps section.
+
 **Grade:** PASS with caveat
-**Notes:** The disclosure exists in citations.md and the benchmarks reference, so the gap is not a hidden fact. A reader following [32] will see "Tier 3 / aggregator." The main analysis.md does not carry the label inline. This is a labeling omission rather than a contradiction — the benchmarks reference file resolves it.
+**Notes:** The 13-day table is complete; the monthly table is not. A reader relying only on the monthly table gets an incomplete picture.
 
 ---
 
-### Issue 5 — METR sample size caveat: disclosed in analysis.md Limitations but not in README "Honesty" section
+### Issue 6 — The "$450-$1,300/month" range excludes the Composer 2 outlier without explanation
 
 **Status:** OPEN
 **Severity:** MINOR
-**File(s):** `analysis.md` (Limitations section), `README.md` (Honesty section), `citations.md` [34]
-**Expected value:** README should flag n=16 as a small-sample caveat when citing the 19% slower finding
-**Actual value(s):**
-- `analysis.md` Limitations: "The METR study sample size is small (n=16) [34]. Vendors will (correctly) note this is statistically borderline." ✓
-- `README.md` Honesty: "METR's RCT measured experienced developers as **19% slower** with AI tools (n=16, real open-source tasks) — and developers perceived themselves as 20% faster anyway [34]." ✓ — n=16 IS stated
-**Grade:** PASS
-**Notes:** On re-check, the README does include "n=16" inline. No issue — the caveat is present in both files.
+**File:** `references/real-cost-at-typical-usage.md` (line 105); `analysis.md` (Dimension 9 and cross-cutting observation 3); `README.md` (TL;DR)
 
----
+All three files state the range as "$450-$1,300/month" for this buyer's profile. The monthly table shows Composer 2 at $97-$145/month — well below $450. The range implicitly excludes the Composer 2 scenario.
 
-### Issue 6 — Windsurf "Light" tier exists in source [21] but is entirely absent from all analysis files
+The real-cost file does call out the outlier: "The Composer 2 all-in scenario at ~$100–$145/mo is an outlier — Composer 2's per-token rates are 5–10x cheaper than any frontier model in the table." So the explanation exists in the reference file. However, the README TL;DR and analysis.md Dimension 9 use "$450-$1,300" without caveat, and both cite [47] (the Cursor source that includes Composer 2 rates) as one of the supporting citations. A reader following [47] would find Composer 2 rates and could reasonably expect the range to start lower.
 
-**Status:** OPEN
-**Severity:** MINOR
-**File(s):** `citations.md` [21], `references/pricing-and-free-tier.md`, `analysis.md`, `README.md`
-**Expected value:** Light tier at least noted as existing (price unknown)
-**Actual value(s):**
-- `citations.md` [21]: "Tiers: Free ($0), **Light (price not shown on this fetch)**, Pro ($20/mo, unlimited), Max ($200/mo)"
-- `references/pricing-and-free-tier.md` Windsurf row: Free | Pro $20 | Max $200 — Light not listed
-- `analysis.md` headline table: "Fork-IDE + plugins (40+) [21][24]" — no tier detail
-- `README.md`: No mention of Light tier
 **Grade:** PASS with caveat
-**Notes:** The source explicitly flags that "Light" has an unknown price. Omitting a tier whose price is unavailable is a reasonable research decision. The gap is transparently documented in citations.md. No substantive reader harm, but a buyer comparing Windsurf options would find only three tiers here vs the four that exist.
+**Notes:** The caveat exists in the right place (reference file) but is not echoed in the summary statements in README and analysis.md.
 
 ---
 
-### Issue 7 — Cursor model at METR study time: "Claude 3.5/3.7 Sonnet" in citations and benchmarks reference; not reconciled with current Cursor model positioning
+### Issue 7 — Analysis.md Reflection says all three platforms "flipped training-data defaults to opt-in"; contradicts softened language for Anthropic in table and cross-cutting observation 4
+
+**Status:** OPEN
+**Severity:** MODERATE
+**Files:** `analysis.md` (Reflection section, line 128) vs `analysis.md` (Dimension 8, line 72; headline table, line 21); `README.md` (Decision framework 5, line 55); `citations.md` [3]
+
+**Contradiction:**
+
+- `analysis.md` headline table (line 21): "User choice via consumer terms (Aug 28 2025) [3]" — softened framing ✓
+- `analysis.md` Dimension 8 (line 72): "Anthropic effective Aug 28 2025 ([3], framed as 'user choice' with default behavior depending on signup-flow framing not explicitly disclosed in the release post)" — softened ✓
+- `analysis.md` cross-cutting observation 4 (line 88): "The training-data default has flipped. Two of the three platforms make this explicit: GitHub Copilot Free/Pro/Pro+ now uses interaction data for training by default (effective April 24, 2026) [14], and Gemini Code Assist Individual collects prompts/code for training with opt-out available [20]. Anthropic's August 2025 consumer terms update presents users with a choice on training data use [3]" — softened ✓
+- `analysis.md` Reflection section (line 128): "IBM Bob has unresolved security disclosure history [30]; **three platforms (Anthropic, GitHub, Google) flipped training-data defaults to opt-in** within the last 8 months [3][14][20]." — NOT softened; says "flipped to opt-in"
+- `README.md` Decision framework 5 (line 55): "Anthropic's August 2025 consumer terms presents the choice to users [3]" — softened ✓
+
+The Reflection section uses unqualified "flipped training-data defaults to opt-in" for all three including Anthropic, which contradicts the hedged language applied everywhere else after the Priority 1 audit fix. The Reflection section was apparently not updated when the softened language was applied to other locations.
+
+**Grade:** FAIL
+**Notes:** This is a direct contradiction within `analysis.md` itself. Citation [3]'s description says "Users **choose** to allow training data use" — which the Reflection's "flipped to opt-in" mischaracterizes. The prior consistency review marked [3] as RESOLVED in the citation audit, but the Reflection section was missed.
+
+---
+
+### Issue 8 — Windsurf "40+ IDEs" partially removed: removed from analysis.md and README.md but survives in ide-and-ecosystem.md
 
 **Status:** OPEN
 **Severity:** MINOR
-**File(s):** `citations.md` [34], `references/benchmarks-and-real-world-quality.md`
-**Expected value:** No contradiction — this is a temporal consistency note
-**Actual value(s):**
-- `citations.md` [34]: "Tools used: Cursor Pro with Claude **3.5/3.7 Sonnet** (frontier at the time)"
-- `references/benchmarks-and-real-world-quality.md`: "developers using AI tools (primarily Cursor Pro + Claude 3.5/3.7 Sonnet)" ✓
-- No file claims METR used Claude 4.x or any 2026 model
-**Grade:** PASS
-**Notes:** Consistent. METR's study was July 2025 when 3.5/3.7 were frontier. The temporal framing is correct. Not a cross-file inconsistency — flagged here for completeness.
+**Files:** `references/ide-and-ecosystem.md` (line 31); `analysis.md`; `README.md`
+
+The Priority 3 audit fix (remove unsupported "40+ IDEs" count for Windsurf) was applied to `analysis.md` (now says "Fork-IDE + multi-IDE plugins [21][24]") and `README.md` (same). However, `references/ide-and-ecosystem.md` line 31 still says: "Plugin lineup spans **40+ IDEs** per agent research."
+
+This is labeled "per agent research" (not a numbered citation), so it's not a citation-accuracy issue, but the claim remains in the reference file without a supporting numbered citation and contradicts the fix applied to the top-level files.
+
+**Grade:** FAIL (partial fix only)
+**Notes:** If the intent of the Priority 3 fix was to remove an unsupported quantitative claim, it needs to be applied to the reference file too.
 
 ---
 
-## Items Verified Consistent
+### Issue 9 — Windsurf "unlimited" label in pricing-and-free-tier.md not flagged as superseded for individual plans
+
+**Status:** OPEN
+**Severity:** MINOR
+**File:** `references/pricing-and-free-tier.md` (line 26) vs `citations.md` [52]
+
+The pricing table in pricing-and-free-tier.md still shows Windsurf Pro as "**Pro $20/mo** (unlimited) [21]" with no caveat about the March 2026 token-based quota shift.
+
+The real-cost file correctly notes: "The 'unlimited' branding from earlier [21] is no longer accurate post-March 2026." And [52] (Windsurf Docs, quota page) is cited for the token-based quota change. But the pricing-and-free-tier.md table — the canonical list-price reference — shows the superseded "unlimited" label without a caveat. The body text below the table does mention: "Windsurf introduced new usage-based plans for self-serve customers in March 2026" [25] — but the table cell itself is inconsistent with that body text.
+
+**Grade:** FAIL
+**Notes:** This creates a contradiction within pricing-and-free-tier.md between its own table and body text. A reader who reads only the table row gets the wrong picture.
+
+---
+
+### Issue 10 — MCP token budget in agentic-capabilities.md table still says "50K+" (Issue 1 from prior review marked RESOLVED, but fix is not confirmed applied)
+
+**Status:** OPEN (re-checking prior RESOLVED)
+**Severity:** MODERATE
+**File:** `references/agentic-capabilities.md` — comparison table, Claude Code row
+
+Prior review marked this RESOLVED: "table updated to '~55K for a 5-server setup' matching [6]."
+
+**Actual current state in agentic-capabilities.md:**
+> `Skills (~30-50 tokens vs MCP's ~55K for a 5-server setup) [6]`
+
+The table now correctly says "~55K for a 5-server setup" — the fix was applied. ✓
+
+**Grade:** PASS
+**Notes:** Marking this RESOLVED is confirmed correct. No further action needed.
+
+---
+
+### Issue 11 — Opus 4.7 / Sonnet 4.6 ratio claim (5/3 = 1.67x): correct for all price categories, but the mix table cells do not follow the exact ratio due to cache proportion
+
+**Status:** OPEN
+**Severity:** MINOR
+**File:** `references/real-cost-at-typical-usage.md`
+
+The task asks to verify: "the all-Opus-4.7 column should be 5/3 = 1.67x the all-Sonnet-4.6 column for input and output, and 0.50/0.30 = 1.67x for cache."
+
+**Rate verification:**
+- Input: Opus $5 / Sonnet $3 = 1.6667x ✓
+- Output: Opus $25 / Sonnet $15 = 1.6667x ✓
+- Cache read: Opus $0.50 / Sonnet $0.30 = 1.6667x ✓
+
+Since all three rate categories share the identical 5/3 ratio, the total cost ratio Opus/Sonnet should be exactly 5/3 regardless of the input/output/cache split.
+
+**Spot check with doc values:**
+- 90/10: Opus $366 / Sonnet $219 = **1.671x** (should be 1.6667x — consistent given $1-2 rounding errors in Opus cells)
+- 80/20: Opus $466 / Sonnet $279 = **1.670x** (consistent)
+- 70/30: Opus $566 / Sonnet $339 = **1.669x** (consistent)
+
+The ratio claim is correct and the table cells are consistent with it (within rounding error from Issue 1).
+
+**Grade:** PASS
+**Notes:** If the Opus cells were corrected to $365/$465/$564, the ratios become $365/$219=1.667, $465/$279=1.667, $564/$339=1.664 — all close to 5/3. The ratio claim is valid.
+
+---
+
+### Issue 12 — Monthly extrapolation arithmetic (13-day × 30/13 = 2.308): verified consistent with 13-day table, but some Sonnet/Opus cells have $1-2 propagation error
+
+**Status:** OPEN
+**Severity:** MINOR
+**File:** `references/real-cost-at-typical-usage.md` — monthly extrapolation table
+
+**Verified cells (13-day × 2.308 → monthly):**
+
+| Row | 13-day | ×2.308 | Doc monthly | Delta |
+|---|---|---|---|---|
+| Sonnet 90/10 | $219 | $505.4→$505 | $505 | ✓ |
+| Sonnet 80/20 | $279 | $644.1→$644 | $644 | ✓ |
+| Sonnet 70/30 | $339 | $782.9→$783 | $782 | $1 |
+| Opus 90/10 | $366 | $844.8→$845 | $844 | $1 |
+| Opus 80/20 | $466 | $1,075.5→$1,076 | $1,075 | $1 |
+| Opus 70/30 | $566 | $1,306.3→$1,306 | $1,306 | ✓ |
+| Mix 90/10 | $293 | $676.2→$676 | $675 | $1 |
+| Mix 80/20 | $373 | $861.0→$861 | $861 | ✓ |
+| Mix 70/30 | $453 | $1,045.6→$1,046 | $1,045 | $1 |
+| GPT-5.4 90/10 | $194 | $447.8→$448 | $448 | ✓ |
+| GPT-5.4 80/20 | $244 | $563.2→$563 | $563 | ✓ |
+| GPT-5.4 70/30 | $294 | $678.6→$679 | $678 | $1 |
+| Composer 2 90/10 | $42 | $96.9→$97 | $97 | ✓ |
+| Composer 2 80/20 | $52 | $120.0→$120 | $120 | ✓ |
+| Composer 2 70/30 | $63 | $145.4→$145 | $145 | ✓ |
+
+The monthly extrapolation is internally consistent with the 13-day values within $1 (rounding of ×2.308). The propagation of the 13-day errors from Issues 1 and 2 is accurate — the monthly table faithfully multiplies the wrong 13-day values.
+
+**Grade:** PASS (monthly math is correct given 13-day inputs, but inputs have errors per Issues 1-2)
+
+---
+
+### Issue 13 — API rate cards in real-cost-at-typical-usage.md vs citations.md: verified consistent
+
+**Status:** RESOLVED (verified consistent)
+**Severity:** N/A
+**Files:** `references/real-cost-at-typical-usage.md` rate card table vs `citations.md` [41], [47], [49], [50]
+
+**Verification:**
+
+| Source | Citation says | Rate card table says | Match? |
+|---|---|---|---|
+| [41] Anthropic Sonnet 4.6 | $3 input / $0.30 cache / $15 output | $3 / $0.30 / $15 | ✓ |
+| [41] Anthropic Opus 4.7/4.6 | $5 input / $0.50 cache / $25 output | $5 / $0.50 / $25 | ✓ |
+| [41] Anthropic Haiku 4.5 | $1 input / $0.10 cache / $5 output | $1 / $0.10 / $5 | ✓ |
+| [47] Cursor Composer 2 | $0.50 input / $0.20 cache / $2.50 output | $0.50 / $0.20 / $2.50 | ✓ |
+| [47] Anthropic via Cursor | $5/$0.50/$25 Opus; $3/$0.30/$15 Sonnet | Same as [41] | ✓ |
+| [49] OpenAI GPT-5.5 | $5 input / $0.50 cache / $30 output | $5 / $0.50 / $30 | ✓ |
+| [49] OpenAI GPT-5.4 | $2.50 input / $0.25 cache / $15 output | $2.50 / $0.25 / $15 | ✓ |
+| [49] OpenAI GPT-5.3-Codex | $1.75 input / $0.175 cache / $14 output | $1.75 / $0.175 / $14 | ✓ |
+| [50] Gemini 3.1 Pro Preview (≤200K) | $2 input / $0.20 cache / $12 output | $2 / $0.20 / $12 | ✓ |
+| [50] Gemini 2.5 Pro (≤200K) | $1.25 input / $0.125 cache / $10 output | $1.25 / $0.125 / $10 | ✓ |
+| [50] Gemini 3 Flash Preview | $0.50 input / $0.05 cache / $3 output | $0.50 / $0.05 / $3 | ✓ |
+
+All rate-card entries in real-cost-at-typical-usage.md match the cited source descriptions exactly. The computation errors in Issues 1-2 are not attributable to wrong rates — the rates are correct and correctly transcribed.
+
+**Grade:** PASS
+
+---
+
+### Issue 14 — Worked Example 1 arithmetic: verified correct
+
+**Status:** RESOLVED (verified correct)
+**Severity:** N/A
+**File:** `references/real-cost-at-typical-usage.md`
+
+**Claim:** `44.82M × $3 + 4.98M × $15 + 32.6M × $0.30 = $134.46 + $74.70 + $9.78 = $218.94. Rounded to $219.`
+
+**Verification:**
+- 49.8M × 0.90 = 44.82M ✓
+- 49.8M × 0.10 = 4.98M ✓
+- 44.82 × $3 = $134.46 ✓
+- 4.98 × $15 = $74.70 ✓
+- 32.6 × $0.30 = $9.78 ✓
+- Sum = $218.94 ✓
+- Rounded = $219 ✓
+
+**Grade:** PASS
+
+---
+
+### Issue 15 — "$450-$1,300/month" range: consistent across all three files, correctly bounded
+
+**Status:** RESOLVED (verified consistent)
+**Severity:** N/A
+**Files:** `README.md` (TL;DR), `analysis.md` (TL;DR and Dimension 9), `references/real-cost-at-typical-usage.md`
+
+All three files state "$450-$1,300/month." The monthly table supports:
+- Lower bound $450 ≈ GPT-5.4 90/10 = $448 (rounded) ✓
+- Upper bound $1,300 ≈ Opus 4.7 70/30 = $1,306 (rounded) ✓
+- Both bounds cite [41][42][47][49][50] which cover Anthropic and OpenAI models ✓
+
+The Composer 2 outlier ($97-$145) is correctly excluded from the range and the exclusion is explained in the reference file. The Gemini scenarios ($499-$782 monthly for 3.1 Pro) are within the stated range.
+
+**Grade:** PASS
+**Notes:** The range is correctly derived from the monthly table, and the lower bound tracks to GPT-5.4 90/10 ($448 ≈ "$450") and the upper bound to Opus 4.7 70/30 ($1,306 ≈ "$1,300"). Citation [42] (prompt caching docs) is cited alongside [41] — appropriate since caching mechanics affect the cost projection.
+
+---
+
+### Issue 16 — Priority 1 fix (Anthropic "by default" softening): PARTIALLY applied — Reflection section missed
+
+**Status:** OPEN (see Issue 7 for detail)
+**Severity:** MODERATE
+**Files:** `analysis.md` (Reflection, line 128)
+
+The citation audit Priority 1 fix was to soften "by default" language for Anthropic [3]. The fix was applied to:
+- Headline table: "User choice via consumer terms" ✓
+- Dimension 8: framed as "user choice with default behavior depending on signup-flow framing not explicitly disclosed" ✓
+- Cross-cutting observation 4: "Anthropic's August 2025 consumer terms update presents users with a choice" ✓
+- README Decision framework 5: "Anthropic's August 2025 consumer terms presents the choice to users" ✓
+
+Not applied to:
+- Reflection section (line 128): "three platforms (Anthropic, GitHub, Google) **flipped training-data defaults to opt-in**" ✗
+
+**Grade:** FAIL (per Issue 7)
+
+---
+
+### Issue 17 — Priority 2 fixes ([10] and [23] tier corrections): confirmed applied
+
+**Status:** RESOLVED
+**Severity:** N/A
+**File:** `citations.md`
+
+- [10] TechCrunch/Cursor apology: now "**Tier:** 3 (corrected 2026-04-26 from prior Tier 1; TechCrunch is industry trade journalism, not peer-reviewed/institutional)" ✓
+- [23] TechCrunch/Windsurf acquisition: same correction note ✓
+
+**Grade:** PASS
+
+---
+
+### Issue 18 — Priority 3 fix (Windsurf "40+ IDEs" removal): partially applied
+
+**Status:** OPEN (see Issue 8 for detail)
+**Severity:** MINOR
+**Files:** `analysis.md`, `README.md` (fixed), `references/ide-and-ecosystem.md` (not fixed)
+
+**Grade:** FAIL (partial fix per Issue 8)
+
+---
+
+### Issue 19 — Citation numbers [41]-[58]: spot-check of new block
+
+**Status:** RESOLVED (verified consistent)
+**Severity:** N/A
+**Files:** `references/real-cost-at-typical-usage.md`, `analysis.md`, `README.md`, `references/pricing-and-free-tier.md` vs `citations.md`
+
+Spot-checking the new [41]-[58] citation block (>50% of new citations):
+
+| Citation | Claimed content | Used for | Match? |
+|---|---|---|---|
+| [41] | Anthropic API rate card | Rate card table; cost projections | ✓ |
+| [42] | Prompt caching docs | Cache pricing explanation | ✓ |
+| [43] | Claude Code Pro/Max help article | "Caps not published" claim | ✓ |
+| [44] | Max plan help article | "5x/20x" descriptor; weekly caps | ✓ |
+| [45] | Extra usage article | "$2,000/day cap"; explicit consent | ✓ |
+| [46] | The Register — quota issues | Pro subscriber quotes; "7% of users" throttle | ✓ |
+| [47] | Cursor models and pricing | Composer 2 rates; $20=$20-of-credits | ✓ |
+| [48] | Cursor June 2025 pricing | "$20 = ~225 requests" benchmark | ✓ |
+| [49] | OpenAI API pricing | GPT-5.4/5.3-Codex/5.5 rates | ✓ |
+| [50] | Gemini API pricing | Gemini 3.1/2.5/3 Flash rates | ✓ |
+| [51] | GitHub Copilot premium requests | Request multiplier table | ✓ |
+| [52] | Windsurf quota docs | Token-based quota (March 2026) | ✓ |
+| [53] | IBM Bobcoins docs | 1 coin = $0.50; Pro = 40 coins | ✓ |
+| [54] | MorphLLM AI coding costs | "$500-2000/month at API rates" claim | ✓ |
+| [55] | Vantage agentic costs | "50-turn session ~$6" Opus 4.6 | ✓ |
+| [56] | Medium — Max plan lockout | "7-day Opus weekly lockout" evidence | ✓ |
+| [57] | Activated Thinker — flat-rate era ending | 5-min cache TTL change; flat-rate analysis | ✓ |
+| [58] | The Next Web — Copilot signup pause | VP Binder quote "handful of requests..." | ✓ |
+
+All 18 new citations (41-58) are correctly attributed to the claims they support. No mismatch found between the citation descriptions and the way they are used in the deliverable.
+
+**Grade:** PASS
+
+---
+
+### Issue 20 — "Cursor Pro $20 = $20 of API credits" — consistent between pricing-and-free-tier.md and real-cost-at-typical-usage.md
+
+**Status:** RESOLVED (verified consistent)
+**Severity:** N/A
+
+Both files state that Cursor Pro = $20 of API credits at list rates [47][48]. The real-cost file uses this to project coverage ratios. The pricing reference documents the June 2025 change [10] that created this model. No contradiction.
+
+**Grade:** PASS
+
+---
+
+### Issue 21 — 49.8M / 82.4M / 32.6M / 13-day / 33-hour profile figures: consistent across files
+
+**Status:** RESOLVED (verified consistent)
+**Severity:** N/A
+
+| Metric | README TL;DR | Analysis TL;DR | Analysis Dim 9 | Real-cost file |
+|---|---|---|---|---|
+| Non-cache tokens | 49.8M | 49.8M | 49.8M | 49.8M ✓ |
+| Cache-inclusive total | — | 82.4M | 82.4M | 82.4M ✓ |
+| Cache tokens (implied) | 32.6M | 32.6M | 32.6M | 32.6M ✓ |
+| Measurement period | 13-day | 13-day | 13-day | 13 calendar days, 12 active ✓ |
+| Active time | ~33 hours | ~33 hours | ~33 hours | 1,966 min ≈ 32.8h ✓ |
+
+All five primary profile figures are identical across all files. The "~33 hours" is consistent with the "1,966 minutes" stated in the measurement table (1,966/60 = 32.77 ≈ 33 hours). ✓
+
+**Grade:** PASS
+
+---
+
+### Issue 22 — Internal link from real-cost-at-typical-usage.md to pricing-and-free-tier.md: correct
+
+**Status:** RESOLVED (verified)
+**Severity:** N/A
+
+`real-cost-at-typical-usage.md` line 1: "calibrates the abstract list-pricing in `pricing-and-free-tier.md`" (markdown sibling-file link with no path prefix) — both files are in `references/`, so this sibling-file link resolves correctly. ✓
+
+**Grade:** PASS
+
+---
+
+### Issue 23 — Internal link from README.md to real-cost-at-typical-usage.md: correct
+
+**Status:** RESOLVED (verified)
+**Severity:** N/A
+
+README.md line 36: `[real-cost analysis](references/real-cost-at-typical-usage.md)` — relative from repo root. ✓
+README.md line 75: `[real cost at typical usage](references/real-cost-at-typical-usage.md)` ✓
+
+**Grade:** PASS
+
+---
+
+### Issue 24 — Internal link from analysis.md to real-cost-at-typical-usage.md: correct
+
+**Status:** RESOLVED (verified)
+**Severity:** N/A
+
+Analysis.md line 76: `See [`references/real-cost-at-typical-usage.md`](references/real-cost-at-typical-usage.md)` — relative from ai-coding-platforms-2026/ root. ✓
+
+**Grade:** PASS
+
+---
+
+### Issue 25 — Estimation markers: projections are labeled as projections throughout real-cost file
+
+**Status:** RESOLVED (verified)
+**Severity:** N/A
+
+Section heading: "13-day API-rate **cost projection**" ✓
+Monthly table heading: "Monthly cost **extrapolation** (linear scaling, ×30/13 ≈ ×2.308)" ✓
+Narrative: "This buyer's **projection** sits in the lower-middle…" ✓
+Gaps section: "the cost **projection** rises by ~$3-$5" ✓; "the **projections** assume Sonnet-dominant" ✓
+
+No projection is labeled as a measured value. ✓
+
+**Grade:** PASS
+
+---
+
+### Issue 26 — Caveat honesty: input/output split, cache split, and model-mix assumptions are disclosed
+
+**Status:** RESOLVED (verified)
+**Severity:** N/A
+
+Gaps and limitations section of real-cost-at-typical-usage.md explicitly states:
+- "**Input/output split is unknown.** The buyer's data sums input+output. The realistic range (90/10 to 70/30) yields cost estimates that vary by ~50%. The 80/20 midpoint is used as the modeling default; this is plausible for Claude Code [54] but not directly measured for this buyer." ✓
+- "**Cache split (read vs write) is unknown.** The 32.6M cache figure combines cache_read and cache_creation. This analysis treats it all as cache reads... If 20% were cache writes at the 5-minute rate..., the cost projection rises by ~$3-$5 over 13 days" ✓
+- "**Model mix is assumed, not measured.** The buyer's data does not separate Sonnet from Opus consumption." ✓
+- "**Linear monthly scaling is approximate.**" ✓
+
+All three key assumptions are explicitly flagged. ✓
+
+**Grade:** PASS
+
+---
+
+### Issue 27 — "$20 cover $100-$1,000 of subscription-equivalent value" claim: traceable and bounded
+
+**Status:** RESOLVED (verified)
+**Severity:** N/A
+**Files:** `references/real-cost-at-typical-usage.md` (cost view table); `references/pricing-and-free-tier.md` (callout box); `analysis.md` (Dimension 9); `README.md` (TL;DR)
+
+The claim traces to the monthly cost table:
+- Lower bound $100 = Composer 2 monthly minimum ($97-$120) — cheapest frontier model option ✓
+- Upper bound $1,000+ = Opus 4.7 monthly maximum ($1,075-$1,306) ✓
+- The real-cost file states: "the $20/mo Pro tier provides **$100-$1,000+ of subscription-equivalent value** compared to the same usage at API rates when the cap doesn't bind" ✓
+
+The pricing-and-free-tier.md callout says "$100-$1,000" (without "+") — a minor softening vs the reference file's "$100-$1,000+." This is not a substantive inconsistency.
+
+The README TL;DR version: "the $20 plan is heavily subsidized for heavy users when caps don't bind" — no explicit dollar range for the "value" in the TL;DR paragraph, but the next paragraph anchors it with "$450-$1,300/month" at API rates vs "$20 paid."
+
+The claim is consistent with the underlying data, correctly framed as subscription-equivalent (not API cost), and correctly conditional on "caps don't bind." ✓
+
+**Grade:** PASS
+
+---
+
+### Issue 28 — Prior RESOLVED issues from first consistency review: status unchanged
+
+**Status:** RESOLVED
+**Severity:** N/A
+
+| Prior Issue | Prior Status | Current Status |
+|---|---|---|
+| Issue 1: MCP token budget "50K+" vs "~55K" | RESOLVED | Confirmed fixed (now "~55K for a 5-server setup") ✓ |
+| Issue 2: Antigravity launch model attribution | RESOLVED | Confirmed fixed (tables now distinguish Sonnet 4.5 at launch [18] from Opus 4.6 later [19]) ✓ |
+| Issue 3: Windsurf SWE-1.5 "40%" vs "40.08%" | RESOLVED | Confirmed fixed (README now shows "40.08%") ✓ |
+| Issue 4: BenchLM not labeled as aggregator in analysis.md | OPEN | Still OPEN — no change since prior review |
+| Issue 5: METR n=16 caveat in README | PASS | Still PASS |
+| Issue 6: Windsurf Light tier omitted | OPEN | Still OPEN — no change; reasonable research decision |
+| Issue 7: METR temporal consistency | PASS | Still PASS |
+
+**Grade:** PASS for the resolved items; OPEN items unchanged
+
+---
+
+## Summary table — all issues
+
+| # | Description | Severity | Status |
+|---|---|---|---|
+| 1 | Opus 4.7 13-day cells off by $1-2 | MODERATE | OPEN |
+| 2 | GPT-5.4 13-day cells off by $13-25; GPT-5.3-Codex and Gemini rows also inconsistent | MODERATE | OPEN |
+| 3 | Worked Example 2 uses wrong Opus subtotal ($465.50 should be $464.50) | MODERATE | OPEN |
+| 4 | Worked Example 2 result ($372) contradicts 50/50 mix 80/20 table cell ($373) | MODERATE | OPEN |
+| 5 | Monthly table missing GPT-5.3-Codex, Gemini 3.1 Pro, Gemini 2.5 Pro rows | MINOR | OPEN |
+| 6 | $450-$1,300 range excludes Composer 2 outlier without summary-level caveat | MINOR | OPEN |
+| 7 | Reflection section still uses "flipped to opt-in" for Anthropic [3] — contradicts Priority 1 fix elsewhere | MODERATE | OPEN |
+| 8 | Windsurf "40+ IDEs" still in ide-and-ecosystem.md (Priority 3 fix partial) | MINOR | OPEN |
+| 9 | Windsurf Pro table cell in pricing-and-free-tier.md still shows "(unlimited)" without March 2026 caveat | MINOR | OPEN |
+| 10 | MCP "50K+" in agentic-capabilities.md — prior RESOLVED confirmed fixed | — | RESOLVED |
+| 11 | Opus/Sonnet 5/3 ratio claim: verified correct within rounding | — | PASS |
+| 12 | Monthly extrapolation arithmetic: correct given 13-day inputs | — | PASS |
+| 13 | API rate cards vs citations [41][47][49][50]: verified exact match | — | RESOLVED |
+| 14 | Worked Example 1 arithmetic: verified correct | — | RESOLVED |
+| 15 | "$450-$1,300/month" range: consistent and correctly bounded | — | RESOLVED |
+| 16 | Priority 1 fix partial — Reflection section missed (same as Issue 7) | MODERATE | OPEN |
+| 17 | Priority 2 fixes ([10] and [23] tier corrections): confirmed applied | — | RESOLVED |
+| 18 | Priority 3 fix (Windsurf "40+" removal): partial (same as Issue 8) | MINOR | OPEN |
+| 19 | Citations [41]-[58] spot-check: all correctly attributed | — | RESOLVED |
+| 20 | Cursor Pro $20 = API credits: consistent across files | — | RESOLVED |
+| 21 | 49.8M/82.4M/32.6M/13-day/33-hour figures: consistent | — | RESOLVED |
+| 22-24 | Internal markdown links to real-cost-at-typical-usage.md: all resolve | — | RESOLVED |
+| 25 | Estimation markers: projections labeled correctly | — | RESOLVED |
+| 26 | Caveat honesty (split/cache/model assumptions): disclosed | — | RESOLVED |
+| 27 | "$20 cover $100-$1,000" claim: traceable and bounded | — | RESOLVED |
+| 28 | Prior RESOLVED issues: unchanged | — | RESOLVED |
+
+---
+
+## Items Verified Consistent (carried forward and extended)
 
 1. **SWE-bench Verified scores:** Opus 4.7 = 87.6%, Opus 4.6 = 80.8%, Sonnet 4.6 = 79.6%, GPT-5.3 Codex = 85.0%, Gemini 2.5 Pro = 63.8% — identical across analysis.md, README.md, citations.md [32], benchmarks reference.
 
-2. **SWE-bench Pro scores:** Opus 4.5 = 45.9%, Sonnet 4.5 = 43.6%, Gemini 3 Pro = 43.3% — identical across analysis.md, citations.md [33], benchmarks reference. The Opus 4.5 Verified baseline of 80.9% (from [33]) is consistent with its use to compute the ~35-point gap.
+2. **SWE-bench Pro scores:** Opus 4.5 = 45.9%, Sonnet 4.5 = 43.6%, Gemini 3 Pro = 43.3% — identical across analysis.md, citations.md [33], benchmarks reference.
 
-3. **METR RCT figures:** n=16, 246 issues, 19% slower, 20% perceived faster, $150/hr compensation — identical across analysis.md, README.md, citations.md [34], benchmarks reference.
+3. **METR RCT figures:** n=16, 246 issues, 19% slower, 20% perceived faster, $150/hr — identical across all four files.
 
 4. **GitClear figures:** 211M lines, 8.3%→12.3% duplication, 25%→under 10% refactoring — identical across README.md, citations.md [35], benchmarks reference.
 
-5. **GitHub Copilot productivity study:** n=95, 55% faster, 95% CI [21%, 89%], P=.0017, 1h 11m vs 2h 41m — identical across citations.md [16] and benchmarks reference.
+5. **GitHub Copilot productivity study:** n=95, 55% faster, 95% CI [21%, 89%], P=.0017 — consistent across all files.
 
-6. **IBM Bob pricing:** Pro $20/mo + $3 support (40 bobcoins), Pro Plus $60/mo + $9 (160 bobcoins), Ultra $200/mo + $30 (500 bobcoins) — identical across analysis.md, README.md, citations.md [26][29], pricing reference.
+6. **IBM Bob pricing:** Pro $20/mo + $3 support (40 bobcoins), Pro Plus $60/mo + $9 (160 bobcoins), Ultra $200/mo + $30 (500 bobcoins) — identical across all files.
 
-7. **Bobcoin unit price:** ~$0.50 USD if exceeding monthly allowance — consistent across citations.md [29] and pricing reference.
+7. **Bobcoin unit price:** ~$0.50 USD — consistent across citations.md [29] and pricing reference.
 
-8. **Antigravity pricing:** $19.99/mo Pro, $249.99/mo Ultra — identical across citations.md [19] and pricing reference. Correctly not rounded to "$20" in any file.
+8. **Antigravity pricing:** $19.99/mo Pro, $249.99/mo Ultra — identical and not rounded to "$20" in any file.
 
-9. **GitHub Copilot Pro = $10/mo, Pro+ = $39/mo** — identical across analysis.md, README.md, citations.md [12], pricing reference.
+9. **GitHub Copilot Pro = $10/mo, Pro+ = $39/mo** — identical across all files.
 
-10. **Cursor pricing:** Hobby free, Pro $20/mo, Pro+ $60/mo, Ultra $200/mo — identical across analysis.md, README.md, citations.md [7], pricing reference.
+10. **Cursor pricing:** Hobby free, Pro $20/mo, Pro+ $60/mo, Ultra $200/mo — identical across all files.
 
-11. **All four "11-day" event dates:**
-    - Windsurf 2.0: April 15, 2026 — consistent across analysis.md, README.md, citations.md [22][39], deployment reference
-    - GitHub Copilot signup pause: April 20, 2026 — consistent across all files
-    - Anthropic silent pricing flip-flop: April 22, 2026 — consistent across all files
-    - GitHub Copilot training data policy effective: April 24, 2026 — consistent across all files
+11. **All four 11-day event dates** (Windsurf 2.0 Apr 15, Copilot pause Apr 20, Anthropic flip-flop Apr 22, training policy Apr 24) — consistent across all files.
 
-12. **IBM Bob GA date:** March 24, 2026 — consistent across analysis.md, README.md, citations.md [26].
+12. **IBM Bob GA date:** March 24, 2026 — consistent.
 
-13. **Composer 2 launch date:** March 19, 2026 — consistent across analysis.md, README.md, citations.md [8].
+13. **Composer 2 launch date:** March 19, 2026 — consistent.
 
-14. **Windsurf acquisition date:** July 14, 2025 — consistent across citations.md [23] and deployment reference.
+14. **Windsurf acquisition date:** July 14, 2025 — consistent.
 
-15. **Antigravity launch date:** November 20, 2025 — consistent across citations.md [18] and deployment reference.
+15. **Antigravity launch date:** November 20, 2025 — consistent.
 
-16. **Anthropic terms update date:** August 28, 2025 — consistent across analysis.md, citations.md [3], privacy reference.
+16. **Anthropic terms update date:** August 28, 2025 — consistent.
 
-17. **The Register IBM Bob article date:** January 7, 2026 — consistent across citations.md [30].
+17. **MCP convergence (all 6 platforms support MCP):** consistent.
 
-18. **MCP convergence (all 6 platforms support MCP):** stated consistently across analysis.md, agentic reference, ide reference.
+18. **IBM Bob fork-vs-plug-in discrepancy:** disclosed consistently.
 
-19. **IBM Bob fork-vs-plug-in discrepancy:** explicitly disclosed in analysis.md Limitations, citations.md [26] footnote, and deployment reference — not silently resolved.
+19. **Claude Code Skills token cost:** ~30-50 tokens — consistent.
 
-20. **SWE-bench live page returning scaffolding (not real scores):** disclosed in analysis.md Limitations and benchmarks reference.
+20. **Pragmatic Engineer survey:** n=906, Claude Code #1 tool, 46% most-loved, 70% juggle 2-4 tools — consistent.
 
-21. **BenchLM as Tier 3 aggregator:** disclosed in citations.md and benchmarks reference (labeled "Per BenchLM aggregator [32]").
+21. **Windsurf Devin 2.0:** Apr 15, 2026 launch, [22]+[39] dual-cited as announcement + independent corroboration — consistent.
 
-22. **CursorBench as vendor-published:** explicitly flagged as "vendor-published figures, not independently audited" in benchmarks reference; consistent with analysis.md Limitations.
+22. **API rate cards ([41][47][49][50]):** all rate-card entries in real-cost reference match citation descriptions exactly.
 
-23. **Bobcoin consumption formula:** 1 coin ≈ $0.50; CLI workflows 5-10 coins/run; Pro includes 40 coins/mo → ~4 intensive CLI runs before overrun. Arithmetic is consistent.
+23. **49.8M/82.4M/32.6M profile figures:** identical across README, analysis, and real-cost reference.
 
-24. **Pragmatic Engineer survey:** n=906, Jan 27–Feb 17 2026, Claude Code #1 tool, 46% most-loved, 70% juggle 2-4 tools — consistent across README.md, citations.md [37], benchmarks reference.
+24. **"~33 hours" active time:** consistent with "1,966 minutes" (1,966÷60=32.77≈33) in the measurement table.
 
-25. **GitHub Copilot Pro tier model restriction:** Opus 4.7 retained on Pro+; Opus 4.5/4.6 to be removed from Pro+; Sonnet 4.6 as default on Pro — consistent across analysis.md and citations.md [13][15].
+25. **$450-$1,300/month range:** correctly bounded by GPT-5.4 90/10 monthly ($448≈$450) and Opus 4.7 70/30 monthly ($1,306≈$1,300).
 
-26. **Gemini Code Assist free tier = 1,000 requests/user/day** — consistent across analysis.md, README.md, citations.md [17], pricing reference.
+26. **Worked Example 1 arithmetic:** 44.82M×$3+4.98M×$15+32.6M×$0.30=$218.94→$219 ✓
 
-27. **Windsurf Max = $200/mo with Devin Cloud sessions** — consistent across analysis.md, README.md, citations.md [21], pricing reference.
+27. **Opus/Sonnet 5/3 pricing ratio:** all three rate categories (input $5/$3, output $25/$15, cache $0.50/$0.30) are exactly 1.6667x — the table cells reflect this within $1-2 rounding.
 
-28. **Claude Code Skills token cost:** ~30-50 tokens — consistent across analysis.md, citations.md [6], and agentic reference body text (the table in the same file incorrectly says "50K+" for MCP but gets Skills correct).
+28. **[10] and [23] tier corrections:** confirmed as Tier 3 with correction note in citations.md.
 
-29. **Gemini 2.5 Pro SWE-bench Verified = 63.8%:** cited consistently from [32] across analysis.md, README.md, benchmarks reference.
+29. **Priority 1 fix coverage (excluding Reflection):** softened Anthropic training language in headline table, Dimension 8, cross-cutting observation 4, and README Decision framework 5.
 
-30. **Windsurf 2.0 / Devin citation**: [22] + [39] both cited for April 15, 2026 event; [39] additionally described as "independent coverage" of [22] — transparent sourcing.
+30. **Priority 3 fix coverage (partial):** "40+ IDEs" removed from analysis.md and README.md; survives in ide-and-ecosystem.md with "per agent research" label.
 
 ---
 
-## Caveat-honesty spot-check
+## Caveat-honesty spot-check (updated)
 
 | Caveat | Disclosed? | Location |
 |---|---|---|
 | SWE-bench live page returned only loading scaffolding | Yes | analysis.md Limitations; benchmarks ref Gaps |
-| BenchLM is a Tier-3 aggregator, not the official leaderboard | Partially — in citations.md and benchmarks ref, not inline in analysis.md main text | citations.md [32]; benchmarks ref header |
-| METR n=16 is a small sample | Yes | analysis.md Limitations; README Honesty section |
+| BenchLM is Tier-3 aggregator | Partially — in citations.md and benchmarks ref, not inline in analysis.md | citations.md [32]; benchmarks ref |
+| METR n=16 is a small sample | Yes | analysis.md Limitations; README Honesty |
 | CursorBench is vendor-published and unaudited | Yes | benchmarks ref; analysis.md Limitations |
 | Windsurf SWE-1.5/1.6 figures are vendor-reported | Yes | benchmarks ref; analysis.md Limitations |
-| IBM Bob fork-vs-plug-in discrepancy | Yes — explicitly flagged and source selected | analysis.md Limitations; deployment ref |
-| Antigravity "92% quota cut" figure unverified | Yes | pricing ref Gaps section |
-| Anthropic silent pricing change was a "~2% test" (employee tweet) | Yes | citations.md [5] |
-| IBM Bob security patch status at GA unconfirmed | Yes | citations.md [30]; analysis.md fit-by-workflow |
+| IBM Bob fork-vs-plug-in discrepancy | Yes | analysis.md Limitations; deployment ref |
+| Antigravity "92% quota cut" figure unverified | Yes | pricing ref Gaps |
+| Input/output split is assumed (80/20), not measured | Yes | real-cost ref Gaps |
+| Cache read vs write split unknown | Yes | real-cost ref Gaps |
+| Model mix (Sonnet vs Opus) is assumed, not measured | Yes | real-cost ref Gaps |
+| Linear monthly scaling is approximate | Yes | real-cost ref Gaps |
+| Pro tier absolute caps undisclosed by Anthropic | Yes | real-cost ref Gaps; [43][44] |
+| Token-per-premium-request undisclosed (Copilot) | Yes | real-cost ref Gaps; [51] |
+| Windsurf quota not published | Yes | real-cost ref; [52] |
+| Bobcoin-to-token ratio undisclosed | Yes | real-cost ref; [53] |
+| MorphLLM "Anthropic data" citation not directly traceable | Yes | real-cost ref Gaps |
+| Cost projections are estimates, not measurements | Yes | section headings, Gaps |
+| Anthropic training-data default ambiguity | **Partially** — disclosed in privacy ref and cross-cutting obs 4; **NOT disclosed in Reflection section** (Issue 7) | privacy ref Gaps; analysis.md cross-cutting obs 4 |

@@ -2,7 +2,7 @@
 
 # AI Coding Platforms Compared (Individual / Small-Team Lens, April 2026)
 
-**Last revised:** 2026-04-26
+**Last revised:** 2026-04-26 (real-cost dimension added; audit Priority 1-3 fixes applied)
 
 ## TL;DR
 
@@ -10,16 +10,18 @@ For an individual or small-team buyer in April 2026, **Claude Code on Pro $20/mo
 
 The four platform events that shaped this comparison fired in the **11 days before this writing**: Windsurf 2.0 + Devin (April 15) [22], GitHub Copilot signup pause (April 20) [13], Anthropic's silent Claude Code pricing flip-flop (April 22) [5], GitHub Copilot training-data policy effective (April 24) [14]. Anything written before mid-April 2026 is dated.
 
+**The $20/mo headline is not the whole cost story.** Calibrated against one buyer's measured 13-day Claude Code Pro usage profile (49.8M non-cache + 32.6M cache tokens, weekend-heavy, ~33 active hours), the same usage at API rates would cost **$450-$1,300/month** depending on model mix [41][42][47][49][50] — the $20 plan is heavily subsidized for heavy users when caps don't bind, and the four pricing events above are direct vendor admissions that the $20 economics break for sustained agentic load. See [real-cost analysis](references/real-cost-at-typical-usage.md) for the calibrated picture.
+
 ## Key comparison table
 
 | Platform | Form | Entry | Best model on platform | SWE-bench Verified | Training default (free/individual) | Key 2026 event |
 |---|---|---|---|---|---|---|
-| Claude Code | CLI + 4 IDEs + web + iOS [2] | $20/mo Pro [1] | Opus 4.7 | **87.6%** [32] | User choice presented in consumer terms [3] | April 22 silent pricing flip-flop [5] |
+| Claude Code | CLI + 4 IDEs + web + iOS [2] | $20/mo Pro [1] | Opus 4.7 | **87.6%** [32] | User choice via consumer terms (Aug 2025) [3] | April 22 silent pricing flip-flop [5] |
 | Cursor | VS Code fork [7] | $20/mo Pro [7] | Composer 2 (own) [8] | Cursor Multilingual 73.7% [8] | Privacy Mode opt-in [9] | Composer 2 launch March 19 [8] |
 | GitHub Copilot | Plugins (8+ IDEs) [15] | $10/mo Pro — **paused April 20** [12][13] | Opus 4.7 (Pro+ only) [15] | 87.6% via Opus 4.7 [32] | Opt-out from training [14] | Signup pause + privacy reversal [13][14] |
 | Gemini Code Assist | IDE plugin [17] | Free 1,000 req/day [17] | Gemini 2.5 (3 coming) | 63.8% (2.5 Pro) [32] | Opt-out [20] | — |
 | Antigravity | Fork-IDE preview [18] | Free during preview [19] | Gemini 3 Pro + Claude Sonnet 4.5 at launch [18]; Opus 4.6 + Sonnet 4.6 + GPT-OSS added later [19] | Gemini not on Verified [32] | Per Google ToS | Quota cuts March 2026 [19] |
-| Windsurf | Fork-IDE + multi-IDE plugins [21][24] | $20/mo Pro [21] | SWE-1.6 + Claude/GPT/Gemini [24] | SWE-1.5 vendor-claimed: 40.08% | Opt-out (hard for Chat) | Windsurf 2.0 + Devin April 15 [22] |
+| Windsurf | Fork-IDE + multi-IDE plugins [21][24] | $20/mo Pro [21] (token-based quota since Mar 2026 [52]) | SWE-1.6 + Claude/GPT/Gemini [24] | SWE-1.5 vendor-claimed: 40.08% | Opt-out (hard for Chat) | Windsurf 2.0 + Devin April 15 [22] |
 | IBM Bob | Bob-IDE (VS Code fork) + Bob Shell [27] | $20/mo + $3 + 40 bobcoins [26][29] | Granite + Claude + Llama + Mistral (auto) | Granite not on Verified [32] | "Code not for training" pledge **not surfaced** [research] | GA March 24 [26]; security flaws Jan [30] |
 
 ## Decision framework
@@ -31,12 +33,13 @@ The four platform events that shaped this comparison fired in the **11 days befo
    - **JetBrains / Visual Studio:** GitHub Copilot is the only first-party option [15] — but new Pro signups paused [12]. Claude Code has a JetBrains beta [2].
    - **RPG / COBOL / IBM i:** IBM Bob is purpose-built [26][28].
 
-2. **What's your monthly budget?**
-   - **$0:** Gemini Code Assist Individual free (1,000/day) [17] or Antigravity preview free [19] — accept training-data tradeoffs.
-   - **~$20/mo:** Claude Code Pro [1] or Cursor Pro [7] or Windsurf Pro [21] or IBM Bob Pro [26] all live here.
+2. **What's your monthly budget?** Sticker price first, then calibrate against your actual token volume — see [real-cost analysis](references/real-cost-at-typical-usage.md) for one buyer's measured profile and the $450-$1,300/month API-equivalent at that load.
+   - **$0:** Gemini Code Assist Individual free (1,000/day) [17] or Antigravity preview free [19] — accept training-data tradeoffs and 3-10 day lockouts on Antigravity Pro [19].
+   - **~$20/mo:** Claude Code Pro [1] or Cursor Pro [7] or Windsurf Pro [21] or IBM Bob Pro [26] all live here. **Caveat:** $20 is documented to be insufficient for sustained agentic use across multiple platforms ([5][10][13][46][58]); workable at light to moderate volumes, throttled or capped above.
    - **~$40-60/mo:** Cursor Pro+ ($60) [7] or GitHub Copilot Pro+ ($39, signup paused) [12].
-   - **$100-200/mo:** Claude Code Max [1], Cursor Ultra [7], Windsurf Max with Devin [21], IBM Bob Ultra [26].
-   - **Multi-platform stack:** 70% of Pragmatic Engineer 2026 survey respondents juggle 2-4 tools [37].
+   - **$100-200/mo:** Claude Code Max [1], Cursor Ultra [7], Windsurf Max with Devin [21], IBM Bob Ultra [26]. **Caveat:** Max-tier weekly lockouts are documented at $200/mo [56].
+   - **Above $200/mo or heavy agentic load:** Direct API + budget caps [41][45] is structurally cheaper and more predictable than any single subscription tier above ~2x typical heavy-user volume.
+   - **Multi-platform stack:** 70% of Pragmatic Engineer 2026 survey respondents juggle 2-4 tools [37]; the typical heavy-user stack totals ~$70/mo [54].
 
 3. **How much do you care about model freedom?**
    - **Want to swap providers freely:** Cursor [7], Windsurf [24], or Antigravity [18] — all expose Claude/GPT/Gemini directly.
@@ -59,7 +62,7 @@ GitHub's controlled study claims Copilot makes developers 55% faster (n=95, cont
 ## Files in this topic
 
 - [Full analysis with methodology](analysis.md) — deliverable with cross-cutting observations and per-dimension findings
-- [All 40 citations](citations.md) — sources, tier ratings, exact data extracted
+- [All 58 citations](citations.md) — sources, tier ratings, exact data extracted
 - Reference files (one per dimension):
   - [deployment model](references/deployment-model.md)
   - [pricing & free tier](references/pricing-and-free-tier.md)
@@ -69,4 +72,5 @@ GitHub's controlled study claims Copilot makes developers 55% faster (n=95, cont
   - [IDE & ecosystem](references/ide-and-ecosystem.md)
   - [benchmarks & real-world quality](references/benchmarks-and-real-world-quality.md)
   - [privacy & data handling](references/privacy-and-data-handling.md)
+  - [real cost at typical usage](references/real-cost-at-typical-usage.md) — calibrated to one buyer's measured 13-day Claude Code Pro session log (added 2026-04-26)
 - Audit: [citation audit](audit/citation-audit.md) · [consistency review](audit/consistency-review.md)
