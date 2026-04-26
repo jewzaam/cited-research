@@ -564,3 +564,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** data integrity verification, functional smoke coverage, upgrade duration SLOs, rollback success rate, stateful workload continuity, version skip validation, API compatibility regression, operator lifecycle upgrade mechanics
 - **Last revised:** 2026-04-20
 - **Status:** Active
+
+## [AI Coding Platforms Compared (Individual / Small-Team Lens, 2026)](research/ai-coding-platforms-2026/README.md)
+
+- **Path:** [research/ai-coding-platforms-2026/](research/ai-coding-platforms-2026/)
+- **Summary:** Comparison of IBM Bob, Claude Code, Cursor, Gemini (Code Assist + CLI + Antigravity), GitHub Copilot, and Windsurf for an individual / small-team buying decision. Headline finding: four platform-shaping events fired in the 11 days before research (Windsurf 2.0 + Devin April 15; GitHub Copilot signup pause April 20; Anthropic's silent Claude Code pricing flip-flop April 22; GitHub Copilot training-data policy effective April 24). Claude Code Opus 4.7 leads SWE-bench Verified at 87.6%, but SWE-bench Verified is being abandoned for contamination — same model drops to 45.9% on SWE-bench Pro. METR's randomized trial measured developers as 19% slower with AI tools while perceiving themselves as 20% faster. 40 sources, independently audited.
+- **Dimensions:** product category and deployment model, pricing and free tier, underlying models and flexibility, agentic capabilities, context and codebase awareness, IDE and ecosystem integration, coding benchmarks and real-world quality, privacy and data handling
+- **Last revised:** 2026-04-26
+- **Status:** Active

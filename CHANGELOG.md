@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-04-26
+
+- Added [AI Coding Platforms Compared (Individual / Small-Team Lens, 2026)](research/ai-coding-platforms-2026/)
+
 ## 2026-04-20
 
 - Added [Quantifiable Metrics for Kubernetes Upgrade Validation](research/kubernetes-upgrade-validation-metrics/)
