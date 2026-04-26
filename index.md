@@ -572,3 +572,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** product category and deployment model, pricing and free tier, underlying models and flexibility, agentic capabilities, context and codebase awareness, IDE and ecosystem integration, coding benchmarks and real-world quality, privacy and data handling
 - **Last revised:** 2026-04-26
 - **Status:** Active
+
+## [Dup-check / anti-reinvention checks for AI-generated code](research/dup-check-anti-reinvention/README.md)
+
+- **Path:** [research/dup-check-anti-reinvention/](research/dup-check-anti-reinvention/)
+- **Summary:** Whether a custom dup-check stage (jscpd via npx + 5 custom semgrep rules of the "imported X but reimplementing X" form) is reinventing existing tooling. Conclusion: keep jscpd (no portable replacement emerged) and keep the 5 rules (3 of 5 — csv, json, argparse — have no off-the-shelf equivalent in ruff/refurb/pylint/semgrep registry/Sourcery; the others have only partially-overlapping unconditional-migration rules). Recommendation: hybrid — keep custom layer, layer ruff PTH/FURB/S for incidental coverage, publish the 5 rules as a Trail of Bits-style external pack rather than upstream-contributing under the Semgrep Rules License v1.0. 74 sources, independently audited (7 inaccuracies found and resolved).
+- **Dimensions:** clone detection landscape, stdlib-preference rule packs, all-in-one packaged tools, AI-code-quality-specific tools, custom rule-pack maintenance burden
+- **Last revised:** 2026-04-26
+- **Status:** Active
