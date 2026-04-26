@@ -33,12 +33,13 @@ The four platform events that shaped this comparison fired in the **11 days befo
    - **JetBrains / Visual Studio:** GitHub Copilot is the only first-party option [15] — but new Pro signups paused [12]. Claude Code has a JetBrains beta [2].
    - **RPG / COBOL / IBM i:** IBM Bob is purpose-built [26][28].
 
-2. **What's your monthly budget?** Sticker price first, then calibrate against your actual token volume — see [real-cost analysis](references/real-cost-at-typical-usage.md) for one buyer's measured profile and the $450-$1,300/month API-equivalent at that load.
+2. **What's your monthly budget?** Sticker price first, then calibrate against your actual token volume — see [real-cost analysis](references/real-cost-at-typical-usage.md) for one buyer's measured profile, the $450-$1,300/month API-equivalent at that load, and the [full tier ladder](references/real-cost-at-typical-usage.md#tier-ladder-across-pro-mid-and-max-equivalent-tiers) comparing Pro / mid / Max-equivalent tiers across all platforms.
    - **$0:** Gemini Code Assist Individual free (1,000/day) [17] or Antigravity preview free [19] — accept training-data tradeoffs and 3-10 day lockouts on Antigravity Pro [19].
-   - **~$20/mo:** Claude Code Pro [1] or Cursor Pro [7] or Windsurf Pro [21] or IBM Bob Pro [26] all live here. **Caveat:** $20 is documented to be insufficient for sustained agentic use across multiple platforms ([5][10][13][46][58]); workable at light to moderate volumes, throttled or capped above.
-   - **~$40-60/mo:** Cursor Pro+ ($60) [7] or GitHub Copilot Pro+ ($39, signup paused) [12].
-   - **$100-200/mo:** Claude Code Max [1], Cursor Ultra [7], Windsurf Max with Devin [21], IBM Bob Ultra [26]. **Caveat:** Max-tier weekly lockouts are documented at $200/mo [56].
-   - **Above $200/mo or heavy agentic load:** Direct API + budget caps [41][45] is structurally cheaper and more predictable than any single subscription tier above ~2x typical heavy-user volume.
+   - **~$20/mo (Pro tier):** Claude Code Pro [1] or Cursor Pro [7] or Windsurf Pro [21] or IBM Bob Pro [26] all live here. **Caveat:** $20 is documented to be insufficient for sustained agentic use across multiple platforms ([5][10][13][46][58]); workable at light to moderate volumes, throttled or capped above.
+   - **~$40-60/mo (mid tier):** Cursor Pro+ ($60) [7] or GitHub Copilot Pro+ ($39, signup paused) [12]. Cursor Pro+ at Composer 2 rates is the lowest-cost frontier-coder path at this buyer's measured volume (~$108/mo total, sub + overage).
+   - **$100-200/mo (Max-equivalent tier):** Claude Code Max 5x ($100) or Max 20x ($200) [1][44]; Cursor Ultra ($200, $400 of API credit) [7]; OpenAI ChatGPT Pro $100/$200 (5x/20x Plus) [49]; Windsurf Max ($200, daily limits removed Apr 6, 2026) [21][52]; IBM Bob Ultra ($230) [26]. At the buyer's measured ~$858/mo workload, **Max 20x is the strongest subscription ROI** (4.3x value vs direct API) but ~3-day Opus lockouts have been observed [56]. Cursor Ultra delivers ~$200 savings vs direct API at this volume.
+   - **$249.99/mo (top tier):** Google AI Ultra [19] is the most expensive line in the comparison, with the least cost transparency — Antigravity credit-to-token ratio undocumented [50] and Ultra users still hitting 100% quotas [19].
+   - **Above $200/mo of subscription or above ~2x this buyer's volume:** Direct API + budget caps [41][45] becomes structurally cheaper and more predictable than any single subscription tier.
    - **Multi-platform stack:** 70% of Pragmatic Engineer 2026 survey respondents juggle 2-4 tools [37]; the typical heavy-user stack totals ~$70/mo [54].
 
 3. **How much do you care about model freedom?**

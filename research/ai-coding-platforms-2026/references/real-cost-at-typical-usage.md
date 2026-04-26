@@ -194,6 +194,97 @@ API rates** when the cap doesn't bind. Anthropic's apparent willingness to
 limit (and briefly remove [5]) Claude Code on Pro is consistent with this
 gap — Pro is heavily subsidized for heavy agentic users.
 
+## Tier ladder across Pro, mid, and Max-equivalent tiers
+
+The Pro $20 row above is one rung on each platform's ladder. The buyer's
+$858/mo midpoint workload sits in a range where the Max-equivalent tiers
+($100–$250/mo) become directly relevant. The table below pairs each tier's
+sticker price with the realistic monthly cost the buyer would actually pay
+(subscription + API-rate overage), assuming the 50/50 Sonnet+Opus 80/20 mix
+where applicable.
+
+Cells marked with † are estimates derived from vendor-stated relative
+multipliers ("5x Pro", "20x Pro", "$70 credit") applied to the buyer's
+$858/mo midpoint — Anthropic does not publish absolute caps in tokens [44],
+so any "covered" claim is inferred from the relative descriptor and the
+empirical lockout reports in [46] and [56].
+
+| Platform | Tier | Sticker | Mechanism | Realistic monthly total at $858 workload | Notes |
+|---|---|---|---|---|---|
+| **Anthropic Claude Code** | Pro | $20 | Session + weekly cap, undisclosed token cap [43][44] | $20 IF cap holds; cap reportedly binds Pro users 18+ days/mo at heavy load [46] | Empirically inadequate for this buyer's volume |
+| **Anthropic Claude Code** | Max 5x | $100 | "5x Pro" session cap [44] | $100 if 5×Pro absorbs $858† workload; one Max 5x user reported 1-hour exhaustion [46] | Borderline — likely fits Sonnet-only ($644/mo); marginal for 50/50 mix |
+| **Anthropic Claude Code** | Max 20x | $200 | "20x Pro" + dual weekly caps (cross-model + Sonnet-specific) [44] | $200 with comfortable margin†; ~3-day weekly Opus lockouts documented [56] | Best Claude-platform fit. 4.3x value vs $858 direct API; "Max" does not mean uncapped |
+| **Anthropic API direct** | (no sub) | $0 fixed | Pay-as-you-go, $2,000/day overage cap [45] | $858 (predictable) | No throttle; predictable monthly cost |
+| **Cursor (frontier model)** | Pro | $20 | $20 of API credit at API rates [47][48] | ~$858 ($20 credit + ~$838 overage) | Pays $20 for negligible savings vs direct API |
+| **Cursor (frontier model)** | Pro+ | $60 | $70 of API credit [47] | ~$848 ($60 + ~$788 overage) | $10 net savings vs Pro at this volume |
+| **Cursor (frontier model)** | Ultra | $200 | $400 of API credit [47] | ~$658 ($200 + ~$458 overage) | $200 saved vs direct API; cheapest path to Sonnet/Opus on Cursor |
+| **Cursor (Composer 2 only)** | Pro | $20 | $20 of credit at $0.50/$2.50/$0.20 [47] | ~$118 ($20 + ~$98 overage) | Same as direct API; $20 absorbed by infrastructure |
+| **Cursor (Composer 2 only)** | Pro+ | $60 | $70 of credit | ~$108 ($60 + $48 overage) | Lowest-cost frontier-coder path at this volume |
+| **Cursor (Composer 2 only)** | Ultra | $200 | $400 of credit | $200 (zero overage; ~$280 unused credit) | Net loss vs Pro+; only worth it above ~3x this buyer's Composer 2 volume |
+| **OpenAI Codex (ChatGPT)** | Plus | $20 | 15–80 GPT-5.5 / 20–100 GPT-5.4 messages per 5h [49] | $20 if message ceiling absorbs the workload; insufficient at agentic per-active-minute rate (25k+ tok/min) | Codex is message-metered, not token-metered |
+| **OpenAI Codex (ChatGPT)** | Pro $100 | $100 | "5x Plus" limits [49] | $100 if cap absorbs (likely tight); 2x usage promo through 2026-05-31 helps | Comparable to Anthropic Max 5x positioning |
+| **OpenAI Codex (ChatGPT)** | Pro $200 | $200 | "20x Plus" limits [49] | $200 if caps absorb $858 workload | Comparable to Anthropic Max 20x positioning |
+| **OpenAI API direct** | (no sub) | $0 fixed | Pay-as-you-go, GPT-5.4 [49] | $593 (predictable) | Cheaper than Anthropic at this volume; weaker SWE-bench Verified [32] |
+| **Google AI / Gemini** | Free | $0 | 1,000 Code Assist req/day; Gemini 2.5 Pro free API tier 50 RPD [17][50] | $0 with quality tradeoff (Gemini 2.5 Pro on free direct API is essentially unusable at agentic volume; Code Assist defaults to Flash for free tier [17]) | Quality not equivalent to Sonnet/Opus |
+| **Google AI / Gemini** | AI Pro | $19.99 | "Higher" Antigravity rate limit, unspecified [19][50] | $19.99 + risk of 3–10 day lockouts [19] | Equivalent positioning to Pro $20; Antigravity quota opaque |
+| **Google AI / Gemini** | AI Ultra | $249.99 | "Highest" Antigravity rate limit, unspecified [19] | $249.99 + Ultra users still report hitting 100% quota [19] | Most expensive in the comparison; opaque value |
+| **Google Gemini API direct** | (no sub) | $0 fixed | Pay-as-you-go [50] | $475 (Gemini 3.1 Pro, 80/20) or $353 (Gemini 2.5 Pro) | Cheapest of the major providers; quality gap vs Anthropic on coding [32] |
+| **Windsurf (BYOK Sonnet/Opus)** | Pro | $20 | Token-based weekly+daily quota since March 2026; absolute numbers undisclosed [52] | $20 + overage at API list prices; cap could bind well below $858 | Quota numbers not published; cannot bound realistic cost |
+| **Windsurf (SWE-1.6 only)** | Pro | $20 | SWE-1.6 family is free (0 quota cost) [52] | $20 (no overage if SWE-1.6 absorbs workload) | Quality not equivalent to Sonnet/Opus; vendor-claimed SWE-1.5 = 40.08% on SWE-bench |
+| **Windsurf** | Max | $200 | Daily limits removed Apr 6, 2026; weekly token cap remains [52] | $200 + overage; includes Devin Cloud sessions [22] | Cap structure same opacity issue as Pro |
+| **GitHub Copilot** | Pro | $10 | 300 premium req/mo + parallel weekly token cap [12][51] | Insufficient — Pro users report exhaustion in days at agentic load [51][58] | Signups paused 2026-04-20 [13][58]; existing users only |
+| **GitHub Copilot** | Pro+ | $39 | 1,500 premium req/mo [12] | Insufficient at this buyer's volume; Pro+ users hit weekly token cap at "20% of nominal" [51] | Signups paused; existing users only |
+| **IBM Bob** | Pro | $20+$3 | 40 bobcoins/mo, ~$0.50/coin overage [29][53] | ~$763 (sub + ~1,480 bobcoin overage at flat rate) — assumes MCP burn rate generalizes [community report] | Token-per-bobcoin undisclosed; very rough estimate |
+| **IBM Bob** | Pro Plus | $60+$9 | 160 bobcoins/mo | ~$749 (sub + ~1,360 bobcoin overage) | ~$14/mo cheaper than Pro at this volume — flat overage rate erodes ladder benefit |
+| **IBM Bob** | Ultra | $200+$30 | 500 bobcoins/mo | ~$740 (sub + ~1,020 bobcoin overage) | Best Bob fit but only ~$23/mo cheaper than Pro; outside RPG/COBOL/IBM i niche this is a category mismatch [26] |
+
+### What this ladder tells the buyer at this volume
+
+1. **Anthropic Max 20x ($200) is the anchor for sustained Sonnet+Opus mix
+   workloads at $858/mo.** It is a 4.3x value buy vs the equivalent direct
+   API spend, with the trade-off that ~3-day Opus lockouts have been
+   observed [56]. For all-Opus workloads ($1,073/mo), Max 20x is a 5.4x
+   value buy if caps allow.
+2. **Anthropic Max 5x ($100) covers Sonnet-only workloads
+   ($644/mo)** at a 6.4x value-density advantage†, but the empirical
+   1-hour exhaustion report [46] suggests it sits closer to the throttle
+   boundary than its 5x marketing implies.
+3. **Direct Anthropic API + budget caps ($858/mo predictable)** is the
+   no-throttle path. At this buyer's volume Max 20x is cheaper IF the cap
+   holds; if a single weekly lockout strands the user for 3+ days [56],
+   the API path may pay for itself in productivity terms even at the
+   higher monthly bill.
+4. **Cursor Ultra $200 is the only Cursor tier that beats direct API** at
+   this volume for frontier models, saving ~$200/mo vs API-direct. Below
+   Ultra, Cursor's $20-credit and $70-credit tiers offer essentially zero
+   savings at this load — you pay the same as direct API plus a small
+   subscription fee.
+5. **OpenAI Codex Pro tiers ($100 / $200)** match Anthropic Max
+   positioning. Direct OpenAI API at GPT-5.4 ($593/mo for the same
+   workload) is materially cheaper than Anthropic, though SWE-bench
+   Verified scores suggest a coding-quality gap [32]. The choice between
+   ChatGPT Pro $100/$200 and Anthropic Max $100/$200 reduces to model
+   preference (Sonnet/Opus vs GPT-5.4/5.5) rather than pricing.
+6. **Google AI Ultra $249.99 is the most expensive line in the table**
+   and the least cost-transparent — Ultra users still hit 100% quotas and
+   the Antigravity credit-to-token ratio is undocumented [19][50]. At
+   this buyer's volume, Google AI Ultra is paying a $50 premium over
+   Claude Max 20x for less-clear capacity.
+7. **Windsurf and IBM Bob are not realistic primary options** at this
+   volume given the documented opacity. Windsurf can be a free-models-
+   only fallback (SWE-1.6, with quality tradeoffs); Bob is a category
+   mismatch outside RPG/COBOL/IBM i.
+8. **GitHub Copilot is unavailable for new individual signups** [13][58];
+   existing Pro+ users would still hit the weekly token cap at this
+   volume [51], so the platform is structurally not in the comparison
+   for a new buyer.
+
+The honest summary at this volume: the realistic 2026-04 buying decision
+collapses to **Anthropic Max 5x or Max 20x vs Cursor Ultra vs direct API**.
+Other platforms are viable for lighter workloads, niche stacks, or
+free-model-only routing — they are not competitive on realistic-cost terms
+for $800+/mo of frontier coding traffic.
+
 ## Sensitivity to usage scaling
 
 How does the answer change for users with 0.5x, 2x, and 4x this buyer's
@@ -325,6 +416,12 @@ of this buyer's measured volume, accepting all the gaps below:
   [51] and Windsurf [52]; Bobcoin-to-token ratio undisclosed [53]. These
   gaps are vendor-side opacity, not research-side gaps; they constrain any
   buyer-side cost projection regardless of methodology.
+- **Max-tier coverage at $858/mo midpoint is inferred, not measured.**
+  The "5x Pro" / "20x Pro" descriptors [44] do not translate to absolute
+  token caps, so the table's "Max 5x covers $1,000/mo of API value"
+  derivation is bounded by the relative descriptor and the empirical
+  lockout reports [46][56]. A buyer at this exact volume should treat
+  the Max-tier coverage rows as directional, not precise.
 - **OpenAI Codex Business credit conversion not verified.** The discovery
   agent surfaced credit-per-million-token figures that imply Codex Business
   is significantly cheaper than direct API; this was not verified against a
