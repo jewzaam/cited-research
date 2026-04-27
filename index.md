@@ -580,3 +580,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** clone detection landscape, stdlib-preference rule packs, all-in-one packaged tools, AI-code-quality-specific tools, custom rule-pack maintenance burden
 - **Last revised:** 2026-04-26
 - **Status:** Active
+
+## [Claude Code Session Management](research/claude-code-session-management/README.md)
+
+- **Path:** [research/claude-code-session-management/](research/claude-code-session-management/)
+- **Summary:** Complete guide to Claude Code session management features: 27 lifecycle hook events, session persistence and resume mechanics, context window management (compaction, /context, subagent isolation), five-tier configuration hierarchy, and MCP/plugin session integration. Key finding: file-based hooks (session-start.sh) are not officially documented; the supported mechanism is JSON-configured hooks in settings.json.
+- **Dimensions:** lifecycle hooks, session persistence and resume, context window management, configuration hierarchy and session initialization, MCP and plugin session integration
+- **Last revised:** 2026-04-27
+- **Status:** Active

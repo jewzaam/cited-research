@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-04-27
+
+- Added [Claude Code Session Management](research/claude-code-session-management/)
+
 ## 2026-04-26
 
 - Added [AI Coding Platforms Compared (Individual / Small-Team Lens, 2026)](research/ai-coding-platforms-2026/)
