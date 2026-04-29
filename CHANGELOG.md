@@ -2,6 +2,11 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-04-29
+
+- Added [Dependency Graph Tools for Python](research/python-dependency-graph-tools/)
+- Added [Call Graph Tools for Python](research/call-graph-tools-python/)
+
 ## 2026-04-27
 
 - Added [Claude Code Session Management](research/claude-code-session-management/)

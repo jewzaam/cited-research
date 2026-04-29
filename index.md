@@ -588,3 +588,19 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** lifecycle hooks, session persistence and resume, context window management, configuration hierarchy and session initialization, MCP and plugin session integration
 - **Last revised:** 2026-04-27
 - **Status:** Active
+
+## [Dependency Graph Tools for Python](research/python-dependency-graph-tools/README.md)
+
+- **Path:** [research/python-dependency-graph-tools/](research/python-dependency-graph-tools/)
+- **Summary:** Tools that analyze, visualize, and manage Python dependency graphs — both package dependency graphs (PyPI) and import dependency graphs (source code). Key insight: these are two distinct graphs served by different tools (pipdeptree/deptry vs pydeps/import-linter). Recommended $0 stack: pipdeptree + deptry + pip-audit + import-linter/tach. Counter-perspective: SBOM scanning has 92.0% false positive rate; CVSS scoring has 56% conflicting dual scores. 56 sources, independently audited.
+- **Dimensions:** package dependency inspection, import graph analysis, conflict and cycle detection, security vulnerability scanning, architectural boundary enforcement, visualization and output formats, CI/CD integration, package manager integration
+- **Last revised:** 2026-04-29
+- **Status:** Active
+
+## [Call Graph Tools for Python](research/call-graph-tools-python/README.md)
+
+- **Path:** [research/call-graph-tools-python/](research/call-graph-tools-python/)
+- **Summary:** Landscape of tools for generating call graphs in Python codebases — static analysis (PyCG archived, JARVIS research-only, pyan3 active but "superficial"), dynamic tracing (pycallgraph abandoned, VizTracer, py-spy flamegraphs), IDE integration (Pylance/PyCharm with documented silent failures), security taint analysis (Pysa 45% FP rate at Instagram, Semgrep, CodeQL), and visualization (Graphviz ceiling ~100-800 nodes). Key finding: PyCG's 99.2% precision on micro-benchmarks masks complete failure on 4/6 real-world apps. Static call graph construction is undecidable by Rice's theorem. Python 3.14 adds asyncio call graph introspection. 67 sources, independently audited.
+- **Dimensions:** tool landscape and taxonomy, static analysis approaches, dynamic/runtime analysis, visualization and output formats, IDE and editor integration, accuracy and limitations, security and taint analysis, use-case fit
+- **Last revised:** 2026-04-29
+- **Status:** Active
