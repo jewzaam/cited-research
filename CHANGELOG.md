@@ -2,10 +2,19 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-04-30
+
+- Added [Astrophotography Planning Apps & the Gap Landscape](research/astrophotography-planning-apps/)
+- Added [TDD for Agentic Development: What the Evidence Says](research/tdd-agentic-development/)
+- Added [DeepSeek V4 (Pro / Flash) for Individual & Small-Team Coding Workflows](research/deepseek-v4-coding/)
+- Added [Memory Poisoning of Agentic AI](research/agentic-memory-poisoning/)
+
 ## 2026-04-29
 
+- Added [Atmospheric Obstructions for Astrophotography](research/atmospheric-obstructions-imaging/)
 - Added [Dependency Graph Tools for Python](research/python-dependency-graph-tools/)
 - Added [Call Graph Tools for Python](research/call-graph-tools-python/)
+- Added [Weather APIs and Multi-Layer Cloud Forecasting for Astrophotography](research/astrophoto-weather-apis/)
 
 ## 2026-04-27
 
