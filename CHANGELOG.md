@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-05-04
+
+- Added [Claude Code Sandbox: Mechanics and Migration Strategy](research/claude-code-sandbox/)
+
 ## 2026-04-30
 
 - Added [Astrophotography Planning Apps & the Gap Landscape](research/astrophotography-planning-apps/)

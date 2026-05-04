@@ -652,3 +652,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** threat-class taxonomy, AgentPoison and similar attacks, persistence and cross-session contamination, defenses, multi-agent propagation, operator playbook, intersection with agentic-research-bias, real-world incidence vs lab demonstration
 - **Last revised:** 2026-04-30
 - **Status:** Active
+
+## [Claude Code Sandbox: Mechanics and Migration Strategy](research/claude-code-sandbox/README.md)
+
+- **Path:** [research/claude-code-sandbox/](research/claude-code-sandbox/)
+- **Summary:** How Claude Code's sandbox setting works (Seatbelt on macOS, bubblewrap on Linux, Bash-only scope, 84% prompt reduction in auto-allow mode) and what to do if already invested in hooks. Key finding: sandbox and hooks are NOT alternatives — they protect different boundaries at different layers (OS kernel vs application). Recommendation: keep all hooks + enable sandbox. CVE-2026-25725 (CVSS 7.7) proved sandbox alone leaves config files exposed — hooks protect the layer sandbox cannot. Trail of Bits, NVIDIA AI Red Team, and OWASP all recommend layered controls. 29 sources, independently audited (7 verified, 2 partial, 0 inaccurate).
+- **Dimensions:** sandbox mechanics, hooks mechanics, security model comparison, composability, cost and performance, migration strategies
+- **Last revised:** 2026-05-04
+- **Status:** Active
