@@ -660,3 +660,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** sandbox mechanics, hooks mechanics, security model comparison, composability, cost and performance, migration strategies
 - **Last revised:** 2026-05-04
 - **Status:** Active
+
+## [MCP Skills Extension (SEP-2640)](research/mcp-skills-extension/README.md)
+
+- **Path:** [research/mcp-skills-extension/](research/mcp-skills-extension/)
+- **Summary:** What the Skills Over MCP working group proposes (SEP-2640) — serving Agent Skills via MCP's Resources primitive with skill:// URIs. Key finding: the format (SKILL.md / Agent Skills spec) is already mature (26+ platforms, 40K+ published skills), but the transport (SEP-2640 / skill:// over MCP) is draft — In Review since April 2026, no MCP client ships native support yet. For someone writing local SKILL.md files today, nothing needs to change. Claude Code-specific frontmatter fields (hooks, agent, model) are outside the Agent Skills spec and cannot be meaningfully served over MCP. 19 sources, independently audited (14 verified, 0 inaccurate).
+- **Dimensions:** problem statement and motivation, technical approach (SEP-2640), relationship to existing skill systems, implementation status and maturity, implications for current skill authors
+- **Last revised:** 2026-05-07
+- **Status:** Active

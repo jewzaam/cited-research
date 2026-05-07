@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-05-07
+
+- Added [MCP Skills Extension (SEP-2640)](research/mcp-skills-extension/)
+
 ## 2026-05-04
 
 - Added [Claude Code Sandbox: Mechanics and Migration Strategy](research/claude-code-sandbox/)
