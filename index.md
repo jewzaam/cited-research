@@ -668,3 +668,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** problem statement and motivation, technical approach (SEP-2640), relationship to existing skill systems, implementation status and maturity, implications for current skill authors
 - **Last revised:** 2026-05-07
 - **Status:** Active
+
+## [Alternative LLM Models for Verification Agents in Claude Code](research/llm-verification-agents/README.md)
+
+- **Path:** [research/llm-verification-agents/](research/llm-verification-agents/)
+- **Summary:** Whether non-Anthropic models can serve as verification agents in Claude Code subagent workflows for failure mode diversity. Key finding: viable models exist (Gemini 2.5 Flash for diversity, DeepSeek V4 Flash for cost), but Claude Code's subagent system is locked to Anthropic model aliases — the feature request was closed as "not planned." Using non-Anthropic verification requires an external harness. Cross-model error correlation is 60% (vs 33% random), and the cheapest alternatives (DeepSeek, Qwen) have documented Claude training contamination. 55 sources, independently audited (11 verified, 0 inaccurate).
+- **Dimensions:** model candidates, provider options, Claude Code integration mechanics, failure mode diversity, cost comparison, reliability
+- **Last revised:** 2026-05-07
+- **Status:** Active
