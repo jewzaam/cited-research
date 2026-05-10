@@ -676,3 +676,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** model candidates, provider options, Claude Code integration mechanics, failure mode diversity, cost comparison, reliability
 - **Last revised:** 2026-05-07
 - **Status:** Active
+
+## [Video Game Design and Development Fundamentals (Indie/Mobile, 1–2 Person Team with AI Augmentation)](research/video-game-design-fundamentals/README.md)
+
+- **Path:** [research/video-game-design-fundamentals/](research/video-game-design-fundamentals/)
+- **Summary:** Citation-backed survey of game-design fundamentals and what drives commercial success, scoped to a solo dev or duo using AI augmentation in indie/mobile. Key findings: median 2025 Steam indie game grosses $249 ($174 net); 79% of 2024 Steam releases classified "Limited" by Valve; 83% of mobile games fail within 3 years; sponsored Twitch streams have median ROI of -95% (Kellogg/Northwestern, Marketing Science 2025); the canonical design frameworks (MDA, Theory of Fun, game feel) are taught but not empirically validated as predictors of commercial outcomes; SDT functions as an unquestioned paradigm in 259 reviewed HCI games papers, not a validated theory; mobile median D28 retention is ~0.85% (the widely-cited 10% benchmark is top-decile). On AI augmentation: METR's randomized controlled trial found experienced developers took 19% longer with AI despite predicting 24% speedup beforehand and self-reporting 20% speedup afterward. SAG-AFTRA strike (95.04% ratification) and Steam disclosure policy create real compliance surface. Cultural breakouts (Vampire Survivors, Balatro, Among Us, Stardew Valley, Hades) share replayability + accessibility + streamer-compatibility + sustained updates. 83 sources, independently audited (25 directly verified against pre-fetched content, 1 PARTIAL resolved, 9 consistency findings RESOLVED).
+- **Dimensions:** core design fundamentals, player psychology and engagement, production process and scope management for tiny teams, disciplines and solo/duo workflow with AI augmentation, commercial success drivers (indie and mobile), critical and cultural success drivers, failure modes
+- **Last revised:** 2026-05-10
+- **Status:** Active

@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-05-10
+
+- Added [Video Game Design and Development Fundamentals (Indie/Mobile, 1–2 Person Team with AI Augmentation)](research/video-game-design-fundamentals/)
+
 ## 2026-05-07
 
 - Added [Alternative LLM Models for Verification Agents in Claude Code](research/llm-verification-agents/)
