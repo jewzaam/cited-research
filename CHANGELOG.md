@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-05-17
+
+- Added [C# NINA 3.x Plugin Coding Standards](research/dotnet-nina-plugin-standards/)
+
 ## 2026-05-10
 
 - Added [Video Game Design and Development Fundamentals (Indie/Mobile, 1–2 Person Team with AI Augmentation)](research/video-game-design-fundamentals/)

@@ -684,3 +684,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** core design fundamentals, player psychology and engagement, production process and scope management for tiny teams, disciplines and solo/duo workflow with AI augmentation, commercial success drivers (indie and mobile), critical and cultural success drivers, failure modes
 - **Last revised:** 2026-05-10
 - **Status:** Active
+
+## [C# NINA 3.x Plugin Coding Standards](research/dotnet-nina-plugin-standards/README.md)
+
+- **Path:** [research/dotnet-nina-plugin-standards/](research/dotnet-nina-plugin-standards/)
+- **Summary:** Citation-backed coding standards for C# NINA 3.x plugins targeting the public `NINA.Plugin` NuGet SDK (source at github.com/isbeorn/nina). Key findings: install path uses 3-segment `<api-version>` `3.0.0` (not 4-segment `3.0.0.9001`); Logger backend is Serilog, NOT log4net (older docs are stale); `ImageSaved` event lives on `IImageSaveMediator`, not `IImagingMediator`; `NINA.Core.Utility.RelayCommand` is `[Obsolete]` (use `CommunityToolkit.Mvvm.Input.RelayCommand`); `PluginBase` neither extends `BaseINPC` nor implements `IDisposable` (cleanup goes through `Teardown()`); the plugin template's checked-in csproj still targets .NET Framework 4.8 but the wizard generates .NET 8; embedded HTTP servers must use EmbedIO's `HttpListenerMode.EmbedIO` (not `Microsoft` mode) to bypass the http.sys ACL admin requirement; GUID must match across `[Guid]`, `IPluginManifest.Identifier`, `manifest.json Identifier`, and `PluginOptionsAccessor` constructor argument; SHA-256 over installer (rebuild invalidates). 63 sources, independently audited (51 verified, 8 PARTIAL, 0 inaccurate, 4 consistency findings RESOLVED).
+- **Dimensions:** build-and-install, assembly-metadata, mef-manifest, mediators-and-devices, wpf-options-ui, persisted-options, embedded-http, logging, async-threading-and-csharp-style, testing, publishing
+- **Last revised:** 2026-05-17
+- **Status:** Active
