@@ -12,5 +12,5 @@ packages = []
 
 [project.optional-dependencies]
 dev = [
-    "pymarkdownlnt>=0.9.36,<1.0",
+    "pymarkdownlnt>=0.9.37,<1.0",
 ]
