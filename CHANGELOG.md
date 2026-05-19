@@ -2,6 +2,11 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-05-19
+
+- Added [Zero Trust Workload Identity Manager for Internal Service Auth](research/zero-trust-workload-identity-manager/)
+- Added [S3-Compatible Object Storage for OpenShift](research/s3-compatible-object-storage/)
+
 ## 2026-05-17
 
 - Added [C# NINA 3.x Plugin Coding Standards](research/dotnet-nina-plugin-standards/)

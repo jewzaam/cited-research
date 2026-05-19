@@ -692,3 +692,19 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** build-and-install, assembly-metadata, mef-manifest, mediators-and-devices, wpf-options-ui, persisted-options, embedded-http, logging, async-threading-and-csharp-style, testing, publishing
 - **Last revised:** 2026-05-17
 - **Status:** Active
+
+## [S3-Compatible Object Storage for OpenShift](research/s3-compatible-object-storage/README.md)
+
+- **Path:** [research/s3-compatible-object-storage/](research/s3-compatible-object-storage/)
+- **Summary:** Evaluation of S3-compatible object storage options for OpenShift (Kubernetes) with enterprise support, after MinIO's AGPL shift and April 2026 archive. Covers on-cluster (Rook Ceph standalone, SeaweedFS, Scality ARTESCA, Garage, RustFS, Portworx, Dell ObjectScale) and off-cluster (Cloudflare R2, Wasabi, Backblaze B2, IBM COS, StorageGRID, VAST Data) across 8 dimensions. Key finding: standalone Rook Ceph is the best overall fit — Apache 2.0 (via Rook), comprehensive S3 via RGW, Red Hat ecosystem, 4x lighter than ODF (24 cores + 48GB vs 48 cores + 192GB). SeaweedFS (Apache 2.0, most mature since 2012, near-complete S3) is strongest lightweight alternative but lacks Red Hat certification. S3 "compatibility" is a spectrum — no industry certification exists, management-plane operations break most often. 90 sources, independently audited (67 verified, 11 partial, 4 time-sensitive star count discrepancies, 0 fabrications).
+- **Dimensions:** solution landscape and current status, S3 API compatibility depth, deployment topology, infrastructure footprint, enterprise support model, software licensing, cost model, operational maturity
+- **Last revised:** 2026-05-19
+- **Status:** Active
+
+## [Zero Trust Workload Identity Manager for Internal Service Auth](research/zero-trust-workload-identity-manager/README.md)
+
+- **Path:** [research/zero-trust-workload-identity-manager/](research/zero-trust-workload-identity-manager/)
+- **Summary:** Evaluation of Red Hat's Zero Trust Workload Identity Manager (ZTWIM) as an option for internal service authentication. ZTWIM is an OpenShift operator built on CNCF-graduated SPIFFE/SPIRE, GA January 2026, bundled with Platform Plus/RHACM/RHACS. Covers architecture, deployment, federation (OIDC + SPIRE-to-SPIRE), integrations (Vault, Istio, Sigstore, OTEL), comparison with alternatives (K8s bound SA tokens, cert-manager, Istio native, cloud IAM), operational model (Uber 250K nodes, Indeed 3K pods), agentic/A2A use cases (Kagenti, Agent Card signing), and licensing. Key finding: strong fit for multi-cloud/hybrid with compliance-mandated attestation; overkill for single-cluster/single-cloud with tight delivery timelines (6-24 months deployment). 40 sources, independently audited (14 verified, 2 partial, 0 inaccurate).
+- **Dimensions:** architecture and technical foundation, deployment and prerequisites, identity federation patterns, integration points, comparison with alternatives, operational model, agentic and A2A use cases, licensing and availability
+- **Last revised:** 2026-05-19
+- **Status:** Active
