@@ -708,3 +708,35 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** architecture and technical foundation, deployment and prerequisites, identity federation patterns, integration points, comparison with alternatives, operational model, agentic and A2A use cases, licensing and availability
 - **Last revised:** 2026-05-19
 - **Status:** Active
+
+## [Kubernetes Pod PVC `$HOME` + tailnet/OTEL egress patterns](research/k8s-pod-home-tailnet-otel-egress/README.md)
+
+- **Path:** [research/k8s-pod-home-tailnet-otel-egress/](research/k8s-pod-home-tailnet-otel-egress/)
+- **Summary:** Wiring a tenant sandbox Pod in a 3-node k3s homelab (Longhorn 1.11, Tailscale Operator, OTEL Collector) for durable `$HOME` via PVC and OTLP egress under default-deny NetworkPolicy. Recommendation: one StatefulSet per operator with `volumeClaimTemplates`; PodSecurity `restricted` + `fsGroup` + `fsGroupChangePolicy: OnRootMismatch` for non-root ownership; call the **in-cluster** Collector Service directly (not the tailnet hostname — Tailscale Operator egress collapses to 2-3 Mbit/s on this exact topology per issue #16820 and gracefully-fails-not-planned for long-lived streams per #16162); NetworkPolicy uses `namespaceSelector` + `podSelector` AND'd in one `to:` entry, plus an explicit DNS allowance to kube-system. 30 sources, independently audited.
+- **Dimensions:** PVC StatefulSet vs Deployment, PVC permissions + PodSecurity profile, Tailscale Operator egress, NetworkPolicy egress patterns, synthesis
+- **Last revised:** 2026-05-23
+- **Status:** Active
+
+## [Browser-accessible coding shells](research/browser-accessible-coding-shells/README.md)
+
+- **Path:** [research/browser-accessible-coding-shells/](research/browser-accessible-coding-shells/)
+- **Summary:** Access-layer survey for self-hosting ~12 concurrent browser-accessible AI-coding sandbox Pods on a k3s homelab over Tailscale. Of five candidates: NVIDIA OpenShell (agent-sandbox runtime, no browser TTY) and OpenClaw (personal AI assistant) are wrong-category; of the four real browser-TTY tools — ttyd, gotty (sorenisanerd fork), wetty, code-server — ttyd is the recommended lowest-blast-radius starting point (6.9 MB Alpine image, `--auth-header X-WEBAUTH-USER` integration). Deployment shape: one Deployment+Service+Ingress+PVC per operator via Argo CD ApplicationSet List generator, fronted by the Tailscale Operator's Ingress class (MagicDNS), optional oauth2-proxy sidecar. Avoid `kubernetes/ingress-nginx` — archived 2026-03-24. 33 citations, independently audited (21 verified, 9 partial, 1 inaccurate-resolved, 1 inaccessible-resolved).
+- **Dimensions:** OpenShell profile, OpenClaw profile, browser TTY comparison (ttyd/gotty/wetty/code-server), Kubernetes deployment patterns, synthesis
+- **Last revised:** 2026-05-23
+- **Status:** Active
+
+## [Containerized Claude Code patterns + GitHub auth scoping](research/containerized-claude-code-patterns/README.md)
+
+- **Path:** [research/containerized-claude-code-patterns/](research/containerized-claude-code-patterns/)
+- **Summary:** How to host Claude Code in a Kubernetes Pod with relaxed permissions safely, plus scoping the Pod's GitHub credential so a leak does not reach the operator's other repos. Key reframing: prefer **auto mode** (March 2026, [`claude --permission-mode auto`]) over `--dangerously-skip-permissions` whenever the account+provider support it; fall back only when auto mode is unavailable (Bedrock/Vertex/Foundry per Anthropic docs). For GitHub credential, a **private GitHub App** has structurally lower blast radius than a fine-grained PAT (1-hour installation token vs ≤366-day PAT; structural work-repo isolation via private-App install scope; PAT carries an unresolved silent-reset UI bug). Notes the Anthropic Self-Hosted Sandboxes launch (May 19 2026) which may obviate self-hosting entirely if the operator only needs "Claude agent runs my tools" rather than the CLI specifically. Covers documented sandbox-bypass CVEs (CVE-2025-66479, SOCKS5, CVE-2025-59536) showing Anthropic's own sandbox was bypassable for ~5.5 months; broader pod-egress threat surface (NetworkPolicy default-allow, IMDS, automounted SA token); semantic-agency threats container isolation cannot bound (repo poisoning, exfil via legitimate GitHub/Anthropic channels). 30 primary sources + 14 advisory-tier, independently audited (20 priority claims verified, SOCKS5 version specifics corrected).
+- **Dimensions:** Anthropic official guidance, community Dockerfiles + K8s patterns, API key injection, GitHub access scoping (PAT vs second account vs GitHub App), `--dangerously-skip-permissions` + pod-egress + semantic-agency threats
+- **Last revised:** 2026-05-23
+- **Status:** Active
+
+## [Hosted coding sandbox products — design-inspiration survey](research/hosted-coding-sandbox-survey/README.md)
+
+- **Path:** [research/hosted-coding-sandbox-survey/](research/hosted-coding-sandbox-survey/)
+- **Summary:** Eight hosted coding sandbox products (GitHub Codespaces, Gitpod Classic+Flex/Ona, Coder, Replit, StackBlitz/WebContainers, Daytona, Eclipse Che, Devpod) surveyed for design choices on four recurring problems: session persistence, browser access UX, multi-tenant isolation, credential injection. Scope is design-pattern mining for a self-hosted 3-node k3s homelab build — adoption of any product is out of scope. 40 specific patterns extracted in the synthesis file, attributed to source product + citation, organized by which recurring problem each addresses. Headline architectural classes identified: VM-per-tenant (Codespaces, Gitpod Flex, Replit microVM), K8s-pod + UID-NS + NetworkPolicy (Gitpod Classic, Coder, Eclipse Che), Sysbox-container (Daytona), browser-tab (StackBlitz), client-orchestrated (Devpod). Counter-perspective skipped per prompt; Tier-3 independent writeups added per bias mitigation. 57 sources, independently audited (56 verified, 0 inaccurate, 0 inaccessible; 5 consistency-review FAILs all resolved).
+- **Dimensions:** GitHub Codespaces, Gitpod (Classic + Flex/Ona), Coder, Replit, StackBlitz/WebContainers, Daytona, Eclipse Che, Devpod, cross-product comparison, design-pattern synthesis
+- **Last revised:** 2026-05-23
+- **Status:** Active

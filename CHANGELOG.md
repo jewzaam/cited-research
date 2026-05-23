@@ -2,6 +2,13 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-05-23
+
+- Added [Browser-accessible coding shells](research/browser-accessible-coding-shells/)
+- Added [Containerized Claude Code patterns + GitHub auth scoping](research/containerized-claude-code-patterns/)
+- Added [Hosted coding sandbox products — design-inspiration survey](research/hosted-coding-sandbox-survey/)
+- Added [Kubernetes Pod PVC `$HOME` + tailnet/OTEL egress patterns](research/k8s-pod-home-tailnet-otel-egress/)
+
 ## 2026-05-19
 
 - Added [Zero Trust Workload Identity Manager for Internal Service Auth](research/zero-trust-workload-identity-manager/)
