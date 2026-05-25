@@ -740,3 +740,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** GitHub Codespaces, Gitpod (Classic + Flex/Ona), Coder, Replit, StackBlitz/WebContainers, Daytona, Eclipse Che, Devpod, cross-product comparison, design-pattern synthesis
 - **Last revised:** 2026-05-23
 - **Status:** Active
+
+## [Anthropic OAuth Mechanics + Subscription Quota API Surface](research/claude-code-oauth-quota/README.md)
+
+- **Path:** [research/claude-code-oauth-quota/](research/claude-code-oauth-quota/)
+- **Summary:** Four-question focused research on Claude Code's OAuth flow and subscription-quota programmatic surface. First-party answers: `CLAUDE_CODE_OAUTH_TOKEN` is an OAuth **access token** (a long-lived ~1-year one; refresh-token role goes to the separate `CLAUDE_CODE_OAUTH_REFRESH_TOKEN` env var), prefix `sk-ant-oat01-*`. Refresh endpoint is `POST https://platform.claude.com/v1/oauth/token` — captured from the Claude Code 2.1.121 binary's debug logs in anthropics/claude-code issue #54443; Anthropic itself flags the docs gap in issue #52202. **No first-party REST endpoint exposes subscription (5-hour / weekly) quota or the Agent SDK credit-pool balance**: `/v1/organizations/rate_limits` is Admin-API-key-only and returns *configured* API-tier limits, not consumption or subscription windows; `anthropic-ratelimit-*` headers describe API-tier limits and are not exposed to Claude Code hooks/statusline (issue #33820). Agent SDK programmatic auth is `ANTHROPIC_API_KEY` (OAuth tokens rejected by Messages API per issue #28091). Refresh-token rotation: strong T2 evidence in issues #24317 + #54443; T1 documentation absent. 16 citations (9 T1, 7 T2), source tier T1-T2 only per user constraint; independently audited (14 verified, 2 partial-auxiliary; 2 consistency issues resolved).
+- **Dimensions:** OAuth + quota API surface (single dimension covering token-type classification, refresh endpoint + flow, subscription-quota surface, refresh-token rotation)
+- **Last revised:** 2026-05-24
+- **Status:** Active

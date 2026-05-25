@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-05-24
+
+- Added [Anthropic OAuth Mechanics + Subscription Quota API Surface](research/claude-code-oauth-quota/)
+
 ## 2026-05-23
 
 - Added [Browser-accessible coding shells](research/browser-accessible-coding-shells/)
