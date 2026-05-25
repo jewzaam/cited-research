@@ -183,7 +183,7 @@ Source-tier constraint: **T1-T2 only** (first-party Anthropic docs/support and
 - **Q4 token rotation:** No first-party Anthropic documentation explicitly
   states that the refresh token rotates on each refresh. Tier-2 evidence
   (issue #24317) is community analysis on the first-party repo, marked
-  here as "unverified by first-party documentation." See [analysis.md §Q4](analysis.md#q4--token-rotation-on-refresh-behavior).
+  here as "unverified by first-party documentation." See [analysis.md §Q4](analysis.md#q4-token-rotation-on-refresh-behavior).
 - **Q3 subscription quota REST endpoint:** No first-party endpoint
   documented for reading subscription (5-hour / weekly) counters
   programmatically. Recorded as "no first-party answer found."

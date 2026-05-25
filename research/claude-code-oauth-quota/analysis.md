@@ -49,7 +49,7 @@ API key (`sk-ant-api03-*`) for direct Messages API calls.
 `--bare` mode does not read `CLAUDE_CODE_OAUTH_TOKEN`; bare-mode scripts must
 use `ANTHROPIC_API_KEY` or `apiKeyHelper` [1].
 
-See [references/oauth-quota-surface.md §Q1](references/oauth-quota-surface.md#q1--is-claude_code_oauth_token-a-refresh-token-or-access-token).
+See [references/oauth-quota-surface.md §Q1](references/oauth-quota-surface.md#q1-is-claudecodeoauthtoken-a-refresh-token-or-access-token).
 
 ---
 
@@ -95,7 +95,7 @@ refresh call itself are **not documented** in any first-party source and are
 not enumerated in the captured logs. This deliverable does not assert that
 schema.
 
-See [references/oauth-quota-surface.md §Q2](references/oauth-quota-surface.md#q2--token-refresh-endpoint-url--auth-flow).
+See [references/oauth-quota-surface.md §Q2](references/oauth-quota-surface.md#q2-token-refresh-endpoint-url-auth-flow).
 
 ---
 
@@ -178,7 +178,7 @@ consumption path is `claude -p` / SDK execution that spawns or links the
 Claude Code CLI binary holding OAuth credentials locally — not a direct
 header-driven OAuth call to the Messages API.
 
-See [references/oauth-quota-surface.md §Q3](references/oauth-quota-surface.md#q3--subscription-quota-api-surface).
+See [references/oauth-quota-surface.md §Q3](references/oauth-quota-surface.md#q3-subscription-quota-api-surface).
 
 ---
 
@@ -215,7 +215,7 @@ any process that started with a now-rotated copy gets 400 from the token
 endpoint and must re-login interactively. This is the failure pattern in
 both #24317 [11] and #54443 [10].
 
-See [references/oauth-quota-surface.md §Q4](references/oauth-quota-surface.md#q4--token-rotation-on-refresh-behavior).
+See [references/oauth-quota-surface.md §Q4](references/oauth-quota-surface.md#q4-token-rotation-on-refresh-behavior).
 
 ---
 
