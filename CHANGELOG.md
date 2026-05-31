@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-05-30
+
+- Added [Self-Hosted K8s Browser Dev Workspaces for Claude Code](research/self-hosted-k8s-dev-workspaces/)
+
 ## 2026-05-24
 
 - Added [Anthropic OAuth Mechanics + Subscription Quota API Surface](research/claude-code-oauth-quota/)
