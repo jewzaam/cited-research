@@ -756,3 +756,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** Coder, Eclipse Che/Che-Code, DevPod, JupyterHub+KubeSpawner, other platforms (Kasm/Theia Cloud/Okteto/Daytona/code-server operators/Gitpod), agent-native (OpenHands/Sculptor/orchestrators), cross-cutting fit + build-custom (Tailscale Operator, Longhorn RWO, Argo CD, Anthropic OAuth)
 - **Last revised:** 2026-05-30
 - **Status:** Active
+
+## [Canon Mirrorless System for Travel, Family, Portrait, Landscape, and Macro](research/canon-mirrorless-system/README.md)
+
+- **Path:** [research/canon-mirrorless-system/](research/canon-mirrorless-system/)
+- **Summary:** Beginner-facing buying guide for a lightweight Canon mirrorless (RF) system that must do travel now, then family and macro, plus arthritis-friendly accessories and thumb-lock tripods. Verdict: start with the APS-C **EOS R50** + **RF-S 18-150mm** all-in-one (~680 g) — the cheapest capable, lightest one-lens kit; add the **RF 50mm f/1.8 STM** (160 g) for portraits and the dual-purpose **RF 85mm f/2 Macro** (portrait + 0.5× close-up) later; step up to the light full-frame **R8** or IBIS-equipped **R6 II** if family low-light matters. A 24–105 zoom is the single lens that combines landscape + portrait. Key facts: the lens drives kit weight more than the body (full-frame R8 is only 86 g heavier than APS-C R50); only the RF 100mm f/2.8L is true 1:1 macro (the f/1.8 "Macro" primes are 0.5×); **third-party (Sigma/Tamron) RF lenses are APS-C-only as of June 2026** — full-frame buyers get Canon glass only. Arthritis aids: Bluetooth BR-E1 remote, touchscreen shooting, hand strap, lever QR clamp. Tripods: insist on flip/lever leg locks (Peak Design Travel, lever-variant Manfrotto Befree) over twist locks. Includes a beginner glossary. 84 sources; many authoritative domains anti-bot-blocked so figures are snippet-sourced + corroborated (flagged per citation); independently audited (0 inaccurate/fabricated; consistency + citation issues resolved).
+- **Dimensions:** bodies (APS-C vs full-frame), portrait lenses, landscape lenses, macro lenses, versatile/all-in-one lenses, third-party RF lenses, kit weight, accessibility (arthritis), tripods (lever/flip locks), glossary
+- **Last revised:** 2026-06-02
+- **Status:** Active

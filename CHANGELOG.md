@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-06-02
+
+- Added [Canon Mirrorless System for Travel, Family, Portrait, Landscape, and Macro](research/canon-mirrorless-system/)
+
 ## 2026-05-30
 
 - Added [Self-Hosted K8s Browser Dev Workspaces for Claude Code](research/self-hosted-k8s-dev-workspaces/)
