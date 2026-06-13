@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-06-13
+
+- Added [Hermes Agent + k3s + NVIDIA OpenShell — Self-Hosting and LLM Billing](research/hermes-agent-k3s-openshell-billing/)
+
 ## 2026-06-02
 
 - Added [Canon Mirrorless System for Travel, Family, Portrait, Landscape, and Macro](research/canon-mirrorless-system/)
