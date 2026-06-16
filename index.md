@@ -772,3 +772,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** Hermes Agent overview, how agents consume LLMs, k3s integration & OpenShell sandboxing, billing (Claude subscription vs API)
 - **Last revised:** 2026-06-13
 - **Status:** Active
+
+## [LLMeem: External Epistemic Memory for LLMs](research/llmeem-external-epistemic-memory/README.md)
+
+- **Path:** [research/llmeem-external-epistemic-memory/](research/llmeem-external-epistemic-memory/)
+- **Summary:** Citation-backed analysis of LLMeem (llmeem.ai), a framework giving LLMs justified, persistent, auditable knowledge using Doyle's 1979 Belief Maintenance System architecture. EEM uniquely combines formal truth maintenance (justification chains, retraction cascades, nogoods) with LLM semantic operations. Self-reported 98.5% A/B grade (3,853 questions) but single evaluator, no peer review. Self-critique failure findings (87%→60%) strongly corroborated by independent research. Project is early-stage: single developer, 0 GitHub stars, 321 PyPI downloads/month. MCP comparison: complementary layers (MCP=connectivity, EEM=epistemic).
+- **Dimensions:** theoretical foundations, architecture and mechanics, measured performance, comparison with alternatives, practical usage and integration, limitations and failure modes, open source and community
+- **Last revised:** 2026-06-16
+- **Status:** Active
