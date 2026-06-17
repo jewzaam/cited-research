@@ -780,3 +780,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** theoretical foundations, architecture and mechanics, measured performance, comparison with alternatives, practical usage and integration, limitations and failure modes, open source and community
 - **Last revised:** 2026-06-16
 - **Status:** Active
+
+## [Context7 MCP + Local Knowledge Repos: Integration Assessment](research/context7-mcp-integration/README.md)
+
+- **Path:** [research/context7-mcp-integration/](research/context7-mcp-integration/)
+- **Summary:** Whether Context7 MCP (cloud-hosted public library docs) adds value for a developer with local knowledge repos (standards, knowledgebase, CLI notes) using Claude Code. Context7 fills a narrow but real gap — version-specific API reference for fast-moving libraries (React, FastAPI, Next.js). Coverage verified for 8/14 stack libraries. Trade-offs: 1,000 req/month free tier (83% cut Jan 2026), ContextCrush supply chain vulnerability (patched), 3,300 tokens per query. Alternatives assessed: Grounded Docs (local, MIT), Context by Neuledge (offline), llms.txt (dead — 97% zero requests). 36 sources, independently audited.
+- **Dimensions:** Context7 capabilities, complementarity with local knowledge repos, integration architecture, practical stack coverage, alternatives
+- **Last revised:** 2026-06-17
+- **Status:** Active
