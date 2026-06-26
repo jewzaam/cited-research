@@ -788,3 +788,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** Context7 capabilities, complementarity with local knowledge repos, integration architecture, practical stack coverage, alternatives
 - **Last revised:** 2026-06-17
 - **Status:** Active
+
+## [Perses vs Grafana: Technical Comparison](research/perses-vs-grafana/README.md)
+
+- **Path:** [research/perses-vs-grafana/](research/perses-vs-grafana/)
+- **Summary:** Citation-backed comparison of Perses (CNCF Sandbox dashboarding project) and Grafana (established observability platform) across nine dimensions. Perses offers Apache 2.0 licensing, K8s-native CRDs, and code-first DaC but lacks alerting, has 6 data sources vs Grafana's 160+, and operator is v1alpha2 ("unstable"). Grafana has documented HA, 35M+ users, and 6 as-code tools but AGPLv3 licensing and non-native K8s integration. 25 sources, independently audited.
+- **Dimensions:** architecture, data source support, dashboard authoring, CNCF ecosystem fit, alerting, maturity, migration path, multi-tenancy/RBAC, performance at scale
+- **Last revised:** 2026-06-26
+- **Status:** Active

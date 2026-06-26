@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-06-26
+
+- Added [Perses vs Grafana: Technical Comparison](research/perses-vs-grafana/)
+
 ## 2026-06-17
 
 - Added [Context7 MCP + Local Knowledge Repos: Integration Assessment](research/context7-mcp-integration/)
