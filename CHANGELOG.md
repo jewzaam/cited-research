@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-07-07
+
+- Added [ADR/TDR Tooling: Alternatives to adr-tools for Agentic Consumption](research/adr-tdr-tooling/)
+
 ## 2026-06-26
 
 - Added [Perses vs Grafana: Technical Comparison](research/perses-vs-grafana/)

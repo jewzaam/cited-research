@@ -796,3 +796,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** architecture, data source support, dashboard authoring, CNCF ecosystem fit, alerting, maturity, migration path, multi-tenancy/RBAC, performance at scale
 - **Last revised:** 2026-06-26
 - **Status:** Active
+
+## [ADR/TDR Tooling: Alternatives to adr-tools for Agentic Consumption](research/adr-tdr-tooling/README.md)
+
+- **Path:** [research/adr-tdr-tooling/](research/adr-tdr-tooling/)
+- **Summary:** Survey of architecture decision record tooling alternatives to the unmaintained adr-tools (npryce, last release 2018). 36 tools cataloged, 5 format families compared. Three tools stand out for agentic consumption: adrs (Rust, MCP server, JSON-ADR export), ADG (Go, MCP server, rule enforcement DSL), and Structured MADR (YAML frontmatter, Claude Code plugin, JSON Schema). Key finding: strict format schemas degrade LLM reasoning but lightweight YAML frontmatter aids agent filtering — the optimal pattern is structured frontmatter + free-form body. 50 sources, independently audited.
+- **Dimensions:** tool landscape, agentic consumption readiness, simplicity and adoption friction, format ecosystem, no-tool baseline
+- **Last revised:** 2026-07-07
+- **Status:** Active
