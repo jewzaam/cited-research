@@ -804,3 +804,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** tool landscape, agentic consumption readiness, simplicity and adoption friction, format ecosystem, no-tool baseline
 - **Last revised:** 2026-07-07
 - **Status:** Active
+
+## [Event Bus Routing: Multi-Protocol, Self-Hosted, Python/Go](research/event-bus-routing/README.md)
+
+- **Path:** [research/event-bus-routing/](research/event-bus-routing/)
+- **Summary:** State of the art for multi-protocol event routing (MQTT ↔ Kafka and others) with content-based filtering in self-hosted/disconnected environments, using Python (primary) and Go (secondary). Redpanda Connect emerges as best universal bridge (225+ connectors, single binary). FastStream leads Python multi-protocol frameworks. franz-go replaces Sarama for Go Kafka. Kafka overkill for 56% of deployments; NATS simplest operationally. 81 sources, independently audited.
+- **Dimensions:** broker landscape, multi-protocol bridging, integration frameworks, content-based routing and filtering, Python ecosystem, Go ecosystem
+- **Last revised:** 2026-07-24
+- **Status:** Active

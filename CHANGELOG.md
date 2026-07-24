@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-07-24
+
+- Added [Event Bus Routing: Multi-Protocol, Self-Hosted, Python/Go](research/event-bus-routing/)
+
 ## 2026-07-07
 
 - Added [ADR/TDR Tooling: Alternatives to adr-tools for Agentic Consumption](research/adr-tdr-tooling/)
