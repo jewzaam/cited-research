@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-07-31
+
+- Added [Structured Output Enforcement in Claude Code](research/prompt-agent-schema/)
+
 ## 2026-07-24
 
 - Added [Event Bus Routing: Multi-Protocol, Self-Hosted, Python/Go](research/event-bus-routing/)

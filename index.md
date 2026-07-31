@@ -812,3 +812,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** broker landscape, multi-protocol bridging, integration frameworks, content-based routing and filtering, Python ecosystem, Go ecosystem
 - **Last revised:** 2026-07-24
 - **Status:** Active
+
+## [Structured Output Enforcement in Claude Code](research/prompt-agent-schema/README.md)
+
+- **Path:** [research/prompt-agent-schema/](research/prompt-agent-schema/)
+- **Summary:** How `agent(schema:)` in Claude Code Workflow scripts enforces structured output from sub-agents. The mechanism wraps JSON schemas as a synthetic `StructuredOutput` tool (tool-call emulation, not constrained decoding) with Ajv validation and up to 5 retries. Available in Workflow scripts and Agent SDK but NOT the Agent tool (feature request closed as not planned). Reliability jumps from 80-95% (prompt-based) to 95-99%+ (schema-based), but constrained decoding can reduce reasoning accuracy by up to 11pp and schema-valid output can be semantically wrong. 42 sources, independently audited.
+- **Dimensions:** mechanism and architecture, retry and validation behavior, schema complexity and capabilities, token overhead and performance, availability surface, prompt-based vs schema-based enforcement
+- **Last revised:** 2026-07-31
+- **Status:** Active
