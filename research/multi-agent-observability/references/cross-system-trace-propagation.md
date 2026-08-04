@@ -45,7 +45,7 @@ application-defined metadata alongside trace context:
 The Temporal Python SDK provides OpenTelemetry support via
 `temporalio[opentelemetry]` [11]:
 
-**TracingInterceptor** supports client, worker, activity, and application
+**TracingInterceptor** supports client, worker, activity, and Nexus
 operation span creation and propagation [10]. Configuration:
 
 - Default propagator: `TraceContextTextMapPropagator()` +

@@ -84,7 +84,7 @@ sampled flag, propagation rules, maximum 32 tracestate list members.
 **[10]** "temporalio.contrib.opentelemetry." *Temporal Python SDK Documentation*.
 <https://python.temporal.io/temporalio.contrib.opentelemetry.html>
 **Tier:** 2
-Data extracted: TracingInterceptor for client/worker/activity/application span
+Data extracted: TracingInterceptor for client/worker/activity/Nexus span
 creation and propagation, text map propagator configuration, header-based
 context serialization, ReplaySafeTracerProvider for workflow replay handling,
 TemporalIdGenerator for deterministic span IDs.
