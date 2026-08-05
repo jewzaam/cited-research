@@ -87,26 +87,48 @@ validation.
 
 ## 4. Schema Capabilities and Limitations
 
-### Supported
+### Constraints by Mechanism
 
-Basic types, `enum` (primitives only), `const`, `anyOf`, `allOf` (not with `$ref`),
-`$ref`/`$def`/`definitions` (internal only), `required`, `additionalProperties: false`,
-string formats (date-time, email, uri, uuid, etc.), nested objects, arrays of objects [1].
+The two structured output mechanisms have **different** constraint support. The Messages
+API compiles schemas to grammars (constrained decoding) and rejects unsupported features.
+`agent(schema:)` validates output with Ajv after generation — Ajv supports full JSON
+Schema, so most constraints work.
 
-### Not Supported in Strict Mode
+**CORRECTION (August 2026):** The original research applied Messages API strict mode
+restrictions to `agent(schema:)`. This was wrong — the two mechanisms have independent
+constraint surfaces. The table below reflects empirical testing (July 2026) documented
+in the [knowledgebase](https://github.com/jewzaam/knowledgebase/blob/main/claude-code/workflow-structured-output.md).
 
-Recursive schemas, `minimum`/`maximum`/`multipleOf`, `minLength`/`maxLength`, `pattern`
-(regex), complex array constraints, `if`/`then`/`else` [1][6].
+| Constraint | Messages API (strict) | `agent(schema:)` / Ajv |
+|---|---|---|
+| Basic types, `enum`, `const`, `required` | Supported [1] | Supported |
+| `$ref` / `$defs` (internal only) | Supported [1] | Supported |
+| `additionalProperties: false` | Required [1] | Supported |
+| `anyOf` / `allOf` / `oneOf` (nested) | Supported [1] | Supported |
+| `anyOf` / `allOf` / `oneOf` (root level) | Not supported — 400 error [1] | Not supported — 400 error |
+| `pattern` (regex) | Not supported — stripped by SDK [6] | **Supported** |
+| `minimum` / `maximum` | Not supported — stripped by SDK [1] | **Supported** |
+| `minLength` / `maxLength` | Not supported — stripped by SDK [1] | **Supported** |
+| `minProperties` | Not supported — stripped by SDK [1] | **Supported** |
+| `if` / `then` / `else` | Not supported [1] | **Supported** (root and nested) |
+| `not` | Not documented | **Supported** (tested nested in `allOf`) |
+| Recursive schemas | Not supported [1] | Not supported |
+| `multipleOf`, `maxProperties`, `uniqueItems` | Not supported [1] | Not tested |
 
-SDKs silently strip unsupported constraints and move them to descriptions [1]. The model
-sees a simplified schema, but client-side validation enforces the original constraints [1].
+SDKs silently strip unsupported constraints and move them to descriptions when using
+the Messages API strict mode [1]. This stripping does **not** apply to `agent(schema:)`,
+which bypasses the SDK's schema transformation entirely.
 
 ### Complexity Limits
 
+Complexity limits apply primarily to the Messages API (grammar compilation). The
+`agent(schema:)` path uses Ajv, which has no grammar compilation step, but the
+underlying API still imposes limits on tool schema size.
+
 - "Compiled grammar is too large" at ~50+ properties / ~8KB schema size [22]
 - 500 errors with complex nested array schemas + `strict: true` (17-55s before crash) [23]
-- 180-second compilation timeout [1]
-- Each optional parameter roughly doubles grammar state space [1]
+- 180-second compilation timeout (Messages API) [1]
+- Each optional parameter roughly doubles grammar state space (Messages API) [1]
 - Combined limits across all strict schemas in a single request [1]
 
 ### Schema Design Impact
@@ -226,10 +248,13 @@ for await (const message of query({
 
 1. Keep top-level `type: "object"` (required) [10]
 2. Set `additionalProperties: false` on all objects [1]
-3. Avoid recursive schemas, numeric constraints, string patterns [1]
-4. Keep nesting under 3 levels [12]
-5. Include a reasoning/explanation field — improves accuracy 33% → 92-94% [25]
-6. Add `input_examples` if accuracy insufficient — 72% → 90% improvement [8]
+3. Avoid `anyOf`/`allOf`/`oneOf` at schema root — 400 error on both mechanisms
+4. Avoid recursive schemas [1]
+5. `pattern`, `minimum`/`maximum`, `minLength`/`maxLength`, `if`/`then`/`else` all work
+   with `agent(schema:)` — use freely (restricted only in Messages API strict mode [1])
+6. Keep nesting under 3 levels [12]
+7. Include a reasoning/explanation field — improves accuracy 33% → 92-94% [25]
+8. Add `input_examples` if accuracy insufficient — 72% → 90% improvement [8]
 
 ## 9. Limitations and Open Questions
 

@@ -5,7 +5,7 @@
 How `agent(schema:)` works, where it's available, and whether to migrate from
 prompt-based JSON enforcement.
 
-**Last revised:** 2026-07-31
+**Last revised:** 2026-08-05
 
 ## TL;DR
 
@@ -26,8 +26,10 @@ It's available in **Workflow scripts** and the **Agent SDK**, but **not** the Ag
 | Retry limit | 5 (configurable via `MAX_STRUCTURED_OUTPUT_RETRIES`) [10] |
 | Failure on exhaustion | `error_max_structured_output_retries` result subtype [3] |
 | Retries count against tool budget? | No [10] |
-| Supported schema features | Basic types, enum (primitives), const, anyOf/allOf, $ref, nested objects [1] |
-| NOT supported (strict) | Recursive schemas, min/max, minLength/maxLength, pattern [1] |
+| Supported schema features | Basic types, enum, const, anyOf/allOf (nested), $ref, nested objects [1] |
+| NOT supported (Messages API strict) | Recursive schemas, min/max, minLength/maxLength, pattern [1] |
+| Additional features in `agent(schema:)` | pattern, min/max, minLength/maxLength, if/then/else, not, minProperties — all work via Ajv |
+| NOT supported (both mechanisms) | anyOf/allOf/oneOf at schema root, recursive schemas |
 | Token overhead | ~200-500 tokens per tool definition + ~2-3% overall [1][4] |
 | Available in Workflow scripts? | Yes — `opts.schema` [7] |
 | Available in Agent SDK? | Yes — `outputFormat` / `output_format` [3] |

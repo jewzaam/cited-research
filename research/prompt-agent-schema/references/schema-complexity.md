@@ -5,45 +5,48 @@
 What JSON Schema features Claude supports, known limitations, and how complexity affects
 reliability.
 
-## Supported Features
+## Constraint Support by Mechanism
 
-From official Anthropic documentation [1][2][41]:
+**CORRECTION (August 2026):** The original research applied Messages API strict mode
+restrictions to all structured output mechanisms. This was wrong. The Messages API
+(constrained decoding) and `agent(schema:)` (Ajv validation) have independent constraint
+surfaces. Empirical testing (July 2026) confirmed many constraints work with Ajv that
+do not work with strict mode.
 
-| Feature | Supported | Notes |
-|---------|-----------|-------|
-| Basic types (object, array, string, integer, number, boolean, null) | Yes | |
-| `enum` | Yes | Primitives only (strings, numbers, bools, nulls) — no complex types [1] |
-| `const` | Yes | |
-| `anyOf` | Yes | |
-| `allOf` | Yes | `allOf` with `$ref` NOT supported [1] |
-| `$ref` / `$def` / `definitions` | Yes | Internal only — no external URLs [1] |
-| `default` | Yes | All supported types |
-| `required` | Yes | |
-| `additionalProperties: false` | Required | Must be false for all objects in strict mode [1][2] |
-| String formats | Yes | date-time, time, date, duration, email, hostname, uri, ipv4, ipv6, uuid [1] |
-| Array `minItems` | Partial | Only values 0 and 1 [1] |
-| Nested objects | Yes | |
-| Arrays of objects | Yes | |
-| `input_examples` | Yes | Not for server-side tools [4] |
+### Messages API Strict Mode
 
-## Not Supported
+From official Anthropic documentation [1][2][41]. Compiles schemas to grammars — only a
+subset of JSON Schema is supported.
 
-| Feature | Status | Impact |
-|---------|--------|--------|
-| Recursive schemas | Not supported [1] | Hard failure |
-| Complex types in enums | Not supported [1] | 400 error |
-| External `$ref` (URLs) | Not supported [1] | 400 error |
-| `minimum` / `maximum` / `multipleOf` | Not supported in strict [1] | Silently stripped by SDK |
-| `minLength` / `maxLength` | Not supported in strict [1] | Silently stripped by SDK |
-| `pattern` (regex) | Not supported in strict [6] | 400 error: "string patterns are not supported" |
-| Array constraints beyond minItems 0-1 | Not supported [1] | Silently stripped |
-| `if` / `then` / `else` | Not mentioned | Likely unsupported |
-| `unevaluatedProperties` | Not mentioned | Likely unsupported |
+**Supported:** Basic types, `enum` (primitives only), `const`, `anyOf`/`allOf` (not at
+root, not `allOf` with `$ref`), `$ref`/`$defs` (internal only), `default`, `required`,
+`additionalProperties: false` (required), string formats, array `minItems` (0 and 1
+only), nested objects, arrays of objects, `input_examples` [1][2][4][41].
 
-## SDK Schema Transformation
+**Not supported:** Recursive schemas, complex enum types, external `$ref`, `minimum`/
+`maximum`/`multipleOf`, `minLength`/`maxLength`, `pattern`, complex array constraints,
+`if`/`then`/`else` [1][6]. SDKs silently strip these and move them to descriptions [1].
+
+### `agent(schema:)` / Ajv Validation
+
+Uses Ajv post-hoc validation — supports full JSON Schema with these exceptions:
+
+**Supported (empirically confirmed):** Everything in the Messages API supported list,
+plus: `pattern`, `minimum`/`maximum`, `minLength`/`maxLength`, `minProperties`,
+`if`/`then`/`else` (root and nested), `not` (nested in `allOf`), `allOf` (nested).
+
+**Not supported:** `anyOf`/`allOf`/`oneOf` at schema root (400 error), recursive schemas.
+
+**Not tested:** `multipleOf`, `maxProperties`, `uniqueItems`, `format` enforcement,
+schemas exceeding ~50 properties / ~8KB.
+
+SDK schema transformation (stripping unsupported constraints) does **not** apply to
+`agent(schema:)` — it bypasses the SDK's schema preprocessing.
+
+### SDK Schema Transformation (Messages API only)
 
 SDKs (Python, TypeScript, Ruby, PHP) silently transform schemas before sending to the
-API [1]:
+Messages API [1]:
 
 1. Remove unsupported constraints (minimum, maximum, minLength, maxLength)
 2. Update descriptions with constraint info (e.g., "Must be at least 100")
