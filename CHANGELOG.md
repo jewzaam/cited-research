@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-08-05
+
+- Updated [Structured Output Enforcement in Claude Code](research/prompt-agent-schema/)
+
 ## 2026-07-31
 
 - Added [Structured Output Enforcement in Claude Code](research/prompt-agent-schema/)
