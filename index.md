@@ -5,6 +5,14 @@
 Searchable index of all research topics in this repository. Each entry includes
 the path, summary, dimensions covered, and last revision date.
 
+## [International Rental Property for a US Investor](research/international-rental-property-us-investor/README.md)
+
+- **Path:** [research/international-rental-property-us-investor/](research/international-rental-property-us-investor/)
+- **Summary:** Nine countries (Costa Rica, Hungary, France, Spain, Italy, Portugal, Greece, Mexico, Panama) assessed for a US-resident investor buying residential property to rent. Answers the legal and regulatory question — who may buy, under what instrument, non-resident tax, estate treaty status, short-let legality — and explicitly does not answer the financial one: no rental yield was sourced for any country, so whether these beat a US-domestic rental is not established. Six of nine have no US estate tax treaty; Spain and Mexico tax a US landlord on gross rent with no deductions; Costa Rica's coast is barred by statute and Mexico's restricted zone is trust-only.
+- **Dimensions:** country screening, purchase mechanics, acquisition and holding costs, short-term rental regulation, tenancy law, political and legal risk, price and yield metrics, US tax and reporting, money movement and exit, counter-evidence
+- **Last revised:** 2026-08-17
+- **Status:** Active
+
 ## [Monolith vs Microservices in the Agentic AI Era](research/mono-vs-micro/README.md)
 
 - **Path:** [research/mono-vs-micro/](research/mono-vs-micro/)
