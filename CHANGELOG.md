@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-08-17
+
+- Added [International Rental Property for a US Investor](research/international-rental-property-us-investor/)
+
 ## 2026-08-05
 
 - Updated [Structured Output Enforcement in Claude Code](research/prompt-agent-schema/)
