@@ -92,9 +92,17 @@ def main():
     root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(".")
     root = root.resolve()
 
+    # `.tmp-cited-research/` holds pages fetched from the open web during a
+    # research run. They are gitignored scratch, not repo content, and their
+    # relative links point into *their own* upstream site — an OpenTelemetry doc
+    # linking to `/docs/registry/attributes/gen-ai.md` is correct there and
+    # unresolvable here. Scanning them reported 66 broken links that no edit to
+    # this repo could ever fix.
+    skip_dirs = {".git", ".tmp-cited-research"}
+
     md_files = sorted(
         p for p in root.rglob("*.md")
-        if ".git" not in p.parts
+        if not skip_dirs & set(p.parts)
     )
 
     all_errors = []
