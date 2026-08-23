@@ -2,6 +2,11 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-08-21
+
+- Added [Claude Code → Codex transition](research/claude-code-to-codex-transition/)
+- Updated [Claude Code → Codex transition](research/claude-code-to-codex-transition/) — added Dimension 7 (observability)
+
 ## 2026-08-17
 
 - Added [International Rental Property for a US Investor](research/international-rental-property-us-investor/)
