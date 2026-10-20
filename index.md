@@ -836,3 +836,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** setup and installation, models available, harness capability map and shift cost, pricing/plans/quota, running Codex inside OpenShell and the openshell-sandbox wrapper, coexistence, observability
 - **Last revised:** 2026-08-21
 - **Status:** Active
+
+## [EQ6-R Pro ~136 s RA Tracking Spike](research/eq6r-pro-136s-ra-spike/README.md)
+
+- **Path:** [research/eq6r-pro-136s-ra-spike/](research/eq6r-pro-136s-ra-spike/)
+- **Summary:** Diagnosis of a fast ~7" RA spike recurring every 134–138 s on a Sky-Watcher EQ6-R Pro that already had all bearings and belts replaced. No stock gear, pulley or belt element of the 180:1 + 48:12 drive has that period (motor pulley 119.7 s, worm 478.7 s, 71-tooth belt 708.1 s, all est.); the only element in range is the ball-defect line (2 × BSF) of a 608 worm-shaft bearing, 136.2–142.3 s (est.). The one solved EQ6-family case — a legacy EQ6 with a 133 s spike — was caused by "upgraded" ceramic worm bearings and fixed by refitting original 608s (0.4" RMS). An Exos2-GT ~134 s, 5–9" spike cleared after belt and worm-play changes (cause not isolated); an EQ6-R Pro 133 s/67 s case stayed unresolved after a motor swap. Includes unguided-capture/PECPrep procedure to pin the period. 40 citations (38 VERIFIED, 2 corrected); single web search engine; forum pages operator-supplied.
+- **Dimensions:** drivetrain and bearing periods, user reports, fixes, diagnosis
+- **Last revised:** 2026-10-20
+- **Status:** Active
