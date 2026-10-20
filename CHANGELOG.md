@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-10-20
+
+- Added [EQ6-R Pro ~136 s RA Tracking Spike](research/eq6r-pro-136s-ra-spike/)
+
 ## 2026-08-21
 
 - Added [Claude Code → Codex transition](research/claude-code-to-codex-transition/)
