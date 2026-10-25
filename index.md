@@ -837,6 +837,14 @@ the path, summary, dimensions covered, and last revision date.
 - **Last revised:** 2026-08-21
 - **Status:** Active
 
+## [Hardware Collision Kill Switch for Strain Wave Mounts](research/strain-wave-mount-collision-kill-switch/README.md)
+
+- **Path:** [research/strain-wave-mount-collision-kill-switch/](research/strain-wave-mount-collision-kill-switch/)
+- **Summary:** Prior art and requirements for a software-independent, latching contact switch on the camera/OTA that cuts DC power to a strain wave (harmonic drive) astro mount on collision. No product or reported build matching the exact design was found. Hardware power cutoff has been discussed since at least 2016. Built examples are position- or comms-triggered: an AP1200 accelerometer relay, the ADG MountWatcher watchdog, and a Wave 150i reed-switch cutoff built after a 2025 crash. The closest contact-triggered idea is a pier-mounted micro switch in the mount's 12V line, suggested but not reported as built. The one posted amateur schematic (non-contact reed switches) is, as read, energize-to-trip and self-resetting, so neither fail-safe nor latched. Key premise risk: documented power-off brakes on AM5/AM3/NYX-101/SAL-33 are RA-only, so DEC can back-drive when power is cut. An AM5 teardown reports a spring-loaded solenoid brake on the stepper; with it removed, the load did not fall by itself but kept going once pushed. ZWO staff say AM5 stall detection works only at 1440x slew, not while tracking. Requirements are borrowed by analogy from ISO 13850 (latch, manual reset at the device, reset must not restart) and positive-opening NC contact practice. 93 citations, including 8 operator-supplied PDFs (one OCR) and one schematic image. Round 1: 74 VERIFIED / 9 PARTIAL / 0 INACCURATE. Round 2: 7 VERIFIED / 2 PARTIAL. All issues resolved. Search was single-wave; forums were read through a reader proxy.
+- **Dimensions:** prior art and community discussion, power-loss behavior of strain wave mounts, built-in collision protection and recovery, adjacent-domain E-stop requirements and counter-perspectives
+- **Last revised:** 2026-10-06
+- **Status:** Active
+
 ## [EQ6-R Pro ~136 s RA Tracking Spike](research/eq6r-pro-136s-ra-spike/README.md)
 
 - **Path:** [research/eq6r-pro-136s-ra-spike/](research/eq6r-pro-136s-ra-spike/)
