@@ -852,3 +852,11 @@ the path, summary, dimensions covered, and last revision date.
 - **Dimensions:** drivetrain and bearing periods, user reports, fixes, diagnosis
 - **Last revised:** 2026-10-20
 - **Status:** Active
+
+## [Agent Harness Capabilities and an Isolated Trial Setup](research/agent-harness-trial-setup/README.md)
+
+- **Path:** [research/agent-harness-trial-setup/](research/agent-harness-trial-setup/)
+- **Summary:** Compares Hermes Agent, OpenHands, opencode, Goose, Codex CLI and Claude Code on capabilities, interfaces, isolation and security record, and picks a trial setup for a low-power laptop already running NVIDIA OpenShell (rootless Podman) versus a home k3s cluster. Recommendation (inference): run Hermes inside OpenShell on the laptop with `terminal.backend: local`, driven through its OpenAI-compatible API server (key required even on loopback) plus Open WebUI; keep the Telegram gateway off (docs say deny-by-default, an open security issue says fail-open, and it was the Carbonato botnet's control channel). k3s adds blast radius without an extra isolation layer: OpenShell's Helm chart is still labelled Experimental while its support matrix says Supported, k3s is unnamed and egress NetworkPolicy enforcement unverified, and only OpenHands ships an official chart (unauthenticated, single-tenant). Goose and opencode document no OS sandbox; every harness had a high/critical CVE in 2025–2026, including repo-borne `core.fsmonitor` RCE before approval in Hermes and Goose. 146 citations, independently audited twice (re-audit: 143 verified, 3 partial, all resolved); single web search engine (Yahoo) because other engines blocked the sandbox IP.
+- **Dimensions:** harness capability matrix, interaction interfaces, isolation on a laptop, isolation on k3s and security record
+- **Last revised:** 2026-11-05
+- **Status:** Active
