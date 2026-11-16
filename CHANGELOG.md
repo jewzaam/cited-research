@@ -2,6 +2,10 @@
 
 Every research add or update to this repo, newest first.
 
+## 2026-11-05
+
+- Added [Agent Harness Capabilities and an Isolated Trial Setup](research/agent-harness-trial-setup/)
+
 ## 2026-10-20
 
 - Added [EQ6-R Pro ~136 s RA Tracking Spike](research/eq6r-pro-136s-ra-spike/)
